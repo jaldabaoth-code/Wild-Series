@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="container d-flex flex-column justify-content-center">
+        <div class="card col-6 offset-3">
+            <h1 class="card-title text-center">{{program.title}}</h1>
+            <img src="{{program.poster}}" class="card-img-top" alt="{{ program.title }} poster">
+            <div class="card-body">
+                <h2 class="card-title text-center">
+                    Saison : {{ season.number }}
+                    Sortie en : ({{ season.year }})</h2>
+                <h3>Episode {{ episode.number }} - le titre de l'episode est : {{ episode.title}}</h3>
+                <h4>Le synopsis : </h4>
+                <p>{{ episode.synopsis }}</p>
+            </div>
+        </div>
+    </div>
+
+    {% if app.user and is_granted("ROLE_CONTRIBUTOR")%}
+        {% for comment in episode.comments | reverse %}
+            Commentaire : {{ comment.comment }}</br>
+            Note : {{ comment.rate }}</br>
+            commentaire de : {{ comment.author.username }}</br>
+        {% if app.user and app.user.email == comment.author.username or is_granted('ROLE_ADMIN') %}
+            {% include "program/_delete_form.html.twig" %}
+        {% endif %}
+        {% endfor %}
+        {% if app.user %}
+            {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <input type='submit' value='Ajouter un commentaire'>
+                {{ form_end(form) }}
+            {% else %}
+        {% endif %}
+    {% endif %}
+
+{% endblock %}

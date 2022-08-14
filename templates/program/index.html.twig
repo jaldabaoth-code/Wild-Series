@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All programs
+{% endblock %}
+
+{% block body %}
+    {{ app.session.get('total') }}
+dffd
+    <h1>Toutes les séries</h1>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button>Search</button>
+        {{ form_end(form) }}
+
+    {% for program in programs %}
+        {{ program.title }}
+            <a href="{{ path("category_show", { categoryName: program.category.name }) }}">{{ program.category.name }}</a>
+        <p>{{ program.summary }}</p>
+    {% endfor %}
+    <a href="{{ path('app_index') }}">Retour à l'accueil</a>
+{% endblock %}
