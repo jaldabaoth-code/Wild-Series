@@ -12,11 +12,10 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints\DateTime;
 
-    /**
-     * @ORM\Entity(repositoryClass="App\Repository\ProgramRepository")
-     * //On précise à l’entité que nous utiliserons l’upload du package Vich uploader
-     * @Vich\Uploadable
-     */
+/**
+ * @ORM\Entity(repositoryClass="App\Repository\ProgramRepository")
+ * @Vich\Uploadable
+ */
 class Program
 {
     /**
@@ -28,7 +27,7 @@ class Program
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="ne me laisse pas tout vide")
+     * @Assert\NotBlank(message="don't leave me empty")
      * @Assert\Length(max="255", maxMessage="La catégorie saisie {{ value }} est trop longue, elle ne devrait pas dépasser {{ limit }} caractères")
     */
     private $title;
@@ -44,21 +43,17 @@ class Program
     */
     private $summary;
 
-     /**
-      * @ORM\Column(type="string", length=255, nullable=true)
-      * @var string
-      */
-      private $poster;
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+    * @var string
+    */
+    private $poster;
 
-      //On va créer un nouvel attribut à notre entité, qui ne sera pas lié à une colonne
-        // Tu peux d’ailleurs voir que l’annotation ORM column n’est pas spécifiée car
-      //On ne rajoute pas de données de type file en bdd
-        /**
-         * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
-         * @var File
-         */
-        private $posterFile;
-
+    /**
+     * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
+     * @var File
+     */
+    private $posterFile;
 
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="programs")
@@ -128,7 +123,6 @@ class Program
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
         return $this;
     }
 
@@ -140,7 +134,6 @@ class Program
     public function setSummary(string $summary): self
     {
         $this->summary = $summary;
-
         return $this;
     }
 
@@ -152,7 +145,6 @@ class Program
     public function setPoster(?string $poster): self
     {
         $this->poster = $poster;
-
         return $this;
     }
 
@@ -164,7 +156,6 @@ class Program
     public function setCategory(?Category $category): self
     {
         $this->category = $category;
-
         return $this;
     }
 
@@ -176,7 +167,6 @@ class Program
     public function setSynopsis(string $synopsis): self
     {
         $this->synopsis = $synopsis;
-
         return $this;
     }
 
@@ -188,7 +178,6 @@ class Program
     public function setCountry(?string $country): self
     {
         $this->country = $country;
-
         return $this;
     }
 
@@ -200,7 +189,6 @@ class Program
     public function setYear(?int $year): self
     {
         $this->year = $year;
-
         return $this;
     }
 
@@ -210,7 +198,6 @@ class Program
         if ($posterFile) {
             $this->updatedAt = new DateTime('now');
         }
-
         return $this;
     }
 
@@ -227,7 +214,6 @@ class Program
     public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
-
         return $this;
     }
 
@@ -245,7 +231,6 @@ class Program
             $this->seasons[] = $season;
             $season->setProgram($this);
         }
-
         return $this;
     }
 
@@ -257,7 +242,6 @@ class Program
                 $season->setProgram(null);
             }
         }
-
         return $this;
     }
 
@@ -275,7 +259,6 @@ class Program
             $this->actors[] = $actor;
             $actor->addProgram($this);
         }
-
         return $this;
     }
 
@@ -284,7 +267,6 @@ class Program
         if ($this->actors->removeElement($actor)) {
             $actor->removeProgram($this);
         }
-
         return $this;
     }
 
@@ -296,7 +278,6 @@ class Program
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
-
         return $this;
     }
 
@@ -308,7 +289,6 @@ class Program
     public function setOwner(?User $owner): self
     {
         $this->owner = $owner;
-
         return $this;
     }
 
@@ -326,7 +306,6 @@ class Program
             $this->viewers[] = $viewer;
             $viewer->addToWatchlist($this);
         }
-
         return $this;
     }
 
@@ -335,7 +314,6 @@ class Program
         if ($this->viewers->removeElement($viewer)) {
             $viewer->removeFromWatchlist($this);
         }
-
         return $this;
     }
 }
