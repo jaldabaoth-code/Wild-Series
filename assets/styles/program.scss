@@ -45,3 +45,15 @@
         }
     }
 }
+
+.carouselImage {
+    float: left;
+    width:  1250px;
+    height: 600px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background: #AAAAAA;
+    opacity: 0.85;
+}

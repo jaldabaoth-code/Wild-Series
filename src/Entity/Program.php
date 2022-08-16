@@ -57,6 +57,18 @@ class Program
 
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
+     */
+    private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="image_file", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+
+    /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="programs")
      * @ORM\JoinColumn(nullable=true)
      */
@@ -83,6 +95,11 @@ class Program
     private $actors;
 
     /**
+     * @ORM\ManyToMany(targetEntity=Creator::class, mappedBy="programs")
+     */
+    private $creators;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $slug;
@@ -103,11 +120,11 @@ class Program
      */
     private $viewers;
 
-
     public function __construct()
     {
         $this->seasons = new ArrayCollection();
         $this->actors = new ArrayCollection();
+        $this->creators = new ArrayCollection();
         $this->viewers = new ArrayCollection();
     }
 
@@ -149,7 +166,7 @@ class Program
         return $this;
     }
 
-/*    public function getImage(): ?string
+    public function getImage(): ?string
     {
         return $this->image;
     }
@@ -158,7 +175,7 @@ class Program
     {
         $this->image = $image;
         return $this;
-    }*/
+    }
 
     public function getCategory(): ?Category
     {
@@ -218,19 +235,19 @@ class Program
         return $this->posterFile;
     }
 
-/*    public function setImageFile(File $imageFile = null): Program
+    public function setImageFile(File $imageFile = null): Program
     {
         $this->imageFile = $imageFile;
         if ($imageFile) {
             $this->updatedAt = new DateTime('now');
         }
         return $this;
-    }*/
+    }
 
-/*    public function getImageFile(): ?File
+    public function getImageFile(): ?File
     {
         return $this->imageFile;
-    }*/
+    }
 
     public function getUpdatedAt(): ?\DateTimeInterface
     {
@@ -295,6 +312,33 @@ class Program
         }
         return $this;
     }
+
+    /**
+     * @return Collection|Creator[]
+     */
+    public function getCreators(): Collection
+    {
+        return $this->creators;
+    }
+
+    public function addCreator(Creator $creator): self
+    {
+        if (!$this->creators->contains($creator)) {
+            $this->creators[] = $creator;
+            $creator->addProgram($this);
+        }
+        return $this;
+    }
+
+    public function removeCreator(Creator $creator): self
+    {
+        if ($this->creators->removeElement($creator)) {
+            $creator->removeProgram($this);
+        }
+        return $this;
+    }
+
+
 
     public function getSlug(): ?string
     {

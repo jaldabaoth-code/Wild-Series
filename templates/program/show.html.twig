@@ -3,15 +3,9 @@
 {% endblock %}
 
 {% block body %}
-    <ul class="my-5">
-        {% for season in seasons %}
-            <li>
-                <a href="{{ path('program_season_show', {slug: program.slug, seasonId: season.id}) }}">Season
-                    {{ season.number }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
+    <div class="col-8">
+        {% include "program/_navbar.html.twig" %}
+    </div>
     <div>
         <div class="media">
             <img class="my-3" src="/uploads/{{program.poster}}" alt="{{ program.title }} poster">
@@ -30,21 +24,24 @@
 {#    <a id="watchlist" href="{{ path('program_watchlist', {id: program.id})}}">
         <i class="bi {{ app.user.isInWatchlist(program) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
     </a>#}
+    <div class="d-flex flex-column align-items-center">
+    <strong class="text-center">CASTING :</strong>
+        <div class="col-8 d-flex row">
 
-    <strong>CASTING :</strong>
-    <ul>
-        {{ dump(program) }}
-        {% for actor in program.actors %}
-            {{ dump(actor) }}
-
-            <img src="{{ asset('build/no-image.png') }}">
-            <img src="{{ actor.poster }}">
-        <li><a href="{{ path('actor_show', {id: actor.id})  }}">{{ actor.name }}</a></li>
-            
-        {% else %}
-            <li>Aucun acteur pour cette série</li>
-        {% endfor %}
-    </ul>
+                {% for actor in program.actors %}
+                    <div class="col-2">
+                        {% if actor.poster %}
+                            <img class="col" src="{{ actor.poster }}">
+                        {%  else %}
+                            <img class="w-100" src="{{ asset('build/no-image.png') }}">
+                        {%endif%}
+                        <a href="{{ path('actor_show', {id: actor.id}) }}">{{ actor.name }}</a>
+                    </div>
+                {% else %}
+                    <div>Aucun acteur pour cette série</div>
+                {% endfor %}
+            </div>
+    </div>
     {% if is_granted("ROLE_ADMIN") %}
         <a href="{{ path('program_edit', { 'slug': program.slug} ) }}">Éditer</a>
     {%endif%}

@@ -21,7 +21,8 @@ class ActorFixtures extends Fixture
         'Kit Harington',
         'Norman Reedus',
     ];
-    
+
+
     public function load(ObjectManager $manager)
     {
         foreach (self::ACTORS as $key => $actorName) {
