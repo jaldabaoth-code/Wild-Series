@@ -55,6 +55,7 @@ class Program
      */
     private $posterFile;
 
+
     /**
      * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="programs")
      * @ORM\JoinColumn(nullable=true)
@@ -148,6 +149,17 @@ class Program
         return $this;
     }
 
+/*    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(?string $image): self
+    {
+        $this->image = $image;
+        return $this;
+    }*/
+
     public function getCategory(): ?Category
     {
         return $this->category;
@@ -205,6 +217,20 @@ class Program
     {
         return $this->posterFile;
     }
+
+/*    public function setImageFile(File $imageFile = null): Program
+    {
+        $this->imageFile = $imageFile;
+        if ($imageFile) {
+            $this->updatedAt = new DateTime('now');
+        }
+        return $this;
+    }*/
+
+/*    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }*/
 
     public function getUpdatedAt(): ?\DateTimeInterface
     {

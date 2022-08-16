@@ -8,27 +8,27 @@
 {% block title %}All programs{% endblock %}
 
 {% block body %}
-    {{ app.session.get('total') }}
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button>Search</button>
-    {{ form_end(form) }}
-
-    {% include "program/_carousel.html.twig" %}
-    <h2 class="text-center">All Series</h2>
-    <div class="d-flex justify-content-center">
+    <div>
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button type="submit"><i class="fa fa-search"></i></button>
+        {{ form_end(form) }}
+    </div>
+    <div class="d-flex flex-column align-items-center">
+        <div class="col-8">
+            {% include "program/_carousel.html.twig" %}
+        </div>
+        <h2 class="text-center">All Series</h2>
         <div class="col-8 d-flex row">
             {% for program in programs %}
-                <div class="col-3">
-                    <div class="d-flex flex-column w-75">
-                        <a class="m-0 p-0 shine" href="{{ path("program_show", { slug: program.slug }) }}">
-                            <img src="{{ program.poster }}" alt="series image">
-                        </a>
-                        <a class="programTitle" href="{{ path("program_show", { slug: program.slug }) }}">
-                            {{ program.title }}
-                        </a>
-                        <a class="categoryName" href="{{ path("category_show", { categoryName: program.category.name }) }}">{{ program.category.name }}</a>
-                    </div>
+                <div class="col-3 my-3 d-flex flex-column align-items-center">
+                    <a class="shine" href="{{ path("program_show", { slug: program.slug }) }}">
+                        <img src="{{ program.poster }}" alt="poster of series">
+                    </a>
+                    <a class="programTitle" href="{{ path("program_show", { slug: program.slug }) }}">
+                        {{ program.title }}
+                    </a>
+                    <a class="categoryName" href="{{ path("category_show", { categoryName: program.category.name }) }}">{{ program.category.name }}</a>
                 </div>
             {% endfor %}
         </div>

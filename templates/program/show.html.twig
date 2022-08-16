@@ -27,13 +27,18 @@
         </a>
     </div>
 
-    <a id="watchlist" href="{{ path('program_watchlist', {id: program.id})}}">
+{#    <a id="watchlist" href="{{ path('program_watchlist', {id: program.id})}}">
         <i class="bi {{ app.user.isInWatchlist(program) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
-    </a>
+    </a>#}
 
-    <strong>Acteurs :</strong>
+    <strong>CASTING :</strong>
     <ul>
+        {{ dump(program) }}
         {% for actor in program.actors %}
+            {{ dump(actor) }}
+
+            <img src="{{ asset('build/no-image.png') }}">
+            <img src="{{ actor.poster }}">
         <li><a href="{{ path('actor_show', {id: actor.id})  }}">{{ actor.name }}</a></li>
             
         {% else %}
