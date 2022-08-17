@@ -44,10 +44,46 @@ class Season
      */
     private $episodes;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Actor::class, mappedBy="seasons")
+     */
+    private $actors;
+
     public function __construct()
     {
         $this->episodes = new ArrayCollection();
+        $this->actors = new ArrayCollection();
     }
+
+
+
+
+    /**
+     * @return Collection|Actor[]
+     */
+    public function getActors(): Collection
+    {
+        return $this->actors;
+    }
+
+    public function addActor(Actor $actor): self
+    {
+        if (!$this->actors->contains($actor)) {
+            $this->actors[] = $actor;
+            $actor->addSeason($this);
+        }
+        return $this;
+    }
+
+    public function removeActor(Actor $actor): self
+    {
+        if ($this->actors->removeElement($actor)) {
+            $actor->removeSeason($this);
+        }
+        return $this;
+    }
+
+
 
     public function getId(): ?int
     {

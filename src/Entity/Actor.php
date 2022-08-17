@@ -34,6 +34,12 @@ class Actor
      */
     private $programs;
 
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Season::class, inversedBy="actors")
+     */
+    private $seasons;
+
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
@@ -53,7 +59,12 @@ class Actor
     public function __construct()
     {
         $this->programs = new ArrayCollection();
+        $this->seasons = new ArrayCollection();
     }
+
+
+
+
 
     public function getId(): ?int
     {
@@ -131,6 +142,31 @@ class Actor
     public function removeProgram(Program $program): self
     {
         $this->programs->removeElement($program);
+
+        return $this;
+    }
+
+
+    /**
+     * @return Collection|Season[]
+     */
+    public function getSeasons(): Collection
+    {
+        return $this->seasons;
+    }
+
+    public function addSeason(Season $season): self
+    {
+        if (!$this->seasons->contains($season)) {
+            $this->seasons[] = $season;
+        }
+
+        return $this;
+    }
+
+    public function removeSeason(Season $season): self
+    {
+        $this->seasons->removeElement($season);
 
         return $this;
     }

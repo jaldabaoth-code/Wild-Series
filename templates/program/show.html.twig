@@ -25,10 +25,11 @@
         <i class="bi {{ app.user.isInWatchlist(program) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
     </a>#}
     <div class="d-flex flex-column align-items-center">
-    <strong class="text-center">CASTING :</strong>
+        <strong class="text-center">CASTING :</strong>
         <div class="col-8 d-flex row">
-
+            {{ dump(program.actors) }}
                 {% for actor in program.actors %}
+                    {{ dump(actor) }}
                     <div class="col-2">
                         {% if actor.poster %}
                             <img class="col" src="{{ actor.poster }}">
