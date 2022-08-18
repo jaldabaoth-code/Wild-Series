@@ -48,8 +48,9 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
 
     public function load(ObjectManager $manager)
     {
+        $seasonFixtures = new SeasonFixtures;
         foreach (ProgramFixtures::PROGRAMS as $programTitle => $programData) {
-            foreach (SeasonFixtures::SAISONS as $seasonTitle => $seasonData) {
+            foreach ($seasonFixtures->getSeries($programTitle) as $seasonTitle => $seasonData) {
                 foreach (self::EPISODES as $number => $episodeData) {
                     $episode = new Episode();
                     $episode->setTitle($episodeData['title']);
