@@ -23,7 +23,6 @@
         <strong class="text-center">CASTING :</strong>
         <div class="col-8 d-flex row">
             {% for actor in season.actors %}
-                {{ dump(actor) }}
                 <div class="col-2">
                     {% if actor.poster %}
                         <img class="col" src="{{ actor.poster }}">

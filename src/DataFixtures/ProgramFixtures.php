@@ -119,9 +119,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
         switch ($title) {
             case 'The Walking Dead':
                 for ($i=0; $i < count(self::ACTORS_OF_THE_WALKING_DEAD); $i++) {
-                    if(in_array(self::ACTORS_OF_THE_WALKING_DEAD[$i], ActorFixtures::ACTORS)) {
-                        $program->addActor($this->getReference('actor_' . $i));
-                    }
+                    $program->addActor($this->getReference('actor_' . $i));
                 }
                 break;
             case 'Game of Thrones':
