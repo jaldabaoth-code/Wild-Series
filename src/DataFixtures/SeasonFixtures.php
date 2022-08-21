@@ -207,6 +207,8 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
                 return self::THE_WALKING_DEAD;
             case 'Game of Thrones':
                 return self::GAME_OF_THRONES;
+            case 'Breaking Bad':
+                return [''];
             default:
                 return [];
         }
