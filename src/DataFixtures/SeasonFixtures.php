@@ -2,8 +2,10 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Actor;
 use App\Entity\Program;
 use App\Entity\Season;
+use App\Repository\ActorRepository;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
@@ -180,15 +182,20 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
     {
         foreach (self::PROGRAMS as $title => $data) {
             $toto = $this->getSeries($title);
-            foreach ($toto as $seasonNumber => $seasonData) {
+            foreach ($this->getSeries($title) as $seasonNumber => $seasonData) {
                 $season = new Season();
                 $season->setNumber($seasonData['number']);
                 $season->setYear($seasonData['year']);
                 $season->setDescription($seasonData['description']);
                 $season->setProgram($this->getReference('program_' . $title));
                 if (array_key_exists('actors', $seasonData)) {
+
                     foreach ($seasonData['actors'] as $actor) {
-                        $season->addActor($this->getReference('actor_' . '1'));
+                        for ($i=0; $i < count(ActorFixtures::ACTORS); $i++) {
+                            if (ActorFixtures::ACTORS[$i]['name'] == $actor) {
+                                $season->addActor($this->getReference('actor_' . $i));
+                            }
+                        }
                     }
                 }
                 $manager->persist($season);
@@ -207,8 +214,6 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
                 return self::THE_WALKING_DEAD;
             case 'Game of Thrones':
                 return self::GAME_OF_THRONES;
-            case 'Breaking Bad':
-                return [''];
             default:
                 return [];
         }
