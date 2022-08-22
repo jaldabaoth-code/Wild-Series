@@ -55,33 +55,6 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 
     ];
 
-    public const ACTORS_OF_THE_WALKING_DEAD = [
-        'Norman Reedus',
-        'Andrew Lincoln',
-        'Lauren Cohan',
-        'Jeffrey Dean Morgan',
-        'Chandler Riggs',
-    ];
-
-    public const ACTORS_OF_GAME_OF_THRONES = [
-        'Pedro Pascal',
-        'Kit Harington',
-    ];
-
-    public const ACTORS_OF_BREAKING_BAD = [
-        'Bryan Cranston',
-    ];
-
-    public const ACTORS_OF_ATTACK_ON_TITAN = [
-        'Yûki Kaji',
-    ];
-
-    public const ACTORS_OF_THE_MANDALORIAN = [
-        'Pedro Pascal',
-    ];
-
-
-
     private Slugify $slugify;
 
     public function __construct(Slugify $slugify)
@@ -100,57 +73,11 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
             $program->setYear($data['year']);
             $program->setCountry($data['country']);
             $program->setCategory($this->getReference('category_' . $data['category']));
-            //ici les acteurs sont insérés via une boucle pour être DRY mais ce n'est pas obligatoire
-/*            if ($title == 'The Mandalorian') {
-                for ($i=0; $i < count(ActorFixtures::ACTORS); $i++) {
-                    $program->addActor($this->getReference('actor_' . $i));
-                }
-            }*/
-            $this->getActorsForSeries($title, $program);
             $program->setSlug($this->slugify->generate($program->getTitle()));
             $manager->persist($program);
             $this->addReference('program_' . $title, $program);
         }
         $manager->flush();
-    }
-
-
-    public function getActorsForSeries(string $title, Program $program) {
-        switch ($title) {
-            case 'The Walking Dead':
-                for ($i=0; $i < count(self::ACTORS_OF_THE_WALKING_DEAD); $i++) {
-                    $program->addActor($this->getReference('actor_' . $i));
-                }
-                break;
-            case 'Game of Thrones':
-                for ($i=0; $i < count(self::ACTORS_OF_GAME_OF_THRONES); $i++) {
-                    if (in_array(self::ACTORS_OF_GAME_OF_THRONES[$i], ActorFixtures::ACTORS)) {
-                        $program->addActor($this->getReference('actor_' . $i));
-                    }
-                }
-                break;
-            case 'Breaking Bad':
-                for ($i=0; $i < count(self::ACTORS_OF_BREAKING_BAD); $i++) {
-                    if (in_array(self::ACTORS_OF_BREAKING_BAD[$i], ActorFixtures::ACTORS)) {
-                        $program->addActor($this->getReference('actor_' . $i));
-                    }
-                }
-                break;
-            case 'Attack on Titan':
-                for ($i=0; $i < count(self::ACTORS_OF_ATTACK_ON_TITAN); $i++) {
-                    if (in_array(self::ACTORS_OF_ATTACK_ON_TITAN[$i], ActorFixtures::ACTORS)) {
-                        $program->addActor($this->getReference('actor_' . $i));
-                    }
-                }
-                break;
-            case 'The Mandalorian':
-                for ($i=0; $i < count(self::ACTORS_OF_THE_MANDALORIAN); $i++) {
-                    if (in_array(self::ACTORS_OF_THE_MANDALORIAN[$i], ActorFixtures::ACTORS)) {
-                        $program->addActor($this->getReference('actor_' . $i));
-                    }
-                }
-                break;
-        }
     }
 
     public function getDependencies()
