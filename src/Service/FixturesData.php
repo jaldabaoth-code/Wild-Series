@@ -328,7 +328,8 @@ class FixturesData
                 'Jason Momoa'
             ]
         ],
-        'Season 02' => [ 'number' => 2,
+        'Season 02' => [
+            'number' => 2,
             'description' => 'The Seven Kingdoms are at war, and each side seeks new alliances. Thanks to the support of the powerful House Lannister, Joffrey Baratheon, Robert\'s heir, now holds the Iron Throne. But the legitimacy of his rule is disputed as Stannis and Renly, the young king\'s uncles, also lay claim to the crown. For his part, Robb Stark continues his rebellion to avenge his father and free his sister Sensa held captive in Port-Réal. At the Wall, Commander Jeor Mormont, supported by Jon Snow, continues to lead the Night\'s Watch against the Wildlings. Meanwhile, Daenerys Targaryen arrives in the city of Qarth where she hopes to find new allies in order to reclaim the throne.',
             'year' => 2012,
             'actors' => [
@@ -569,7 +570,8 @@ class FixturesData
                 'RJ Mitte'
             ]
         ],
-        'Season 02' => [ 'number' => 2,
+        'Season 02' => [
+            'number' => 2,
             'description' => 'After the misadventures encountered with Krazy-8 and Tuco Salamanca, Walter and Jesse decide to set up their own business. But as Heisenberg\'s empire expands further and further, a deal goes awry and trouble begins. On the advice of Saul Goodman, his crooked lawyer, Walter contacts the owner of a restaurant chain who could help him sell off his drug stocks. Meanwhile, Skyler begins to have doubts about her husband as Jesse slowly descends into heroin.',
             'year' => 2009,
             'actors' => [
@@ -623,6 +625,90 @@ class FixturesData
                 'RJ Mitte',
                 'Bob Odenkirk',
                 'Jonathan Banks'
+            ]
+        ]
+    ];
+
+    const ATTACK_ON_TITAN = [
+        'Season 01' => [
+            'number' => 1,
+            'description' => 'In a world ravaged for more than a century by man-eating titans, the few survivors of humanity have no choice but to barricade themselves in a fortress city. Young Eren, witness of the death of his mother devoured by a titan, has only one dream: to join the elite corps responsible for discovering the origin of the titans and annihilating them to the last.',
+            'year' => 2013,
+            'actors' => [
+                'Romi Pak',
+                'Yui Ishikawa',
+                'Yûki Kaji',
+                'Marina Inoue',
+                'Hiroshi Kamiya',
+                'Yû Kobayashi',
+                'Daisuke Ono'
+            ]
+        ],
+        'Season 02' => [
+            'number' => 2,
+            'description' => 'The arrival of the Colossal Titan completely changed Eren Jäger\'s life. After enlisting in the army to fight him and his congeners, Eren discovers that he can transform himself into what he hates the most. But he quickly understands that his new powers can be used to repel his attackers. While granted a little respite after his narrow victory against the Female Titan, he must now face a horde of titans dangerously approaching Wall Rose. New mysteries are coming to light, and a talking titan seems to be pulling the strings for this new wave of hungry, oversized attackers. For their part, the members of the cult of the wall seem to be hiding vital information for the survival of humanity. The pressure on Eren and the Survey Corps is greater than ever.',
+            'year' => 2017,
+            'actors' => [
+                'Yui Ishikawa',
+                'Marina Inoue',
+                'Daisuke Ono',
+                'Hiroshi Kamiya',
+                'Yûki Kaji',
+                'Yû Kobayashi',
+                'Yoshimasa Hosoya',
+                'Kenjiro Tsuda'
+            ]
+        ],
+        'Season 03' => [
+            'number' => 3,
+            'description' => 'Kidnapped by Bertholdt and Reiner, Eren was able to escape with the help of the Survey Corps. But the losses are heavy, especially since Ymir has decided to join the enemy. As the king gives the order to capture Christa and Eren, a spirit of rebellion gradually creeps into the ranks of the battalion.',
+            'year' => 2018,
+            'actors' => [
+                'Yui Ishikawa',
+                'Yûki Kaji',
+                'Marina Inoue',
+                'Hiroshi Kamiya',
+                'Kazuhiro Yamaji',
+                'Ayane Sakura',
+                'Hiroshi Tsuchida'
+            ]
+        ],
+        'Season 04' => [
+            'number' => 4,
+            'description' => 'Four years after his departure from Paradis, Reiner imposes himself as an elite soldier alongside the future receptacles of the promordial titans. But his past still haunts him and the threat of revenge from Eren and his comrades looms.',
+            'year' => 2020,
+            'actors' => [
+                'Yûki Kaji',
+                'Yui Ishikawa',
+                'Marina Inoue',
+                'Hiroshi Kamiya'
+            ]
+        ]
+    ];
+
+    const THE_MANDALORIAN = [
+        'Season 01' => [
+            'number' => 1,
+            'description' => '',
+            'year' => 2019,
+            'actors' => [
+
+            ]
+        ],
+        'Season 02' => [
+            'number' => 2,
+            'description' => '',
+            'year' => 2020,
+            'actors' => [
+
+            ]
+        ],
+        'Season 03' => [
+            'number' => 3,
+            'description' => '',
+            'year' => 2022,
+            'actors' => [
+
             ]
         ]
     ];
