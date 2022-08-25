@@ -115,7 +115,7 @@ class FixturesData
                 'Emily Kinney',
                 'Lawrence Gilliard Jr.',
                 'Melissa McBride',
-                'Scott Wilson',
+                'Scott Wilson'
             ]
         ],
         'Season 05' => [
@@ -123,52 +123,156 @@ class FixturesData
             'description' => 'Captives of the Terminus community, Rick and his family manage to escape. After a long journey and many sacrifices, the group finds refuge in Alexandria, a small fortified town that has never faced the horrors of the world as it has become. But their arrival will not be seen with a very good eye, especially as Rick will try to take matters into his own hands.',
             'year' => 2014,
             'actors' => [
-
+                'Andrew Lincoln',
+                'Steven Yeun',
+                'Chandler Riggs',
+                'Norman Reedus',
+                'Lauren Cohan',
+                'Danai Gurira',
+                'Chad L. Coleman',
+                'Emily Kinney',
+                'Melissa McBride',
+                'Michael Cudlitz',
+                'Sonequa Martin-Green',
+                'Josh McDermitt',
+                'Seth Gilliam',
+                'Alanna Masterson',
+                'Christian Serratos',
+                'Lawrence Gilliard Jr.',
+                'Andrew J. West'
             ]
         ],
         'Season 06' => [
             'number' => 6,
-            'description' => 'Saison 5 De la Serie',
+            'description' => 'When new threats endanger the safety of Alexandria, the utopia ends, and the community will quickly realize that the world around them is much larger and more complex than it seems. After meeting a group whose help could prove invaluable, Rick and his people are confronted by the Saviors, a cruel and relentless armed band. To face this new adversary, they will have to be more formidable than ever.',
             'year' => 2015,
             'actors' => [
-
+                'Andrew Lincoln',
+                'Steven Yeun',
+                'Chandler Riggs',
+                'Norman Reedus',
+                'Lauren Cohan',
+                'Danai Gurira',
+                'Melissa McBride',
+                'Michael Cudlitz',
+                'Sonequa Martin-Green',
+                'Josh McDermitt',
+                'Seth Gilliam',
+                'Alanna Masterson',
+                'Christian Serratos',
+                'Lennie James',
+                'Ross Marquand',
+                'Tovah Feldshuh',
+                'Austin Nichols'
             ]
         ],
         'Season 07' => [
             'number' => 7,
-            'description' => 'Saison 5 De la Serie',
+            'description' => 'Shaken by the tragic events that transpired during his confrontation with Negan, Rick is forced to submit to the demands of the Saviors. With the community of Alexandria left with no choice but to work for them, Rick and his group seek allies to get rid of Negan.',
             'year' => 2016,
             'actors' => [
-
+                'Andrew Lincoln',
+                'Norman Reedus',
+                'Jeffrey Dean Morgan',
+                'Steven Yeun',
+                'Chandler Riggs',
+                'Lauren Cohan',
+                'Danai Gurira',
+                'Melissa McBride',
+                'Seth Gilliam',
+                'Alanna Masterson',
+                'Christian Serratos',
+                'Ross Marquand',
+                'Tovah Feldshuh',
+                'Austin Nichols',
+                'Tom Payne (II)',
+                'Austin Amelio',
+                'Xander Berkeley',
+                'Pollyanna McIntosh'
             ]
         ],
-        'Season08' => [
+        'Season 08' => [
             'number' => 8,
-            'description' => 'Saison 5 De la Serie',
+            'description' => 'After suffering Negan\'s violence, Rick and the people of Alexandria declare war on the Saviors. Now allied with the Hilltop and Kingdom communities, they will stop at nothing to prevail and regain their freedom. But the man at the bat also gathers his troops, and the battles to come announce heavy losses.',
             'year' => 2017,
             'actors' => [
-
+                'Andrew Lincoln',
+                'Norman Reedus',
+                'Jeffrey Dean Morgan',
+                'Chandler Riggs',
+                'Lauren Cohan',
+                'Danai Gurira',
+                'Melissa McBride',
+                'Lennie James',
+                'Josh McDermitt',
+                'Seth Gilliam',
+                'Alanna Masterson',
+                'Christian Serratos',
+                'Ross Marquand',
+                'Tovah Feldshuh',
+                'Tom Payne (II)',
+                'Austin Amelio',
+                'Xander Berkeley',
+                'Pollyanna McIntosh'
             ]
         ],
         'Season 09' => [
             'number' => 9,
-            'description' => 'Saison 5 De la Serie',
+            'description' => 'A year and a half after Negan\'s defeat, the various communities of survivors have united and now live in harmony. But a mysterious group, known as the Whisperers, threatens the foundations of the civilization Rick seeks to build to secure a better future.',
             'year' => 2018,
             'actors' => [
-
+                'Norman Reedus',
+                'Jeffrey Dean Morgan',
+                'Danai Gurira',
+                'Melissa McBride',
+                'Josh McDermitt',
+                'Samantha Morton',
+                'Seth Gilliam',
+                'Alanna Masterson',
+                'Katelyn Nacon',
+                'Christian Serratos',
+                'Khary Payton',
+                'Ross Marquand',
+                'Avi Nash',
+                'Pollyanna McIntosh',
+                'Callan McAuliffe',
+                'Andrew Lincoln',
+                'Lauren Cohan',
+                'Tom Payne (II)',
+                'Austin Amelio',
+                'Xander Berkeley'
             ]
         ],
         'Season 10' => [
             'number' => 10,
-            'description' => 'Saison 5 De la Serie',
+            'description' => 'After the Whisperer attack leaves several people dead, Michonne, Daryl and the other survivors are determined to get revenge. Can they count on Negan\'s help?',
             'year' => 2019,
             'actors' => [
-
+                'Norman Reedus',
+                'Melissa McBride',
+                'Danai Gurira',
+                'Lauren Cohan',
+                'Josh McDermitt',
+                'Christian Serratos',
+                'Seth Gilliam',
+                'Ross Marquand',
+                'Khary Payton',
+                'Ryan Hurst',
+                'Samantha Morton',
+                'Jeffrey Dean Morgan',
+                'Callan McAuliffe',
+                'Avi Nash',
+                'Eleanor Matsuura',
+                'Cooper Andrews',
+                'Nadia Hilker',
+                'Cailey Fleming',
+                'Cassady McClincy',
+                'Lauren Ridloff'
             ]
         ],
         'Season 11' => [
             'number' => 11,
-            'description' => 'Saison 5 De la Serie',
+            'description' => 'Daryl and his friends had to go through a lot. And the latter are not yet at the end of their troubles. While as you might expect, the reunion between Maggie and Negan has been more than tense, a new threat is emerging. And this could well spell the end of the community of Alexandria, which has already struggled so much to recover from the Whisperers. The fight for their survival promises to be more intense than ever...',
             'year' => 2021,
             'actors' => [
                 'Norman Reedus',
