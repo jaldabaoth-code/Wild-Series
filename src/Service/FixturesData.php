@@ -44,7 +44,7 @@ class FixturesData
             'country' => 'United States',
             'year' => '2019',
             'category' => 'Action'
-        ],
+        ]
     ];
 
 
@@ -298,7 +298,7 @@ class FixturesData
                 'Josh Hamilton',
                 'Laurie Fortier'
             ]
-        ],
+        ]
     ];
 
     const GAME_OF_THRONES = [
@@ -552,8 +552,78 @@ class FixturesData
                 'Joe Dempsie',
                 'Jacob Anderson'
             ]
-        ],
+        ]
     ];
 
-
+    const BREAKING_BAD = [
+        'Season 01' => [
+            'number' => 1,
+            'description' => 'Walter White, 50 years old, is a high school chemistry teacher in New Mexico. His daily life is turned upside down when he learns that he has incurable lung cancer. He has only one solution left to quickly protect his family from want: to manufacture and sell a synthetic drug. Then begins a long descent into hell.',
+            'year' => 2008,
+            'actors' => [
+                'Bryan Cranston',
+                'Anna Gunn',
+                'Aaron Paul',
+                'Dean Norris',
+                'Betsy Brandt',
+                'RJ Mitte'
+            ]
+        ],
+        'Season 02' => [ 'number' => 2,
+            'description' => 'After the misadventures encountered with Krazy-8 and Tuco Salamanca, Walter and Jesse decide to set up their own business. But as Heisenberg\'s empire expands further and further, a deal goes awry and trouble begins. On the advice of Saul Goodman, his crooked lawyer, Walter contacts the owner of a restaurant chain who could help him sell off his drug stocks. Meanwhile, Skyler begins to have doubts about her husband as Jesse slowly descends into heroin.',
+            'year' => 2009,
+            'actors' => [
+                'Bryan Cranston',
+                'Anna Gunn',
+                'Aaron Paul',
+                'Dean Norris',
+                'Betsy Brandt',
+                'RJ Mitte'
+            ]
+        ],
+        'Season 03' => [
+            'number' => 3,
+            'description' => 'Two weeks after the two planes collided, the entire city of Albuquerque is in mourning. While his wife has filed for divorce, Walter refuses to continue working in crime. But, at the risk of provoking a war between the Mexican and American barons, Gus hatches a plan to get him back into drug production. For his part, Hank is looking for a way to put the traffickers in prison, and devotes himself entirely to the Heisenberg case, which he could solve by finding the trace of the motorhome. Meanwhile, two killers from the Juárez Cartel arrive in Albuquerque to avenge the death of their cousin Tuco Salamanca.',
+            'year' => 2010,
+            'actors' => [
+                'Aaron Paul',
+                'Anna Gunn',
+                'Bryan Cranston',
+                'Dean Norris',
+                'Betsy Brandt',
+                'RJ Mitte'
+            ]
+        ],
+        'Season 04' => [
+            'number' => 4,
+            'description' => 'As Walter regains some professional stability, Jesse distances himself and is manipulated by Gus. But the latter\'s pressures and low blows could well lead Jesse and Walter to team up to get rid of him. For his part, Hank is in great danger when he decides to investigate the restaurant : Los Pollos Harmanos.',
+            'year' => 2011,
+            'actors' => [
+                'Bryan Cranston',
+                'Anna Gunn',
+                'Aaron Paul',
+                'Dean Norris',
+                'Betsy Brandt',
+                'RJ Mitte',
+                'Bob Odenkirk',
+                'Giancarlo Esposito',
+                'Jonathan Banks'
+            ]
+        ],
+        'Season 05' => [
+            'number' => 5,
+            'description' => 'Following the death of Gus Fring, Walter decides to create his own drug empire. In partnership with Jesse and Mike, the latter makes a fortune, but his plans are thwarted by his brother-in-law Hank, now head of the Albuquerque Narcotics, who is still obsessed with the mysterious Heisenberg.',
+            'year' => 2012,
+            'actors' => [
+                'Bryan Cranston',
+                'Aaron Paul',
+                'Anna Gunn',
+                'Dean Norris',
+                'Betsy Brandt',
+                'RJ Mitte',
+                'Bob Odenkirk',
+                'Jonathan Banks'
+            ]
+        ]
+    ];
 }
