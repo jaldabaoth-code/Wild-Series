@@ -689,26 +689,31 @@ class FixturesData
     const THE_MANDALORIAN = [
         'Season 01' => [
             'number' => 1,
-            'description' => '',
+            'description' => 'After the adventures of Jango and Boba Fett, a new hero emerges in the Star Wars universe. The plot, set between the fall of the Empire and the rise of the First Order, follows the travels of a lone bounty hunter to the furthest reaches of the Galaxy, far from the authority of the New Republic.',
             'year' => 2019,
             'actors' => [
-
+                'Pedro Pascal',
+                'Troy Kotsur'
             ]
         ],
         'Season 02' => [
             'number' => 2,
-            'description' => '',
+            'description' => 'The Mandalorian and the Child continue their journey, facing many enemies and rejoining their allies. They fight their way through a dangerous galaxy, in the tumultuous period that followed the fall of the Empire.',
             'year' => 2020,
             'actors' => [
-
+                'Pedro Pascal'
             ]
         ],
         'Season 03' => [
             'number' => 3,
-            'description' => '',
+            'description' => 'À VENIR',
             'year' => 2022,
             'actors' => [
-
+                'Pedro Pascal',
+                'Katee Sackhoff',
+                'Christopher Lloyd',
+                'Giancarlo Esposito',
+                'Carl Weathers'
             ]
         ]
     ];
