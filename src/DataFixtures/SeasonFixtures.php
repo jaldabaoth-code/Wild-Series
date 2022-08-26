@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Season;
+use App\Service\FixturesData;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
@@ -155,9 +156,15 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
     {
         switch ($title) {
             case 'The Walking Dead':
-                return self::THE_WALKING_DEAD;
+                return FixturesData::THE_WALKING_DEAD;
             case 'Game of Thrones':
-                return self::GAME_OF_THRONES;
+                return FixturesData::GAME_OF_THRONES;
+            case 'Breaking Bad':
+                return FixturesData::BREAKING_BAD;
+            case 'Attack on Titan':
+                return FixturesData::ATTACK_ON_TITAN;
+            case 'The Mandalorian':
+                return FixturesData::THE_MANDALORIAN;
             default:
                 return [];
         }
