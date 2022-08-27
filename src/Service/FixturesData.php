@@ -2385,49 +2385,49 @@ class FixturesData
             'episodes' => [
                 'episode 01' => [
                     'number' => 1,
-                    'title' => '',
+                    'title' => 'Box Cutter',
                     'poster' => '',
                     'description' => ''
                 ],
                 'episode 02' => [
                     'number' => 2,
-                    'title' => '',
+                    'title' => 'Thirty-Eight Snub',
                     'poster' => '',
                     'description' => ''
                 ],
                 'episode 03' => [
                     'number' => 3,
-                    'title' => '',
+                    'title' => 'Open House',
                     'poster' => '',
                     'description' => ''
                 ],
                 'episode 04' => [
                     'number' => 4,
-                    'title' => '',
+                    'title' => 'Bullet Points',
                     'poster' => '',
                     'description' => ''
                 ],
                 'episode 05' => [
                     'number' => 5,
-                    'title' => '',
+                    'title' => 'Shotgun',
                     'poster' => '',
                     'description' => ''
                 ],
                 'episode 06' => [
                     'number' => 6,
-                    'title' => '',
+                    'title' => 'Cornered',
                     'poster' => '',
                     'description' => ''
                 ],
                 'episode 07' => [
                     'number' => 7,
-                    'title' => '',
+                    'title' => 'Problem Dog',
                     'poster' => '',
                     'description' => ''
                 ],
                 'episode 08' => [
                     'number' => 8,
-                    'title' => '',
+                    'title' => 'Hermanos',
                     'poster' => '',
                     'description' => ''
                 ],
