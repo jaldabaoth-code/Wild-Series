@@ -2599,151 +2599,151 @@ class FixturesData
                     'number' => 1,
                     'title' => 'To You, in 2000 Years: The Fall of Shiganshina, Part 1',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'After 100 years of peace, humanity is suddenly reminded of the terror of being at the Titans\' mercy.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'That Day: The Fall of Shiganshina, Part 2',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'After the Titans break through the wall, the citizens of Shiganshina must run for their lives. Those that do make it to safety find a harsh life waiting for them, however.'
                 ],
                 'episode 03' => [
                     'number' => 3,
-                    'title' => '',
+                    'title' => 'A Dim Light Amid Despair: Humanity\'s Comeback, Part 1',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Eren begins his training with the Cadet Corps, but questions about his painful past overwhelm him. When he struggles with a maneuvering exercise, Berholt and Reiner offer kindly advice.'
                 ],
                 'episode 04' => [
                     'number' => 4,
-                    'title' => '',
+                    'title' => 'The Night of the Closing Ceremony: Humanity\'s Comeback, Part 2',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Annie proves her skill in a sparring session, Jan dreams of serving alongside the King, and graduation day brings shocking revelations - along with a sudden outbreak of violence.'
                 ],
                 'episode 05' => [
                     'number' => 5,
-                    'title' => '',
+                    'title' => 'First Battle: The Struggle for Trost, Part 1',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Eren faces off against the Colossal Titan after it appears out of nowhere and knocks a strategic hole in Wall Rose\'s gate. As Titans swarm the city, the newly graduated Cadets are called in to fight in a brutal battle.'
                 ],
                 'episode 06' => [
                     'number' => 6,
-                    'title' => '',
+                    'title' => 'The World the Girl Saw: The Struggle for Trost, Part 2',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'As Armin is left reeling from the death of his squad, Mikasa reflects on the day she met Eren.'
                 ],
                 'episode 07' => [
                     'number' => 7,
-                    'title' => '',
+                    'title' => 'Small Blade: The Struggle for Trost, Part 3',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Cornered by the titans and out of gas, the desperation takes over the scouts. After hearing the news about Armin\'s squad, Mikasa encourages her mates in order to continue fighting at any cost.'
                 ],
                 'episode 08' => [
                     'number' => 8,
-                    'title' => '',
+                    'title' => 'I Can Hear His Heartbeat: The Struggle for Trost, Part 4',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Armin comes up with a risky plan that pits Titan against Titan as the abandoned Cadets aim to take back their headquarters. Getting into the building may be possible, but getting out alive and refueled will mean facing more of the giants.'
                 ],
                 'episode 09' => [
                     'number' => 9,
-                    'title' => '',
+                    'title' => 'Whereabouts of His Left Arm: The Struggle for Trost, Part 5',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'A miraculous return is met with anger and fear. Cannons are fixed on Eren as he struggles to remember what happened to him inside the belly of a monster. One question is all that matters: is Eren human or Titan?'
                 ],
                 'episode 10' => [
                     'number' => 10,
-                    'title' => '',
+                    'title' => 'Response: The Struggle for Trost, Part 6',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Cadets react to Eren\'s transformation with doubt and fear as he struggles to understand it himself. If Armin can\'t talk the commander into using Eren\'s newfound powers for the good of humanity, all hope of stopping the Titans may be lost.'
                 ],
                 'episode 11' => [
                     'number' => 11,
-                    'title' => '',
+                    'title' => 'Idol: The Struggle for Trost, Part 7',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Plans are created to use Eren\'s Titan powers to seal the hole in the wall to reclaim Trost. But with the government\'s bloodstained history and vocal dissenters in the military ranks, the biggest threat to humankind may not be the Titans.'
                 ],
                 'episode 12' => [
                     'number' => 12,
-                    'title' => '',
+                    'title' => 'Wound: The Struggle for Trost, Part 8',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The plan to reclaim Trost falls apart when Eren\'s newfound powers turn him into a mindless giant. As Titans continue to swarm the city, it\'s up to Armin and Mikasa to make sure the cadets massacred during the mission haven\'t died in vain.'
                 ],
                 'episode 13' => [
                     'number' => 13,
-                    'title' => '',
+                    'title' => 'Primal Desire: The Struggle for Trost, Part 9',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Jean takes desperate measures to replace his broken maneuvering device. Meanwhile, Eren is able to plug the hole in the wall thanks to the help of his fellow cadets, but the cost of humanity\'s first victory against the Titans will be vast.'
                 ],
                 'episode 14' => [
                     'number' => 14,
-                    'title' => '',
+                    'title' => 'Can\'t Look into His Eyes Yet: Eve of the Counterattack, Part 1',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'A military tribunal will decide Eren\'s fate. The Military Police call for his execution, while the Scouts argue that he is a powerful resource for humankind. Mikasa is put on the spot when asked about the events of the Trost mission.'
                 ],
                 'episode 15' => [
                     'number' => 15,
-                    'title' => '',
+                    'title' => 'Special Operations Squad: Eve of the Counterattack, Part 2',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The Scouts move Eren to an old, abandoned castle where his training will continue. Hange visits and reveals that she\'s been putting two captured Titans through a series of tests and trials--experiments that she wants Eren\'s help with.'
                 ],
                 'episode 16' => [
                     'number' => 16,
-                    'title' => '',
+                    'title' => 'What Needs to Be Done Now: Eve of the Counterattack, Part 3',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Everyone is a suspect in the investigation to find out who killed the two test subject Titans. Meanwhile, the Cadets pick which corps they\'ll join, but after the tragic events of the Trost attack, many are uncertain which branch to choose.'
                 ],
                 'episode 17' => [
                     'number' => 17,
-                    'title' => '',
+                    'title' => 'Female Titan: The 57th Expedition Beyond the Walls, Part 1',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'As the Scout Regiment pushes toward Shiganshina, they encounter an intelligent Titan unlike any they\'ve seen before. When Armin hypothesizes that it\'s really a human that\'s been turned into a Titan, he, Jean, and Reiner attempt to stop it.'
                 ],
                 'episode 18' => [
                     'number' => 18,
-                    'title' => '',
+                    'title' => 'Forest of Giant Trees: The 57th Expedition Beyond the Walls, Part 2',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'As the Female Titan tears its way through the Scout Regiment, Levi makes a bold decision to split the ranks and send Eren and the supply wagons through a huge forest.'
                 ],
                 'episode 19' => [
                     'number' => 19,
-                    'title' => '',
+                    'title' => 'Bite: The 57th Exterior Scouting Mission, Part 3',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'A memory of Eren testing out his Titan powers sheds light on how his abilities work. As the Female Titan slaughters members of the Scout Regiment, Eren is faced with a difficult decision: does he trust his teammates or act out on his own?'
                 ],
                 'episode 20' => [
                     'number' => 20,
-                    'title' => '',
+                    'title' => 'Erwin Smith: The 57th Expedition Beyond the Walls, Part 4',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The Female Titan has been captured. Erwin\'s goal is to find out who the human is lurking inside. Meanwhile, the Scouts realize the reason Levi told no one about their true mission outside the wall is because of a spy among their ranks.'
                 ],
                 'episode 21' => [
                     'number' => 21,
-                    'title' => '',
+                    'title' => 'Crushing Blow: The 57th Exterior Scouting Mission, Part 5',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Managing to get out of Erwin\'s trap, the Female Titan transforms once more and chases after Levi\'s squad, who fight back in a deadly clash.'
                 ],
                 'episode 22' => [
                     'number' => 22,
-                    'title' => '',
+                    'title' => 'The Defeated: The 57th Expedition Beyond the Walls, Part 6',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'After watching Eren get swallowed by the Female Titan, Mikasa and Levi follow the monster in the hopes that he\'s still alive inside her. As the Scout Regiment tries to recover from the brutal losses of the operation, emotions run high.'
                 ],
                 'episode 23' => [
                     'number' => 23,
-                    'title' => '',
+                    'title' => 'Smile: Raid on Stohess District, Part 1',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'After the failed scouting expedition, Eren and his superiors are summoned to the capital. Annie sees just how deep corruption runs in the Military Police and agrees to join Armin in a plot to defy the government-but nothing is as it seems.'
                 ],
                 'episode 24' => [
                     'number' => 24,
-                    'title' => '',
+                    'title' => 'Mercy: Raid on Stohess District, Part 2',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'When the identity of the Female Titan is finally revealed, she goes on a rampage within Wall Sina. Eren is hesitant to fight her, but Armin and Mikasa throw themselves into the battle in a desperate attempt to stop the towering monster.'
                 ],
                 'episode 25' => [
                     'number' => 25,
-                    'title' => '',
+                    'title' => 'Wall: Raid on Stohess District, Part 3',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Eren goes head-to-head with the Female Titan in a fight that demolishes Stohess District inside Wall Sina. As the number of casualties multiplies and Annie tries to escape over the wall, Erwin must deal with the consequences of his plan.'
                 ]
             ]
         ],
@@ -2765,75 +2765,75 @@ class FixturesData
             'episodes' => [
                 'episode 01' => [
                     'number' => 1,
-                    'title' => '',
+                    'title' => 'Beast Titan',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Coupled with the military\'s cover-up of a previous incident, the shocking discovery inside the wall causes a stir. Elsewhere, while the new Scout recruits are held for observation, a surprising threat appears.'
                 ],
                 'episode 02' => [
                     'number' => 2,
-                    'title' => '',
+                    'title' => 'I\'m Home',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'With the appearance of Titans within Wall Rose, Sasha and Connie ride as messengers to warn their villages of the impending threat.'
                 ],
                 'episode 03' => [
                     'number' => 3,
-                    'title' => '',
+                    'title' => 'Southwestward',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The Scouts search for a hole in the wall while Eren and others learn that someone close may be hiding all the answers.'
                 ],
                 'episode 04' => [
                     'number' => 4,
-                    'title' => '',
+                    'title' => 'Soldier',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'When the Scouts are overwhelmed by the Titan assault on the castle, the unarmed recruits\' hope for survival may lie in a promise and secret.'
                 ],
                 'episode 05' => [
                     'number' => 5,
-                    'title' => '',
+                    'title' => 'Historia',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Utgard Castle comes crumbling down as Ymir desperately battles the Titans. Now, Christa must fulfill the promise they made long ago during winter training.'
                 ],
                 'episode 06' => [
                     'number' => 6,
-                    'title' => '',
+                    'title' => 'Warrior',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The Scouts rest atop the wall, and in their departure, two of their own reveal an Earth-shattering secret to Eren.'
                 ],
                 'episode 07' => [
                     'number' => 7,
-                    'title' => '',
+                    'title' => 'Close Combat',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'With a new enemy revealed, Eren and the Scouts fight back using all the techniques at their disposal. However, the Armored and Colossal Titan have other plans in mind.'
                 ],
                 'episode 08' => [
                     'number' => 8,
-                    'title' => '',
+                    'title' => 'The Hunters',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Without a way to pursue the Titans, the Scouts have no choice but to recuperate as they wait for reinforcements. But do they still have faith in Eren?'
                 ],
                 'episode 09' => [
                     'number' => 9,
-                    'title' => '',
+                    'title' => 'Opening',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The Scouts rally and charge in pursuit, but Reiner is not quite himself while the group is trapped in the giant forest until nightfall.'
                 ],
                 'episode 10' => [
                     'number' => 10,
-                    'title' => '',
+                    'title' => 'Children',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'When the group finally flees, Ymir wonders whether she should lie or stay true to herself, even if it means ruining the lives and future of those she cares about.'
                 ],
                 'episode 11' => [
                     'number' => 11,
-                    'title' => '',
+                    'title' => 'Totsugeki',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'While the recruits attempt to reason with Bertholdt, Commander Erwin charges forth in a desperate strategy to topple the Armored Titan.'
                 ],
                 'episode 12' => [
                     'number' => 11,
-                    'title' => '',
+                    'title' => 'Scream',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Eren\'s confrontation with a smiling Titan raises questions about his powers, but any answers will come at a cost.'
                 ]
             ]
         ],
@@ -2854,39 +2854,135 @@ class FixturesData
             'episodes' => [
                 'episode 01' => [
                     'number' => 1,
-                    'title' => '',
+                    'title' => 'Smoke Signal',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'After barely surviving Eren\'s recovery, a rising threat from the shadows puts everyone\'s lives in danger again.'
                 ],
                 'episode 02' => [
                     'number' => 2,
-                    'title' => '',
+                    'title' => 'Pain',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The Scouts take a stand against a new enemy, but it\'s not just Titans they\'ll be fighting anymore.'
                 ],
                 'episode 03' => [
                     'number' => 3,
-                    'title' => '',
+                    'title' => 'Old Story',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Historia and Erwin look back on their past, revealing shady actions taken by the government and a motivation for change.'
                 ],
                 'episode 04' => [
                     'number' => 4,
-                    'title' => '',
+                    'title' => 'Trust',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'On the run and running out of time, the Scouts must entrust their lives to others if they plan on surviving.'
                 ],
                 'episode 05' => [
                     'number' => 5,
-                    'title' => '',
+                    'title' => 'Reply',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Erwin pleads his case for the Scouts to be spared, but an unforeseen announcement puts the fate of humanity at risk.'
                 ],
                 'episode 06' => [
                     'number' => 6,
-                    'title' => '',
+                    'title' => 'Sin',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'While sins of the past reveal new truths, both sides prepare for the upcoming showdown before they run out of time.'
+                ],
+                'episode 07' => [
+                    'number' => 7,
+                    'title' => 'Wish',
+                    'poster' => '',
+                    'description' => 'As battle breaks out to prevent the ritual, Historia makes a shocking decision which leads to catastrophe.'
+                ],
+                'episode 08' => [
+                    'number' => 8,
+                    'title' => 'Outside the Walls of Orvud District',
+                    'poster' => '',
+                    'description' => 'When everything falls apart, Eren must believe in himself to save his friends. But Eren alone may not be enough to stop the impending doom.'
+                ],
+                'episode 09' => [
+                    'number' => 9,
+                    'title' => 'Ruler of the Walls',
+                    'poster' => '',
+                    'description' => 'Desperate to stop the approaching monstrosity, the Scouts resort to unconventional tactics before it destroys everything it its path.'
+                ],
+                'episode 10' => [
+                    'number' => 10,
+                    'title' => 'Friends',
+                    'poster' => '',
+                    'description' => 'Kenny recalls the life which has brought him to death\'s door, but he gets to decide whether to live on or not.'
+                ],
+                'episode 11' => [
+                    'number' => 11,
+                    'title' => 'Bystander',
+                    'poster' => '',
+                    'description' => 'Having seen a glimpse of his father\'s memories, Eren attempts to track down a man hoping they might shed some light on his father\'s secrets.'
+                ],
+                'episode 12' => [
+                    'number' => 12,
+                    'title' => 'Night of the Battle to Retake the Wall',
+                    'poster' => '',
+                    'description' => 'The Scouts enjoy a feast before retaking Wall Maria. They\'ll soon uncover what\'s hidden within the basement, once and for all.'
+                ],
+                'episode 13' => [
+                    'number' => 13,
+                    'title' => 'The Town Where Everything Began',
+                    'poster' => '',
+                    'description' => 'The operation to retake Wall Maria commences in Shiganshina, the town where everything began. But when the Scouts arrive, something seems very wrong.'
+                ],
+                'episode 14' => [
+                    'number' => 14,
+                    'title' => 'Thunder Spears',
+                    'poster' => '',
+                    'description' => 'Against a rush of enemies, the Scouts scramble to defend their horses. But despite falling into a trap, they have their own surprise for the Armored Titan.'
+                ],
+                'episode 15' => [
+                    'number' => 15,
+                    'title' => 'Descent',
+                    'poster' => '',
+                    'description' => 'Though their Thunder Spears prove effective, the Scouts\' celebration is short-lived as disaster descends upon Shiganshina.'
+                ],
+                'episode 16' => [
+                    'number' => 16,
+                    'title' => 'Perfect Game',
+                    'poster' => '',
+                    'description' => 'While one front is rained on by flames, the other is battered by boulders. With no way out and limited options, the Scouts are forced to fight against the Titans with little hope left.'
+                ],
+                'episode 17' => [
+                    'number' => 17,
+                    'title' => 'Hero',
+                    'poster' => '',
+                    'description' => 'As Erwin\'s heroic charge buys Levi time to confront the Beast Titan, Armin comes up with a plan of his own that lays it all on the line.'
+                ],
+                'episode 18' => [
+                    'number' => 18,
+                    'title' => 'Midnight Sun',
+                    'poster' => '',
+                    'description' => 'While picking up the pieces from the costly battle, tensions rise when deciding which of the wounded Scouts to use the single syringe on.'
+                ],
+                'episode 19' => [
+                    'number' => 19,
+                    'title' => 'The Basement',
+                    'poster' => '',
+                    'description' => 'The secrets hidden in Grisha\'s basement await in the ruins of Shiganshina. There, the Scouts hope to find answers to the world worth more than the price they paid.'
+                ],
+                'episode 20' => [
+                    'number' => 20,
+                    'title' => 'That Day',
+                    'poster' => '',
+                    'description' => 'A look into Grisha\'s memories shows Eren the many secrets his father was hiding, including one which led to his mother\'s demise.'
+                ],
+                'episode 21' => [
+                    'number' => 21,
+                    'title' => 'Attack Titan',
+                    'poster' => '',
+                    'description' => 'Eren learns how all paths connect in the story that his father began. If Grisha is to pay for his sins, he must fight for freedom and take a stand.'
+                ],
+                'episode 22' => [
+                    'number' => 22,
+                    'title' => 'The Other Side of the Wall',
+                    'poster' => '',
+                    'description' => 'Though it\'s met with hope and despair, the truth is made public. The Scouts then venture beyond the walls to see if it\'s everything they dreamed of.'
                 ]
             ]
         ],
@@ -2904,39 +3000,177 @@ class FixturesData
             'episodes' => [
                 'episode 01' => [
                     'number' => 1,
-                    'title' => '',
+                    'title' => 'The Other Side of the Sea',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'As Marley battles the Mid-East Alliance to end a four-year war, a group of Warrior candidates on the front lines compete to be the successor of the Armored Titan.'
                 ],
                 'episode 02' => [
                     'number' => 2,
-                    'title' => '',
+                    'title' => 'Midnight Train',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Though glad the war is over, Both the Eldian Warriors and Marley brass realize that neither have a future unless they finish the job of retaking the Founding Titan.'
                 ],
                 'episode 03' => [
                     'number' => 3,
-                    'title' => '',
+                    'title' => 'The Door of Hope',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'A flashback into Reiner\'s harsh and difficult life, and his own personal wish to become a Marleyan Warrior for his family honor.'
                 ],
                 'episode 04' => [
                     'number' => 4,
-                    'title' => '',
+                    'title' => 'From One Hand to Another',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'A sudden visit from the Tybur family shakes up the Marleyan military. Meanwhile, Falco smuggles letters for a friend and helps two old comrades reunite.'
                 ],
                 'episode 05' => [
                     'number' => 5,
-                    'title' => '',
+                    'title' => 'Declaration of War',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Eren confronts Reiner, while Willy Tybur gives a speech to the entire world in which he aims to solve the endless cycle of hate directed towards Eldians.'
                 ],
                 'episode 06' => [
                     'number' => 6,
-                    'title' => '',
+                    'title' => 'The War Hammer Titan',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'As the Attack Titan rampages, several people are crushed to death. While all of this is going on, the War Hammer Titan appears to confront Eren.'
+                ],
+                'episode 07' => [
+                    'number' => 7,
+                    'title' => 'Assault',
+                    'poster' => '',
+                    'description' => 'As the battle between Eren and the warriors rages on, another party makes their move on Marley\'s Forces that pushes the tide of the battle into a more devastating climax.'
+                ],
+                'episode 08' => [
+                    'number' => 8,
+                    'title' => 'Assassin\'s Bullet',
+                    'poster' => '',
+                    'description' => 'Out of strength, the Armored Titan falls. Furious to have her hometown trampled, Gabi picks up a gun and takes off.'
+                ],
+                'episode 09' => [
+                    'number' => 9,
+                    'title' => 'Brave Volunteers',
+                    'poster' => '',
+                    'description' => 'As Paradis deals with the aftermath of the raid on Liberio, Armin looks back in the past to meeting the volunteer soldiers who reshaped their world.'
+                ],
+                'episode 10' => [
+                    'number' => 10,
+                    'title' => 'A Sound Argument',
+                    'poster' => '',
+                    'description' => 'Two years ago, Paradis welcomed their first visitor who was surprised to see one of their own. Obtaining their help will be critical in a three-part plan to protect Paradis.'
+                ],
+                'episode 11' => [
+                    'number' => 11,
+                    'title' => 'Deceiver',
+                    'poster' => '',
+                    'description' => 'Gabi and Falco escape from prison. Without a clue where they should go, they receive help from none other than the devils they despise. Meanwhile, Floch\'s mind is shifting gears.'
+                ],
+                'episode 12' => [
+                    'number' => 12,
+                    'title' => 'Guides',
+                    'poster' => '',
+                    'description' => 'A new turn of events rocks the Military Corps. In the midst of confusion, Eren begins enacting his plans for Paradis.'
+                ],
+                'episode 13' => [
+                    'number' => 13,
+                    'title' => 'Children of the Forest',
+                    'poster' => '',
+                    'description' => 'As Zeke\'s plans come to light and the Jaegerists move in, the two warrior fugitives have their identities uncovered.'
+                ],
+                'episode 14' => [
+                    'number' => 14,
+                    'title' => 'Savagery',
+                    'poster' => '',
+                    'description' => 'As the Jaegerists take over, Eren has a tense altercation with Armin and Mikasa, and Levi battles Zeke.'
+                ],
+                'episode 15' => [
+                    'number' => 15,
+                    'title' => 'Sole Salvation',
+                    'poster' => '',
+                    'description' => 'A look into Zeke\'s past shows his struggle to become a Warrior. His plans to end the suffering of all Eldians stem from a chance friendship made in his youth.'
+                ],
+                'episode 16' => [
+                    'number' => 16,
+                    'title' => 'Above and Below',
+                    'poster' => '',
+                    'description' => 'With the Jaegerists now in charge, Zeke\'s master plan is revealed. But before it is put in motion, Eren recruits help to flush out any invaders in their midst.'
+                ],
+                'episode 17' => [
+                    'number' => 17,
+                    'title' => 'Judgment',
+                    'poster' => '',
+                    'description' => 'The Marleyan military\'s air force invades Paradis, while Eren Yeager continues battling Porco Galliard, who is soon joined by Reiner Braun in his Armored Titan form.'
+                ],
+                'episode 18' => [
+                    'number' => 18,
+                    'title' => 'Sneak Attack',
+                    'poster' => '',
+                    'description' => 'The Beast Titan joins the fray, but General Magath is determined to take him down. Meanwhile, with the city in flames, Colt and Gabi rush to rescue Falco who\'s held captive by the Jaegerists.'
+                ],
+                'episode 19' => [
+                    'number' => 19,
+                    'title' => 'Two Brothers',
+                    'poster' => '',
+                    'description' => 'Colt pleads with Zeke to not use his scream and turn Falco into a Titan. All the while, soldiers and Titans clash in battle as Eren struggles to make contact with his brother.'
+                ],
+                'episode 20' => [
+                    'number' => 20,
+                    'title' => 'Memories of the Future',
+                    'poster' => '',
+                    'description' => 'Zeke takes Eren through Grisha\'s memories to show him how he\'s been brainwashed. But in doing so, Zeke discovers something about Eren that he never knew.'
+                ],
+                'episode 21' => [
+                    'number' => 21,
+                    'title' => 'From You, 2000 Years Ago',
+                    'poster' => '',
+                    'description' => 'Eren and Zeke with their contradicted ethics and shattered emotions, clash on the credibility of their ideals while Ymir, the founder, discloses her tragic past and deepest secrets within the walls.'
+                ],
+                'episode 22' => [
+                    'number' => 22,
+                    'title' => 'Thaw',
+                    'poster' => '',
+                    'description' => 'With no walls left on the island and Shiganshina full of Titans, the Scouts must battle their former comrades. In the midst of it all, Gabi is determined to find and rescue Falco at whatever cost.'
+                ],
+                'episode 23' => [
+                    'number' => 23,
+                    'title' => 'Sunset',
+                    'poster' => '',
+                    'description' => 'The Rumbling is set in motion once all hardening is undone, but this also sets Annie free. As the Jaegerists take control of the island, Connie races towards Ragako to feed Falco to his Titan mother.'
+                ],
+                'episode 24' => [
+                    'number' => 24,
+                    'title' => 'Pride',
+                    'poster' => '',
+                    'description' => 'Upon reaching Ragako, Connie hatches a plan to trick Falco into being eaten by his mother. Elsewhere, hero of the Eldian Empire, Jean, is set to execute Yelena and Onyankopon for their crimes against humanity.'
+                ],
+                'episode 25' => [
+                    'number' => 25,
+                    'title' => 'Night of the End',
+                    'poster' => '',
+                    'description' => 'Deep in the forest, an unlikely rabble of Marley stragglers and island fugitives attempt to set their hatred aside and talk around a campfire without killing each other.'
+                ],
+                'episode 26' => [
+                    'number' => 26,
+                    'title' => 'Traitor',
+                    'poster' => '',
+                    'description' => 'The Azumabito\'s flying boat is guarded by a port full of Jaegerists, but the Scouts are reluctant to kill their former friends. If they wish to avoid bloodshed, they can\'t afford their plan to go wrong.'
+                ],
+                'episode 27' => [
+                    'number' => 27,
+                    'title' => 'Retrospective',
+                    'poster' => '',
+                    'description' => 'For the flying boat to take off, the mechanics need half a day to service it. Knowing they\'ll never last that long with Jaegerist reinforcements on the way, the crew is forced to change their plans.'
+                ],
+                'episode 28' => [
+                    'number' => 28,
+                    'title' => 'The Dawn of Humanity',
+                    'poster' => '',
+                    'description' => 'Regardless of where it all began, Eren commits to his path of destruction during the Scouts\' first visit to the Marleyan mainland, leaving Mikasa to wonder if things could\'ve been different.'
+                ],
+                'episode 29' => [
+                    'number' => 29,
+                    'title' => '4.29',
+                    'poster' => '',
+                    'description' => 'Ramzi and Halil, two refugee children, flee the approaching Colossal Titans as they surround the crowds of refugees. One year prior, Eren reflects on his previous experiences, and his future actions.'
                 ]
             ]
         ]
@@ -2955,39 +3189,51 @@ class FixturesData
             'episodes' => [
                 'episode 01' => [
                     'number' => 1,
-                    'title' => '',
+                    'title' => 'Chapter 1: The Mandalorian',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'A Mandalorian bounty hunter tracks a target for a well-paying, mysterious client.'
                 ],
                 'episode 02' => [
                     'number' => 2,
-                    'title' => '',
+                    'title' => 'Chapter 2: The Child',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Target in hand, the Mandalorian must now contend with scavengers.'
                 ],
                 'episode 03' => [
                     'number' => 3,
-                    'title' => '',
+                    'title' => 'Chapter 3: The Sin',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The battered Mandalorian returns to his client for his reward.'
                 ],
                 'episode 04' => [
                     'number' => 4,
-                    'title' => '',
+                    'title' => 'Chapter 4: Sanctuary',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The Mandalorian teams up with an ex-soldier to protect a farming village from raiders.'
                 ],
                 'episode 05' => [
                     'number' => 5,
-                    'title' => '',
+                    'title' => 'Chapter 5: The Gunslinger',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'On a familiar desert planet, the Mandalorian helps a rookie bounty hunter who is in over his head.'
                 ],
                 'episode 06' => [
                     'number' => 6,
-                    'title' => '',
+                    'title' => 'Chapter 6: The Prisoner',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The Mandalorian is part of a crew of mercenaries springing a convict from a prison ship.'
+                ],
+                'episode 07' => [
+                    'number' => 7,
+                    'title' => 'Chapter 7: The Reckoning',
+                    'poster' => '',
+                    'description' => 'An old contact extends an invitation for the Mandalorian to make peace with his enemies.'
+                ],
+                'episode 08' => [
+                    'number' => 8,
+                    'title' => 'Chapter 8: Redemption',
+                    'poster' => '',
+                    'description' => 'The Mandalorian and his allies come to know their true enemy, who already knows much about them.'
                 ]
             ]
         ],
@@ -3002,39 +3248,51 @@ class FixturesData
             'episodes' => [
                 'episode 01' => [
                     'number' => 1,
-                    'title' => '',
+                    'title' => 'Chapter 9: The Marshal',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The Mandalorian is drawn to the Outer Rim in search of others of his kind.'
                 ],
                 'episode 02' => [
                     'number' => 2,
-                    'title' => '',
+                    'title' => 'Chapter 10: The Passenger',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The Mandalorian must ferry a passenger with precious cargo on a risky journey.'
                 ],
                 'episode 03' => [
                     'number' => 3,
-                    'title' => '',
+                    'title' => 'Chapter 11: The Heiress',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The Mandalorian braves high seas and meets unexpected allies.'
                 ],
                 'episode 04' => [
                     'number' => 4,
-                    'title' => '',
+                    'title' => 'Chapter 12: The Siege',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The Mandalorian rejoins old allies for a new mission.'
                 ],
                 'episode 05' => [
                     'number' => 5,
-                    'title' => '',
+                    'title' => 'Chapter 13: The Jedi',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The Mandalorian travels to a world ruled by a ruthless magistrate who has made a powerful enemy.'
                 ],
                 'episode 06' => [
                     'number' => 6,
-                    'title' => '',
+                    'title' => 'Chapter 14: The Tragedy',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The Mandalorian and Child travel to an ancient site.'
+                ],
+                'episode 07' => [
+                    'number' => 7,
+                    'title' => 'Chapter 15: The Believer',
+                    'poster' => '',
+                    'description' => 'To move against the Empire, the Mandalorian needs the help of an old enemy.'
+                ],
+                'episode 08' => [
+                    'number' => 8,
+                    'title' => 'Chapter 16: The Rescue',
+                    'poster' => '',
+                    'description' => 'The Mandalorian and his allies attempt a daring rescue.'
                 ]
             ]
         ],
@@ -3053,37 +3311,49 @@ class FixturesData
             'episodes' => [
                 'episode 01' => [
                     'number' => 1,
-                    'title' => '',
+                    'title' => '3.1',
                     'poster' => '',
                     'description' => ''
                 ],
                 'episode 02' => [
                     'number' => 2,
-                    'title' => '',
+                    'title' => '3.2',
                     'poster' => '',
                     'description' => ''
                 ],
                 'episode 03' => [
                     'number' => 3,
-                    'title' => '',
+                    'title' => '3.3',
                     'poster' => '',
                     'description' => ''
                 ],
                 'episode 04' => [
                     'number' => 4,
-                    'title' => '',
+                    'title' => '3.4',
                     'poster' => '',
                     'description' => ''
                 ],
                 'episode 05' => [
                     'number' => 5,
-                    'title' => '',
+                    'title' => '3.5',
                     'poster' => '',
                     'description' => ''
                 ],
                 'episode 06' => [
                     'number' => 6,
-                    'title' => '',
+                    'title' => '3.6',
+                    'poster' => '',
+                    'description' => ''
+                ],
+                'episode 07' => [
+                    'number' => 7,
+                    'title' => '3.7',
+                    'poster' => '',
+                    'description' => ''
+                ],
+                'episode 08' => [
+                    'number' => 8,
+                    'title' => '3.8',
                     'poster' => '',
                     'description' => ''
                 ]
