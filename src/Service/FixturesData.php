@@ -2387,79 +2387,79 @@ class FixturesData
                     'number' => 1,
                     'title' => 'Box Cutter',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Walt and Jesse are held captive for Gus, after Gale\'s death. Meanwhile, Skyler tries to find out what happened to Walt.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'Thirty-Eight Snub',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Walt attempts to form a new alliance as he plans his next move. Meanwhile Skyler pushes Walt towards a business opportunity, in hopes of protecting the family.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'Open House',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'While Walt worries about Gus\'s interference and Jesse\'s increasingly fragile state of mind, Skyler steps up the pressure to get what she wants.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Bullet Points',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'As Skyler concocts an elaborate story to explain the Whites\' finances, a worried Walt discovers that Hank has begun a new investigation.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'Shotgun',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Jesse rides shotgun with Mike on a perilous run of pickups, prompting Walt to worry that his partner is about to be killed.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'Cornered',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Skyler adopts an aloof approach when she suspects that Walt isn\'t telling her the truth. Meanwhile, Jesse proves his worth to Mike and Gus.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'Problem Dog',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Skyler looks to continue her family\'s trend of appearing poverty-stricken by forcing Walt to return the car he bought. A concerned Walt chauffeurs Hank to Los Pollos Hermanos, and the articulate yet immobile DEA agent collects prints.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'Hermanos',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'When Hank produces evidence that Gus is Albuquerque\'s crystal meth kingpin, Walt worries that he and Jesse will be killed to protect their boss.'
                 ],
                 'episode 09' => [
                     'number' => 9,
-                    'title' => '',
+                    'title' => 'Bug',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'While Walt tries to subvert Hank\'s probe into the Albuquerque meth scene, a deadly warning forces Gus to consider a deal with the cartel.'
                 ],
                 'episode 10' => [
                     'number' => 10,
-                    'title' => '',
+                    'title' => 'Salud',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Jesse, Gus, and Mike fly down to Mexico, and Jesse cooks the blue meth for the cartel. Walt misses his son\'s 16th birthday after his fight with Jesse.'
                 ],
                 'episode 11' => [
                     'number' => 11,
-                    'title' => '',
+                    'title' => 'Crawl Space',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Hank asks Walt to drive him to the laundry where the meth lab is hidden. Ted still won\'t pay the IRS so Skyler asks Saul for help, and Saul sends in his A-Team. Gus and Jesse return from Mexico, and Walt fears he is in trouble with Gus.'
                 ],
                 'episode 12' => [
                     'number' => 12,
-                    'title' => '',
+                    'title' => 'End Times',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'The DEA is putting Hank and his family in protective custody; however, Walt refuses and awaits his fate in his house. Meanwhile, Brock has fallen terribly ill and Jesse suspects Walt may be behind it.'
                 ],
                 'episode 13' => [
                     'number' => 13,
-                    'title' => '',
+                    'title' => 'Face Off',
                     'poster' => '',
-                    'description' => ''
+                    'description' => 'Jesse is brought to the FBI for questioning on his knowledge of ricin. In a last effort to kill Gus, Walt must ask for help from an old enemy.'
                 ]
             ]
         ],
@@ -2481,13 +2481,129 @@ class FixturesData
             'episodes' => [
                 'episode 01' => [
                     'number' => 1,
-                    'title' => '',
+                    'title' => 'Live Free or Die',
+                    'poster' => '',
+                    'description' => 'Now that Gus is dead, Walt, Jesse, and Mike work to cover their tracks. Skyler panics when Ted Beneke wakes up.'
+                ],
+                'episode 02' => [
+                    'number' => 2,
+                    'title' => 'Madrigal',
+                    'poster' => '',
+                    'description' => 'Walt and Jesse seek out an unlikely partner for a new business venture. The DEA follows up new leads in its investigation.'
+                ],
+                'episode 03' => [
+                    'number' => 3,
+                    'title' => 'Hazard Pay',
+                    'poster' => '',
+                    'description' => 'The guys put a business plan into action; Walt confesses to Marie.'
+                ],
+                'episode 04' => [
+                    'number' => 4,
+                    'title' => 'Fifty-One',
+                    'poster' => '',
+                    'description' => 'It\'s Walt\'s 51st birthday. His return to the drug business causes Skyler to go into depression.'
+                ],
+                'episode 05' => [
+                    'number' => 5,
+                    'title' => 'Dead Freight',
+                    'poster' => '',
+                    'description' => 'Walter White\'s domestic life continues to deteriorate; at the same time, his growing business venture aims to steal a train car chock full of methylamine.'
+                ],
+                'episode 06' => [
+                    'number' => 6,
+                    'title' => 'Buyout',
+                    'poster' => '',
+                    'description' => 'In the aftermath of the train heist, Jesse and Mike decide to quit the business, leaving Walt to handle things on his own. Mike is being followed by the DEA.'
+                ],
+                'episode 07' => [
+                    'number' => 7,
+                    'title' => 'Say My Name',
+                    'poster' => '',
+                    'description' => 'Mike and Jesse are out. Now Walt has to handle things on his own. Hank finally finds a rat in Mike\'s gang.'
+                ],
+                'episode 08' => [
+                    'number' => 8,
+                    'title' => 'Gliding Over All',
+                    'poster' => '',
+                    'description' => 'Walt expands his business overseas, and the money is pouring in.'
+                ],
+                'episode 09' => [
+                    'number' => 9,
+                    'title' => 'Blood Money',
+                    'poster' => '',
+                    'description' => 'Walt is out of the meth business and trying to move on with his life. Jesse tries to get rid of his money. Hank now knows that Walt is the famous Heisenberg.'
+                ],
+                'episode 10' => [
+                    'number' => 10,
+                    'title' => 'Buried',
+                    'poster' => '',
+                    'description' => 'Hank is determined to bring down Walt. Walt scrambles to hide evidence before Hank gets to it, and Skyler tries to stop Hank and Marie from taking away the kids.'
+                ],
+                'episode 11' => [
+                    'number' => 11,
+                    'title' => 'Confessions',
+                    'poster' => '',
+                    'description' => 'Walt makes his next move against Hank, putting Hank in a tough position. Hank confronts Jesse and attempts to turn him against Walt, and Jesse decides it\'s time to move on. Meanwhile, Todd has taken over the business.'
+                ],
+                'episode 12' => [
+                    'number' => 12,
+                    'title' => 'Rabid Dog',
+                    'poster' => '',
+                    'description' => 'Walt discovers Jesse broke into his house and attempted to burn it down. Walt wants to protect his family so he moves them into a hotel for a few nights. Jesse makes plans to take down Walt.'
+                ],
+                'episode 13' => [
+                    'number' => 13,
+                    'title' => 'To\'hajiilee',
+                    'poster' => '',
+                    'description' => 'Jesse and Hank come up with an idea to take Walt down. Walt hires Todd\'s uncle to kill Jesse.'
+                ],
+                'episode 14' => [
+                    'number' => 14,
+                    'title' => 'Ozymandias',
+                    'poster' => '',
+                    'description' => 'Walt goes on the run. Jesse is taken hostage. Marie convinces Skyler to tell Walter, Jr. the truth.'
+                ],
+                'episode 15' => [
+                    'number' => 15,
+                    'title' => 'Granite State',
+                    'poster' => '',
+                    'description' => 'Walt struggles as he adapts to aspects of his new identity. Jesse plans an escape against Jack and his crew.'
+                ],
+                'episode 16' => [
+                    'number' => 16,
+                    'title' => 'Felina',
+                    'poster' => '',
+                    'description' => 'Walter White makes one last attempt to secure his family\'s future, while also visiting some old enemies, during his final return to Albuquerque.'
+                ]
+            ]
+        ]
+    ];
+
+    const ATTACK_ON_TITAN = [
+        'Season 01' => [
+            'number' => 1,
+            'poster' => '',
+            'description' => 'In a world ravaged for more than a century by man-eating titans, the few survivors of humanity have no choice but to barricade themselves in a fortress city. Young Eren, witness of the death of his mother devoured by a titan, has only one dream: to join the elite corps responsible for discovering the origin of the titans and annihilating them to the last.',
+            'year' => 2013,
+            'actors' => [
+                'Romi Pak',
+                'Yui Ishikawa',
+                'Yûki Kaji',
+                'Marina Inoue',
+                'Hiroshi Kamiya',
+                'Yû Kobayashi',
+                'Daisuke Ono'
+            ],
+            'episodes' => [
+                'episode 01' => [
+                    'number' => 1,
+                    'title' => 'To You, in 2000 Years: The Fall of Shiganshina, Part 1',
                     'poster' => '',
                     'description' => ''
                 ],
                 'episode 02' => [
                     'number' => 2,
-                    'title' => '',
+                    'title' => 'That Day: The Fall of Shiganshina, Part 2',
                     'poster' => '',
                     'description' => ''
                 ],
@@ -2574,59 +2690,57 @@ class FixturesData
                     'title' => '',
                     'poster' => '',
                     'description' => ''
-                ]
-            ]
-        ]
-    ];
-
-    const ATTACK_ON_TITAN = [
-        'Season 01' => [
-            'number' => 1,
-            'poster' => '',
-            'description' => 'In a world ravaged for more than a century by man-eating titans, the few survivors of humanity have no choice but to barricade themselves in a fortress city. Young Eren, witness of the death of his mother devoured by a titan, has only one dream: to join the elite corps responsible for discovering the origin of the titans and annihilating them to the last.',
-            'year' => 2013,
-            'actors' => [
-                'Romi Pak',
-                'Yui Ishikawa',
-                'Yûki Kaji',
-                'Marina Inoue',
-                'Hiroshi Kamiya',
-                'Yû Kobayashi',
-                'Daisuke Ono'
-            ],
-            'episodes' => [
-                'episode 01' => [
-                    'number' => 1,
+                ],
+                'episode 17' => [
+                    'number' => 17,
                     'title' => '',
                     'poster' => '',
                     'description' => ''
                 ],
-                'episode 02' => [
-                    'number' => 2,
+                'episode 18' => [
+                    'number' => 18,
                     'title' => '',
                     'poster' => '',
                     'description' => ''
                 ],
-                'episode 03' => [
-                    'number' => 3,
+                'episode 19' => [
+                    'number' => 19,
                     'title' => '',
                     'poster' => '',
                     'description' => ''
                 ],
-                'episode 04' => [
-                    'number' => 4,
+                'episode 20' => [
+                    'number' => 20,
                     'title' => '',
                     'poster' => '',
                     'description' => ''
                 ],
-                'episode 05' => [
-                    'number' => 5,
+                'episode 21' => [
+                    'number' => 21,
                     'title' => '',
                     'poster' => '',
                     'description' => ''
                 ],
-                'episode 06' => [
-                    'number' => 6,
+                'episode 22' => [
+                    'number' => 22,
+                    'title' => '',
+                    'poster' => '',
+                    'description' => ''
+                ],
+                'episode 23' => [
+                    'number' => 23,
+                    'title' => '',
+                    'poster' => '',
+                    'description' => ''
+                ],
+                'episode 24' => [
+                    'number' => 24,
+                    'title' => '',
+                    'poster' => '',
+                    'description' => ''
+                ],
+                'episode 25' => [
+                    'number' => 25,
                     'title' => '',
                     'poster' => '',
                     'description' => ''
@@ -2681,6 +2795,42 @@ class FixturesData
                 ],
                 'episode 06' => [
                     'number' => 6,
+                    'title' => '',
+                    'poster' => '',
+                    'description' => ''
+                ],
+                'episode 07' => [
+                    'number' => 7,
+                    'title' => '',
+                    'poster' => '',
+                    'description' => ''
+                ],
+                'episode 08' => [
+                    'number' => 8,
+                    'title' => '',
+                    'poster' => '',
+                    'description' => ''
+                ],
+                'episode 09' => [
+                    'number' => 9,
+                    'title' => '',
+                    'poster' => '',
+                    'description' => ''
+                ],
+                'episode 10' => [
+                    'number' => 10,
+                    'title' => '',
+                    'poster' => '',
+                    'description' => ''
+                ],
+                'episode 11' => [
+                    'number' => 11,
+                    'title' => '',
+                    'poster' => '',
+                    'description' => ''
+                ],
+                'episode 12' => [
+                    'number' => 11,
                     'title' => '',
                     'poster' => '',
                     'description' => ''
