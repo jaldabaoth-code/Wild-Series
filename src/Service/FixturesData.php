@@ -341,97 +341,97 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => '30 Days Without an Accident',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/210/448/21044893_20130927192352717.jpg',
                     'description' => 'Several months have passed and Rick and the expanded group are living a more peaceful life at the prison. Problems surface when Rick encounters a new survivor, and a supply run ends in disaster.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'Infected',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/210/466/21046630_20131003213702734.jpg',
                     'description' => 'Rick is forced to abandon his quiet lifestyle when a mysterious virus puts the lives of everyone at the prison at risk.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'Isolation',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/210/510/21051025_20131021105428591.jpg',
                     'description' => 'As the sick are quarantined, Daryl, Tyreese, Michonne and Bob leave the prison in search of medical supplies. Rick makes a shocking discovery.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Indifference',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/210/535/21053575_20131029104842878.jpg',
                     'description' => 'Daryl, Tyreese, Michonne and Bob continue to the veterinary college on foot in search of medicine. Rick and Carol go on a run to a nearby town where they find two uninfected stragglers.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'Internment',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/210/549/21054996_2013110510324918.jpg',
                     'description' => 'Hershel struggles to care for the sick as the situation in the cell block escalates. Meanwhile, Rick and Carl defend the prison as the fences give way.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'Live Bait',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/210/569/21056941_20131112141704193.jpg',
                     'description' => 'The Governor bonds with a small family following the downfall of Woodbury.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'Dead Weight',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/210/590/21059069_2013111914565155.jpg',
                     'description' => 'The Governor plans his next move as he, Lilly, Tara and Meghan adjust to new surroundings.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'Too Far Gone',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/13/12/03/12/02/077443.jpg',
                     'description' => 'Rick and the group face imminent danger as The Governor tries to take the prison.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'After',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/14/01/27/10/33/203927.jpg',
                     'description' => 'With the prison overrun, Rick and Carl find themselves on the road looking for shelter. Meanwhile, Michonne is haunted by memories of the past.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'Inmates',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/14/02/10/12/15/470894.jpg',
                     'description' => 'Beth tries to remain hopeful. Tyreese, Lizzie and Mika run into a familiar face. Glenn and Maggie struggle to cope without each other.'
                 ],
                 'episode 11' => [
                     'number' => 11,
                     'title' => 'Claimed',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/14/02/25/12/36/551173.jpg',
                     'description' => 'While Carl and Michonne look for supplies, Rick is faced against a gang of marauders. Meanwhile, Glenn and Tara are brought together with three strangers on an important mission.'
                 ],
                 'episode 12' => [
                     'number' => 12,
                     'title' => 'Still',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/14/03/04/12/29/012107.jpg',
                     'description' => 'Daryl and Beth seek refuge in the woods, where conflict emerges between the pair.'
                 ],
                 'episode 13' => [
                     'number' => 13,
                     'title' => 'Alone',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/14/03/04/12/18/118162.jpg',
                     'description' => 'Maggie, Sasha and Bob clash over whether they should head to Terminus. Daryl and Beth take shelter in a seemingly abandoned funeral home.'
                 ],
                 'episode 14' => [
                     'number' => 14,
                     'title' => 'The Grove',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/14/03/11/12/46/112177.jpg',
                     'description' => 'Carol has to cope with old secrets and Lizzie\'s psychotic behavior when she, Tyreese and the girls take refuge in a vacant house on the way to Terminus.'
                 ],
                 'episode 15' => [
                     'number' => 15,
                     'title' => 'Us',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/14/03/19/09/43/105050.jpg',
                     'description' => 'Glenn and Tara are set on the way to Terminus, but Abraham is reluctant. Daryl struggles to adjust to the Claimers\' rules.'
                 ],
                 'episode 16' => [
                     'number' => 16,
                     'title' => 'A',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/14/03/25/10/58/146759.jpg',
                     'description' => 'Rick, Carl and Michonne cross paths with the Claimers once again on the way to Terminus, as the so-called sanctuary begins to reveal its true face'
                 ]
             ]
@@ -1399,7 +1399,7 @@ class FixturesData
     const GAME_OF_THRONES = [
         'Season 01' => [
             'number' => 1,
-            'poster' => '',
+            'poster' => 'https://fr.web.img6.acsta.net/c_225_300/pictures/19/03/21/17/05/1927893.jpg',
             'description' => 'In Westeros, a chimerical continent, powerful families are fighting over the Iron Throne, symbol of absolute power over the kingdom of the Seven Kingdoms. Several years after the rebellion caused by the blind ambitions of Aerys II Targaryen, nicknamed the Mad King, Robert, of House Baratheon, sits on the coveted throne and reigns over the kingdom. When Jon Arryn, his first adviser and mentor, dies, Robert travels north to ask his childhood friend, Eddard Stark, Governor of the North and Lord of Winterfell, to become the new Hand of the King. For his part, Jon Snow, Eddard\'s bastard son, joins the Night\'s Watch, an old brotherhood whose mission is to defend the Wall, a huge ice fortress protecting the kingdom from mythical creatures. Meanwhile, on the continent of Essos, Viserys and Daenerys, the exiled children of the Targaryen family, plot to return to Westeros and reclaim the Iron Throne. Between plots, betrayals and power struggles, the Iron Throne will be the object of all desires.',
             'year' => 2011,
             'actors' => [
@@ -1488,7 +1488,7 @@ class FixturesData
         ],
         'Season 02' => [
             'number' => 2,
-            'poster' => '',
+            'poster' => 'https://fr.web.img6.acsta.net/c_225_300/medias/nmedia/18/89/08/62/20043497.jpg',
             'description' => 'The Seven Kingdoms are at war, and each side seeks new alliances. Thanks to the support of the powerful House Lannister, Joffrey Baratheon, Robert\'s heir, now holds the Iron Throne. But the legitimacy of his rule is disputed as Stannis and Renly, the young king\'s uncles, also lay claim to the crown. For his part, Robb Stark continues his rebellion to avenge his father and free his sister Sensa held captive in Port-Réal. At the Wall, Commander Jeor Mormont, supported by Jon Snow, continues to lead the Night\'s Watch against the Wildlings. Meanwhile, Daenerys Targaryen arrives in the city of Qarth where she hopes to find new allies in order to reclaim the throne.',
             'year' => 2012,
             'actors' => [
@@ -1583,7 +1583,7 @@ class FixturesData
         ],
         'Season 03' => [
             'number' => 3,
-            'poster' => '',
+            'poster' => 'https://fr.web.img6.acsta.net/c_225_300/medias/nmedia/18/89/08/62/20481643.jpg',
             'description' => 'The fight for the Iron Throne continues. Joffrey Baratheon has won a precious victory and now finds himself at the head of the greatest army in the kingdom. On the island of Dragonstone, Melisandre proposes to Stannis Baratheon to use powerful magic to conquer the Iron Throne. At the same time, Robb Stark questions his strategy, and must decide on a course of action to achieve ultimate victory. As the Night\'s Watch faces the threat of the White Walkers, Jon Snow infiltrates the Wildlings to uncover Mance Rayder\'s plans. Daenerys, meanwhile, heads to the port city of Astapor to raise an army.',
             'year' => 2013,
             'actors' => [
@@ -1680,7 +1680,7 @@ class FixturesData
         ],
         'Season 04' => [
             'number' => 4,
-            'poster' => '',
+            'poster' => 'https://fr.web.img4.acsta.net/c_225_300/pictures/14/02/28/00/50/120605.jpg',
             'description' => 'After many victories, House Lannister is more powerful than ever and now holds absolute power over the Iron Throne. Prince Oberyn Martell arrives in Port-Réal to claim his place on the Restricted Council, and obtain justice for the assassination of his sister. As he continues to rebuild his army in Dragonstone, Stannis Baratheon comes to the aid of the Night\'s Watch to prevent the Wildlings from breaching the Wall. At the same time, Daenerys Targaryen and her army are heading towards the city of Meereen which could provide her with valuable assistance.',
             'year' => 2014,
             'actors' => [
@@ -1777,7 +1777,7 @@ class FixturesData
         ],
         'Season 05' => [
             'number' => 5,
-            'poster' => '',
+            'poster' => 'https://fr.web.img6.acsta.net/c_225_300/pictures/15/03/03/12/13/418016.jpg',
             'description' => 'As war rages in Westeros, the Lannister family is weakened in King\'s Landing. Jealous of the growing influence of the Tyrell family, and in order to retain what power she has left, Cersei Lannister establishes the Faith Militant, a religious regime ruled by fanatics. At Châteaunoir, Jon Snow\'s decisions related to his new position within the Night\'s Watch could deeply divide the brotherhood. For his part, Stannis Baratheon sets out to conquer the north, while Tyrion, who fled Port-Réal, joins forces with another camp. Daenerys Targaryen must face multiple rebellion movements in Meereen.',
             'year' => 2015,
             'actors' => [
@@ -1874,7 +1874,7 @@ class FixturesData
         ],
         'Season 06' => [
             'number' => 6,
-            'poster' => '',
+            'poster' => 'https://fr.web.img6.acsta.net/c_225_300/pictures/16/02/25/10/45/157467.jpg',
             'description' => 'After being publicly humiliated, Cersei Lannister seeks revenge on her enemies and regain power. While Sansa Stark and Theon Greyjoy are on the run, Arya Stark struggles to survive and continues her training to become a Faceless. In Meereen, Tyrion Lannister tries by all means to avoid a war in the absence of Daenerys. Meanwhile, in Castle Black, Alliser Thorne takes command of the Night\'s Watch, while Tormund works to free Jon Snow\'s remaining followers. For his part, Bran Stark continues to learn to master his powers with the Three-Eyed Crow, but his visions of the past could have serious consequences on both the present and the future.',
             'year' => 2016,
             'actors' => [
@@ -1973,7 +1973,7 @@ class FixturesData
         ],
         'Season 07' => [
             'number' => 7,
-            'poster' => '',
+            'poster' => 'https://fr.web.img6.acsta.net/c_225_300/pictures/17/05/23/22/35/531401.jpg',
             'description' => 'After a summer that lasted almost ten years, winter has arrived. Daenerys Targaryen, accompanied by her army and her dragons, heads to Westeros in search of new allies. For his part, Jon Snow seeks to unify the northern houses as well as the Wildlings to face the approaching army of White Walkers. In King\'s Landing, Cersei Lannister, more isolated than ever, has taken over the Iron Throne and strives to retain power. To oppose the threat of the army of the dead led by the Night King, unexpected alliances will be necessary.',
             'year' => 2017,
             'actors' => [
@@ -2047,7 +2047,7 @@ class FixturesData
         ],
         'Season 08' => [
             'number' => 8,
-            'poster' => '',
+            'poster' => 'https://fr.web.img2.acsta.net/c_225_300/pictures/19/04/03/08/25/3808274.jpg',
             'description' => 'The fight for the Iron Throne is coming to an end as the White Walkers have breached the wall and entered Westeros. Who will end up on the Iron Throne and rule the Kingdom of the Seven Kingdoms?',
             'year' => 2019,
             'actors' => [
@@ -2122,7 +2122,7 @@ class FixturesData
     const BREAKING_BAD = [
         'Season 01' => [
             'number' => 1,
-            'poster' => '',
+            'poster' => 'https://fr.web.img2.acsta.net/c_225_300/pictures/18/07/23/11/26/1237965.jpg',
             'description' => 'Walter White, 50 years old, is a high school chemistry teacher in New Mexico. His daily life is turned upside down when he learns that he has incurable lung cancer. He has only one solution left to quickly protect his family from want: to manufacture and sell a synthetic drug. Then begins a long descent into hell.',
             'year' => 2008,
             'actors' => [
@@ -2180,7 +2180,7 @@ class FixturesData
         ],
         'Season 02' => [
             'number' => 2,
-            'poster' => '',
+            'poster' => 'https://fr.web.img6.acsta.net/c_225_300/pictures/18/07/23/11/26/1597342.jpg',
             'description' => 'After the misadventures encountered with Krazy-8 and Tuco Salamanca, Walter and Jesse decide to set up their own business. But as Heisenberg\'s empire expands further and further, a deal goes awry and trouble begins. On the advice of Saul Goodman, his crooked lawyer, Walter contacts the owner of a restaurant chain who could help him sell off his drug stocks. Meanwhile, Skyler begins to have doubts about her husband as Jesse slowly descends into heroin.',
             'year' => 2009,
             'actors' => [
@@ -2274,7 +2274,7 @@ class FixturesData
         ],
         'Season 03' => [
             'number' => 3,
-            'poster' => '',
+            'poster' => 'https://fr.web.img4.acsta.net/c_225_300/pictures/18/07/23/11/26/2167658.jpg',
             'description' => 'Two weeks after the two planes collided, the entire city of Albuquerque is in mourning. While his wife has filed for divorce, Walter refuses to continue working in crime. But, at the risk of provoking a war between the Mexican and American barons, Gus hatches a plan to get him back into drug production. For his part, Hank is looking for a way to put the traffickers in prison, and devotes himself entirely to the Heisenberg case, which he could solve by finding the trace of the motorhome. Meanwhile, two killers from the Juárez Cartel arrive in Albuquerque to avenge the death of their cousin Tuco Salamanca.',
             'year' => 2010,
             'actors' => [
@@ -2368,7 +2368,7 @@ class FixturesData
         ],
         'Season 04' => [
             'number' => 4,
-            'poster' => '',
+            'poster' => 'https://fr.web.img4.acsta.net/c_225_300/pictures/18/07/23/11/26/2778599.jpg',
             'description' => 'As Walter regains some professional stability, Jesse distances himself and is manipulated by Gus. But the latter\'s pressures and low blows could well lead Jesse and Walter to team up to get rid of him. For his part, Hank is in great danger when he decides to investigate the restaurant : Los Pollos Harmanos.',
             'year' => 2011,
             'actors' => [
@@ -2465,7 +2465,7 @@ class FixturesData
         ],
         'Season 05' => [
             'number' => 5,
-            'poster' => '',
+            'poster' => 'https://fr.web.img2.acsta.net/c_225_300/pictures/18/07/23/11/26/3445791.jpg',
             'description' => 'Following the death of Gus Fring, Walter decides to create his own drug empire. In partnership with Jesse and Mike, the latter makes a fortune, but his plans are thwarted by his brother-in-law Hank, now head of the Albuquerque Narcotics, who is still obsessed with the mysterious Heisenberg.',
             'year' => 2012,
             'actors' => [
@@ -2582,7 +2582,7 @@ class FixturesData
     const ATTACK_ON_TITAN = [
         'Season 01' => [
             'number' => 1,
-            'poster' => '',
+            'poster' => 'https://fr.web.img4.acsta.net/c_225_300/pictures/18/10/31/18/23/3895256.jpg',
             'description' => 'In a world ravaged for more than a century by man-eating titans, the few survivors of humanity have no choice but to barricade themselves in a fortress city. Young Eren, witness of the death of his mother devoured by a titan, has only one dream: to join the elite corps responsible for discovering the origin of the titans and annihilating them to the last.',
             'year' => 2013,
             'actors' => [
@@ -2749,7 +2749,7 @@ class FixturesData
         ],
         'Season 02' => [
             'number' => 2,
-            'poster' => '',
+            'poster' => 'https://fr.web.img2.acsta.net/c_225_300/pictures/18/11/06/15/07/4301473.jpg',
             'description' => 'The arrival of the Colossal Titan completely changed Eren Jäger\'s life. After enlisting in the army to fight him and his congeners, Eren discovers that he can transform himself into what he hates the most. But he quickly understands that his new powers can be used to repel his attackers. While granted a little respite after his narrow victory against the Female Titan, he must now face a horde of titans dangerously approaching Wall Rose. New mysteries are coming to light, and a talking titan seems to be pulling the strings for this new wave of hungry, oversized attackers. For their part, the members of the cult of the wall seem to be hiding vital information for the survival of humanity. The pressure on Eren and the Survey Corps is greater than ever.',
             'year' => 2017,
             'actors' => [
@@ -2839,7 +2839,7 @@ class FixturesData
         ],
         'Season 03' => [
             'number' => 3,
-            'poster' => '',
+            'poster' => 'https://fr.web.img6.acsta.net/c_225_300/pictures/19/04/25/17/17/2578934.jpg',
             'description' => 'Kidnapped by Bertholdt and Reiner, Eren was able to escape with the help of the Survey Corps. But the losses are heavy, especially since Ymir has decided to join the enemy. As the king gives the order to capture Christa and Eren, a spirit of rebellion gradually creeps into the ranks of the battalion.',
             'year' => 2018,
             'actors' => [
@@ -2988,7 +2988,7 @@ class FixturesData
         ],
         'Season 04' => [
             'number' => 4,
-            'poster' => '',
+            'poster' => 'https://fr.web.img6.acsta.net/c_225_300/pictures/21/11/19/16/03/5515709.jpg',
             'description' => 'Four years after his departure from Paradis, Reiner imposes himself as an elite soldier alongside the future receptacles of the promordial titans. But his past still haunts him and the threat of revenge from Eren and his comrades looms.',
             'year' => 2020,
             'actors' => [
@@ -3179,7 +3179,7 @@ class FixturesData
     const THE_MANDALORIAN = [
         'Season 01' => [
             'number' => 1,
-            'poster' => '',
+            'poster' => 'https://fr.web.img2.acsta.net/c_225_300/pictures/19/10/29/09/01/2094959.jpg',
             'description' => 'After the adventures of Jango and Boba Fett, a new hero emerges in the Star Wars universe. The plot, set between the fall of the Empire and the rise of the First Order, follows the travels of a lone bounty hunter to the furthest reaches of the Galaxy, far from the authority of the New Republic.',
             'year' => 2019,
             'actors' => [
@@ -3239,7 +3239,7 @@ class FixturesData
         ],
         'Season 02' => [
             'number' => 2,
-            'poster' => '',
+            'poster' => 'https://fr.web.img4.acsta.net/c_225_300/pictures/20/09/15/17/53/0501597.jpg',
             'description' => 'The Mandalorian and the Child continue their journey, facing many enemies and rejoining their allies. They fight their way through a dangerous galaxy, in the tumultuous period that followed the fall of the Empire.',
             'year' => 2020,
             'actors' => [
@@ -3298,7 +3298,7 @@ class FixturesData
         ],
         'Season 03' => [
             'number' => 3,
-            'poster' => '',
+            'poster' => 'https://fr.web.img5.acsta.net/c_225_300/pictures/20/09/16/09/09/4156636.jpg',
             'description' => 'À VENIR',
             'year' => 2022,
             'actors' => [
