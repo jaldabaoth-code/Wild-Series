@@ -464,97 +464,97 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'No Sanctuary',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/14/09/18/12/09/168172.jpg',
                     'description' => 'Carol takes drastic action to rescue Rick and the group from the cannibals of Terminus as she and Tyreese reach the compound. A familiar face makes a return.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'Strangers',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/14/09/19/12/18/563668.jpg',
                     'description' => 'Rick and the group cross paths with a mysterious priest and take shelter in his church, soon realizing that they\'re being hunted. Meanwhile, Daryl and Carol follow a lead to the whereabouts of Beth.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'Four Walls and a Roof',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/06/04/13/40/5477936.jpg',
                     'description' => 'With Bob\'s life hanging in the balance, the group prepares to fight back against Gareth and his group of cannibals.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Slabtown',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/14/10/28/14/26/590042.jpg',
                     'description' => 'After being separated from Daryl, Beth finds herself in Grady Memorial Hospital in Atlanta, now controlled by what\'s left of the police force.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'Self Help',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/14/11/03/17/30/332011.jpg',
                     'description' => 'As Glenn, Maggie, Abraham and co. head to D.C., a new revelation threatens to bring the whole journey to a halt.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'Consumed',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/14/11/12/11/41/479652.jpg',
                     'description' => 'Daryl and Carol chase the white-crossed car to a desolated Atlanta with hopes of finding Beth and her kidnappers.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'Crossed',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/14/11/17/12/27/558172.jpg',
                     'description' => 'While Carl, Michonne and Gabriel hold the church, Rick takes a rescue mission to Atlanta, as Abraham\'s group deal with the fallout from Eugene\'s revelation.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'Coda',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/14/12/02/10/43/218366.jpg',
                     'description' => 'Rick and the group go face-to-face against Dawn and her officers in an attempt to save both Beth and Carol without any more bloodshed.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'What Happened and What\'s Going On',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/15/01/23/13/55/485671.jpg',
                     'description' => 'Rick, Glenn, Michonne and Tyreese take Noah to his home in Shirewilt Estates with hopes of finding sanctuary, but what they encounter is something else entirely.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'Them',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/15/02/10/12/29/111958.jpg',
                     'description' => 'Grieving from the deaths of Beth and Tyreese in different ways and with dwindling supplies, the group face the harsh road to Washington D.C.'
                 ],
                 'episode 11' => [
                     'number' => 11,
                     'title' => 'The Distance',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/15/02/16/16/45/301525.jpg',
                     'description' => 'Recovering from a devastating storm, Rick and the group find themselves mistrustful of a new survivor who promises them safety in a walled-off community.'
                 ],
                 'episode 12' => [
                     'number' => 12,
                     'title' => 'Remember',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/15/02/24/14/15/514000.jpg',
                     'description' => 'Scarred from their experiences in the outside world, the group struggles to adapt to the normality of the Alexandria Safe-Zone.'
                 ],
                 'episode 13' => [
                     'number' => 13,
                     'title' => 'Forget',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/15/03/03/14/10/234922.jpg',
                     'description' => 'As Deanna throws a party for the new arrivals, Carol comes up with a plan to get the group\'s weapons back. Meanwhile, Daryl bonds with Aaron, and Sasha struggles to cope.'
                 ],
                 'episode 14' => [
                     'number' => 14,
                     'title' => 'Spend',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/15/03/10/10/33/320904.jpg',
                     'description' => 'Eugene is forced to step up when a run led by Glenn goes awry. Back at Alexandria, Carol uncovers a secret.'
                 ],
                 'episode 15' => [
                     'number' => 15,
                     'title' => 'Try',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/15/03/25/10/07/006965.jpg',
                     'description' => 'While out recruiting, Daryl and Aaron find troubling signs of human activity. Back at Alexandria, Carl bonds with Enid, and the tension between Rick and Pete comes to a head.'
                 ],
                 'episode 16' => [
                     'number' => 16,
                     'title' => 'Conquer',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/15/03/25/10/11/208423.jpg',
                     'description' => 'Daryl and Aaron cross paths with Morgan. Back at the safe-zone, the people of Alexandria decide what to do with Rick, as a new danger emerges.'
                 ]
             ]
@@ -587,97 +587,97 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'First Time Again',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/15/07/24/14/55/172768.jpg',
                     'description' => 'Rick and the group come up with a plan to lure a massive herd of walkers away from Alexandria, while flashbacks show the events following Pete\'s death, including Rick\'s reunion with Morgan.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'JSS',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/15/07/24/14/55/171987.jpg',
                     'description' => 'While Rick and his group lure the herd away, Carol and Morgan lead a line of defense against the Wolves when Alexandria comes under attack.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'Thank You',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/18/11/13/07/38/5860983.jpg',
                     'description' => 'With half of the herd out of control, Glenn and Michonne lead Nicholas and their group back to Alexandria, as Rick crosses paths with the surviving members of the Wolves.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Here\'s Not Here',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/15/10/27/10/12/298327.jpg',
                     'description' => 'Morgan tells the captured wolf about his journey from King County to Alexandria, where he met a lone survivor with a code.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'Now',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/15/11/03/14/29/216528.jpg',
                     'description' => 'Deanna begins to question her leadership. Meanwhile, Maggie shares a secret with Aaron while searching for Glenn, as the herd approaches the safe-zone.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'Always Accountable',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/15/11/09/17/10/251580.jpg',
                     'description' => 'Wounded after being separated from Abraham and Sasha, Daryl finds himself captive of three survivors on the run.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'Heads Up',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/15/11/16/14/59/379439.jpg',
                     'description' => 'Glenn and Enid make their way back to Alexandria. Meanwhile, Spencer puts his life at risk, as the herd finds its way inside the safe-zone.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'Start to Finish',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/15/11/24/10/31/104696.jpg',
                     'description' => 'With the walls down, Alexandria finds itself swarmed by walkers. Meanwhile, Daryl, Abraham and Sasha come face-to-face with a new danger.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'No Way Out',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/16/02/16/10/46/481548.jpg',
                     'description' => 'Daryl, Abraham and Sasha face-off against the Saviors. Back at Alexandria, Rick and his group make their way through the herd.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'The Next World',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/16/02/16/10/58/424524.jpg',
                     'description' => 'Weeks after the walker invasion, Rick and Daryl cross paths with Jesus, a mysterious man with many secrets. Meanwhile, Michonne helps Spencer find closure, as Carl recovers from his injury.'
                 ],
                 'episode 11' => [
                     'number' => 11,
                     'title' => 'Knots Untie',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/16/02/24/14/24/288530.jpg',
                     'description' => 'Jesus takes Rick and the group to the Hilltop Colony, a peaceful community overshadowed by the power of the Saviors.'
                 ],
                 'episode 12' => [
                     'number' => 12,
                     'title' => 'Not Tomorrow Yet',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/16/02/29/15/29/320967.jpg',
                     'description' => 'Rick leads a surprise attack against the Saviors with the joint forces of Alexandria and the Hilltop. As two group members end up captured, Tara and Heath leave on a two-week supply run.'
                 ],
                 'episode 13' => [
                     'number' => 13,
                     'title' => 'The Same Boat',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/16/03/15/10/23/101462.jpg',
                     'description' => 'Carol and Maggie must fight for their lives after being taken by a group of Saviors.'
                 ],
                 'episode 14' => [
                     'number' => 14,
                     'title' => 'Twice as Far',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/18/06/04/13/40/5679501.jpg',
                     'description' => 'With medicine running low, Denise goes on a supply with Daryl and Rosita. Meanwhile, Eugene tries to prove himself to Abraham.'
                 ],
                 'episode 15' => [
                     'number' => 15,
                     'title' => 'East',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/16/03/22/12/01/214157.jpg',
                     'description' => 'Rick and Morgan set out in the search for Carol. Meanwhile, Daryl and Rosita track down Dwight, as Glenn and Michonne fall into a trap.'
                 ],
                 'episode 16' => [
                     'number' => 16,
                     'title' => 'Last Day on Earth',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/16/04/04/15/53/384960.jpg',
                     'description' => 'Morgan continues his search for Carol. Meanwhile, Rick and the group travel to the Hilltop with an ailing Maggie, leading to a daunting and life-changing confrontation.'
                 ]
             ]
@@ -711,97 +711,97 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'The Day Will Come When You Won\'t Be',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/16/10/26/12/34/474085.jpg',
                     'description' => 'Having been brutally overpowered by Negan and his Saviors, Rick and the group kneel helplessly as they suffer heavy losses that will haunt them forever.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'The Well',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/16/10/28/11/59/179172.jpg',
                     'description' => 'Carol and Morgan are brought to a community called the Kingdom, led by the eccentric King Ezekiel.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'The Cell',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/16/11/03/12/07/290705.jpg',
                     'description' => 'Daryl is taken by Negan to the Sanctuary, home of the Saviors. Meanwhile, Dwight is sent on a mission to bring back a runaway member of his group.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Service',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/16/11/08/11/58/226871.jpg',
                     'description' => 'Still mourning from the recent tragic losses, Rick and the people of Alexandria receive a sobering visit from Negan and his Saviors.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'Go Getters',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/16/11/16/14/09/505775.jpg',
                     'description' => 'Maggie and Sasha recover from their grief at the Hilltop. Meanwhile, Carl and Enid journey to the community, as the Saviors arrive to get their tribute.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'Swear',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/18/10/29/22/09/0135647.jpg',
                     'description' => 'Tara encounters a group of female survivors living near the coast after being separated from Heath during their two-week supply run.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'Sing Me a Song',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/16/11/29/12/39/467959.jpg',
                     'description' => 'As Eugene and Rosita head to the bullet factory, Rick and Aaron search for supplies for Negan. Meanwhile, Carl and Jesus find themselves on their way to the Sanctuary.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'Hearts Still Beating',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/16/12/06/11/11/435055.jpg',
                     'description' => 'Negan\'s unwelcome visit to Alexandria continues as other members scavenge for supplies, things quickly spin out of control.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'Rock in the Road',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/01/11/11/14/500822.jpg',
                     'description' => 'Jesus leads Rick and the group to the Kingdom, to convince King Ezekiel in joining Alexandria and the Hilltop in the incoming fight against Negan.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'New Best Friends',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/17/02/14/14/57/147443.jpg',
                     'description' => 'While searching for Father Gabriel, the group comes across a mysterious new collective of survivors. Back at the Kingdom, Carol and Daryl have an emotional reunion.'
                 ],
                 'episode 11' => [
                     'number' => 11,
                     'title' => 'Hostiles and Calamities',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/02/20/16/09/552682.jpg',
                     'description' => 'Eugene unwillingly begins to work for Negan and the Saviors at the Sanctuary. Meanwhile, Dwight pays a visit to a place from his past.'
                 ],
                 'episode 12' => [
                     'number' => 12,
                     'title' => 'Say Yes',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/02/28/14/10/578353.jpg',
                     'description' => 'The group scavenge for supplies. Back in Alexandria, Tara must make a morally challenging decision.'
                 ],
                 'episode 13' => [
                     'number' => 13,
                     'title' => 'Bury Me Here',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/03/14/09/12/148691.jpg',
                     'description' => 'Things don\'t go as planned, when a group of Kingdommers delivers goods to the Saviors during a routine supply drop-off.'
                 ],
                 'episode 14' => [
                     'number' => 14,
                     'title' => 'The Other Side',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/03/14/17/06/303196.jpg',
                     'description' => 'The Saviors visit the Hilltop unexpectedly, surprising everyone, with plans of taking more than supplies.'
                 ],
                 'episode 15' => [
                     'number' => 15,
                     'title' => 'Something They Need',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/03/21/10/47/001038.jpg',
                     'description' => 'A group of Alexandrians embark on a journey; One member of the group must make a heartbreaking decision.'
                 ],
                 'episode 16' => [
                     'number' => 16,
                     'title' => 'The First Day of the Rest of Your Life',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/03/28/12/01/482068.jpg',
                     'description' => 'The stakes continue to grow higher as paths cross; The group enacts an intricate plan as the saviors arrive in Alexandria.'
                 ]
             ]
@@ -835,97 +835,97 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'Mercy',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/08/10/10/11/262028.jpg',
                     'description' => 'Rick and his group, along with the Kingdom and Hilltop, band together to bring the fight to Negan and the Saviors.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'The Damned',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/10/23/17/32/3582572.jpg',
                     'description' => 'The plan involving Alexandrians, Kingdommers and Hilltoppers unfolds; As Rick continues to fight, he encounters a familiar face.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'Monsters',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/10/30/17/40/2631983.jpg',
                     'description' => 'Conflict with the Saviors leads to unintended consequences for the Hilltop, the Kingdom, and Alexandria.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Some Guy',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/17/11/07/12/06/5025632.jpg',
                     'description' => 'A new weapon in the Savior arsenal proves to be a giant hurdle as fighting continues between Rick\'s forces and those of the Saviors.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'The Big Scary U',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/10/29/22/22/4403361.jpg',
                     'description' => 'A close look at Negan and the lives of the Saviors during the conflict through a familiar set of eyes.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'The King, the Widow and Rick',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/17/11/21/18/04/5442898.jpg',
                     'description' => 'With things looking up for Rick and the group, an argument breaks out at the Hilltop, where the consequences of the decision are life versus death.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'Time for After',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/11/28/15/28/5328474.jpg',
                     'description' => 'Negan has to enlist the help of his lieutenants in solving a huge issue facing The Sanctuary; Rick and the group continue to enact the plan.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'How It\'s Gotta Be',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/12/04/18/06/0716838.jpg',
                     'description' => 'Every story and battle comes crashing together as everything Rick and his group have done will be put to the test.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'Honor',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/18/02/14/12/32/3673056.jpg',
                     'description' => 'Rick faces new difficulties after a battle. Meanwhile, the fight continues in other communities as core members face hard decisions.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'The Lost and the Plunderers',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/18/02/27/16/45/1705119.jpg',
                     'description' => 'Groups unite their forces and converge on the Hilltop; Aaron and Enid search for allies; Simon takes matters into his own hands.'
                 ],
                 'episode 11' => [
                     'number' => 11,
                     'title' => 'Dead or Alive Or',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/18/03/06/16/42/0897948.jpg',
                     'description' => 'Daryl finds himself in bad company as his group heads to the Hilltop; Gabriel\'s faith gets tested.'
                 ],
                 'episode 12' => [
                     'number' => 12,
                     'title' => 'The Key',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/18/03/13/13/55/5422493.jpg',
                     'description' => 'Hilltop\'s leadership faces a difficult dilemma after the arrival of unexpected visitors; Rick comes face to face with an adversary.'
                 ],
                 'episode 13' => [
                     'number' => 13,
                     'title' => 'Do Not Send Us Astray',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/03/23/12/08/0175696.jpg',
                     'description' => 'Trouble arises when unexpected visitors arrive at the Hilltop and the community is thrust into action; heartbreaking discoveries are made.'
                 ],
                 'episode 14' => [
                     'number' => 14,
                     'title' => 'Still Gotta Mean Something',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/03/29/15/02/2552936.jpg',
                     'description' => 'A Heaps prisoner makes a discovery; Carol searches for someone in the nearby forest; Rick and Morgan find themselves in the company of strangers.'
                 ],
                 'episode 15' => [
                     'number' => 15,
                     'title' => 'Worth',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/18/04/03/14/41/4673832.jpg',
                     'description' => 'With the threat of the Saviors still looming, Aaron continues searching for allies; Daryl and Rosita take action and confront an old friend.'
                 ],
                 'episode 16' => [
                     'number' => 16,
                     'title' => 'Wrath',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/18/04/10/11/50/5100531.jpg',
                     'description' => 'The communities join forces in the last stand against the Saviors as all-out war unfolds.'
                 ]
             ]
@@ -961,97 +961,97 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'A New Beginning',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/08/24/14/52/0449272.jpg',
                     'description' => 'Rick and his group make a risky run into Washington, D.C. to search for artifacts they will need to build the civilization he and Carl envisioned.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'The Bridge',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/18/10/09/11/25/2868751.jpg',
                     'description' => 'The communities join forces to restore a bridge that will facilitate communication and trade; someone is gravely injured at the construction site.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'Warning Signs',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/18/10/16/11/27/0136315.jpg',
                     'description' => 'A mysterious disappearance from the work camp threatens Rick\'s vision for the future.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'The Obliged',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/10/23/10/56/1101036.jpg',
                     'description' => 'Rick\'s vision of a civilized future is threatened by a sudden reckoning with past sins that remain unavenged and unforgiven.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'What Comes After',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/18/10/29/17/04/3184405.jpg',
                     'description' => 'Rick is forced to face the past as he struggles to maintain the safety of the communities and protect the future he and Carl envisioned.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'Who Are You Now?',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/18/11/05/17/19/5052851.jpg',
                     'description' => 'The Survivors encounter unfamiliar faces outside the safety of their community\'s walls and must decide whether or not this new group can be trusted.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'Stradivarius',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/18/11/12/18/03/1676391.jpg',
                     'description' => 'Carol seeks out an old friend living alone in a wilderness teeming with walkers; survivors make the perilous trek to a new home.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'Evolution',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/11/19/17/38/3194551.jpg',
                     'description' => 'A small rescue mission braves a dangerous herd in their hunt for a missing comrade, only to discover a surprising threat that could doom them all.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'Adaptation',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/19/01/31/09/39/3959515.jpg',
                     'description' => 'The group unmasks a disturbing and dangerous new threat. An escaped captive revisits his past.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'Omega',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/19/02/19/09/38/3452485.jpg',
                     'description' => 'Another arrival at the Hilltop Colony reveals information about the leader of a hostile new group of savages. A party searches for Alden and Luke.'
                 ],
                 'episode 11' => [
                     'number' => 11,
                     'title' => 'Bounty',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/19/02/05/11/34/4536790.jpg',
                     'description' => 'The Whisperers, led by Alpha, confront the Hilltop in a harrowing attempt to retrieve her daughter; a supply run for the Kingdom turns into a dangerous quest.'
                 ],
                 'episode 12' => [
                     'number' => 12,
                     'title' => 'Guardians',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/19/02/26/10/34/1190491.jpg',
                     'description' => 'While one community struggles to ease tensions that threaten to divide from within, the true nature of another group comes into focus; a mission to rescue a friend has potentially deadly consequences.'
                 ],
                 'episode 13' => [
                     'number' => 13,
                     'title' => 'Chokepoint',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/19/03/05/09/56/1270428.jpg',
                     'description' => 'Daryl\'s daring rescue mission forces Alpha to unleash a group of her own to retrieve what belongs to her, even if the price is paid in blood, the Kingdom\'s plans to reunite the communities are put in jeopardy.'
                 ],
                 'episode 14' => [
                     'number' => 14,
                     'title' => 'Scars',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/19/03/14/10/29/4987219.jpg',
                     'description' => 'An outsider\'s arrival forces Alexandria to rehash devastating old wounds; eye-opening secrets from the past are revealed.'
                 ],
                 'episode 15' => [
                     'number' => 15,
                     'title' => 'The Calm Before',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/19/03/19/14/45/1751507.jpg',
                     'description' => 'The four communities come together in celebration at the Kingdom\'s fair, but while some pacts are renewed, others come at a much steeper price.'
                 ],
                 'episode 16' => [
                     'number' => 16,
                     'title' => 'The Storm',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/19/03/25/17/09/3714903.jpg',
                     'description' => 'In the aftermath of an overwhelming loss, the communities must brave a ferocious blizzard; as one group deals with an enemy from within, another is forced to make a life or death decision.'
                 ]
             ]
@@ -1087,133 +1087,133 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'Lines We Cross',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/19/09/18/10/44/1012203.jpg',
                     'description' => 'The group in Oceanside continues to train in case the Whisperers return; tensions are high as the heroes struggle to hold onto their concept of civilization.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'We Are the End of the World',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/19/10/08/09/37/1503361.jpg',
                     'description' => 'The origins of Alpha and Beta are revealed; Alpha attempts to toughen up Lydia as they prepare to walk with the dead; the Whisperers create their herds.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'Ghosts',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/19/10/15/15/11/0109381.jpg',
                     'description' => 'The threat of the Whisperers return leads to paranoia sweeping over Alexandria; in the meantime, Carol battles with the need for revenge.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Silence the Whisperers',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/19/10/22/14/48/3717639.jpg',
                     'description' => 'The outcast Lydia is badly treated by three Alexandrians. When Negan saves her from an attack, the life changes in Alexandria. Meanwhile Michonne and a group of Alexandrians head to Hilltop to save survivors of a collapsed wall.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'What It Always Is',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/19/10/29/14/51/5751852.jpg',
                     'description' => 'Supplies go missing from Hilltop; Negan is idolized by Brandon; Ezekiel holds a secret.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'Bonds',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/19/11/05/14/45/3175540.jpg',
                     'description' => 'Carol and Daryl go on a mission together; Siddiq struggles to solve a mystery.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'Open Your Eyes',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/19/11/14/13/55/5614643.jpg',
                     'description' => 'Carol pushes boundaries that make Daryl uneasy; Alpha and Beta have reservations about someone.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'The World Before',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/19/11/20/17/19/0277252.jpg',
                     'description' => 'A fight causes tensions in Oceanside; The Alexandrians set out on a high-stakes mission.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'Squeeze',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/20/02/19/15/26/0603070.jpg',
                     'description' => 'The collected communities are reluctantly respecting the new borderlines being imposed on them.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'Stalker',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/20/02/25/10/54/3006724.jpg',
                     'description' => 'The group must defend Alexandria from a threatening outside force.'
                 ],
                 'episode 11' => [
                     'number' => 11,
                     'title' => 'Morning Star',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/20/03/02/17/04/1350873.jpg',
                     'description' => 'The Whisperers are coming for Hilltop, after Daryl and Lydia\'s encounter with Alpha, the communities must decide whether to run or fight; Eugene\'s communication with Stephanie gets complicated.'
                 ],
                 'episode 12' => [
                     'number' => 12,
                     'title' => 'Walk with Us',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/20/03/10/09/58/2527155.jpg',
                     'description' => 'The survivors try to escape from the Whisperer\'s walkers horde after the battle of Hilltop.'
                 ],
                 'episode 13' => [
                     'number' => 13,
                     'title' => 'What We Become',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/20/03/16/17/36/5247702.jpg',
                     'description' => 'Michonne takes Virgil back to his mysterious island to reunite with his family; in exchange, Virgil promises weapons that could change the tide of the Whisperer War.'
                 ],
                 'episode 14' => [
                     'number' => 14,
                     'title' => 'Look at the Flowers',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/20/03/24/09/24/5217460.jpg',
                     'description' => 'Heroes and villains reckon with the aftermath of the Hilltop fire; Eugene takes a group on a journey to meet Stephanie, with the hopes of befriending another civilization.'
                 ],
                 'episode 15' => [
                     'number' => 15,
                     'title' => 'The Tower',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/20/03/31/11/01/0141042.jpg',
                     'description' => 'The communities prepare for the final battle of the Whisperer War; meanwhile, Eugene\'s group encounters Princess.'
                 ],
                 'episode 16' => [
                     'number' => 16,
                     'title' => 'A Certain Doom',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/20/08/20/09/50/4767416.jpg',
                     'description' => 'Beta engages the final battle of the Whisperer War.'
                 ],
                 'episode 17' => [
                     'number' => 17,
                     'title' => 'Home Sweet Home',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/21/01/13/10/38/1141653.jpg',
                     'description' => 'Maggie returns, to the dismay of Negan; the trials she endured since leaving have made her harder in order for her and her son to survive; Daryl and Maggie unexpectedly fight an unseen and unknown threat.'
                 ],
                 'episode 18' => [
                     'number' => 18,
                     'title' => 'Find Me',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/21/03/08/13/41/2671063.jpg',
                     'description' => 'Daryl and Carol find an old cabin that takes Daryl back to his years away from the group after Rick disappeared; he relives the painful memory of meeting a reticent survivor and the toxic events that amplified his relationship with Dog.'
                 ],
                 'episode 19' => [
                     'number' => 19,
                     'title' => 'One More',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/21/03/08/13/42/3380051.jpg',
                     'description' => 'With Maggie\'s map, Gabriel and Aaron search for food and supplies to bring back to Alexandria, checking out one more location, they chance upon a stash; faith is broken and optimism is fragmented when they are put to the ultimate test.'
                 ],
                 'episode 20' => [
                     'number' => 20,
                     'title' => 'Splinter',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/21/03/22/11/44/5186923.jpg',
                     'description' => 'Eugene, Ezekiel, Yumiko, and Princess are captured and separated. Princess struggles with memories of her traumatic past and tries to escape one way or another with the help of Ezekiel.'
                 ],
                 'episode 21' => [
                     'number' => 21,
                     'title' => 'Diverged',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/21/03/29/12/52/3462489.jpg',
                     'description' => 'Daryl and Carol come to a fork in the road and head their separate ways. Each going into their own type of survival mode, the easiest of challenges become much harder.'
                 ],
                 'episode 22' => [
                     'number' => 22,
                     'title' => 'Here\'s Negan',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/21/04/01/23/47/5776749.jpg',
                     'description' => 'Carol takes Negan on a journey, hoping to minimize the increasing tension. Negan reflects on the events that led him to this point and comes to a conclusion about his future.'
                 ]
             ]
@@ -1251,145 +1251,145 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'Acheron: Part I',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/21/08/17/17/44/5983353.jpg',
                     'description' => 'Daryl leads a team to scavenge the military base he discovered; Maggie tells her story, prompting a new mission for survival that only Negan can lead; Eugene and his group go through assessment by the Commonwealth\'s paramilitary police.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'Acheron: Part II',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/21/08/24/12/40/1389835.jpg',
                     'description' => 'Maggie\'s mission takes the team through a subway tunnel, challenged by a recalcitrant Negan and lurking walkers, with Eugene\'s group, Yumiko searches for answers about her brother and challenges the processes at the Commonwealth outpost.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'Hunted',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/21/09/01/15/07/4314040.jpg',
                     'description' => 'Maggie\'s mission team gets separated and hunted by the Reapers, Carol, Rosita, Magna and Kelly attempt to catch horses for Alexandria; Judith, RJ, Hershel and Gracie cope with their parents going away.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Rendition',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/21/09/09/14/19/1230058.jpg',
                     'description' => 'Daryl and Dog get captured by the Reapers; they are taken to the Meridian and reconnect with a familiar figure from their past.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'Out of the Ashes',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/21/09/15/13/42/1134030.jpg',
                     'description' => 'Aaron, Carol, Lydia, and Jerry go to the Hilltop ruins for blacksmith tools and nearby game, Eugene\'s group goes through orientation at the Commonwealth; Maggie and Negan trudge through the woods; Judith and the kids clash with teenagers.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'On the Inside',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/21/09/21/14/38/2133771.jpg',
                     'description' => 'Escaping from walkers, Connie and Virgil hide in a house occupied by mysterious creatures; Pope tests Daryl\'s loyalty to the Reapers with a conflicting mission; Kelly leaves Alexandria in search of Connie.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'Promises Broken',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/21/09/28/14/57/1991638.jpg',
                     'description' => 'Maggie and Elijah learn a new survival tactic from Negan; Eugene\'s group clears walkers to pay their fines, Yumiko interviews for an upper-class job, Daryl learns more about Leah and the Reapers; Gabriel encounters a man of God.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'For Blood',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/21/10/06/16/13/4545965.jpg',
                     'description' => 'The Reapers defend Meridian from an incoming herd; Pope suspects Maggie is behind the attack, while Daryl treads carefully; Alexandrians scramble to protect themselves when a violent storm leaves them vulnerable to walkers.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'No Other Way',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/22/01/25/16/53/2406839.jpg',
                     'description' => 'Hellfire rains down on those at Meridian as every fight with the Reapers proves to be a brutal battle. At home in Alexandria, the violent rainstorm rages on as walkers continue to pour in, threatening everyone\'s safety.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'New Haunts',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/22/03/01/16/54/5259678.jpg',
                     'description' => 'The heroes experience Halloween in the Commonwealth; Daryl and Rosita undergo military training led by Mercer; Carol investigates Ezekiel\'s medical condition.'
                 ],
                 'episode 11' => [
                     'number' => 11,
                     'title' => 'Rogue Element',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/22/03/03/10/21/3294338.jpg',
                     'description' => 'Eugene looks for Stephanie after she mysteriously goes missing. Connie investigates a story on Trooper Davis. Carol helps Hornsby with a labor dispute at a drug farm.'
                 ],
                 'episode 12' => [
                     'number' => 12,
                     'title' => 'The Lucky Ones',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/22/03/09/15/55/0608758.jpg',
                     'description' => 'Aaron and Maggie meet Gov. Pamela Milton as she tours Alexandria, Oceanside and Hilltop; Ezekiel finds himself lucky during a routine checkup; Eugene processes Max\'s story.'
                 ],
                 'episode 13' => [
                     'number' => 13,
                     'title' => 'Warlords',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/22/03/15/15/28/5986949.jpg',
                     'description' => 'Maggie, Lydia, and Elijah help a stranger from another community called Riverbend. They run into Aaron, who tells them about a mission he embarked on with Gabriel as emissaries for the Commonwealth.'
                 ],
                 'episode 14' => [
                     'number' => 14,
                     'title' => 'The Rotten Core',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/22/03/28/17/07/4927710.jpg',
                     'description' => 'Maggie, Lydia and Elijah help Aaron and Gabriel on a rescue mission; in the chaos, Negan finds himself watching over Hershel; Sebastian coerces Daryl and Rosita into pulling a heist.'
                 ],
                 'episode 15' => [
                     'number' => 15,
                     'title' => 'Trust',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/22/03/30/11/25/0129269.jpg',
                     'description' => 'Hornsby marches Daryl and troops to confront Maggie at Hilltop, after a harrowing heist, Rosita gets Connie, Kelly, Eugene, and Max to investigate the Miltons; Ezekiel helps hospital patients in need.'
                 ],
                 'episode 16' => [
                     'number' => 16,
                     'title' => 'Acts of God',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/22/04/07/11/16/4245227.jpg',
                     'description' => 'Maggie prepares to defend Hilltop and the people of Riverbend against Hornsby.'
                 ],
                 'episode 17' => [
                     'number' => 17,
                     'title' => '11.17',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/21/04/19/14/51/5593951.jpg',
                     'description' => ''
                 ],
                 'episode 18' => [
                     'number' => 18,
                     'title' => '11.18',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/21/04/19/14/51/5593951.jpg',
                     'description' => ''
                 ],
                 'episode 19' => [
                     'number' => 19,
                     'title' => '11.19',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/21/04/19/14/51/5593951.jpg',
                     'description' => ''
                 ],
                 'episode 20' => [
                     'number' => 20,
                     'title' => '11.20',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/21/04/19/14/51/5593951.jpg',
                     'description' => ''
                 ],
                 'episode 21' => [
                     'number' => 21,
                     'title' => '11.21',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/21/04/19/14/51/5593951.jpg',
                     'description' => ''
                 ],
                 'episode 22' => [
                     'number' => 22,
                     'title' => '11.22',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/21/04/19/14/51/5593951.jpg',
                     'description' => ''
                 ],
                 'episode 23' => [
                     'number' => 23,
                     'title' => '11.23',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/21/04/19/14/51/5593951.jpg',
                     'description' => ''
                 ],
                 'episode 24' => [
                     'number' => 24,
                     'title' => '11.24',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/21/04/19/14/51/5593951.jpg',
                     'description' => ''
                 ]
             ]
@@ -1427,61 +1427,61 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'Winter Is Coming',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/18/06/27/06/02/2385641.jpg',
                     'description' => 'Eddard Stark is torn between his family and an old friend when asked to serve at the side of King Robert Baratheon, Viserys plans to wed his sister to a nomadic warlord in exchange for an army.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'The Kingsroad',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/18/06/27/06/04/0654457.jpg',
                     'description' => 'While Bran recovers from his fall, Ned takes only his daughters to King\'s Landing. Jon Snow goes with his uncle Benjen to the Wall. Tyrion joins them.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'Lord Snow',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/18/06/27/06/05/5365463.jpg',
                     'description' => 'Jon begins his training with the Night\'s Watch; Ned confronts his past and future at King\'s Landing, Daenerys finds herself at odds with Viserys.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Cripples, Bastards, and Broken Things',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/18/06/27/06/07/5757729.jpg',
                     'description' => 'Eddard investigates Jon Arryn\'s murder. Jon befriends Samwell Tarly, a coward who has come to join the Night\'s Watch.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'The Wolf and the Lion',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/06/27/06/10/2417222.jpg',
                     'description' => 'Catelyn has captured Tyrion and plans to bring him to her sister, Lysa Arryn, at the Vale, to be tried for his, supposed, crimes against Bran. Robert plans to have Daenerys killed, but Eddard refuses to be a part of it and quits.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'A Golden Crown',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/18/06/27/06/13/0811053.jpg',
                     'description' => 'While recovering from his battle with Jaime, Eddard is forced to run the kingdom while Robert goes hunting. Tyrion demands a trial by combat for his freedom. Viserys is losing his patience with Drogo.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'You Win or You Die',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/18/06/27/06/15/3567398.jpg',
                     'description' => 'Robert has been injured while hunting and is dying. Jon and the others finally take their vows to the Night\'s Watch. A man, sent by Robert, is captured for trying to poison Daenerys. Furious, Drogo vows to attack the Seven Kingdoms.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'The Pointy End',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/06/27/06/17/5979990.jpg',
                     'description' => 'The Lannisters press their advantage over the Starks; Robb rallies his father\'s northern allies and heads south to war; The White Walkers attack the Wall; Tyrion returns to his father with some new friends.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'Baelor',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/06/27/06/20/0369132.jpg',
                     'description' => 'Robb goes to war against the Lannisters. Jon finds himself struggling on deciding if his place is with Robb or the Night\'s Watch. Drogo has fallen ill from a fresh battle wound. Daenerys is desperate to save him.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'Fire and Blood',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/18/06/27/06/22/3714566.jpg',
                     'description' => 'Robb vows to get revenge on the Lannisters. Jon must officially decide if his place is with Robb or the Night\'s Watch. Daenerys says her final goodbye to Drogo.'
                 ]
             ]
@@ -1522,61 +1522,61 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'The North Remembers',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/05/24/11/58/2659291.jpg',
                     'description' => 'Tyrion arrives at King\'s Landing to take his father\'s place as Hand of the King. Stannis Baratheon plans to take the Iron Throne for his own. Robb tries to decide his next move in the war. The Night\'s Watch arrive at the house of Craster.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'The Night Lands',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/18/05/24/11/58/2715541.jpg',
                     'description' => 'Arya makes friends with Gendry. Tyrion tries to take control of the Small Council. Theon arrives at his home, Pyke, in order to persuade his father into helping Robb with the war. Jon tries to investigate Craster\'s secret.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'What Is Dead May Never Die',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/05/24/11/58/2767104.jpg',
                     'description' => 'Tyrion tries to see who he can trust in the Small Council. Catelyn visits Renly to try and persuade him to join Robb in the war. Theon must decide if his loyalties lie with his own family or with Robb.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Garden of Bones',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/18/05/24/11/58/2807729.jpg',
                     'description' => 'Lord Baelish arrives at Renly\'s camp just before he faces off against Stannis. Daenerys and her company are welcomed into the city of Qarth. Arya, Gendry, and Hot Pie find themselves imprisoned at Harrenhal.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'The Ghost of Harrenhal',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/18/05/24/11/58/2867105.jpg',
                     'description' => 'Tyrion investigates a secret weapon that King Joffrey plans to use against Stannis. Meanwhile, as a token for saving his life, Jaqen H\'ghar offers to kill three people that Arya chooses.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'The Old Gods and the New',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/18/05/24/11/58/2923355.jpg',
                     'description' => 'Theon seizes control of Winterfell. Jon captures a wildling, named Ygritte. The people of King\'s Landing begin to turn against King Joffrey. Daenerys looks to buy ships to sail for the Seven Kingdoms.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'A Man Without Honor',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/05/24/11/58/2979606.jpg',
                     'description' => 'Bran and Rickon have escaped Winterfell. Theon tries to hunt them down. Daenerys\' dragons have been stolen. Jon travels through the wilderness with Ygritte as his prisoner. Sansa has bled and is now ready to have Joffrey\'s children.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'The Prince of Winterfell',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/05/24/11/58/3031168.jpg',
                     'description' => 'Stannis is just days from King\'s Landing. Tyrion prepares for his arrival. Jon and Qhorin are taken prisoner by the wildlings. Catelyn is arrested for releasing Jaime. Arya, Gendry, and Hot Pie plan to escape from Harrenhal.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'Blackwater',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/18/05/24/11/58/3071794.jpg',
                     'description' => 'Stannis Baratheon\'s fleet and army arrive at King\'s Landing and the battle for the city begins. Cersei plans for her and her children\'s future.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'Valar Morghulis',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/18/05/24/11/58/3131169.jpg',
                     'description' => 'Joffrey puts Sansa aside for Margaery Tyrell. Robb marries Talisa Maegyr. Jon prepares to meet Mance Rayder. Arya says farewell to Jaqen H\'ghar. Daenerys tries to rescue her dragons.'
                 ]
             ]
@@ -1619,61 +1619,61 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'Valar Dohaeris',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/06/27/06/52/2959979.jpg',
                     'description' => 'Jon is brought before Mance Rayder, the King Beyond the Wall, while the Night\'s Watch survivors retreat south. In King\'s Landing, Tyrion asks for his reward. Littlefinger offers Sansa a way out.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'Dark Wings, Dark Words',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/18/06/27/06/54/3400654.jpg',
                     'description' => 'Bran and company meet Jojen and Meera Reed. Arya, Gendry, and Hot Pie meet the Brotherhood. Jaime travels through the wilderness with Brienne. Sansa confesses her true feelings about Joffery to Margaery.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'Walk of Punishment',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/18/06/27/06/57/4222649.jpg',
                     'description' => 'Robb and Catelyn arrive at Riverrun for Lord Hoster Tully\'s funeral. Tywin names Tyrion the new Master of Coin. Arya says goodbye to Hot Pie. The Night\'s Watch returns to Craster\'s. Brienne and Jaime are taken prisoner.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'And Now His Watch Is Ended',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/06/27/06/59/5591191.jpg',
                     'description' => 'Jaime mopes over his lost hand. Cersei is growing uncomfortable with the Tyrells. The Night\'s Watch is growing impatient with Craster. Daenerys buys the Unsullied.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'Kissed by Fire',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/18/06/27/07/01/3955320.jpg',
                     'description' => 'Robb\'s army is falling apart. Jaime reveals a story, to Brienne, that he has never told anyone. Jon breaks his vows. The Hound is granted his freedom. The Lannisters hatch a new plan.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'The Climb',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/18/06/27/07/03/5169467.jpg',
                     'description' => 'Jon and the wildlings scale the Wall. The Brotherhood sells Gendry to Melisandre. Robb does what he can to win back the Freys. Tyrion tells Sansa about their engagement.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'The Bear and the Maiden Fair',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/18/06/27/07/05/4471102.jpg',
                     'description' => 'Jon and the wildlings travel south of the Wall. Talisa tells Robb that she\'s pregnant. Arya runs away from the Brotherhood. Daenerys arrives at Yunkai. Jaime leaves Brienne behind at Harrenhal.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'Second Sons',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/18/06/27/07/07/2475853.jpg',
                     'description' => 'Daenerys tries to persuade the Second Sons to join her against Yunkai. Stannis releases Davos from the dungeons. Sam and Gilly are attacked by a White Walker. Sansa and Tyrion wed.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'The Rains of Castamere',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/18/06/27/07/11/1966628.jpg',
                     'description' => 'Robb and Catelyn arrive at the Twins for the wedding. Jon is put to the test to see where his loyalties truly lie. Bran\'s group decides to split up. Daenerys plans an invasion of Yunkai.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'Mhysa',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/210/117/21011762_20130611111017986.jpg',
                     'description' => 'Bran and company travel beyond the Wall. Sam returns to Castle Black. Jon says goodbye to Ygritte. Jaime returns to King\'s Landing. The Night\'s Watch asks for help from Stannis.'
                 ]
             ]
@@ -1716,61 +1716,61 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'Two Swords',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/14/03/31/11/58/243956.jpg',
                     'description' => 'Tyrion welcomes a guest to King\'s Landing. At Castle Black, Jon stands trial. Daenerys is pointed to Meereen, the mother of all slave cities. Arya runs into an old enemy.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'The Lion and the Rose',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/14/04/10/10/57/560209.jpg',
                     'description' => 'Joffrey and Margaery\'s wedding has come. Tyrion breaks up with Shae. Ramsay tries to prove his worth to his father. Bran and company find a Weirwood tree.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'Breaker of Chains',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/14/04/11/11/11/431411.jpg',
                     'description' => 'Tyrion is arrested for the murder of Joffrey and awaits trial. Sansa escapes King\'s Landing. Sam sends Gilly to Mole\'s Town as the Night\'s Watch finds itself in a tight spot. Meereen challenges Daenerys.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Oathkeeper',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/14/01/31/10/39/180057.jpg',
                     'description' => 'Jaime entrusts a task to Brienne. Daenerys frees Meereen. Jon is given permission to lead a group of Night\'s Watchmen to Craster\'s Keep. Bran and company are taken hostage.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'First of His Name',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/14/05/05/11/33/308480.jpg',
                     'description' => 'Tommen is crowned King of the Seven Kingdoms. Cersei builds her case against Tyrion. Sansa and Lord Baelish arrive at the Eyrie. The Night\'s Watch attacks Craster\'s Keep.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'The Laws of Gods and Men',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/14/05/16/14/13/117076.jpg',
                     'description' => 'Tyrion\'s trial has come. Yara and her troops storm the Dreadfort to free Theon. Daenerys meets Hizdar zo Loraq. Stannis makes a deal with the Iron Bank of Braavos.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'Mockingbird',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/18/06/27/07/21/1285758.jpg',
                     'description' => 'Tyrion tries to find a champion. Daenerys sleeps with Daario. The Hound becomes wounded. Jon\'s advice is ignored at Castle Black. Brienne and Podrick receive a tip on Arya\'s whereabouts.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'The Mountain and the Viper',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/14/05/28/11/20/314866.jpg',
                     'description' => 'Theon helps Ramsay seize Moat Cailin. The wildlings attack Mole\'s Town. Sansa comes up with a story to protect Lord Baelish. Daenerys finds out a secret about Jorah Mormont. Oberyn Martell faces Gregor Clegane, the Mountain.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'The Watchers on the Wall',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/18/06/27/07/24/3164304.jpg',
                     'description' => 'The battle between the Night\'s Watch and the wildlings has come.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'The Children',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/18/06/27/07/27/0010980.jpg',
                     'description' => 'Jon makes an important decision. Daenerys experiences new consequences. Brienne and Podrick have an unexpected encounter. Bran achieves a goal, while Tyrion makes an important discovery.'
                 ]
             ]
@@ -1813,61 +1813,61 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'The Wars to Come',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/15/04/10/10/58/087226.jpg',
                     'description' => 'Cersei and Jaime adjust to a world without Tywin. Tyrion and Varys arrive at Pentos. In Meereen, a new enemy emerges. Jon is caught between two kings.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'The House of Black and White',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/15/04/16/10/33/438316.jpg',
                     'description' => 'Arya arrives in Braavos. Jaime takes on a secret mission. Ellaria Sand seeks revenge for Oberyn\'s death. Stannis makes Jon a generous offer as the Night\'s Watch elects a new Lord Commander. Daenerys is faced with a difficult decision.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'High Sparrow',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/15/04/23/11/26/207349.jpg',
                     'description' => 'Tommen and Margaery wed. Arya has trouble adapting to her new life. Littlefinger reveals his plans to Sansa. Jon gives his first orders as Lord Commander. Tyrion and Varys arrive in Volantis.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Sons of the Harpy',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/15/05/05/12/21/292320.jpg',
                     'description' => 'Jorah Mormont sets sail alongside his prisoner, Tyrion. Cersei makes a move against the Tyrells. Jaime and Bronn sneak into Dorne. Ellaria and the Sand Snakes make their plans. Melisandre tempts Jon. The Harpies attack.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'Kill the Boy',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/15/05/12/11/00/567882.jpg',
                     'description' => 'Daenerys arrests the heads of Meereen\'s great families. Jon makes a difficult decision. Theon is forced to face Sansa. Stannis rides south. Tyrion and Jorah enter the ruins of Old Valyria.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'Unbowed, Unbent, Unbroken',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/15/05/18/10/39/140928.jpg',
                     'description' => 'Arya is put to the test. Tyrion and Jorah are captured by slavers. Loras Tyrell is judged by the Sparrows. Jaime and Bronn face the Sand Snakes. Sansa marries Ramsay Bolton.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'The Gift',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/15/05/25/14/46/087233.jpg',
                     'description' => 'Jon heads east as trouble begins to stir for Sam and Gilly at Castle Black. Sansa asks Theon for help. Tyrion and Jorah are sold as slaves. Cersei savors her triumph over the Tyrells as new plots are developed in the shadows.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'Hardhome',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/15/05/29/10/40/277382.jpg',
                     'description' => 'Tyrion advises Daenerys. Sansa forces Theon to tell her a secret. Cersei remains stubborn. Arya meets her first target. Jon and Tormund meet with the wildling elders.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'The Dance of Dragons',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/15/06/05/12/19/323911.jpg',
                     'description' => 'Jon and the wildlings return to Castle Black. Jaime meets with Doran Martell. Stannis makes a hard choice. Arya runs into Meryn Trant. Daenerys attends the grand reopening of the fighting pits.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'Mother\'s Mercy',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/18/06/27/07/41/0888086.jpg',
                     'description' => 'Stannis arrives at Winterfell. Tyrion runs Meereen as Daario and Jorah go after Daenerys. Jaime and Myrcella leave Dorne. Jon sends Sam and Gilly to Oldtown. Arya challenges the Many-Faced God. Cersei confesses her sins.'
                 ]
             ]
@@ -1912,61 +1912,61 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'The Red Woman',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/16/04/22/12/18/180815.jpg',
                     'description' => 'The fate of Jon Snow is revealed. Daenerys is brought before Khal Moro. Tyrion gets used to living in Meereen. Ramsay sends his dogs after Theon and Sansa. Ellaria and the Sand Snakes make their move. Cersei mourns for Myrcella.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'Home',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/16/04/28/11/07/300957.jpg',
                     'description' => 'Bran trains with the Three-Eyed Raven. Tommen meets with Cersei. Tyrion makes a bold move. Theon leaves while at Pyke new issues arise. Ramsay\'s brother is born. Davos asks Melisandre for a miracle.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'Oathbreaker',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/16/05/06/17/24/491224.jpg',
                     'description' => 'Daenerys arrives at Vaes Dothrak. Sam and Gilly sail for Horn Hill. Arya trains as No One. Varys finds information on the Sons of the Harpy. Ramsay receives a gift. Tommen meets with the High Sparrow. At Castle Black, a miracle occurs.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Book of the Stranger',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/16/05/12/11/32/053649.jpg',
                     'description' => 'Sansa arrives at Castle Black. Tyrion makes a deal with the slave masters. Jorah and Daario sneak into Vaes Dothrak. Ramsay sends a letter to Jon. Theon arrives at Pyke. Cersei and Olenna Tyrell plot against the High Sparrow.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'The Door',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/16/05/19/14/07/215088.jpg',
                     'description' => 'Sansa and Jon make plans. Arya is given another chance to prove herself. Jorah confesses a secret to Daenerys. Tyrion meets with a red priestess. Yara finds her rule tested. Bran discovers the origin of the White Walkers.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'Blood of My Blood',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/16/05/26/09/37/299287.jpg',
                     'description' => 'Bran and Meera find a new ally. Gilly meets Sam\'s family. Arya makes a difficult choice. The Lannisters and Tyrells march against the High Sparrow.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'The Broken Man',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/16/06/02/11/13/208569.jpg',
                     'description' => 'Jon and Sansa gather troops. Jaime arrives at Riverrun. Olenna Tyrell plans to leave King\'s Landing. Theon and Yara plan a destination. Arya makes plans to leave.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'No One',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/16/06/09/11/14/528367.jpg',
                     'description' => 'Brienne arrives at Riverrun. Arya seeks shelter. Jaime meets with Edmure Tully. Cersei challenges the Faith. Sandor Clegane hunts for revenge. Tyrion faces the consequences of earlier decisions.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'Battle of the Bastards',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/16/06/16/14/39/152189.jpg',
                     'description' => 'Jon and Sansa face Ramsay Bolton on the fields of Winterfell. Daenerys strikes back at her enemies. Theon and Yara arrive in Meereen.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'The Winds of Winter',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/16/06/23/09/36/036958.jpg',
                     'description' => 'Cersei and Loras Tyrell stand trial by the gods. Daenerys prepares to set sail for Westeros. Davos confronts Melisandre. Sam and Gilly arrive in the Citadel. Bran discovers a long-kept secret. Lord Frey has an uninvited guest.'
                 ]
             ]
@@ -2004,43 +2004,43 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'Dragonstone',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/07/13/10/24/354996.jpg',
                     'description' => 'Jon organizes the North\'s defenses. Cersei tries to even the odds. Daenerys comes home. Arya reminds the Freys the North remembers. Sam adapts to life in Oldtown. The Night King makes his way south.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'Stormborn',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/07/20/11/16/431571.jpg',
                     'description' => 'Daenerys receives an unexpected visitor. Jon faces resistance. Tyrion plans the conquest of Westeros. Cersei gathers her allies. Arya has a reunion with old friends. Sam risks his career and life.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'The Queen\'s Justice',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/17/07/27/10/39/115895.jpg',
                     'description' => 'Jon and Daenerys finally meet. Cersei gains a new ally. Sansa receives an unexpected visitor. Sam is confronted for his actions.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'The Spoils of War',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/08/03/10/15/245019.jpg',
                     'description' => 'Daenerys takes matters into her own hands. Arya reaches her destination. Jaime and Bronn collect the spoils from the war with the Tyrells.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'Eastwatch',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/17/08/10/10/00/249399.jpg',
                     'description' => 'Daenerys demands loyalty from the surviving Lannister soldiers; Jon heeds Bran\'s warning about White Walkers on the move; Cersei vows to vanquish anyone or anything that stands in her way.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'Beyond the Wall',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/08/17/09/56/412724.jpg',
                     'description' => 'Jon and his team go beyond the wall to capture a wight. Daenerys has to make a tough decision.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'The Dragon and the Wolf',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/09/04/13/44/292046.jpg',
                     'description' => 'Everyone meets in King\'s Landing to discuss the fate of the realm. In Winterfell, Sansa confronts Arya. Sam reaches Winterfell, where he and Bran discover a shocking secret about Jon Snow.'
                 ]
             ]
@@ -2076,43 +2076,37 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'Winterfell',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/19/04/17/18/11/0432743.jpg',
                     'description' => 'Jon and Daenerys arrive in Winterfell and are met with skepticism. Sam learns about the fate of his family. Cersei gives Euron the reward he aims for. Theon follows his heart.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'A Knight of the Seven Kingdoms',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/19/04/18/10/02/1108671.jpg',
                     'description' => 'Jaime faces judgment and Winterfell prepares for the battle to come.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'The Long Night',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/19/04/25/09/11/4547536.jpg',
                     'description' => 'The Night King and his army have arrived at Winterfell and the great battle begins.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'The Last of the Starks',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/19/05/02/10/14/5461585.jpg',
                     'description' => 'The Battle of Winterfell is over and a new chapter for Westeros begins.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'The Bells',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/19/05/09/10/53/0083221.jpg',
                     'description' => 'Forces have arrived at King\'s Landing for the final battle.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'The Iron Throne',
-                    'poster' => '',
-                    'description' => 'In the aftermath of the devastating attack on King\'s Landing, Daenerys must face the survivors.'
-                ],
-                'episode 07' => [
-                    'number' => 7,
-                    'title' => 'The Iron Throne',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/19/05/16/09/42/5774364.jpg',
                     'description' => 'In the aftermath of the devastating attack on King\'s Landing, Daenerys must face the survivors.'
                 ]
             ]
@@ -2137,43 +2131,43 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'Pilot',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/41/050383.jpg',
                     'description' => 'Diagnosed with terminal lung cancer, chemistry teacher Walter White teams up with former student Jesse Pinkman to cook and sell crystal meth.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'Cat\'s in the Bag...',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/05/31/14/41/066789.jpg',
                     'description' => 'After their first drug deal goes terribly wrong, Walt and Jesse are forced to deal with a corpse and a prisoner. Meanwhile, Skyler grows suspicious of Walt\'s activities.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => '...And the Bag\'s in the River',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/05/31/14/41/073820.jpg',
                     'description' => 'Walt and Jesse clean up after the bathtub incident before Walt decides what course of action to take with their prisoner Krazy-8.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Cancer Man',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/05/31/14/41/084758.jpg',
                     'description' => 'Walt tells the rest of his family about his cancer. Jesse tries to make amends with his own parents.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'Gray Matter',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/05/31/14/41/108821.jpg',
                     'description' => 'Walt rejects everyone who tries to help him with the cancer. Jesse tries his best to create Walt\'s meth, with the help of an old friend.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'Crazy Handful of Nothin\'',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/41/117727.jpg',
                     'description' => 'With the side effects and cost of his treatment mounting, Walt demands that Jesse finds a wholesaler to buy their drugs - which lands him in trouble.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'A No-Rough-Stuff-Type Deal',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/05/31/14/41/120071.jpg',
                     'description' => 'Walt and Jesse try to up their game by making more of the crystal every week for Tuco. Unfortunately, some of the ingredients they need are not easy to find. Meanwhile, Skyler realizes that her sister is a shoplifter.'
                 ]
             ]
@@ -2195,79 +2189,79 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'Seven Thirty-Seven',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/17/05/31/14/41/130227.jpg',
                     'description' => 'Walt and Jesse realize how dire their situation is. They must come up with a plan to kill Tuco before Tuco kills them first.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'Grilled',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/17/05/31/14/41/138196.jpg',
                     'description' => 'Walt\'s disappearance is met with investigation by both his wife and Hank, as Tuco Salamanca intends to leave town with his kidnapped cooks.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'Bit by a Dead Bee',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/17/05/31/14/41/147415.jpg',
                     'description' => 'Walt and Jesse try to come up with alibis for their disappearances.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Down',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/17/05/31/14/41/157258.jpg',
                     'description' => 'Skyler keeps mysteriously leaving without talking to Walt. Jesse\'s parents throw him out of his own house.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'Breakage',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/05/31/14/41/166946.jpg',
                     'description' => 'Walt and Jesse decide to start their own little empire with the help of Jesse\'s friends: Skinny Pete, Combo, and Badger. Meanwhile, Hank tries to pull himself together after his encounter with Tuco.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'Peekaboo',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/41/172102.jpg',
                     'description' => 'After Skinny Pete gets ripped off, Walt makes Jesse go get the money. Meanwhile, Walt\'s cover story on how Elliott and Gretchen are paying for his medical treatment is on the verge of collapsing.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'Negro y Azul',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/05/31/14/41/182883.jpg',
                     'description' => 'Rumor is spreading that Jesse killed the man that ripped Skinny Pete off. Walt uses this to his advantage on expanding their territory. Meanwhile, Hank has been promoted to the El Paso office. But it\'s not all he hoped it would be.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'Better Call Saul',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/05/31/14/41/187884.jpg',
                     'description' => 'Badger is caught by the DEA. Walt and Jesse hire the best criminal lawyer in town, Saul Goodman.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => '4 Days Out',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/41/196009.jpg',
                     'description' => 'Walt and Jesse become stranded out in the middle of the desert after cooking more crystal.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'Over',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/17/05/31/14/41/201165.jpg',
                     'description' => 'Walt\'s cancer has greatly improved. Time to celebrate. Meanwhile Jesse tries to meet his new girlfriend\'s father.'
                 ],
                 'episode 11' => [
                     'number' => 11,
                     'title' => 'Mandala',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/05/31/14/41/209915.jpg',
                     'description' => 'Walt and Jesse\'s little empire begins to crumble. Saul tries to set them up with a mysterious distributor.'
                 ],
                 'episode 12' => [
                     'number' => 12,
                     'title' => 'Phoenix',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/41/216790.jpg',
                     'description' => 'Walt and Skyler have a baby girl. Now that Jesse is hooked on heroin, Walt refuses to give him his money until he gets clean. Meanwhile, as an excuse for his money, Walt decides to donate the money to himself through his son\'s new website.'
                 ],
                 'episode 13' => [
                     'number' => 13,
                     'title' => 'ABQ',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/17/05/31/14/41/229446.jpg',
                     'description' => 'Walt\'s lies have pushed Skyler to her limit. She leaves with the kids. Meanwhile, Jesse blames himself for Jane\'s death and goes into rehab.'
                 ]
             ]
@@ -2289,79 +2283,79 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'No Más',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/41/231946.jpg',
                     'description' => 'Skyler goes through with her plans to divorce Walt. Jesse finishes rehab.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'Caballo sin Nombre',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/05/31/14/41/233196.jpg',
                     'description' => 'Walter, Jr. is having a rough time accepting his parents\' separation. Jesse buys his old house from his parents. Meanwhile, two mysterious men have come into town looking for Walt.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'I.F.T.',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/41/239290.jpg',
                     'description' => 'Walt has moved back into the house without Skyler\'s consent. Now she can\'t get him out. Meanwhile, Jesse continues to cope with Jane\'s death.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Green Light',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/17/05/31/14/41/241009.jpg',
                     'description' => 'Walt\'s world crumbles even more after finding out that Skyler is cheating on him. Jesse tries to set up a meeting with Gus to try and sell his own version of the blue meth. Meanwhile, Hank is growing obsessed with finding Heisenberg.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'Más',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/41/242728.jpg',
                     'description' => 'Gus tries to get Walt back in the business by offering him three million dollars and a brand new lab. Jesse is furious that Walt received half of the money for his blue meth. Hank tries to track down the RV meth lab.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'Sunset',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/05/31/14/41/244446.jpg',
                     'description' => 'Heisenberg\'s organized and practical assistant Gale greatly aids his work in Gus\'s lab. Hank finally tracks the RV back to Jesse, as a concerned Walt finds any way to erase the evidence.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'One Minute',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/05/31/14/41/245696.jpg',
                     'description' => 'Jesse ends up in the hospital after getting beaten up by Hank. Now he is threatening to press charges against the DEA. To stop him, Walt decides to bring Jesse on as his partner, once again.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'I See You',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/05/31/14/41/247728.jpg',
                     'description' => 'Hank ends up in the hospital after being attacked by Tuco\'s cousins. Walt spends too much time by his family\'s side when he should be cooking meth.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'Kafkaesque',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/05/31/14/41/248978.jpg',
                     'description' => 'Skyler hatches a plan as Hank\'s hospital bills stack up. Meanwhile, Walt and Gus come to a better understanding as Jesse, looking for more independence, pursues a new opportunity.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'Fly',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/41/250228.jpg',
                     'description' => 'There is a fly loose in the lab. Walt and Jesse must do whatever they can to kill it before it contaminates the meth.'
                 ],
                 'episode 11' => [
                     'number' => 11,
                     'title' => 'Abiquiu',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/17/05/31/14/41/253821.jpg',
                     'description' => 'Skyler gets more involved in Walt\'s business, much to his chagrin, as Hank struggles with his recovery. Meanwhile, Jesse takes an active role in his new enterprise, leading him to a startling discovery.'
                 ],
                 'episode 12' => [
                     'number' => 12,
                     'title' => 'Half Measures',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/05/31/14/41/255228.jpg',
                     'description' => 'Against Walt\'s advice, Jesse lashes out. Fearing for Jesse\'s safety, Walt takes drastic action to intervene. Meanwhile a tragic event leads to a shocking confrontation.'
                 ],
                 'episode 13' => [
                     'number' => 13,
                     'title' => 'Full Measure',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/05/31/14/41/258821.jpg',
                     'description' => 'Jesse has disappeared and Walt is in big trouble with Gus. So Gus rehires Gale to learn from Walt\'s cooking so that they can dispose of Walt once and for all.'
                 ]
             ]
@@ -2386,79 +2380,79 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'Box Cutter',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/17/05/31/14/41/270228.jpg',
                     'description' => 'Walt and Jesse are held captive for Gus, after Gale\'s death. Meanwhile, Skyler tries to find out what happened to Walt.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'Thirty-Eight Snub',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/17/05/31/14/41/278040.jpg',
                     'description' => 'Walt attempts to form a new alliance as he plans his next move. Meanwhile Skyler pushes Walt towards a business opportunity, in hopes of protecting the family.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'Open House',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/17/05/31/14/41/279759.jpg',
                     'description' => 'While Walt worries about Gus\'s interference and Jesse\'s increasingly fragile state of mind, Skyler steps up the pressure to get what she wants.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Bullet Points',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/05/31/14/41/290540.jpg',
                     'description' => 'As Skyler concocts an elaborate story to explain the Whites\' finances, a worried Walt discovers that Hank has begun a new investigation.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'Shotgun',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/05/31/14/41/474128.jpg',
                     'description' => 'Jesse rides shotgun with Mike on a perilous run of pickups, prompting Walt to worry that his partner is about to be killed.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'Cornered',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/05/31/14/41/480221.jpg',
                     'description' => 'Skyler adopts an aloof approach when she suspects that Walt isn\'t telling her the truth. Meanwhile, Jesse proves his worth to Mike and Gus.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'Problem Dog',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/17/05/31/14/41/481627.jpg',
                     'description' => 'Skyler looks to continue her family\'s trend of appearing poverty-stricken by forcing Walt to return the car he bought. A concerned Walt chauffeurs Hank to Los Pollos Hermanos, and the articulate yet immobile DEA agent collects prints.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'Hermanos',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/17/05/31/14/41/489751.jpg',
                     'description' => 'When Hank produces evidence that Gus is Albuquerque\'s crystal meth kingpin, Walt worries that he and Jesse will be killed to protect their boss.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'Bug',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/05/31/14/41/495218.jpg',
                     'description' => 'While Walt tries to subvert Hank\'s probe into the Albuquerque meth scene, a deadly warning forces Gus to consider a deal with the cartel.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'Salud',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/05/31/14/41/501467.jpg',
                     'description' => 'Jesse, Gus, and Mike fly down to Mexico, and Jesse cooks the blue meth for the cartel. Walt misses his son\'s 16th birthday after his fight with Jesse.'
                 ],
                 'episode 11' => [
                     'number' => 11,
                     'title' => 'Crawl Space',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/05/31/14/41/509435.jpg',
                     'description' => 'Hank asks Walt to drive him to the laundry where the meth lab is hidden. Ted still won\'t pay the IRS so Skyler asks Saul for help, and Saul sends in his A-Team. Gus and Jesse return from Mexico, and Walt fears he is in trouble with Gus.'
                 ],
                 'episode 12' => [
                     'number' => 12,
                     'title' => 'End Times',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/41/519433.jpg',
                     'description' => 'The DEA is putting Hank and his family in protective custody; however, Walt refuses and awaits his fate in his house. Meanwhile, Brock has fallen terribly ill and Jesse suspects Walt may be behind it.'
                 ],
                 'episode 13' => [
                     'number' => 13,
                     'title' => 'Face Off',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/41/529744.jpg',
                     'description' => 'Jesse is brought to the FBI for questioning on his knowledge of ricin. In a last effort to kill Gus, Walt must ask for help from an old enemy.'
                 ]
             ]
@@ -2482,97 +2476,97 @@ class FixturesData
                 'episode 01' => [
                     'number' => 1,
                     'title' => 'Live Free or Die',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/41/537868.jpg',
                     'description' => 'Now that Gus is dead, Walt, Jesse, and Mike work to cover their tracks. Skyler panics when Ted Beneke wakes up.'
                 ],
                 'episode 02' => [
                     'number' => 2,
                     'title' => 'Madrigal',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/17/05/31/14/41/544117.jpg',
                     'description' => 'Walt and Jesse seek out an unlikely partner for a new business venture. The DEA follows up new leads in its investigation.'
                 ],
                 'episode 03' => [
                     'number' => 3,
                     'title' => 'Hazard Pay',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/41/550210.jpg',
                     'description' => 'The guys put a business plan into action; Walt confesses to Marie.'
                 ],
                 'episode 04' => [
                     'number' => 4,
                     'title' => 'Fifty-One',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/17/05/31/14/41/557709.jpg',
                     'description' => 'It\'s Walt\'s 51st birthday. His return to the drug business causes Skyler to go into depression.'
                 ],
                 'episode 05' => [
                     'number' => 5,
                     'title' => 'Dead Freight',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/17/05/31/14/41/564114.jpg',
                     'description' => 'Walter White\'s domestic life continues to deteriorate; at the same time, his growing business venture aims to steal a train car chock full of methylamine.'
                 ],
                 'episode 06' => [
                     'number' => 6,
                     'title' => 'Buyout',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/17/05/31/14/41/570207.jpg',
                     'description' => 'In the aftermath of the train heist, Jesse and Mike decide to quit the business, leaving Walt to handle things on his own. Mike is being followed by the DEA.'
                 ],
                 'episode 07' => [
                     'number' => 7,
                     'title' => 'Say My Name',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/17/05/31/14/41/582705.jpg',
                     'description' => 'Mike and Jesse are out. Now Walt has to handle things on his own. Hank finally finds a rat in Mike\'s gang.'
                 ],
                 'episode 08' => [
                     'number' => 8,
                     'title' => 'Gliding Over All',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/41/589735.jpg',
                     'description' => 'Walt expands his business overseas, and the money is pouring in.'
                 ],
                 'episode 09' => [
                     'number' => 9,
                     'title' => 'Blood Money',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/41/595828.jpg',
                     'description' => 'Walt is out of the meth business and trying to move on with his life. Jesse tries to get rid of his money. Hank now knows that Walt is the famous Heisenberg.'
                 ],
                 'episode 10' => [
                     'number' => 10,
                     'title' => 'Buried',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/17/05/31/14/42/007545.jpg',
                     'description' => 'Hank is determined to bring down Walt. Walt scrambles to hide evidence before Hank gets to it, and Skyler tries to stop Hank and Marie from taking away the kids.'
                 ],
                 'episode 11' => [
                     'number' => 11,
                     'title' => 'Confessions',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img4.acsta.net/c_400_200/pictures/17/05/31/14/42/017231.jpg',
                     'description' => 'Walt makes his next move against Hank, putting Hank in a tough position. Hank confronts Jesse and attempts to turn him against Walt, and Jesse decides it\'s time to move on. Meanwhile, Todd has taken over the business.'
                 ],
                 'episode 12' => [
                     'number' => 12,
                     'title' => 'Rabid Dog',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/17/05/31/14/42/032697.jpg',
                     'description' => 'Walt discovers Jesse broke into his house and attempted to burn it down. Walt wants to protect his family so he moves them into a hotel for a few nights. Jesse makes plans to take down Walt.'
                 ],
                 'episode 13' => [
                     'number' => 13,
                     'title' => 'To\'hajiilee',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img6.acsta.net/c_400_200/pictures/17/05/31/14/42/052538.jpg',
                     'description' => 'Jesse and Hank come up with an idea to take Walt down. Walt hires Todd\'s uncle to kill Jesse.'
                 ],
                 'episode 14' => [
                     'number' => 14,
                     'title' => 'Ozymandias',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img3.acsta.net/c_400_200/pictures/17/05/31/14/42/060193.jpg',
                     'description' => 'Walt goes on the run. Jesse is taken hostage. Marie convinces Skyler to tell Walter, Jr. the truth.'
                 ],
                 'episode 15' => [
                     'number' => 15,
                     'title' => 'Granite State',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img5.acsta.net/c_400_200/pictures/17/05/31/14/42/069879.jpg',
                     'description' => 'Walt struggles as he adapts to aspects of his new identity. Jesse plans an escape against Jack and his crew.'
                 ],
                 'episode 16' => [
                     'number' => 16,
                     'title' => 'Felina',
-                    'poster' => '',
+                    'poster' => 'https://fr.web.img2.acsta.net/c_400_200/pictures/17/05/31/14/42/071910.jpg',
                     'description' => 'Walter White makes one last attempt to secure his family\'s future, while also visiting some old enemies, during his final return to Albuquerque.'
                 ]
             ]
