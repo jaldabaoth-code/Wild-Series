@@ -126,7 +126,7 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
 
     public function load(ObjectManager $manager)
     {
-        foreach (ProgramFixtures::PROGRAMS as $seriesTitle => $seriesData) {
+        foreach (FixturesData::TV_SERIES as $seriesTitle => $seriesData) {
             foreach ($this->getSeries($seriesTitle) as $seasonNumber => $seasonData) {
                 $season = new Season();
                 $season->setNumber($seasonData['number']);
@@ -136,8 +136,8 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
                 if (array_key_exists('actors', $seasonData)) {
 
                     foreach ($seasonData['actors'] as $actor) {
-                        for ($i=0; $i < count(ActorFixtures::ACTORS); $i++) {
-                            if (ActorFixtures::ACTORS[$i]['name'] == $actor) {
+                        for ($i=0; $i < count(FixturesData::ACTORS); $i++) {
+                            if (FixturesData::ACTORS[$i]['name'] == $actor) {
                                 $season->addActor($this->getReference('actor_' . $i));
                             }
                         }

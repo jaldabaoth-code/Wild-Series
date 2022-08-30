@@ -4,6 +4,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Actor;
+use App\Service\FixturesData;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -147,7 +148,7 @@ class ActorFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        foreach (self::ACTORS as $key => $data) {
+        foreach (FixturesData::ACTORS as $key => $data) {
             $actor = new Actor();
             $actor->setName($data['name']);
             $actor->setPoster($data['poster']);
@@ -157,7 +158,7 @@ class ActorFixtures extends Fixture
         $manager->flush();
     }
 
-    public const ACTORS = [
+/*    public const ACTORS = [
         [
             'name' => 'Sean Bean',
             'poster' => 'https://fr.web.img6.acsta.net/c_310_420/pictures/15/07/20/17/45/031961.jpg'
@@ -646,7 +647,7 @@ class ActorFixtures extends Fixture
             'name' => 'Jonathan Banks',
             'poster' => 'https://fr.web.img3.acsta.net/c_310_420/pictures/16/07/15/12/17/522276.jpg'
         ]
-    ];
+    ];*/
 
 
 

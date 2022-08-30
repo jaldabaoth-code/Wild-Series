@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Episode;
+use App\Service\FixturesData;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
@@ -49,15 +50,15 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         $seasonFixtures = new SeasonFixtures;
-        foreach (ProgramFixtures::PROGRAMS as $programTitle => $programData) {
-            foreach ($seasonFixtures->getSeries($programTitle) as $seasonTitle => $seasonData) {
-                foreach (self::EPISODES as $number => $episodeData) {
+        foreach (FixturesData::TV_SERIES as $programTitle => $programData) {
+            foreach ($seasonFixtures->getSeries($programTitle) as $seasonNumber => $seasonData) {
+                foreach ($seasonData['episodes'] as $episodeNumber => $episodeData) {
                     $episode = new Episode();
                     $episode->setTitle($episodeData['title']);
                     $episode->setSlug($this->slugify->generate($programTitle .'-' . $episode->getTitle()));
                     $episode->setNumber($episodeData['number']);
-                    $episode->setSynopsis($episodeData['synopsis']);
-                    $episode->setSeason($this->getReference('season_'. $programTitle . '_' . $seasonTitle));
+                    $episode->setSynopsis($episodeData['description']);
+                    $episode->setSeason($this->getReference('season_'. $programTitle . '_' . $seasonNumber));
                     $manager->persist($episode);
                 }
             }

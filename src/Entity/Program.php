@@ -41,7 +41,7 @@ class Program
     * message="On parle de vraies séries ici"
     * )
     */
-    private $summary;
+    private $description;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -144,14 +144,14 @@ class Program
         return $this;
     }
 
-    public function getSummary(): ?string
+    public function getDescription(): ?string
     {
-        return $this->summary;
+        return $this->description;
     }
 
-    public function setSummary(string $summary): self
+    public function setDescription(string $description): self
     {
-        $this->summary = $summary;
+        $this->description = $description;
         return $this;
     }
 

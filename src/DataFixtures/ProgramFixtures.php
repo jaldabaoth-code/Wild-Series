@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Program;
 use App\Entity\Category;
+use App\Service\FixturesData;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
@@ -11,7 +12,7 @@ use App\Service\Slugify;
 
 class ProgramFixtures extends Fixture implements DependentFixtureInterface
 {
-    const PROGRAMS = [
+/*    const PROGRAMS = [
         'The Walking Dead' => [
             'summary' => 'Après une apocalypse ayant transformé la quasi-totalité de la population en zombies, un groupe d\'hommes et de femmes mené par l\'officier Rick Grimes tente de survivre... Ensemble, ils vont devoir tant bien que mal faire face à ce nouveau monde devenu méconnaissable, à travers leur périple dans le Sud profond des États-Unis.',
             'poster' => 'https://fr.web.img6.acsta.net/c_225_300/pictures/210/454/21045474_20130930201634487.jpg',
@@ -53,7 +54,7 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
             'category' => 'Action'
         ],
 
-    ];
+    ];*/
 
     private Slugify $slugify;
 
@@ -64,10 +65,10 @@ class ProgramFixtures extends Fixture implements DependentFixtureInterface
 
     public function load(ObjectManager $manager)
     {
-        foreach (self::PROGRAMS as $title => $data) {
+        foreach (FixturesData::TV_SERIES as $title => $data) {
             $program = new Program();
             $program->setTitle($title);
-            $program->setSummary($data['summary']);
+            $program->setDescription($data['description']);
             $program->setPoster($data['poster']);
             $program->setImage($data['image']);
             $program->setYear($data['year']);
