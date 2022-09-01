@@ -1,3 +1,4 @@
+{#
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
@@ -10,7 +11,30 @@
 
     <div class="d-flex flex-column align-items-center">
         <div class="col-8">
-            {% include "program/_carousel.html.twig" %}
+            {% include "_carousel.html.twig" %}
+        </div>
+        <div class="col-8">
+            {% include "_footer.html.twig" %}
         </div>
     </div>
+
+{% endblock %}
+#}
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('default') }}
+{% endblock %}
+
+{% block navbar %}
+    {% include "includes/_navbar.html.twig" %}
+{% endblock %}
+
+{% block body %}
+    {% include "_carousel.html.twig" %}
+{% endblock %}
+
+{% block footer %}
+    {% include "_footer.html.twig" %}
 {% endblock %}

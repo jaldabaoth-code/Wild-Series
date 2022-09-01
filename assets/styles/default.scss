@@ -9,3 +9,28 @@
   background: #AAAAAA;
   opacity: 0.85;
 }
+
+.test {
+  text-decoration: none;
+  color: #00636f;
+  font-weight: 300;
+}
+
+.test:hover {
+  color: #1b2630;
+}
+
+
+.fab {
+  color: white !important;
+  background-color: #ed9f1a !important;
+  border-radius: 50% !important;
+  padding: 10px !important;
+}
+
+.fab:hover {
+  opacity: .7 !important;
+  transition-duration: .7s !important;
+}
+
+

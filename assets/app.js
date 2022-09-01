@@ -13,9 +13,10 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 
 require('bootstrap');
-require('@fortawesome/fontawesome-free/css/all.min.css');
-require('@fortawesome/fontawesome-free/js/all.js');
+/*require('@fortawesome/fontawesome-free/css/all.min.css');
+require('@fortawesome/fontawesome-free/js/all.js');*/
 
+/*
 document.querySelector("#watchlist").addEventListener('click', addToWatchlist);
 
 function addToWatchlist(event) {
@@ -40,4 +41,4 @@ function addToWatchlist(event) {
                 watchlistIcon.classList.add('bi-heart'); // Add the .bi-heart (empty heart) from classes in <i> element
             }
         });
-}
+}*/
