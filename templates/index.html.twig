@@ -1,5 +1,16 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('default') }}
+{% endblock %}
+
 {% block body %}
     <h1>Bienvenue !</h1>
+
+    <div class="d-flex flex-column align-items-center">
+        <div class="col-8">
+            {% include "program/_carousel.html.twig" %}
+        </div>
+    </div>
 {% endblock %}
