@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('default') }}
+{% endblock %}
+
+{% block navbar %}
+    {% include "includes/_navbar.html.twig" %}
+{% endblock %}
+
+{% block body %}
+    {% include "_carousel.html.twig" %}
+{% endblock %}
+
+{% block footer %}
+    {% include "_footer.html.twig" %}
+{% endblock %}
