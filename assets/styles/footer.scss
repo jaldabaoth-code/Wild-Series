@@ -1,10 +1,13 @@
+@import "~bootstrap/scss/bootstrap";
+
 .fab {
-  color: white;
-  background-color: #ed9f1a;
-  border-radius: 50%;
+    color: $secondary;
+    background-color: $white;
+    border-radius: 50%;
 }
 
 .fab:hover {
-  opacity: .7;
-  transition-duration: .7s;
+    transition-duration: .7s;
+    color: $dark;
+    background-color: $warning;
 }

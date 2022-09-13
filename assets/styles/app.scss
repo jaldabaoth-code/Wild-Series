@@ -20,3 +20,14 @@ body {
     background-color: white;
     color: black;
 }
+
+.log {
+    font-weight: bolder;
+    text-decoration: none;
+    font-size: large;
+    color: $white;
+}
+
+.log:hover {
+    color: $warning;
+}

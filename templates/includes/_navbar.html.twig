@@ -6,8 +6,8 @@
                 {{ app.user.email }}
                 <a class="text-warning" href="{{ path('app_logout') }}"> Se déconnecter</a>
             {% else %}
-                <a class="text-warning" href="{{ path('app_login') }}"> Se connecter</a>
-                <a class="text-warning" href="{{ path('app_register') }}"> S'inscrire</a>
+                <a class="log px-3" href="{{ path('app_login') }}"> Se connecter</a>
+                <a class="log px-3" href="{{ path('app_register') }}"> S'inscrire</a>
             {% endif %}
         </div>
     </div>
