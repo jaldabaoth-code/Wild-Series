@@ -2,10 +2,6 @@
 @import "~bootstrap/scss/bootstrap";
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
-// customize some Bootstrap variables
-$primary: blue;
-$secondary: black;
-
 .img {
     width: 30px;
     height: 30px;
@@ -30,8 +26,4 @@ body {
 
 .log:hover {
     color: $warning;
-}
-
-.active {
-    background-color: $warning;
 }
