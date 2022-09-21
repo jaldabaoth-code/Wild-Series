@@ -1,6 +1,6 @@
 <div class="container-fluid bg-primary d-flex justify-content-between">
-    <a class="navbar-brand" href="/"><img src="{{ asset('build/logo.svg') }}" alt="logo" class="logo-navbar">Wild-Series</a>
-    <div id="navbarSupportedContent">
+    <a href="/"><img src="{{ asset('build/logo.svg') }}" alt="logo" class="logo-navbar">Wild-Series</a>
+    <div>
         {% if app.user %}
             {{ app.user.email }}
             <a class="text-warning" href="{{ path('app_logout') }}">Log Out</a>

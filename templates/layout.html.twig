@@ -5,6 +5,10 @@
     {{ encore_entry_link_tags('default') }}
 {% endblock %}
 
+{% block header %}
+    {% include "includes/_header.html.twig" %}
+{% endblock %}
+
 {% block navbar %}
     {% include "includes/_navbar.html.twig" %}
 {% endblock %}
