@@ -15,7 +15,7 @@ class DefaultController extends AbstractController
     public function index(ProgramRepository $programRepository): Response
     {
         $programs = $programRepository->findAll();
-        return $this->render('layout.html.twig', [
+        return $this->render('home/index.html.twig', [
             'programs' => $programs
         ]);
     }
