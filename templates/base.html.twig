@@ -1,35 +1,3 @@
-{#
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}"/>
-        <title>{% block title %}Welcome!{% endblock %}</title>
-
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body class="main_body">
-        {% for category, messages in app.flashes %}
-            {% for message in messages %}
-                <div class="alert alert-{{ category }}">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endfor %}
-        <header>
-            {% include "includes/_navbar.html.twig" %}
-        </header>
-        {% block body %}{% endblock %}
-    </body>
-</html>
-#}
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -37,15 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}"/>
         <title>
-            {% block title %}Welcome!
-            {% endblock %}
+            {% block title %}Wild Series{% endblock %}
         </title>
 
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
-            {{ encore_entry_link_tags('header') }}
-            {{ encore_entry_link_tags('navbar') }}
-            {{ encore_entry_link_tags('footer') }}
         {% endblock %}
 
         {% block javascripts %}
@@ -53,7 +17,7 @@
             <script src="https://kit.fontawesome.com/365f79b953.js" crossorigin="anonymous"></script>
         {% endblock %}
     </head>
-    <body class="main_body">
+    <body>
         {% block header %}{% endblock %}
         {% block navbar %}{% endblock %}
         {% block body %}{% endblock %}

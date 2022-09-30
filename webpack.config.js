@@ -35,7 +35,7 @@ Encore
     .addStyleEntry('header', './assets/styles/header.scss')
     .addStyleEntry('navbar', './assets/styles/navbar.scss')
     .addStyleEntry('footer', './assets/styles/footer.scss')
-    .addStyleEntry('default', './assets/styles/default.scss')
+    .addStyleEntry('home', './assets/styles/home.scss')
     .addStyleEntry('program', './assets/styles/program.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)

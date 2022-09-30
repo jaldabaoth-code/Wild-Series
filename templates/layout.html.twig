@@ -2,7 +2,9 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    {{ encore_entry_link_tags('default') }}
+    {{ encore_entry_link_tags('header') }}
+    {{ encore_entry_link_tags('navbar') }}
+    {{ encore_entry_link_tags('footer') }}
 {% endblock %}
 
 {% block header %}
@@ -11,10 +13,6 @@
 
 {% block navbar %}
     {% include "includes/_navbar.html.twig" %}
-{% endblock %}
-
-{% block body %}
-    {% include "_carousel.html.twig" %}
 {% endblock %}
 
 {% block footer %}
