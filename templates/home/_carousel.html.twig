@@ -8,25 +8,25 @@
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="10000">
+                    <div class="carousel-item active" data-bs-interval="5000">
                         <img src="{{ programs[programs|length-1].image }}" class="carouselImage d-block" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>First slide label</h3>
-                            <p>Some representative placeholder content for the first slide.</p>
+                            <h3>{{ programs[programs|length-1].title }}</h3>
+                            <p>{{ programs[programs|length-1].description }}</p>
                         </div>
                     </div>
-                    <div class="carousel-item" data-bs-interval="2000">
+                    <div class="carousel-item" data-bs-interval="5000">
                         <img src="{{ programs[programs|length-2].image }}" class="carouselImage d-block" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h3>Second slide label</h3>
-                            <p>Some representative placeholder content for the second slide.</p>
+                            <h3>{{ programs[programs|length-2].title }}</h3>
+                            <p>{{ programs[programs|length-2].description }}</p>
                         </div>
                     </div>
-                    <div class="carousel-item">
+                    <div class="carousel-item" data-bs-interval="5000">
                         <img src="{{ programs[programs|length-3].image }}" class="carouselImage d-block" alt="...">
                         <div class="col carousel-caption d-none d-md-block">
-                            <h3>Third slide label</h3>
-                            <p>Some representative placeholder content for the third slide.</p>
+                            <h3>{{ programs[programs|length-3].title }}</h3>
+                            <p>{{ programs[programs|length-3].description }}</p>
                         </div>
                     </div>
                 </div>
