@@ -23,15 +23,15 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         $seasonFixtures = new SeasonFixtures;
-        foreach (FixturesData::TV_SERIES as $programTitle => $programData) {
-            foreach ($seasonFixtures->getSeries($programTitle) as $seasonNumber => $seasonData) {
+        foreach (FixturesData::TV_SERIES as $serieTitle => $serieData) {
+            foreach ($seasonFixtures->getSeries($serieTitle) as $seasonNumber => $seasonData) {
                 foreach ($seasonData['episodes'] as $episodeNumber => $episodeData) {
                     $episode = new Episode();
                     $episode->setTitle($episodeData['title']);
-                    $episode->setSlug($this->slugify->generate($programTitle .'-' . $episode->getTitle()));
+                    $episode->setSlug($this->slugify->generate($serieTitle .'-' . $episode->getTitle()));
                     $episode->setNumber($episodeData['number']);
                     $episode->setSynopsis($episodeData['description']);
-                    $episode->setSeason($this->getReference('season_'. $programTitle . '_' . $seasonNumber));
+                    $episode->setSeason($this->getReference('season_'. $serieTitle . '_' . $seasonNumber));
                     $manager->persist($episode);
                 }
             }

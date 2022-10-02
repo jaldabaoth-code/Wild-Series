@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %}All programs in category
+{% block title %}All series in category
 {% endblock %}
 
 {% block body %}
@@ -9,8 +9,8 @@
     {% endif %}
     <p>A joué dans: </p>
     <ul>
-        {% for program in actor.programs %}
-            <li><a href="{{ path('program_show', {slug: program.slug}) }}">{{ program.title }}</a></li>
+        {% for serie in actor.series %}
+            <li><a href="{{ path('serie_show', {slug: serie.slug}) }}">{{ serie.title }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Episode;
 use App\Form\EpisodeType;
-use App\Entity\Program;
+use App\Entity\Serie;
 use App\Repository\EpisodeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -48,7 +48,7 @@ class EpisodeController extends AbstractController
             $entityManager->flush();
 
             // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The new program has been created');
+            $this->addFlash('success', 'The new serie has been created');
 
             $email = (new Email())
                     ->from($this->getParameter('mailer_from'))
@@ -93,7 +93,7 @@ class EpisodeController extends AbstractController
             $this->getDoctrine()->getManager()->flush();
             
             // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The program has been edited');
+            $this->addFlash('success', 'The serie has been edited');
 
             return $this->redirectToRoute('episode_index');
         }
@@ -113,7 +113,7 @@ class EpisodeController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($episode);
             $entityManager->flush();
-            $this->addFlash('danger', 'The program is deleted');
+            $this->addFlash('danger', 'The serie is deleted');
         }
 
         return $this->redirectToRoute('episode_index');

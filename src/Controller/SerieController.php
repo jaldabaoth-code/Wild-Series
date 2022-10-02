@@ -2,14 +2,14 @@
 
 namespace App\Controller;
 
-use App\Entity\Program;
+use App\Entity\Serie;
 use App\Entity\Season;
 use App\Entity\Episode;
-use App\Form\ProgramType;
+use App\Form\SerieType;
 use App\Form\CommentType;
 use App\Entity\Comment;
-use App\Repository\ProgramRepository;
-use App\Form\SearchProgramFormType;
+use App\Repository\SerieRepository;
+use App\Form\SearchSerieFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,17 +25,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\RedirectController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
- * @Route("/programs", name="program_")
+ * @Route("/series", name="serie_")
  */
-class ProgramController extends AbstractController
+class SerieController extends AbstractController
 {
 
     /**
-     * show all rows from Program's entity
+     * show all rows from Serie's entity
      * @Route("/", name="index")
      * @return Response A response instance
      */
-    public function index(Request $request, ProgramRepository $programRepository, SessionInterface $session): Response
+    public function index(Request $request, SerieRepository $serieRepository, SessionInterface $session): Response
     {
         // If total doesn’t exist in session, it is initialized
         if (!$session->has('total')) {
@@ -49,121 +49,121 @@ class ProgramController extends AbstractController
         // 
         if ($form->isSubmitted() && $form->isValid()) {
             $search = $form->getData();
-            $programs = $programRepository->findLikeName($search);
+            $series = $serieRepository->findLikeName($search);
         } else {
-            $programs = $programRepository->findAll();
+            $series = $serieRepository->findAll();
         }
 
-        return $this->render('program/index.html.twig', [
-            'programs' => $programs,
+        return $this->render('serie/index.html.twig', [
+            'series' => $series,
             'form' => $form->createView(),
         ]);
     }
     
     /**
-     * The controller for the program add form
+     * The controller for the serie add form
      * Display the form or deal with it
      *
      * @Route("/new", name="new")
      */
     public function new(Request $request, Slugify $slugify, MailerInterface $mailer) : Response
     {
-        // Create a new Program Object
-        $program = new Program();
+        // Create a new Serie Object
+        $serie = new Serie();
         // Create the associated Form
-        $form = $this->createForm(ProgramType::class, $program);
+        $form = $this->createForm(SerieType::class, $serie);
         // Get data from HTTP request
         $form->handleRequest($request);
         // Was the form submitted ?
         if ($form->isSubmitted() && $form->isValid()) {
-            $slug = $slugify->generate($program->getTitle());
-            $program->setSlug($slug);
+            $slug = $slugify->generate($serie->getTitle());
+            $serie->setSlug($slug);
             // Deal with the submitted data
             // Get the Entity Manager
-            $program->setOwner($this->getUser());
+            $serie->setOwner($this->getUser());
             $entityManager = $this->getDoctrine()->getManager();
-            // Persist Program Object
-            $entityManager->persist($program);
+            // Persist Serie Object
+            $entityManager->persist($serie);
             // Flush the persisted object
             $entityManager->flush();
 
             // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The new program has been created');
+            $this->addFlash('success', 'The new serie has been created');
 
             $email = (new Email())
                     ->from($this->getParameter('mailer_from'))
                     ->to('your_email@example.com')
                     ->subject('Une nouvelle série vient d\'être publiée !')
-                    ->html($this->renderView('mail/newProgramEmail.html.twig', ['program' => $program]));
+                    ->html($this->renderView('mail/newSerieEmail.html.twig', ['serie' => $serie]));
 
             $mailer->send($email);
-            // Finally redirect to programs list
-            return $this->redirectToRoute('program_index');
+            // Finally redirect to series list
+            return $this->redirectToRoute('serie_index');
         }
         // Render the form
-        return $this->render('program/new.html.twig', [
+        return $this->render('serie/new.html.twig', [
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * Getting a program by id
+     * Getting a serie by id
      *
      * @Route("/{slug}", name="show")
      * 
      * @return Response
      */
-    public function show(Program $program, Slugify $slugify):Response
+    public function show(Serie $serie, Slugify $slugify):Response
     {
         $seasons = $this->getDoctrine()
         ->getRepository(Season::class)
         ->findBy([
-            'program' => $program->getId()
+            'serie' => $serie->getId()
         ]);
 
-        $slug = $slugify->generate($program->getTitle());
-        $program->setSlug($slug);
-        if (!$program) {
+        $slug = $slugify->generate($serie->getTitle());
+        $serie->setSlug($slug);
+        if (!$serie) {
             throw $this->createNotFoundException(
-                'No program with id : '. $program->getId() .' found in program\'s table.'
+                'No serie with id : '. $serie->getId() .' found in serie\'s table.'
             );
         }
-        return $this->render('program/show.html.twig', [
-            'program' => $program,
+        return $this->render('serie/show.html.twig', [
+            'serie' => $serie,
             'seasons' => $seasons,
         ]);
     }
 
     /**
      * @Route("/{slug}/seasons/{seasonId}", name="season_show")
-     * @ParamConverter("program", class="App\Entity\Program", options={"mapping": {"slug": "slug"}})
+     * @ParamConverter("serie", class="App\Entity\Serie", options={"mapping": {"slug": "slug"}})
      * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"seasonId": "id"}})
      * @return Response
      */
-    public function showSeason(Program $program, Season $season, Slugify $slugify): Response
+    public function showSeason(Serie $serie, Season $season, Slugify $slugify): Response
     {
-        $slug = $slugify->generate($program->getTitle());
-        $program->setSlug($slug);
+        $slug = $slugify->generate($serie->getTitle());
+        $serie->setSlug($slug);
         $episodes = $this->getDoctrine()
         ->getRepository(Episode::class)
         ->findBy([
             'season' => $season->getId()
         ]);
-        return $this->render('program/season_show.html.twig', [
-            'program' => $program,
+        return $this->render('serie/season_show.html.twig', [
+            'serie' => $serie,
             'season' => $season,
             'episodes' => $episodes,
         ]);
     }
 
     /**
-     * @Route("/{programSlug}/seasons/{seasonId}/episodes/{episodeSlug}", name="episode_show")
-     * @ParamConverter("program", class="App\Entity\Program", options={"mapping": {"programSlug": "slug"}})
+     * @Route("/{serieSlug}/seasons/{seasonId}/episodes/{episodeSlug}", name="episode_show")
+     * @ParamConverter("serie", class="App\Entity\Serie", options={"mapping": {"serieSlug": "slug"}})
      * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"seasonId": "id"}})
      * @ParamConverter("episode", class="App\Entity\Episode", options={"mapping": {"episodeSlug": "slug"}})
      * @return Response
      */
-    public function showEpisode(Request $request, Program $program, Season $season, Episode $episode, Slugify $slugify): Response
+    public function showEpisode(Request $request, Serie $serie, Season $season, Episode $episode, Slugify $slugify): Response
     {
         $comment = new Comment();
         $form = $this->createForm(CommentType::class, $comment);
@@ -179,10 +179,10 @@ class ProgramController extends AbstractController
             }
         }
 
-        $slug = $slugify->generate($program->getTitle());
-        $program->setSlug($slug);
-        return $this->render('program/episode_show.html.twig', [
-            'program' => $program,
+        $slug = $slugify->generate($serie->getTitle());
+        $serie->setSlug($slug);
+        return $this->render('serie/episode_show.html.twig', [
+            'serie' => $serie,
             'season' => $season,
             'episode' => $episode,
             'form' => $form->createView(),
@@ -192,29 +192,29 @@ class ProgramController extends AbstractController
     /**
      * @Route("/{slug}/edit", name="edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Program $program, Slugify $slugify): Response
+    public function edit(Request $request, Serie $serie, Slugify $slugify): Response
     {
 
-        if (!($this->getUser() == $program->getOwner())) {
+        if (!($this->getUser() == $serie->getOwner())) {
             // If not the owner, throws a 403 Access Denied exception
-            throw new AccessDeniedException('Only the owner can edit the program!');
+            throw new AccessDeniedException('Only the owner can edit the serie!');
         }
 
-        $form = $this->createForm(ProgramType::class, $program);
+        $form = $this->createForm(SerieType::class, $serie);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $program->setSlug($slugify->generate($program->getTitle()));
+            $serie->setSlug($slugify->generate($serie->getTitle()));
             $this->getDoctrine()->getManager()->flush();
 
             // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The program has been edited');
+            $this->addFlash('success', 'The serie has been edited');
 
-            return $this->redirectToRoute('program_index');
+            return $this->redirectToRoute('serie_index');
         }
 
-        return $this->render('program/edit.html.twig', [
-            'program' => $program,
+        return $this->render('serie/edit.html.twig', [
+            'serie' => $serie,
             'form' => $form->createView(),
         ]);
     }
@@ -228,29 +228,29 @@ class ProgramController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($comment);
             $entityManager->flush();
-            $this->addFlash('danger', 'The program is deleted');
+            $this->addFlash('danger', 'The serie is deleted');
         }
-        return $this->redirectToRoute('program_index');
+        return $this->redirectToRoute('serie_index');
     }
 
     /**
      * @Route("/{id}/watchlist", name="watchlist", methods={"GET","POST"})
      */
-    public function addToWatchList(Program $program, EntityManagerInterface $em): Response
+    public function addToWatchList(Serie $serie, EntityManagerInterface $em): Response
     {
-        if ($this->getUser()->isInWatchList($program)){
-            $this->getUser()->removeFromWatchlist($program);
+        if ($this->getUser()->isInWatchList($serie)){
+            $this->getUser()->removeFromWatchlist($serie);
         } else {
-            $this->getUser()->addToWatchList($program);
+            $this->getUser()->addToWatchList($serie);
         }
 
         $em->flush();
         /*
-        return $this->redirectToRoute('program_show', [
-            'slug' => $program->getSlug(),
+        return $this->redirectToRoute('serie_show', [
+            'slug' => $serie->getSlug(),
         ]);*/
         return $this->json([
-            'isInWatchlist' => $this->getUser()->isInWatchlist($program)
+            'isInWatchlist' => $this->getUser()->isInWatchlist($serie)
         ]);
     }
 }

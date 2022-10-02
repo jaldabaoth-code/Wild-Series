@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Program;
+use App\Entity\Serie;
 use App\Entity\Actor;
 use App\Form\CommentType;
 use Symfony\Component\Form\AbstractType;
@@ -14,7 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 
-class ProgramType extends AbstractType
+class SerieType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -43,7 +43,7 @@ class ProgramType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Program::class,
+            'data_class' => Serie::class,
         ]);
     }
 }

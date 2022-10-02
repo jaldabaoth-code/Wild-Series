@@ -24,13 +24,13 @@ class Category
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Program", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="App\Entity\Serie", mappedBy="category")
      */
-    private $programs;
+    private $series;
 
     public function __construct()
     {
-        $this->programs = new ArrayCollection();
+        $this->series = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -51,38 +51,38 @@ class Category
     }
 
     /**
-     * @return Collection|Program[]
+     * @return Collection|Serie[]
      */
-    public function getPrograms(): Collection
+    public function getSeries(): Collection
     {
-        return $this->programs;
+        return $this->series;
     }
 
     /**
-     * @param Program $program
+     * @param Serie $serie
      * @return Category
      */
-    public function addProgram(Program $program): self
+    public function addSerie(Serie $serie): self
     {
-        if (!$this->programs->contains($program)) {
-            $this->programs[] = $program;
-            $program->setCategory($this);
+        if (!$this->series->contains($serie)) {
+            $this->series[] = $serie;
+            $serie->setCategory($this);
         }
         return $this;
     }
 
     /**
-     * @param Program $program
+     * @param Serie $serie
      * @return Category
      */
 
-    public function removeProgram(Program $program): self
+    public function removeSerie(Serie $serie): self
     {
-        if ($this->programs->contains($program)) {
-            $this->programs->removeElement($program);
+        if ($this->series->contains($serie)) {
+            $this->series->removeElement($serie);
             // set the owning side to null (unless already changed)
-            if ($program->getCategory() === $this) {
-                $program->setCategory(null);
+            if ($serie->getCategory() === $this) {
+                $serie->setCategory(null);
             }
         }
         return $this;

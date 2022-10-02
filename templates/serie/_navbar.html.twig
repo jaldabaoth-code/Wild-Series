@@ -22,7 +22,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             {% for season in seasons %}
               <li>
-                <a class="dropdown-item"  href="{{ path('program_season_show', {slug: program.slug, seasonId: season.id}) }}">Season
+                <a class="dropdown-item"  href="{{ path('serie_season_show', {slug: serie.slug, seasonId: season.id}) }}">Season
                   {{ season.number }}
                 </a>
               </li>

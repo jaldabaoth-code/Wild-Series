@@ -44,9 +44,9 @@ class User implements UserInterface
     private $comments;
 
     /**
-     * @ORM\OneToMany(targetEntity=Program::class, mappedBy="owner")
+     * @ORM\OneToMany(targetEntity=Serie::class, mappedBy="owner")
      */
-    private $programs;
+    private $series;
 
     /**
      * @ORM\Column(type="boolean")
@@ -54,7 +54,7 @@ class User implements UserInterface
     private $isVerified = false;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Program::class, inversedBy="viewers")
+     * @ORM\ManyToMany(targetEntity=Serie::class, inversedBy="viewers")
      * @ORM\JoinTable(name="watchlist")
      */
     private $watchlist;
@@ -63,7 +63,7 @@ class User implements UserInterface
     public function __construct()
     {
         $this->comments = new ArrayCollection();
-        $this->programs = new ArrayCollection();
+        $this->series = new ArrayCollection();
         $this->watchlist = new ArrayCollection();
     }
 
@@ -179,53 +179,53 @@ class User implements UserInterface
     }
 
     /**
-     * @return Collection|Program[]
+     * @return Collection|Serie[]
      */
     public function getWatchlist(): Collection
     {
         return $this->watchlist;
     }
 
-    public function addToWatchlist(Program $program): self
+    public function addToWatchlist(Serie $serie): self
     {
-        if (!$this->watchlist->contains($program)) {
-            $this->watchlist[] = $program;
+        if (!$this->watchlist->contains($serie)) {
+            $this->watchlist[] = $serie;
         }
 
         return $this;
     }
 
-    public function removeFromWatchlist(Program $program): self
+    public function removeFromWatchlist(Serie $serie): self
     {
-        $this->watchlist->removeElement($program);
+        $this->watchlist->removeElement($serie);
 
         return $this;
     }
 
     /**
-     * @return Collection|Program[]
+     * @return Collection|Serie[]
      */
-    public function getPrograms(): Collection
+    public function getSeries(): Collection
     {
-        return $this->programs;
+        return $this->series;
     }
 
-    public function addProgram(Program $program): self
+    public function addSerie(Serie $serie): self
     {
-        if (!$this->programs->contains($program)) {
-            $this->programs[] = $program;
-            $program->setOwner($this);
+        if (!$this->series->contains($serie)) {
+            $this->series[] = $serie;
+            $serie->setOwner($this);
         }
 
         return $this;
     }
 
-    public function removeProgram(Program $program): self
+    public function removeSerie(Serie $serie): self
     {
-        if ($this->programs->removeElement($program)) {
+        if ($this->series->removeElement($serie)) {
             // set the owning side to null (unless already changed)
-            if ($program->getOwner() === $this) {
-                $program->setOwner(null);
+            if ($serie->getOwner() === $this) {
+                $serie->setOwner(null);
             }
         }
 
@@ -244,8 +244,8 @@ class User implements UserInterface
         return $this;
     }
     
-    public function isInWatchlist(Program $program): bool
+    public function isInWatchlist(Serie $serie): bool
     {
-        return $this->getWatchlist()->contains($program) ? true : false;
+        return $this->getWatchlist()->contains($serie) ? true : false;
     }
 }

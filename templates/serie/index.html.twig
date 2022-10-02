@@ -11,15 +11,15 @@
     <div class="d-flex flex-column align-items-center">
         <h2 class="text-center">All Series</h2>
         <div class="col-8 d-flex row">
-            {% for program in programs %}
+            {% for serie in series %}
                 <div class="col-3 my-3 d-flex flex-column align-items-center">
-                    <a class="shine" href="{{ path("program_show", { slug: program.slug }) }}">
-                        <img src="{{ program.poster }}" alt="poster of series">
+                    <a class="shine" href="{{ path("serie_show", { slug: serie.slug }) }}">
+                        <img src="{{ serie.poster }}" alt="poster of series">
                     </a>
-                    <a class="programTitle" href="{{ path("program_show", { slug: program.slug }) }}">
-                        {{ program.title }}
+                    <a class="serieTitle" href="{{ path("serie_show", { slug: serie.slug }) }}">
+                        {{ serie.title }}
                     </a>
-                    <a class="categoryName" href="{{ path("category_show", { categoryName: program.category.name }) }}">{{ program.category.name }}</a>
+                    <a class="categoryName" href="{{ path("category_show", { categoryName: serie.category.name }) }}">{{ serie.category.name }}</a>
                 </div>
             {% endfor %}
         </div>

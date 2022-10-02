@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Repository\ProgramRepository;
+use App\Repository\SerieRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -13,10 +13,10 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ProgramRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\SerieRepository")
  * @Vich\Uploadable
  */
-class Program
+class Serie
 {
     /**
      * @ORM\Id
@@ -55,7 +55,6 @@ class Program
      */
     private $posterFile;
 
-
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @var string
@@ -69,7 +68,7 @@ class Program
     private $imageFile;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="programs")
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="series")
      * @ORM\JoinColumn(nullable=true)
      */
     private $category;
@@ -85,17 +84,17 @@ class Program
     private $year;
 
     /**
-     * @ORM\OneToMany(targetEntity=Season::class, mappedBy="program", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Season::class, mappedBy="serie", orphanRemoval=true)
      */
     private $seasons;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Actor::class, mappedBy="programs")
+     * @ORM\ManyToMany(targetEntity=Actor::class, mappedBy="series")
      */
     private $actors;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Creator::class, mappedBy="programs")
+     * @ORM\ManyToMany(targetEntity=Creator::class, mappedBy="series")
      */
     private $creators;
 
@@ -105,7 +104,7 @@ class Program
     private $slug;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="programs")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="series")
      */
     private $owner;
 
@@ -221,7 +220,7 @@ class Program
         return $this;
     }
 
-    public function setPosterFile(File $posterFile = null): Program
+    public function setPosterFile(File $posterFile = null): Serie
     {
         $this->posterFile = $posterFile;
         if ($posterFile) {
@@ -235,7 +234,7 @@ class Program
         return $this->posterFile;
     }
 
-    public function setImageFile(File $imageFile = null): Program
+    public function setImageFile(File $imageFile = null): Serie
     {
         $this->imageFile = $imageFile;
         if ($imageFile) {
@@ -272,7 +271,7 @@ class Program
     {
         if (!$this->seasons->contains($season)) {
             $this->seasons[] = $season;
-            $season->setProgram($this);
+            $season->setSerie($this);
         }
         return $this;
     }
@@ -281,8 +280,8 @@ class Program
     {
         if ($this->seasons->removeElement($season)) {
             // set the owning side to null (unless already changed)
-            if ($season->getProgram() === $this) {
-                $season->setProgram(null);
+            if ($season->getSerie() === $this) {
+                $season->setSerie(null);
             }
         }
         return $this;
@@ -300,7 +299,7 @@ class Program
     {
         if (!$this->actors->contains($actor)) {
             $this->actors[] = $actor;
-            $actor->addProgram($this);
+            $actor->addSerie($this);
         }
         return $this;
     }
@@ -308,7 +307,7 @@ class Program
     public function removeActor(Actor $actor): self
     {
         if ($this->actors->removeElement($actor)) {
-            $actor->removeProgram($this);
+            $actor->removeSerie($this);
         }
         return $this;
     }
@@ -325,7 +324,7 @@ class Program
     {
         if (!$this->creators->contains($creator)) {
             $this->creators[] = $creator;
-            $creator->addProgram($this);
+            $creator->addSerie($this);
         }
         return $this;
     }
@@ -333,12 +332,10 @@ class Program
     public function removeCreator(Creator $creator): self
     {
         if ($this->creators->removeElement($creator)) {
-            $creator->removeProgram($this);
+            $creator->removeSerie($this);
         }
         return $this;
     }
-
-
 
     public function getSlug(): ?string
     {

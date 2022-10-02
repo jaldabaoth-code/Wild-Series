@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit serie
+{% endblock %}
+
+{% block body %}
+    <h1>Edit serie</h1>
+    <div class="d-flex flex-column">
+        <a href="{{ path('serie_index') }}">back to list</a>
+        {{ include('serie/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
+{% endblock %}

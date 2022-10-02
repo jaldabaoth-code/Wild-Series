@@ -7,16 +7,16 @@
                     <a class="nav-link px-3 {{ currentPath == '/' ? 'active' : '' }} menu" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link px-3 {{ currentPath == '/programs' ? 'active' : '' }} menu" href="/programs/">Series</a>
+                    <a class="nav-link px-3 {{ currentPath == '/series/' ? 'active' : '' }} menu" href="/series/">Series</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link px-3 {{ currentPath == '/categories' ? 'active' : '' }} menu" href="/categories/">Categories</a>
+                    <a class="nav-link px-3 {{ currentPath == '/categories/' ? 'active' : '' }} menu" href="/categories/">Categories</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link px-3 {{ currentPath == '/season' ? 'active' : '' }} menu" href="/season/">Seasons</a>
+                    <a class="nav-link px-3 {{ currentPath == '/season/' ? 'active' : '' }} menu" href="/season/">Seasons</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link px-3 {{ currentPath == '/episode' ? 'active' : '' }} menu" href="/episode/">Episodes</a>
+                    <a class="nav-link px-3 {{ currentPath == '/episode/' ? 'active' : '' }} menu" href="/episode/">Episodes</a>
                 </li>
                 <li class="nav-item dropdown">
                     {{ render(controller('App\\Controller\\CategoryController::dropdown')) }}

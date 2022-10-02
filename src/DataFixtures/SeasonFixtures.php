@@ -18,7 +18,7 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
                 $season->setNumber($seasonData['number']);
                 $season->setYear($seasonData['year']);
                 $season->setDescription($seasonData['description']);
-                $season->setProgram($this->getReference('program_' . $seriesTitle));
+                $season->setSerie($this->getReference('serie_' . $seriesTitle));
                 if (array_key_exists('actors', $seasonData)) {
 
                     foreach ($seasonData['actors'] as $actor) {
@@ -57,6 +57,6 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
 
     public function getDependencies()
     {
-        return [ProgramFixtures::class];
+        return [SerieFixtures::class];
     }
 }

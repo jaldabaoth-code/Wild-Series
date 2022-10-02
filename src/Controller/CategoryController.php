@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Category;
-use App\Entity\Program;
+use App\Entity\Serie;
 use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -81,13 +81,13 @@ class CategoryController extends AbstractController
             );
         }
 
-        $programs = $this->getDoctrine()
-        ->getRepository(Program::class)
+        $series = $this->getDoctrine()
+        ->getRepository(Serie::class)
         ->findBy(['category' => $category->getId()],
                     ['id' => 'DESC'], 3);
                     
         return $this->render('category/show.html.twig', [
-            'programs' => $programs,
+            'series' => $series,
         ]);
     }
 

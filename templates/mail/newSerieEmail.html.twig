@@ -1,0 +1,11 @@
+{% extends "mail/layout_email.html.twig" %}
+    {% block title %}
+        {{ parent() }}
+        Serie
+    {% endblock %}
+{% block body %}
+    <h1>New serie {{ serie.title }} created</h1>
+    <p>Hello, the new serie {{ serie.title }} has been created on Wild Series</p>
+    <p>Summary : {{serie.summary }}
+    <a href="http://127.0.0.1:8000/series/{{ serie.slug }}">HERE YOUR NEW SERIE</a>
+{% endblock body %}

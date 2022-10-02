@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
-{% block title %} All programs in category {% endblock %}
+{% block title %} All series in category {% endblock %}
 
 {% block body %}
-    {% if programs %}
+    {% if series %}
         <h1 class="my-5">Les 3 dernières séries de la catégorie :
-            {{ programs.0.category.name }}</h1>
-        {% for program in programs %}
+            {{ series.0.category.name }}</h1>
+        {% for serie in series %}
             <div class="my-5">
-                <h2>{{ program.id }}
+                <h2>{{ serie.id }}
                     /
-                    <a href="{{ path("program_show", { 'slug': program.slug }) }}">{{ program.title }}</a>
+                    <a href="{{ path("serie_show", { 'slug': serie.slug }) }}">{{ serie.title }}</a>
                 </h2>
-                <p>{{ program.description }}</p>
+                <p>{{ serie.description }}</p>
             </div>
         {% else %}
             Aucune série trouvée.

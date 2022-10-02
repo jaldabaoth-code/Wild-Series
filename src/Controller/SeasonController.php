@@ -40,7 +40,7 @@ class SeasonController extends AbstractController
             $entityManager->flush();
 
             // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The new program has been created');
+            $this->addFlash('success', 'The new serie has been created');
             return $this->redirectToRoute('season_index');
         }
 
@@ -72,7 +72,7 @@ class SeasonController extends AbstractController
             $this->getDoctrine()->getManager()->flush();
             
             // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The program has been edited');
+            $this->addFlash('success', 'The serie has been edited');
             return $this->redirectToRoute('season_index');
         }
 
@@ -91,7 +91,7 @@ class SeasonController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($season);
             $entityManager->flush();
-            $this->addFlash('danger', 'The program is deleted');
+            $this->addFlash('danger', 'The serie is deleted');
         }
 
         return $this->redirectToRoute('season_index');

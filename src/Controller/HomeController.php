@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\ProgramRepository;
+use App\Repository\SerieRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,11 +12,11 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      */
-    public function index(ProgramRepository $programRepository): Response
+    public function index(SerieRepository $serieRepository): Response
     {
-        $programs = $programRepository->findAll();
+        $series = $serieRepository->findAll();
         return $this->render('home/index.html.twig', [
-            'programs' => $programs
+            'series' => $series
         ]);
     }
 }

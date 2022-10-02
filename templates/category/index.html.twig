@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
-{% block title %}All programs{% endblock %}
+{% block title %}All series{% endblock %}
 
 {% block body %}
     <h1 class="m-5">Toutes les catégories existante : </h1>
     {% for category in categories %}
         <div class="my-5">
             <h2>{{ loop.index }} / {{ category.name }}</h2>
-             <a href="{{ path("category_show", { categoryName: category.name }) }}">Voir les programmes de la catégorie {{ category.name }}</a>
+             <a href="{{ path("category_show", { categoryName: category.name }) }}">Voir les series de la catégorie {{ category.name }}</a>
         </div>
     {% else %}
         Aucune catégorie trouvée.
     {% endfor %}
 
-    <a href="{{ path('app_index') }}">
+    <a href="{{ path('home') }}">
         Retour à l'accueil
     </a>
 {% endblock %}

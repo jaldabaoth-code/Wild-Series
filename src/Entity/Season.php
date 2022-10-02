@@ -25,9 +25,9 @@ class Season
     private $number;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Program::class, inversedBy="seasons")
+     * @ORM\ManyToOne(targetEntity=Serie::class, inversedBy="seasons")
      */
-    private $program;
+    private $serie;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -55,9 +55,6 @@ class Season
         $this->actors = new ArrayCollection();
     }
 
-
-
-
     /**
      * @return Collection|Actor[]
      */
@@ -83,8 +80,6 @@ class Season
         return $this;
     }
 
-
-
     public function getId(): ?int
     {
         return $this->id;
@@ -102,14 +97,14 @@ class Season
         return $this;
     }
 
-    public function getProgram(): ?Program
+    public function getSerie(): ?Serie
     {
-        return $this->program;
+        return $this->serie;
     }
 
-    public function setProgram(?Program $program): self
+    public function setSerie(?Serie $serie): self
     {
-        $this->program = $program;
+        $this->serie = $serie;
 
         return $this;
     }

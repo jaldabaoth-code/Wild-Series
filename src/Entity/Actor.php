@@ -28,9 +28,9 @@ class Actor
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Program::class, inversedBy="actors")
+     * @ORM\ManyToMany(targetEntity=Serie::class, inversedBy="actors")
      */
-    private $programs;
+    private $series;
 
 
     /**
@@ -56,7 +56,7 @@ class Actor
 
     public function __construct()
     {
-        $this->programs = new ArrayCollection();
+        $this->series = new ArrayCollection();
         $this->seasons = new ArrayCollection();
     }
 
@@ -121,25 +121,25 @@ class Actor
     }
 
     /**
-     * @return Collection|Program[]
+     * @return Collection|Serie[]
      */
-    public function getPrograms(): Collection
+    public function getSeries(): Collection
     {
-        return $this->programs;
+        return $this->series;
     }
 
-    public function addProgram(Program $program): self
+    public function addSerie(Serie $serie): self
     {
-        if (!$this->programs->contains($program)) {
-            $this->programs[] = $program;
+        if (!$this->series->contains($serie)) {
+            $this->series[] = $serie;
         }
 
         return $this;
     }
 
-    public function removeProgram(Program $program): self
+    public function removeSerie(Serie $serie): self
     {
-        $this->programs->removeElement($program);
+        $this->series->removeElement($serie);
 
         return $this;
     }

@@ -28,9 +28,9 @@ class Creator
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Program::class, inversedBy="creators")
+     * @ORM\ManyToMany(targetEntity=Serie::class, inversedBy="creators")
      */
-    private $programs;
+    private $series;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -50,7 +50,7 @@ class Creator
 
     public function __construct()
     {
-        $this->programs = new ArrayCollection();
+        $this->series = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -110,25 +110,25 @@ class Creator
     }
 
     /**
-     * @return Collection|Program[]
+     * @return Collection|Serie[]
      */
-    public function getPrograms(): Collection
+    public function getSeries(): Collection
     {
-        return $this->programs;
+        return $this->series;
     }
 
-    public function addProgram(Program $program): self
+    public function addSerie(Serie $serie): self
     {
-        if (!$this->programs->contains($program)) {
-            $this->programs[] = $program;
+        if (!$this->series->contains($serie)) {
+            $this->series[] = $serie;
         }
 
         return $this;
     }
 
-    public function removeProgram(Program $program): self
+    public function removeSerie(Serie $serie): self
     {
-        $this->programs->removeElement($program);
+        $this->series->removeElement($serie);
 
         return $this;
     }
