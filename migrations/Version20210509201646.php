@@ -21,13 +21,13 @@ final class Version20210509201646 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE category (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(100) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
-        $this->addSql('ALTER TABLE program ADD title VARCHAR(255) NOT NULL, ADD summary LONGTEXT NOT NULL, ADD poster VARCHAR(255) DEFAULT NULL');
+        $this->addSql('ALTER TABLE serie ADD title VARCHAR(255) NOT NULL, ADD description LONGTEXT NOT NULL, ADD poster VARCHAR(255) DEFAULT NULL');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('DROP TABLE category');
-        $this->addSql('ALTER TABLE program DROP title, DROP summary, DROP poster');
+        $this->addSql('ALTER TABLE serie DROP title, DROP description, DROP poster');
     }
 }

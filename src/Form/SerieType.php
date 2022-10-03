@@ -20,7 +20,7 @@ class SerieType extends AbstractType
     {
         $builder
             ->add('title', TextType::class)
-            ->add('summary', TextType::class)
+            ->add('description', TextType::class)
             ->add('posterFile', VichFileType::class, [
                 'required'      => false,
                 'allow_delete'  => true, // not mandatory, default is true

@@ -29,7 +29,6 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
  */
 class SerieController extends AbstractController
 {
-
     /**
      * show all rows from Serie's entity
      * @Route("/", name="index")
@@ -43,7 +42,6 @@ class SerieController extends AbstractController
         }
         // Get actual value in session with ‘total' key
         $total = $session->get('total');
-
         $form = $this->createForm(SearchType::class);
         $form->handleRequest($request);
         // 
@@ -53,8 +51,8 @@ class SerieController extends AbstractController
         } else {
             $series = $serieRepository->findAll();
         }
-
         return $this->render('serie/index.html.twig', [
+            'total' => $total,
             'series' => $series,
             'form' => $form->createView(),
         ]);

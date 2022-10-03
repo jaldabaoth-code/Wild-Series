@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use DateTime;
+use App\Repository\ActorRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\File\File;
@@ -32,7 +33,6 @@ class Actor
      */
     private $series;
 
-
     /**
      * @ORM\ManyToMany(targetEntity=Season::class, inversedBy="actors")
      */
@@ -59,10 +59,6 @@ class Actor
         $this->series = new ArrayCollection();
         $this->seasons = new ArrayCollection();
     }
-
-
-
-
 
     public function getId(): ?int
     {
