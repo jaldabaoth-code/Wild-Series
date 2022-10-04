@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Serie;
-use App\Entity\Season;
 use App\Entity\Episode;
 use App\Form\SerieType;
 use App\Form\CommentType;
@@ -35,33 +34,17 @@ class SerieController extends AbstractController
      * @Route("/", name="index")
      * @return Response A response instance
      */
-    public function index(Request $request, SerieRepository $serieRepository, SeasonRepository $seasonRepository, SessionInterface $session): Response
+    public function index(Request $request, SerieRepository $serieRepository): Response
     {
-        // If total doesn’t exist in session, it is initialized
-        if (!$session->has('total')) {
-            $session->set('total', 0);
-        }
-        // Get actual value in session with ‘total' key
-        $total = $session->get('total');
         $form = $this->createForm(SearchType::class);
         $form->handleRequest($request);
-        
         if ($form->isSubmitted() && $form->isValid()) {
             $search = $form->getData();
             $series = $serieRepository->findLikeName($search);
-
-            $season = $seasonRepository->findLikeName($search);
         } else {
-            $search = '';
             $series = $serieRepository->findAll();
-
-            $season = $seasonRepository->findAll();
         }
-        //var_dump($series);
-        //die;
         return $this->render('serie/index.html.twig', [
-            'search' => $search,
-            'season' => $season,
             'series' => $series,
             'form' => $form->createView(),
         ]);
@@ -81,6 +64,7 @@ class SerieController extends AbstractController
         $form = $this->createForm(SerieType::class, $serie);
         // Get data from HTTP request
         $form->handleRequest($request);
+        
         // Was the form submitted ?
         if ($form->isSubmitted() && $form->isValid()) {
             $slug = $slugify->generate($serie->getTitle());

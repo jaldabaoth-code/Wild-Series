@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Serie;
 use App\Entity\Actor;
+use App\Entity\Season;
 use App\Form\CommentType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -26,18 +27,37 @@ class SerieType extends AbstractType
                 'allow_delete'  => true, // not mandatory, default is true
                 'download_uri' => true, // not mandatory, default is true
                 ])
+            ->add('imageFile', VichFileType::class, [
+                'required'      => false,
+                'allow_delete'  => true, // not mandatory, default is true
+                'download_uri' => true, // not mandatory, default is true
+                ])
             ->add('country', TextType::class)
             ->add('year', IntegerType::class)
             ->add('category', null, [
                 'choice_label' => 'name'
             ])
+            /*
             ->add('actors', EntityType::class, [
             'class' => Actor::class,
             'choice_label' => 'name',
             'multiple' => true,
             'expanded' => true,
             'by_reference' => false,
-        ]);
+        ])*/
+        ;
+
+           /* ->add('seasons', EntityType::class)
+        ;*/
+/*
+        $builder->add('actors', EntityType::class, [
+            'class' => Actor::class,
+            'choice_label' => 'name',
+            'multiple' => true,
+            'expanded' => true,
+            'by_reference' => false,
+        ]);*/
+
     }
 
     public function configureOptions(OptionsResolver $resolver)

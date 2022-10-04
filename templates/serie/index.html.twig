@@ -24,7 +24,6 @@
             {% endfor %}
         </div>
     </div>#}
-        {{ app.session.get('total') }}
 
     <h1>Toutes les séries</h1>
         {{ form_start(form) }}
@@ -32,9 +31,6 @@
         <button>Search</button>
         {{ form_end(form) }}
 
-        {{ dump(search) }}
-        {{ dump(series) }}
-        {{ dump(season) }}
 
     {% for serie in series %}
         {{ serie.title }}

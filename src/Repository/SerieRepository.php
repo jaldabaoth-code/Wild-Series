@@ -62,14 +62,14 @@ class SerieRepository extends ServiceEntityRepository
 
     public function findLikeName(string $name): array
     {
-        $queryBuilder = $this->createQueryBuilder('ser')
-            ->join('ser.seasons', 'sea')
-            ->join('sea.actors', 'act')
-            ->where('ser.title LIKE :name')
+        $queryBuilder = $this->createQueryBuilder('serie')
+            ->join('serie.seasons', 'season')
+            ->join('season.actors', 'actor')
+            ->where('serie.title LIKE :name')
             ->setParameter('name', '%' . $name . '%')
-            ->orWhere('act.name LIKE :actor')
+            ->orWhere('actor.name LIKE :actor')
             ->setParameter('actor', '%' . $name . '%')
-            ->orderBy('ser.title', 'ASC')
+            ->orderBy('serie.title', 'ASC')
             ->getQuery();
 
         return $queryBuilder->getResult();

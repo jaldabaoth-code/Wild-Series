@@ -12,12 +12,20 @@ class SeasonType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
+     /*   $builder
             ->add('number')
             ->add('year')
             ->add('description')
             ->add('serie', null, ['choice_label' => 'title'])
-        ;
+        ;*/
+
+      /*  $builder->add('actors', EntityType::class, [
+            'class' => Actor::class,
+            'choice_label' => 'name',
+            'multiple' => true,
+            'expanded' => true,
+            'by_reference' => false,
+        ]);*/
     }
 
     public function configureOptions(OptionsResolver $resolver)
