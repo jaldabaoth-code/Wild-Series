@@ -8,8 +8,7 @@
 {% block title %}All Series{% endblock %}
 
 {% block body %}
-{{ dump(total)}}
-    <div class="d-flex flex-column align-items-center">
+    {#<div class="d-flex flex-column align-items-center">
         <h2 class="text-center">All Series</h2>
         <div class="col-8 d-flex row">
             {% for serie in series %}
@@ -24,5 +23,24 @@
                 </div>
             {% endfor %}
         </div>
-    </div>
+    </div>#}
+        {{ app.session.get('total') }}
+
+    <h1>Toutes les séries</h1>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button>Search</button>
+        {{ form_end(form) }}
+
+        {{ dump(search) }}
+        {{ dump(series) }}
+        {{ dump(season) }}
+
+    {% for serie in series %}
+        {{ serie.title }}
+            <a href="{{ path("category_show", { categoryName: serie.category.name }) }}">{{ serie.category.name }}</a>
+        <p>{{ serie.description }}</p>
+    {% endfor %}
+    <a href="{{ path('home') }}">Retour à l'accueil</a>
 {% endblock %}
+

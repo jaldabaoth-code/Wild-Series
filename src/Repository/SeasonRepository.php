@@ -47,4 +47,19 @@ class SeasonRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function findLikeName(string $name): array
+    {
+        $queryBuilder = $this->createQueryBuilder('sea')
+            ->join('sea.actors', 'a')
+            ->join('sea.serie', 'ser')
+            ->where('ser.title LIKE :name')
+            ->setParameter('name', '%' . $name . '%')
+            ->orWhere('a.name LIKE :actor')
+            ->setParameter('actor', '%' . $name . '%')
+            ->orderBy('ser.title', 'ASC')
+            ->getQuery();
+
+        return $queryBuilder->getResult();
+    }
 }

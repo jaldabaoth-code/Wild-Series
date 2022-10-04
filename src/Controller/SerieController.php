@@ -9,6 +9,7 @@ use App\Form\SerieType;
 use App\Form\CommentType;
 use App\Entity\Comment;
 use App\Repository\SerieRepository;
+use App\Repository\SeasonRepository;
 use App\Form\SearchSerieFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -34,7 +35,7 @@ class SerieController extends AbstractController
      * @Route("/", name="index")
      * @return Response A response instance
      */
-    public function index(Request $request, SerieRepository $serieRepository, SessionInterface $session): Response
+    public function index(Request $request, SerieRepository $serieRepository, SeasonRepository $seasonRepository, SessionInterface $session): Response
     {
         // If total doesn’t exist in session, it is initialized
         if (!$session->has('total')) {
@@ -44,15 +45,23 @@ class SerieController extends AbstractController
         $total = $session->get('total');
         $form = $this->createForm(SearchType::class);
         $form->handleRequest($request);
-        // 
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $search = $form->getData();
             $series = $serieRepository->findLikeName($search);
+
+            $season = $seasonRepository->findLikeName($search);
         } else {
+            $search = '';
             $series = $serieRepository->findAll();
+
+            $season = $seasonRepository->findAll();
         }
+        //var_dump($series);
+        //die;
         return $this->render('serie/index.html.twig', [
-            'total' => $total,
+            'search' => $search,
+            'season' => $season,
             'series' => $series,
             'form' => $form->createView(),
         ]);
