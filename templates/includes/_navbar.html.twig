@@ -23,9 +23,14 @@
                 </li>
             </ul>
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
             </form>
+            {% if form is defined %}
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                {{ form_end(form) }}
+            {% endif %}
         </div>
     </div>
 </nav>

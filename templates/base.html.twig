@@ -7,7 +7,6 @@
         <title>
             {% block title %}Wild-Series{% endblock %}
         </title>
-
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -18,7 +17,8 @@
         {% endblock %}
     </head>
     <body>
-            {% for category, messages in app.flashes %}
+        {# Flash message, when a series is added #}
+        {% for category, messages in app.flashes %}
             {% for message in messages %}
                 <div class="alert alert-{{ category }}">
                     {{ message }}
