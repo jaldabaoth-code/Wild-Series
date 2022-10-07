@@ -1,16 +1,39 @@
-{% extends 'base.html.twig' %}
-{% block title %}Série #{{ serie.id }}
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    {{ serie.title }}
 {% endblock %}
 
 {% block body %}
+    <div class="d-flex flex-column align-items-center">
+        <h2 class="text-center">{{ serie.title }}</h2>
+        <div class="col-8 d-flex row">
+            <img class="my-3" src="/uploads/series/poster/{{serie.poster}}" alt="{{ serie.title }} poster">
+        </div>
+    </div>
+
     <div class="col-8">
-        {% include "serie/_navbar.html.twig" %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Seasons
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            {% for season in seasons %}
+              <li>
+                <a class="dropdown-item"  href="{{ path('serie_season_show', {slug: serie.slug, seasonId: season.id}) }}">Season
+                  {{ season.number }}
+                </a>
+              </li>
+            {% endfor %}
+            toto
+          </ul>
+        </li>
     </div>
     <div>
         <div class="media">
             <img class="my-3" src="/uploads/{{serie.poster}}" alt="{{ serie.title }} poster">
             <div class="media-body">
-                <h1 class="my-0">{{ serie.title }}</h1>
+{#                 <h1 class="my-0">{{ serie.title }}</h1> #}
                 <p>{{ serie.description }}</p>
                 <p>Catégorie :
                     {{ serie.category.name }}</p>
@@ -21,9 +44,9 @@
         </a>
     </div>
 
-{#    <a id="watchlist" href="{{ path('serie_watchlist', {id: serie.id})}}">
+    <a id="watchlist" href="{{ path('serie_watchlist', {id: serie.id})}}">
         <i class="bi {{ app.user.isInWatchlist(serie) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
-    </a>#}
+    </a>
     <div class="d-flex flex-column align-items-center">
         <strong class="text-center">CASTING :</strong>
         <div class="col-8 d-flex row">

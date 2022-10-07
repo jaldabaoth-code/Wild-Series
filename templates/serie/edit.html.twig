@@ -6,11 +6,8 @@
 {% block body %}
     <div class="d-flex flex-column align-items-center">
         <h2 class="text-center">Edit series</h2>
-        <div class="col-8 d-flex row">
-            <div class="d-flex flex-column">
-                {{ include('serie/_form.html.twig', {'button_label': 'Update'}) }}
-                <a href="{{ path('serie_index') }}">back to list</a>
-            </div>
+        <div class="col-8">
+            {{ include('serie/_form.html.twig') }}
         </div>
     </div>
 {% endblock %}

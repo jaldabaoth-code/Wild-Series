@@ -36,17 +36,21 @@ class SerieController extends AbstractController
      */
     public function index(Request $request, SerieRepository $serieRepository): Response
     {
+
         $formSearchSeries = $this->createForm(SearchType::class);
         $formSearchSeries->handleRequest($request);
+
         if ($formSearchSeries->isSubmitted() && $formSearchSeries->isValid()) {
             $search = $formSearchSeries->getData();
             $series = $serieRepository->findLikeName($search);
         } else {
             $series = $serieRepository->findAll();
+            $search = '';
         }
         return $this->render('serie/index.html.twig', [
             'series' => $series,
             'formSearchSeries' => $formSearchSeries->createView(),
+            'search' => $search,
         ]);
     }
     
@@ -205,13 +209,13 @@ class SerieController extends AbstractController
     }
 
     /**
-     * @Route("/delete/{id}", name="delete_comment", methods={"POST"})
+     * @Route("/delete/{id}", name="delete", methods={"POST"})
      */
-    public function deleteComment(Request $request, Comment $comment): Response
+    public function deleteComment(Request $request, Serie $serie): Response
     {
-        if ($this->isCsrfTokenValid('delete' . $comment->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $serie->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($comment);
+            $entityManager->remove($serie);
             $entityManager->flush();
             $this->addFlash('danger', 'The serie is deleted');
         }
@@ -230,10 +234,10 @@ class SerieController extends AbstractController
         }
 
         $em->flush();
-        /*
+        
         return $this->redirectToRoute('serie_show', [
             'slug' => $serie->getSlug(),
-        ]);*/
+        ]);
         return $this->json([
             'isInWatchlist' => $this->getUser()->isInWatchlist($serie)
         ]);

@@ -2,18 +2,19 @@
 
 namespace App\Form;
 
-use App\Entity\Serie;
 use App\Entity\Actor;
+use App\Entity\Serie;
 use App\Entity\Season;
 use App\Form\CommentType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\UrlType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Vich\UploaderBundle\Form\Type\VichFileType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class SerieType extends AbstractType
 {
@@ -21,7 +22,7 @@ class SerieType extends AbstractType
     {
         $builder
             ->add('title', TextType::class)
-            ->add('description', TextType::class)
+            ->add('description', TextareaType::class)
             ->add('posterFile', VichFileType::class, [
                 'required'      => false,
                 'allow_delete'  => true, // not mandatory, default is true
@@ -37,27 +38,7 @@ class SerieType extends AbstractType
             ->add('category', null, [
                 'choice_label' => 'name'
             ])
-            /*
-            ->add('actors', EntityType::class, [
-            'class' => Actor::class,
-            'choice_label' => 'name',
-            'multiple' => true,
-            'expanded' => true,
-            'by_reference' => false,
-        ])*/
         ;
-
-           /* ->add('seasons', EntityType::class)
-        ;*/
-/*
-        $builder->add('actors', EntityType::class, [
-            'class' => Actor::class,
-            'choice_label' => 'name',
-            'multiple' => true,
-            'expanded' => true,
-            'by_reference' => false,
-        ]);*/
-
     }
 
     public function configureOptions(OptionsResolver $resolver)
