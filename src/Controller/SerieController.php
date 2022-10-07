@@ -3,12 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Serie;
+use App\Entity\Season;
 use App\Entity\Episode;
 use App\Form\SerieType;
 use App\Form\CommentType;
 use App\Entity\Comment;
 use App\Repository\SerieRepository;
-use App\Repository\SeasonRepository;
 use App\Form\SearchSerieFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -36,17 +36,17 @@ class SerieController extends AbstractController
      */
     public function index(Request $request, SerieRepository $serieRepository): Response
     {
-        $form = $this->createForm(SearchType::class);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $search = $form->getData();
+        $formSearchSeries = $this->createForm(SearchType::class);
+        $formSearchSeries->handleRequest($request);
+        if ($formSearchSeries->isSubmitted() && $formSearchSeries->isValid()) {
+            $search = $formSearchSeries->getData();
             $series = $serieRepository->findLikeName($search);
         } else {
             $series = $serieRepository->findAll();
         }
         return $this->render('serie/index.html.twig', [
             'series' => $series,
-            'form' => $form->createView(),
+            'formSearchSeries' => $formSearchSeries->createView(),
         ]);
     }
     
@@ -183,27 +183,21 @@ class SerieController extends AbstractController
     /**
      * @Route("/{slug}/edit", name="edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Serie $serie, Slugify $slugify): Response
+    public function edit(Request $request, Serie $serie, Slugify $slugify,): Response
     {
-
-        if (!($this->getUser() == $serie->getOwner())) {
+        if (!($this->getUser() == $serie->getOwner()) && ($this->getUser()->getRoles()[0] != 'ROLE_ADMIN')) {
             // If not the owner, throws a 403 Access Denied exception
             throw new AccessDeniedException('Only the owner can edit the serie!');
         }
-
         $form = $this->createForm(SerieType::class, $serie);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $serie->setSlug($slugify->generate($serie->getTitle()));
             $this->getDoctrine()->getManager()->flush();
-
             // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
             $this->addFlash('success', 'The serie has been edited');
-
             return $this->redirectToRoute('serie_index');
         }
-
         return $this->render('serie/edit.html.twig', [
             'serie' => $serie,
             'form' => $form->createView(),

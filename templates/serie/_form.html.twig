@@ -1,4 +1,32 @@
 {{ form_start(form) }}
+    <div class="col-12">
+        {{ form_label(form.title, null, {'attr': {'class': 'col-12 form-label'}}) }}
+        {{ form_widget(form.title, {'attr': {'class': 'col-12 form-control'}}) }}
+    </div>
+    <div class="col-12">
+        {{ form_label(form.description, null, {'attr': {'class': 'col-md-3 col-12 form-label'}}) }}
+        {{ form_widget(form.description, {'attr': {'class': 'col-12 form-control'}}) }}
+    </div>
+    <div class="col-12">
+        {{ form_label(form.posterFile, null, {'attr': {'class': 'col-md-3 col-12 form-label'}}) }}
+        {{ form_widget(form.posterFile, {'attr': {'class': 'col-12 form-control'}}) }}
+    </div>
+    <div class="col-12">
+        {{ form_label(form.imageFile, null, {'attr': {'class': 'col-md-3 col-12 form-label'}}) }}
+        {{ form_widget(form.imageFile, {'attr': {'class': 'col-12 form-control'}}) }}
+    </div>
+    <div class="col-12">
+        {{ form_label(form.country, null, {'attr': {'class': 'col-md-3 col-12 form-label'}}) }}
+        {{ form_widget(form.country, {'attr': {'class': 'col-12 form-control'}}) }}
+    </div>
+    <div class="col-12">
+        {{ form_label(form.year, null, {'attr': {'class': 'col-md-3 col-12 form-label'}}) }}
+        {{ form_widget(form.year, {'attr': {'class': 'col-12 form-control'}}) }}
+    </div>
+    <div class="col-12">
+        {{ form_label(form.category, null, {'attr': {'class': 'col-md-3 col-12 form-label'}}) }}
+        {{ form_widget(form.category, {'attr': {'class': 'col-12 form-control'}}) }}
+    </div>
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <button class="btn btn-primary mt-5 mb-3 col-10 offset-1">{{ edit ?? 'Save' }}</button>
 {{ form_end(form) }}

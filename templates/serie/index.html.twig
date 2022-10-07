@@ -8,10 +8,6 @@
 {% block title %}All Series{% endblock %}
 
 {% block body %}
-        {# {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <button>Search</button>
-        {{ form_end(form) }} #}
     <div class="d-flex flex-column align-items-center">
         <h2 class="text-center">All Series</h2>
         <div class="col-8 d-flex row">
@@ -20,7 +16,11 @@
                     <a class="shine" href="{{ path("serie_show", { slug: serie.slug }) }}">
                         <img src="{{ serie.poster }}" alt="poster of series">
                     </a>
-                    <a class="serieTitle mt-3" href="{{ path("serie_show", { slug: serie.slug }) }}">
+                    <div class="mt-2 mb-1 col-12 d-flex justify-content-center">
+                        <a href="{{ path("serie_edit", { slug: serie.slug }) }}" type="button" class="btn btn-primary btn-sm col-4 me-1">Edit</a>
+                        <a href="{{ path("serie_show", { slug: serie.slug }) }}" type="button" class="btn btn-danger btn-sm col-4 ms-1">Delete</a>
+                    </div>
+                    <a class="serieTitle mt-0" href="{{ path("serie_show", { slug: serie.slug }) }}">
                         {{ serie.title }}
                     </a>
                     <a class="categoryName" href="{{ path("category_show", { categoryName: serie.category.name }) }}">{{ serie.category.name }}</a>
@@ -28,6 +28,4 @@
             {% endfor %}
         </div>
     </div>
-    <a href="{{ path('home') }}">Retour à l'accueil</a>
 {% endblock %}
-

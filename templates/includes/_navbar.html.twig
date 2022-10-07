@@ -22,14 +22,16 @@
                     {{ render(controller('App\\Controller\\CategoryController::dropdown')) }}
                 </li>
             </ul>
-            <form class="d-flex">
-                <!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> -->
-            </form>
-            {% if form is defined %}
-                {{ form_start(form) }}
-                {{ form_widget(form) }}
-                <button class="btn btn-outline-success" type="submit">Search</button>
-                {{ form_end(form) }}
+            {# Serach series #}
+            {% if formSearchSeries is defined %}
+                {{ form_start(formSearchSeries) }}
+                    <div class="row m-0 p-0">
+                        <div class="col-9 m-0 p-0">
+                            {{ form_widget(formSearchSeries, {'attr': {'class': 'col-9 form-control', 'type': 'search', 'placeholder': 'Search'} }) }}
+                        </div>
+                        <button class="col-3 btn btn-outline-success" type="submit">Search</button>
+                    </div>
+                {{ form_end(formSearchSeries) }}
             {% endif %}
         </div>
     </div>

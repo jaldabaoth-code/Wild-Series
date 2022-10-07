@@ -4,8 +4,8 @@ security:
             algorithm: auto
 
     role_hierarchy:
-        ROLE_CONTRIBUTOR: ROLE_USER
-        ROLE_ADMIN: ROLE_CONTRIBUTOR
+        ROLE_CONTRIBUTOR: ROLE_CONTRIBUTOR
+        ROLE_ADMIN: ROLE_ADMIN
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
@@ -40,4 +40,5 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/series/new, roles: ROLE_CONTRIBUTOR }
-        - { path: ^/series/[a-z-]+/edit, roles: ROLE_CONTRIBUTOR }
+        # - { path: ^/series/[a-z-]+/edit, roles: ROLE_CONTRIBUTOR }
+        - { path: ^/series/[a-z-]+/edit, roles: ROLE_ADMIN }
