@@ -7,10 +7,17 @@
 {% block body %}
     <div class="d-flex flex-column align-items-center">
         <h2 class="text-center">{{ serie.title }}</h2>
-        <div class="col-8 d-flex row">
-            <img class="my-3" src="/uploads/series/poster/{{serie.poster}}" alt="{{ serie.title }} poster">
+        <div class="col-8 d-flex row justify-content-center">
+            {% if ('https://' in serie.poster) or ('http://' in serie.poster) %}
+                <img class="my-3 w-25" src="{{serie.poster}}" alt="{{ serie.title }} poster">
+            {% else %}
+                <img class="my-3" src="/uploads/series/poster/{{serie.poster}}" alt="{{ serie.title }} poster">
+            {% endif %}
         </div>
     </div>
+
+
+
 
     <div class="col-8">
         <li class="nav-item dropdown">
@@ -44,9 +51,11 @@
         </a>
     </div>
 
-    <a id="watchlist" href="{{ path('serie_watchlist', {id: serie.id})}}">
-        <i class="bi {{ app.user.isInWatchlist(serie) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
-    </a>
+    {% if app.user %}
+        <a id="watchlist" href="{{ path('serie_watchlist', {id: serie.id})}}">
+            <i class="bi {{ app.user.isInWatchlist(serie) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
+        </a>
+    {% endif %}
     <div class="d-flex flex-column align-items-center">
         <strong class="text-center">CASTING :</strong>
         <div class="col-8 d-flex row">

@@ -2,6 +2,10 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
 body {
-    background-color: $white;
+    background: linear-gradient(grey, white, #D3D3D3);
     color: $dark;
+}
+
+.main {
+    box-shadow: 1px 1px 12px #aaa;
 }

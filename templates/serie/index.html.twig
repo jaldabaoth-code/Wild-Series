@@ -9,14 +9,14 @@
 
 {% block body %}
     <div class="d-flex flex-column align-items-center">
-        <h2 class="text-center">
+        <h2 class="col text-center">
             {% if search == '' %}
                 All Series
             {% else %}
                 Result for : {{ search }}
             {% endif %}
         </h2>
-        <div class="col-8 d-flex row">
+        <div class="d-flex row">
             {% for serie in series %}
                 <div class="col-3 my-3 d-flex flex-column align-items-center">
                     <a class="shine" href="{{ path("serie_show", { slug: serie.slug }) }}">

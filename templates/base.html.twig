@@ -27,7 +27,11 @@
         {% endfor %}
         {% block header %}{% endblock %}
         {% block navbar %}{% endblock %}
-        {% block body %}{% endblock %}
+        <div class="d-flex justify-content-center mt-5">
+            <div class="col-8 bg-white py-5 px-5 main">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
         {% block footer %}{% endblock %}
     </body>
 </html>
