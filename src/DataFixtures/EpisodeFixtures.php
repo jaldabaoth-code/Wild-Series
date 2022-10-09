@@ -19,7 +19,6 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
         $this->slugify = $slugify;
     }
 
-
     public function load(ObjectManager $manager)
     {
         $seasonFixtures = new SeasonFixtures;
@@ -31,6 +30,7 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
                     $episode->setSlug($this->slugify->generate($serieTitle .'-' . $episode->getTitle()));
                     $episode->setNumber($episodeData['number']);
                     $episode->setSynopsis($episodeData['description']);
+                    $episode->setPoster($episodeData['poster']);
                     $episode->setSeason($this->getReference('season_'. $serieTitle . '_' . $seasonNumber));
                     $manager->persist($episode);
                 }

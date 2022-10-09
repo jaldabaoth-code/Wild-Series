@@ -6,6 +6,9 @@ use App\Repository\EpisodeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * @ORM\Entity(repositoryClass=EpisodeRepository::class)
@@ -18,7 +21,6 @@ class Episode
      * @ORM\Column(type="integer")
      */
     private $id;
-
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -50,6 +52,18 @@ class Episode
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="episode", orphanRemoval=true)
      */
     private $comments;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * @var string
+     */
+    private $poster;
+
+    /**
+     * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
+     * @var File
+     */
+    private $posterFile;
 
     public function __construct()
     {
@@ -150,5 +164,30 @@ class Episode
         }
 
         return $this;
+    }
+
+    public function getPoster(): ?string
+    {
+        return $this->poster;
+    }
+
+    public function setPoster(?string $poster): self
+    {
+        $this->poster = $poster;
+        return $this;
+    }
+
+    public function setPosterFile(File $posterFile = null): Serie
+    {
+        $this->posterFile = $posterFile;
+        if ($posterFile) {
+            $this->updatedAt = new DateTime('now');
+        }
+        return $this;
+    }
+
+    public function getPosterFile(): ?File
+    {
+        return $this->posterFile;
     }
 }

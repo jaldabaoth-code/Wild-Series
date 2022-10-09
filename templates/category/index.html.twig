@@ -1,15 +1,18 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 {% block title %}All series{% endblock %}
 
 {% block body %}
     <h1 class="m-5">Toutes les catégories existante : </h1>
-    {% for category in categories %}
-        <div class="my-5">
-            <h2>{{ loop.index }} / {{ category.name }}</h2>
-             <a href="{{ path("category_show", { categoryName: category.name }) }}">Voir les series de la catégorie {{ category.name }}</a>
+    {% for categorie, seriesCategorie in seriesCategories %}
+        <h2><a href="{{ path("category_show", { categoryName: categorie }) }}">{{ loop.index }} / {{ categorie }}</a></h2>
+        <div class="row">
+            <a class="shine" href="{{ path("serie_show", { slug: seriesCategorie.slug }) }}">
+                <img src="{{ seriesCategorie.poster }}" alt="poster of series">
+            </a>
+            <a href="{{ path("serie_show", { 'slug': seriesCategorie.slug }) }}">{{ seriesCategorie.title }}</a>
         </div>
     {% else %}
-        Aucune catégorie trouvée.
+        Aucune série trouvée.
     {% endfor %}
 
     <a href="{{ path('home') }}">

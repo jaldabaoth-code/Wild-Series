@@ -1,8 +1,18 @@
-{% extends "base.html.twig" %}
+{% extends "layout.html.twig" %}
 
 {% block body %}
-    {{ form_start(form) }}
+{#     {{ form_start(form) }}
     {{ form_widget(form) }}
     <input type='submit' value='Add category'>
+    {{ form_end(form) }} #}
+
+
+    {{ form_start(form) }}
+        <div class="col-12 mt-2">
+            {{ form_label(form.name, 'Category name : ', {'attr': {'class': 'form-label'}}) }}
+            {{ form_widget(form.name, {'attr': {'class': 'mt-1 form-control'}}) }}
+        </div>
+        <button class="btn btn-primary mb-3 col-12 mt-4">{{ edit ?? 'Add category' }}</button>
     {{ form_end(form) }}
+
 {% endblock %}

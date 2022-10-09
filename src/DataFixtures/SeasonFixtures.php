@@ -18,9 +18,9 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
                 $season->setNumber($seasonData['number']);
                 $season->setYear($seasonData['year']);
                 $season->setDescription($seasonData['description']);
+                $season->setPoster($seasonData['poster']);
                 $season->setSerie($this->getReference('serie_' . $seriesTitle));
                 if (array_key_exists('actors', $seasonData)) {
-
                     foreach ($seasonData['actors'] as $actor) {
                         for ($i=0; $i < count(FixturesData::ACTORS); $i++) {
                             if (FixturesData::ACTORS[$i]['name'] == $actor) {
@@ -31,7 +31,6 @@ class SeasonFixtures extends Fixture implements DependentFixtureInterface
                 }
                 $manager->persist($season);
                 $this->addReference('season_' . $seriesTitle . '_' . $seasonNumber, $season);
-
             }
         }
         $manager->flush();

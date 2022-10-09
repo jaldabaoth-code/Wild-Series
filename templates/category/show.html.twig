@@ -1,14 +1,13 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 {% block title %} All series in category {% endblock %}
 
 {% block body %}
     {% if series %}
-        <h1 class="my-5">Les 3 dernières séries de la catégorie :
-            {{ series.0.category.name }}</h1>
+        <h1 class="my-5">{{ series.0.category.name }}</h1>
+
         {% for serie in series %}
             <div class="my-5">
-                <h2>{{ serie.id }}
-                    /
+                <h2>
                     <a href="{{ path("serie_show", { 'slug': serie.slug }) }}">{{ serie.title }}</a>
                 </h2>
                 <p>{{ serie.description }}</p>

@@ -6,6 +6,7 @@ use App\Entity\Category;
 use App\Entity\Serie;
 use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
+use App\Repository\SerieRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,22 +24,25 @@ class CategoryController extends AbstractController
      * @Route("/", name="index")
      * @return Response A response instance
      */
-    public function index(): Response
+    public function index(SerieRepository $serieRepository): Response
     {
         $categories = $this->getDoctrine()
         ->getRepository(Category::class)
         ->findAll();
-
-        return $this->render('category/index.html.twig', ['categories' => $categories,]);
+        for ($i = 0; $i <= sizeof($categories)-1; $i++) {
+            $seriesCategorie = $serieRepository->findByCategory($categories[$i]->getId());
+            if (isset($seriesCategorie[0])) {
+                $seriesCategories[$categories[$i]->getName()] = $seriesCategorie[0];
+            }
+        }
+        return $this->render('category/index.html.twig', ['categories' => $categories, 'seriesCategories' => $seriesCategories]);
     }
 
     /**
      * The controller for the category add form
      * Display the form or deal with it
-     * 
      * @Route("/new", name="new")
      * @IsGranted("ROLE_ADMIN")
-     * 
      */
     public function new(Request $request) : Response
     {

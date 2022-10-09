@@ -1,33 +1,41 @@
 
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 {% block body %}
 
     <div class="container">
-        <h1 class="my-5">{{serie.title}}</h1>
-        <img class="my-5" src="{{serie.poster}}" alt="{{ serie.title }}">
-        <h2 class="my-3">Saison {{ season.number }} ({{ season.year }})</h2>
-        <p>{{ season.description }}</p>
-
-        <p>Liste des épisodes:</p>
-        <ul>
-            {% for episode in episodes %}
-                <li><a href="{{ path('serie_episode_show', {serieSlug: serie.slug, seasonId: season.id, episodeSlug: episode.slug}) }}">
-                Episode {{ episode.number }} -- avec le titre de l'episode : {{ episode.title }}</a></li>
-            {% endfor %}
-        </ul>
+        <h1 class="my-5">{{serie.title}} - Season {{ season.number }}</h1>
+        <div class="d-flex">
+            <img src="{{season.poster}}" alt="{{ serie.title }}">
+            <div>
+                <p>Series title : {{ serie.title }}</p>
+                <p>Season : {{ season.number }}</p>
+                <p>Year : {{ season.year }}</p>
+                <p>Liste des épisodes:</p>
+                <div class="d-flex">
+                    <div class="dropdown-toggle col-1" role="button" data-bs-toggle="dropdown">
+                        Episodes : 
+                    </div>
+                    <div class="dropdown-menu ms-5 ms-5" aria-labelledby="navbarDropdownMenuLink">
+                        {% for episode in episodes %}
+                            <a class="dropdown-item" href="{{ path('serie_episode_show', {serieSlug: serie.slug, seasonId: season.id, episodeSlug: episode.slug}) }}">Episode
+                                {{ episode.number }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-
-    <div class="d-flex flex-column align-items-center">
-        {{ dump(season.actors) }}
-        <strong class="text-center">CASTING :</strong>
-        <div class="col-8 d-flex row">
+    <p>Description : {{ season.description }}</p>
+    <strong class="text-center">CASTING :</strong>
+    <div class="d-flex justify-content-center">
+        <div class="d-flex row">
             {% for actor in season.actors %}
-                <div class="col-2">
+                <div class="col-3 row">
                     {% if actor.poster %}
-                        <img class="col" src="{{ actor.poster }}">
+                        <img class="w-75" src="{{ actor.poster }}">
                     {%  else %}
-                        <img class="w-100" src="{{ asset('build/no-image.png') }}">
+                        <img class="w-75" src="{{ asset('build/no-image.png') }}">
                     {%endif%}
                     <a href="{{ path('actor_show', {id: actor.id}) }}">{{ actor.name }}</a>
                 </div>
@@ -36,4 +44,6 @@
             {% endfor %}
         </div>
     </div>
+
+
 {% endblock %}
