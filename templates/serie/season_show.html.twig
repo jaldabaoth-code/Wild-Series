@@ -1,11 +1,20 @@
 
 {% extends 'layout.html.twig' %}
-{% block body %}
 
+{% block title %}
+    {{ serie.title }} - Season {{ season.number }}
+{% endblock %}
+
+{% block body %}
     <div class="container">
-        <h1 class="my-5">{{serie.title}} - Season {{ season.number }}</h1>
+        <h1 class="text-center">{{serie.title}} - Season {{ season.number }}</h1>
         <div class="d-flex">
-            <img src="{{season.poster}}" alt="{{ serie.title }}">
+
+            {% if ('https://' in season.poster) or ('http://' in season.poster) %}
+                <img src="{{season.poster}}" alt="{{ serie.title }} poster">
+            {% else %}
+                <img src="/uploads/seasons/posters/{{season.poster}}" alt="{{ season.poster }} poster">
+            {% endif %}
             <div>
                 <p>Series title : {{ serie.title }}</p>
                 <p>Season : {{ season.number }}</p>

@@ -20,7 +20,7 @@
         {# Flash message, when a series is added #}
         {% for category, messages in app.flashes %}
             {% for message in messages %}
-                <div class="alert alert-{{ category }}">
+                <div class="alert alert-{{ category }} my-0">
                     {{ message }}
                 </div>
             {% endfor %}

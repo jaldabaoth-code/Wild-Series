@@ -6,21 +6,33 @@
 
 {% block body %}
     <div class="d-flex flex-column ">
-        <h2 class="text-center">{{ serie.title }}</h2>
-        <div class="col-8 d-flex justify-content-center">
+        <h1 class="text-center">{{ serie.title }}</h1>
+        <div class="d-flex">
             {% if ('https://' in serie.poster) or ('http://' in serie.poster) %}
-                <img class="my-3 w-25" src="{{serie.poster}}" alt="{{ serie.title }} poster">
+                <img src="{{serie.poster}}" alt="{{ serie.title }} poster">
             {% else %}
-                <img class="my-3" src="/uploads/series/poster/{{serie.poster}}" alt="{{ serie.title }} poster">
+                <img src="/uploads/series/poster/{{serie.poster}}" alt="{{ serie.title }} poster">
             {% endif %}
-            <div class="">
-                <p>Title : {{ serie.title }}</p>
-                {% if app.user %}
-                    <a id="watchlist" href="{{ path('serie_watchlist', {id: serie.id})}}">
-                        <i class="bi {{ app.user.isInWatchlist(serie) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
-                    </a>
-                {% endif %}
-
+            <div class="mx-3">
+                <p>Title : {{ serie.title }}
+                    {% if app.user %}
+                        <a id="watchlist" href="{{ path('serie_watchlist', {id: serie.id})}}">
+                            <i class="ms-3 bi {{ app.user.isInWatchlist(serie) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
+                        </a>
+                    {% endif %}
+                </p>
+                <p>Date : {{ serie.year }}</p>
+                <p>Category : {{ serie.category.name }}</p>
+                <p>Country : {{ serie.country }}</p>
+                
+                <div class="d-flex">
+                    <p>Actor : </p>
+                    {% for actor in seasons[0].actors|slice(0, 4) %}
+                        <a class="ms-2" href="{{ path('actor_show', {id: actor.id}) }}">{{ actor.name }}</a>
+                    {% else %}
+                        <div>Aucun acteur pour cette série</div>
+                    {% endfor %}
+                </div>
                 <div class="d-flex">
                     <div class="dropdown-toggle col-1" role="button" data-bs-toggle="dropdown">
                         Seasons : {{ seasons|length }} seasons
@@ -33,34 +45,25 @@
                         {% endfor %}
                     </div>
                 </div>
-                <p>Date : {{ serie.year }}</p>
-                <p>Catégorie : {{ serie.category.name }}</p>
-                <p>Country : {{ serie.country }}</p>
-                <p>Actor : </p>
-                <div class="col-8 d-flex row">
-                    {% for actor in seasons[0].actors|slice(0, 4) %}
-                        <a href="{{ path('actor_show', {id: actor.id}) }}">{{ actor.name }}</a>
-                    {% else %}
-                        <div>Aucun acteur pour cette série</div>
-                    {% endfor %}
-                </div>
             </div>
         </div>
     </div>
     <div>
-        {% if ('https://' in serie.image) or ('http://' in serie.image) %}
-            <img class="my-3 w-25" src="{{serie.image}}" alt="{{ serie.title }} poster">
-        {% else %}
-            <img class="my-3" src="/uploads/series/images/{{serie.image}}" alt="{{ serie.title }} poster">
-        {% endif %}
-        <p>{{ serie.description }}</p>
-    </div>
-    <div>
-        <a href="{{ path('serie_index') }}">
-            Retour à la liste des series
-        </a>
+        <p class="mb-5 mt-4">{{ serie.description }}</p>
+        <div class="d-flex justify-content-center">
+            {% if ('https://' in serie.image) or ('http://' in serie.image) %}
+                <img class="w-75" src="{{serie.image}}" alt="{{ serie.title }} poster">
+            {% else %}
+                <img src="/uploads/series/images/{{serie.image}}" alt="{{ serie.title }} poster">
+            {% endif %}
+        </div>
     </div>
     {% if is_granted("ROLE_ADMIN") %}
         <a href="{{ path('serie_edit', { 'slug': serie.slug} ) }}">Edit</a>
-    {%endif%}
+    {% endif %}
+    <div>
+        <a href="{{ path('serie_index') }}">
+            Back to series list
+        </a>
+    </div>
 {% endblock %}
