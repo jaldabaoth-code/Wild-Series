@@ -1,11 +1,23 @@
+@import 'variables.scss';
 @import "~bootstrap/scss/bootstrap";
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
 body {
-    background: linear-gradient(grey, white, #D3D3D3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient($secondary, $white, $light);
     color: $dark;
 }
 
-.main {
-    box-shadow: 1px 1px 12px #aaa;
+main {
+    box-shadow: 1px 1px 12px $secondary;
+    background-color: $white;
+    margin-top: $spacer * 3;
+    padding: $spacer * 3;
+}
+
+.alertNewSeries {
+    padding: $spacer;
 }

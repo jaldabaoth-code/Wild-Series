@@ -32,7 +32,9 @@
                         </form>
                     </div>
                     <a class="serieTitle mt-0" href="{{ path("serie_show", { slug: serie.slug }) }}">{{ serie.title }}</a>
-                    <a class="categoryName" href="{{ path("category_show", { categoryName: serie.category.name }) }}">{{ serie.category.name }}</a>
+                    {% if serie.category.name is defined %}
+                        <a class="categoryName" href="{{ path("category_show", { categoryName: serie.category.name }) }}">{{ serie.category.name }}</a>
+                    {% endif %}
                 </div>
             {% endfor %}
         </div>
