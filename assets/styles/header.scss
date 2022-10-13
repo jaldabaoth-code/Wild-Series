@@ -1,22 +1,46 @@
 @import 'variables.scss';
 @import "~bootstrap/scss/bootstrap";
 
-.img {
-    width: 30px;
-    height: 30px;
-}
 
-.title {
-    text-decoration: none;
-}
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: $primary;
+    padding: $spacer * 0 $spacer;
+    width: 100%;
 
-.log {
-    text-decoration: none;
-    font-weight: bolder;
-    font-size: large;
-    color: $white;
-}
+    .title, .title:hover {
+        text-decoration: none;
+        color: $dark;
+    }
 
-.log:hover {
-    color: $warning;
+    .log {
+        display: flex;
+        align-items: center;
+
+        .userMail {
+            color: $white;
+            padding: $spacer * 0 $spacer * .5;
+        }
+        
+        .logOut {
+            color: $warning;
+        }
+        
+        .logOut:hover {
+            color: $danger;
+        }
+        
+        .logIn, .register, .logOut {
+            text-decoration: none;
+            font-weight: bolder;
+            font-size: large;
+            color: $white;
+            padding: $spacer * 0 $spacer;
+        }
+        
+        .logIn:hover, .register:hover {
+            color: $warning;
+        }
+    }
 }

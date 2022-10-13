@@ -1,13 +1,35 @@
+@import 'variables.scss';
 @import "~bootstrap/scss/bootstrap";
 
-.fab {
-    color: $secondary;
-    background-color: $white;
-    border-radius: 50%;
-}
+footer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: $primary;
+    padding: $spacer * 3 $spacer;
+    margin-top: $spacer * 3;
+    width: 100%;
+    
+    .informations {
+        display: flex;
+        justify-content: center;
+        width: $column * 8;
 
-.fab:hover {
-    transition-duration: .7s;
-    color: $dark;
-    background-color: $warning;
+        a {
+            margin: $spacer * 0 $spacer * 1.5;
+
+            .fab {
+                color: $secondary;
+                background-color: $white;
+                border-radius: 50%;
+                padding: $spacer;
+            }
+    
+            .fab:hover {
+                transition-duration: .7s;
+                color: $dark;
+                background-color: $warning;
+            }
+        }
+    }
 }

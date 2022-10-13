@@ -9,19 +9,23 @@ body {
     flex-direction: column;
     background: linear-gradient($secondary, $white, $light);
     color: $dark;
-}
 
-main {
-    box-shadow: 1px 1px 12px $secondary;
-    background-color: $white;
-    margin-top: $spacer * 3;
-    padding: $spacer * 3;
-}
+    main {
+        box-shadow: 1px 1px 12px $secondary;
+        background-color: $white;
+        margin-top: $spacer * 3;
+        padding: $spacer * 3;
 
-h1, h2 {
-    text-align: center;
-}
-
-.alertNewSeries {
-    padding: $spacer;
+        h1 {
+            padding-bottom: $spacer * 2;
+        }
+        
+        h1, h2 {
+            text-align: center;
+        }
+        
+        .alertNewSeries {
+            padding: $spacer;
+        }
+    }
 }
