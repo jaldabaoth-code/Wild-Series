@@ -11,6 +11,36 @@
 {% endblock %}
 
 {% block body %}
-	<h2 class="text-center">Latest Series</h2>
-    {% include "home/_carousel.html.twig" %}
+	<h1>Latest series</h1>
+	{%  if lastSeries == true %}
+		{# Bootsrap carousel #}
+		<div id="carouselDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+			<div class="carousel-indicators">
+				{% for i in 0.. lastSeries|length-1 %}
+					<button type="button" data-bs-target="#carouselDark" data-bs-slide-to="{{ i }}" aria-label="Slide {{ i+1 }}" {{ (i == 0) ? "class='active' aria-current='true'" : "" }}></button>
+				{% endfor %}
+			</div>
+			<div class="carousel-inner">
+				{% for serie in lastSeries %}
+					<div class="carousel-item {{ (loop.index == 1) ? 'active' : '' }}" data-bs-interval="5000">
+						<img src="{{ serie.image }}" class="carouselImage d-block" alt="...">
+						<div class="carousel-caption d-none d-md-block">
+							<h3>{{ serie.title }}</h3>
+							<p>{{ serie.description }}</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselDark" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselDark" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	{% else %}
+		<p>No series on site currently</p>
+	{% endif %}
 {% endblock %}

@@ -14,9 +14,10 @@ class HomeController extends AbstractController
      */
     public function index(SerieRepository $serieRepository): Response
     {
-        $series = $serieRepository->findAll();
+        // Get the last 3 series from the database
+        $lastSeries = $serieRepository->findBy(array(),array('id'=>'DESC'),3,0);
         return $this->render('home/index.html.twig', [
-            'series' => $series
+            'lastSeries' => $lastSeries
         ]);
     }
 }
