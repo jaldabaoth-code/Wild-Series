@@ -23,4 +23,22 @@ nav {
             width: $column * 3;
         }
     }
+
+    .dropdown-menu {
+        padding: $spacer * 0;
+
+        a {
+            width: 100%;
+            display: inline-block;
+            padding: $spacer * 0 $spacer * .5;
+            text-decoration: none;
+            font-size: larger;
+            color: $dark;
+        }
+
+        a:hover {
+            background-color: $primary;
+            color: $white;
+        }
+    }
 }

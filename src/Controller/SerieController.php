@@ -30,9 +30,8 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class SerieController extends AbstractController
 {
     /**
-     * show all rows from Serie's entity
+     * show all rows from Series's entity
      * @Route("/", name="index")
-     * @return Response A response instance
      */
     public function index(Request $request, SerieRepository $serieRepository): Response
     {
@@ -54,14 +53,12 @@ class SerieController extends AbstractController
     }
     
     /**
-     * The controller for the serie add form
-     * Display the form or deal with it
-     *
+     * Display the form for add series
      * @Route("/new", name="new")
      */
     public function new(Request $request, Slugify $slugify, MailerInterface $mailer) : Response
     {
-        // Create a new Serie Object
+        // Create a new Series Object
         $serie = new Serie();
         // Create the associated Form
         $form = $this->createForm(SerieType::class, $serie);

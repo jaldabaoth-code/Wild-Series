@@ -95,12 +95,14 @@ class CategoryController extends AbstractController
         ]);
     }
 
+    /**
+     * Dropdown in navbar, for display series categories
+     */
     public function dropdown(CategoryRepository $categoryRepository): Response
     {
+        $categories = $categoryRepository->findBy([], ['id' => 'DESC']);
         return $this->render('includes/_dropdown_navbar.html.twig', [
-            'categories' => $categoryRepository->findBy([], ['id' => 'DESC'])
+            'categories' => $categories
         ]);
     }
-
-
 }

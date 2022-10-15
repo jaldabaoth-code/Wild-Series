@@ -1,28 +1,33 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}
-    {{ serie.title }}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('series') }}
 {% endblock %}
 
+{% block title %}{{ serie.title }}{% endblock %}
+
 {% block body %}
-    <div class="d-flex flex-column ">
-        <h1 class="text-center">{{ serie.title }}</h1>
-        <div class="d-flex">
+        <h1>{{ serie.title }}</h1>
+        <div class="showSeries">
             {% if ('https://' in serie.poster) or ('http://' in serie.poster) %}
-                <img src="{{serie.poster}}" alt="{{ serie.title }} poster">
+                <img src="{{ serie.poster }}" alt="{{ serie.title }} poster">
             {% else %}
-                <img src="/uploads/series/poster/{{serie.poster}}" alt="{{ serie.title }} poster">
+                <img src="/uploads/series/poster/{{ serie.poster }}" alt="{{ serie.title }} poster">
             {% endif %}
-            <div class="mx-3">
-                <p>Title : {{ serie.title }}
+            <div class="seriesInformations mt-2 mx-3">
+                <p>Title :
+                    <a class="seriesTitle" href="{{ path("serie_show", { slug: serie.slug }) }}">{{ serie.title }}</a>
                     {% if app.user %}
-                        <a id="watchlist" href="{{ path('serie_watchlist', {id: serie.id})}}">
+                        <a id="watchlist" href="{{ path('serie_watchlist', { id: serie.id }) }}">
                             <i class="ms-3 bi {{ app.user.isInWatchlist(serie) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
                         </a>
                     {% endif %}
                 </p>
                 <p>Date : {{ serie.year }}</p>
-                <p>Category : {{ serie.category.name }}</p>
+                <p>Category : 
+                    <a class="categoryName" href="{{ path("category_show", { categoryName: serie.category.name }) }}">{{ serie.category.name }}</a>
+                </p>
                 <p>Country : {{ serie.country }}</p>
                 
                 <div class="d-flex">
@@ -47,7 +52,6 @@
                 </div>
             </div>
         </div>
-    </div>
     <div>
         <p class="mb-5 mt-4">{{ serie.description }}</p>
         <div class="d-flex justify-content-center">

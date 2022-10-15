@@ -1,6 +1,6 @@
 @import 'variables.scss';
 
-.mainSeries {
+.allSeries {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -94,4 +94,15 @@
             }
         }
     }
+}
+
+.showSeries {
+    display: flex;
+    
+    img{
+        padding: $spacer * 0.5;
+        border: thick double $primary;
+    }
+
+
 }

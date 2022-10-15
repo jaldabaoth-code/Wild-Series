@@ -8,14 +8,14 @@
 {% block title %}All Series{% endblock %}
 
 {% block body %}
-    <div class="mainSeries">
-        <h1>
-            {% if search == '' %}
-                All Series
-            {% else %}
-                Result for : {{ search }}
-            {% endif %}
-        </h1>
+    <h1>
+        {% if search == '' %}
+            All Series
+        {% else %}
+            Result for : {{ search }}
+        {% endif %}
+    </h1>
+    <div class="allSeries">
         <div class="seriesBody">
             {% for serie in series %}
                 <div class="eachSeries">

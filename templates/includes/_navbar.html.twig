@@ -17,11 +17,9 @@
             <li class="nav-item">
                 <a class="nav-link px-3 {{ currentPath == '/episode/' ? 'active text-white' : '' }} menu" href="/episode/">Episodes</a>
             </li>
-            <li class="nav-item dropdown">
-                {{ render(controller('App\\Controller\\CategoryController::dropdown')) }}
-            </li>
+            {{ render(controller('App\\Controller\\CategoryController::dropdown')) }}
         </ul>
-        {# Serach series display only in series page #}
+        {# Search series, it's display only in series page #}
         {% if formSearchSeries is defined %}
             {{ form_start(formSearchSeries) }}
                 <div class="formSearchSeries">
