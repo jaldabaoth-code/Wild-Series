@@ -9,7 +9,7 @@
         text-align: center;
     }
 
-    .allSeries {
+    .seriesBody {
         display: flex;
         flex-wrap: wrap;
 
@@ -20,7 +20,7 @@
             width: $column * 3;
             margin: $spacer $spacer * 0;
 
-            .shinePoster {
+            .shineSeriesPoster {
                 position: relative;
                 overflow: hidden;
                 border-radius: 15px;
@@ -52,7 +52,7 @@
                 }
             }
 
-            .buttons {
+            .rectificationButtons {
                 display: flex;
                 justify-content: center;
                 width: 100%;

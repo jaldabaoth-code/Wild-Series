@@ -16,13 +16,13 @@
                 Result for : {{ search }}
             {% endif %}
         </h1>
-        <div class="allSeries">
+        <div class="seriesBody">
             {% for serie in series %}
                 <div class="eachSeries">
-                    <a class="shinePoster" href="{{ path("serie_show", { slug: serie.slug }) }}">
+                    <a class="shineSeriesPoster" href="{{ path("serie_show", { slug: serie.slug }) }}">
                         <img src="{{ serie.poster }}" alt="poster of {{ serie.title }}">
                     </a>
-                    <div class="buttons">
+                    <div class="rectificationButtons">
                         <!-- Edit series button -->
                         <a class="buttonEditSeries btn btn-primary btn-sm" href="{{ path("serie_edit", { slug: serie.slug }) }}" type="button" >Edit</a>
                         <!-- Delete series button -->
