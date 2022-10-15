@@ -1,6 +1,26 @@
+@import 'variables.scss';
 @import "~bootstrap/scss/bootstrap";
 
-.active {
-    color: $white !important;
-    background-color: $dark;
+nav {
+    width: 100%;
+    background-color: $light;
+
+    .active {
+        background-color: $dark;
+    }
+
+    .formSearchSeries {
+        display: flex;
+        flex-wrap: wrap;
+        padding: $spacer * 0;
+        margin: $spacer * 0;
+
+        .inputSearchSeries {
+            width: $column * 9;
+        }
+        
+        .buttonSearchSeries {
+            width: $column * 3;
+        }
+    }
 }

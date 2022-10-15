@@ -1,60 +1,97 @@
-.serieTitle {
-    color: #2b2b2b;
-    text-decoration: none;
-}
+@import 'variables.scss';
 
-.serieTitle:hover {
-    color: #2c82c8;
-}
+.mainSeries {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-.categoryName {
-    color: #b3b3b3;
-    text-decoration: none;
-}
-
-.categoryName:hover {
-    color: #8b8b8b;
-}
-
-.shine {
-    position: relative;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 8px 8px 12px #aaa;
-    &::before {
-        background: linear-gradient(to right, fade_out(#fff, 1) 0%, fade_out(#fff, 0.7) 100%);
-        content: "";
-        display: block;
-        height: 100%;
-        left: -75%;
-        position: absolute;
-        top: 0;
-        transform: skewX(-25deg);
-        width: 50%;
-        z-index: 2;
+    h1 {
+        text-align: center;
     }
 
-    &:hover, &:focus {
-        &::before {
-            animation: shine 0.85s;
+    .allSeries {
+        display: flex;
+        flex-wrap: wrap;
+
+        .eachSeries {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: $column * 3;
+            margin: $spacer $spacer * 0;
+
+            .shinePoster {
+                position: relative;
+                overflow: hidden;
+                border-radius: 15px;
+                box-shadow: 8px 8px 12px #aaa;
+
+                &::before {
+                    background: linear-gradient(to right, fade_out(#fff, 1) 0%, fade_out(#fff, 0.7) 100%);
+                    content: "";
+                    display: block;
+                    height: 100%;
+                    left: -75%;
+                    position: absolute;
+                    top: 0;
+                    transform: skewX(-25deg);
+                    width: 50%;
+                    z-index: 2;
+                }
+            
+                &:hover, &:focus {
+                    &::before {
+                        animation: shine 0.85s;
+                    }
+                }
+            
+                @keyframes shine {
+                    100% {
+                        left: 125%;
+                    }
+                }
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                margin-top: $spacer * .5;
+                margin-bottom: $spacer * .25;
+
+                .buttonEditSeries {
+                    width: $column * 4;
+                    margin-right: $spacer * .25;
+                }
+
+                .formDeleteSeries {
+                    width: $column * 4;
+                    margin-left: $spacer * .25;
+
+                    .buttonDeleteSeries {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .seriesTitle {
+                color: $dark;
+                text-decoration: none;
+                margin-top: $spacer * 0;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+
+            .categoryName {
+                color: $secondary;
+                text-decoration: none;
+
+                &:hover {
+                    filter: brightness(20%);
+                }
+            }
         }
     }
-
-    @keyframes shine {
-        100% {
-            left: 125%;
-        }
-    }
-}
-
-.carouselImage {
-    float: left;
-    width:  1250px;
-    height: 600px;
-    object-fit: cover;
-}
-
-.carousel-caption {
-    background: #AAAAAA;
-    opacity: 0.85;
 }

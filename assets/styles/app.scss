@@ -10,11 +10,17 @@ body {
     background: linear-gradient($secondary, $white, $light);
     color: $dark;
 
+    .alertSeries {
+        padding: $spacer;
+        width: 100%;
+    }
+
     main {
         box-shadow: 1px 1px 12px $secondary;
         background-color: $white;
         margin-top: $spacer * 3;
         padding: $spacer * 3;
+        width: $column * 8;
 
         h1 {
             padding-bottom: $spacer * 2;
@@ -22,10 +28,6 @@ body {
         
         h1, h2 {
             text-align: center;
-        }
-        
-        .alertNewSeries {
-            padding: $spacer;
         }
     }
 }

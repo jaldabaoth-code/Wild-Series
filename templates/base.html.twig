@@ -17,10 +17,10 @@
         {% endblock %}
     </head>
     <body>
-        {# Flash message, when a new series is added #}
+        {# Flash message, when a series is added/deleted #}
         {% for category, messages in app.flashes %}
             {% for message in messages %}
-                <div class="alertNewSeries alert-{{ category }} container-fluid">
+                <div class="alertSeries alert-{{ category }}">
                     {{ message }}
                 </div>
             {% endfor %}
@@ -28,7 +28,7 @@
         {% block header %}{% endblock %}
         {% block navbar %}{% endblock %}
         {# Main on body #}
-        <main class="col-8">
+        <main>
             {% block body %}{% endblock %}
         </main>
         {% block footer %}{% endblock %}

@@ -24,7 +24,7 @@
 			<div class="carousel-inner">
 				{% for serie in lastSeries %}
 					<div class="carousel-item {{ (loop.index == 1) ? 'active' : '' }}" data-bs-interval="5000">
-						<img src="{{ serie.image }}" class="carouselImage d-block" alt="...">
+						<img src="{{ serie.image }}" class="carouselImage d-block" alt="{{ serie.title }} image">
 						<div class="carousel-caption d-none d-md-block">
 							<h3>{{ serie.title }}</h3>
 							<p>{{ serie.description }}</p>

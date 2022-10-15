@@ -36,7 +36,6 @@ class SerieController extends AbstractController
      */
     public function index(Request $request, SerieRepository $serieRepository): Response
     {
-
         $formSearchSeries = $this->createForm(SearchType::class);
         $formSearchSeries->handleRequest($request);
 
@@ -83,7 +82,7 @@ class SerieController extends AbstractController
             $entityManager->flush();
 
             // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The new serie has been created');
+            $this->addFlash('success', 'The new serie has been added');
 
             $email = (new Email())
                     ->from($this->getParameter('mailer_from'))
