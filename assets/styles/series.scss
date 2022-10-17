@@ -97,12 +97,20 @@
 }
 
 .showSeries {
-    display: flex;
-    
-    img{
-        padding: $spacer * 0.5;
-        border: thick double $primary;
+    .seriesMain {
+        display: flex;
+        
+        p {
+            display: flex;
+        }
+
+        p>a {
+            text-decoration: none;
+        }
+
+        img{
+            padding: $spacer * 0.5;
+            border: thick double $secondary;
+        }
     }
-
-
 }
