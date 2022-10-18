@@ -30,7 +30,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class SerieController extends AbstractController
 {
     /**
-     * show all rows from Series's entity
+     * Show all rows from Series's entity
      * @Route("/", name="index")
      */
     public function index(Request $request, SerieRepository $serieRepository): Response
@@ -98,10 +98,8 @@ class SerieController extends AbstractController
     }
 
     /**
-     * Getting a serie by id
-     *
+     * Getting a series by id
      * @Route("/{slug}", name="show")
-     * 
      * @return Response
      */
     public function show(Serie $series, Slugify $slugify):Response

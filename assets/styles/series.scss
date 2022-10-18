@@ -139,4 +139,22 @@
             width: $column * 9;
         }
     }
+
+    .rectificationButtons {
+        display: flex;
+
+        .buttonEditSeries {
+            width: $column * 2;
+            margin-right: $spacer * .25;
+        }
+
+        .formDeleteSeries {
+            width: $column * 2;
+            margin-left: $spacer * .25;
+
+            .buttonDeleteSeries {
+                width: 100%;
+            }
+        }
+    }
 }

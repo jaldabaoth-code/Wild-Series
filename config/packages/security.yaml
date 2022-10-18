@@ -40,5 +40,6 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/series/new, roles: ROLE_ADMIN }
-        # - { path: ^/series/[a-z-]+/edit, roles: ROLE_CONTRIBUTOR }
+        - { path: ^/series/new, roles: ROLE_CONTRIBUTOR }
         - { path: ^/series/[a-z-]+/edit, roles: ROLE_ADMIN }
+        - { path: ^/series/[a-z-]+/edit, roles: ROLE_CONTRIBUTOR }
