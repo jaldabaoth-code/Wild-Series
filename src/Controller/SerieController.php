@@ -104,23 +104,23 @@ class SerieController extends AbstractController
      * 
      * @return Response
      */
-    public function show(Serie $serie, Slugify $slugify):Response
+    public function show(Serie $series, Slugify $slugify):Response
     {
         $seasons = $this->getDoctrine()
         ->getRepository(Season::class)
         ->findBy([
-            'serie' => $serie->getId()
+            'serie' => $series->getId()
         ]);
 
-        $slug = $slugify->generate($serie->getTitle());
-        $serie->setSlug($slug);
-        if (!$serie) {
+        $slug = $slugify->generate($series->getTitle());
+        $series->setSlug($slug);
+        if (!$series) {
             throw $this->createNotFoundException(
-                'No serie with id : '. $serie->getId() .' found in serie\'s table.'
+                'No series with id : '. $series->getId() .' found in series table.'
             );
         }
         return $this->render('serie/show.html.twig', [
-            'serie' => $serie,
+            'series' => $series,
             'seasons' => $seasons,
         ]);
     }

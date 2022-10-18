@@ -97,20 +97,46 @@
 }
 
 .showSeries {
+    margin: $spacer;
+    padding: $spacer;
+
     .seriesMain {
         display: flex;
-        
-        p {
-            display: flex;
+
+        .seriesInformations {
+            margin: $spacer $spacer * .5 $spacer * .25;
+
+            p {
+                display: flex;
+
+                a {
+                    color: $primary;
+                    text-decoration: none;
+                    margin-left: $spacer * .25;
+
+                    &:hover {
+                        filter: brightness(20%);
+                    }
+                }
+            }
         }
 
-        p>a {
-            text-decoration: none;
-        }
-
-        img{
+        .seriesPoster  {
             padding: $spacer * 0.5;
             border: thick double $secondary;
+        }
+    }
+
+    .description {
+        margin: $spacer * 2 $spacer * 3;
+    }
+
+    .descriptionImage {
+        display: flex;
+        justify-content: center;
+
+        .seriesImage {
+            width: $column * 9;
         }
     }
 }

@@ -5,72 +5,66 @@
     {{ encore_entry_link_tags('series') }}
 {% endblock %}
 
-{% block title %}{{ serie.title }}{% endblock %}
+{% block title %}{{ series.title }}{% endblock %}
 
 {% block body %}
     <div class="showSeries">
-        <h1>{{ serie.title }}</h1>
+        <h1>{{ series.title }}</h1>
         <div class="seriesMain">
-            {% if ('https://' in serie.poster) or ('http://' in serie.poster) %}
-                <img src="{{ serie.poster }}" alt="{{ serie.title }} poster">
+            {% if ('https://' in series.poster) or ('http://' in series.poster) %}
+                <img class"seriesPoster"  src="{{ series.poster }}" alt="{{ series.title }} poster">
             {% else %}
-                <img src="/uploads/series/poster/{{ serie.poster }}" alt="{{ serie.title }} poster">
+                <img class"seriesPoster" src="/uploads/series/poster/{{ series.poster }}" alt="{{ series.title }} poster">
             {% endif %}
-            <div class="seriesInformations mt-2 mx-3">
+            <div class="seriesInformations">
                 <p>Title :
-                    <a class="seriesTitle" href="{{ path("serie_show", { slug: serie.slug }) }}">{{ serie.title }}</a>
+                    <a href="{{ path("serie_show", { slug: series.slug }) }}">{{ series.title }}</a>
                     {% if app.user %}
-                        <a id="watchlist" href="{{ path('serie_watchlist', { id: serie.id }) }}">
+                        <a id="watchlist" href="{{ path('serie_watchlist', { id: series.id }) }}">
                             <i class="ms-3 bi {{ app.user.isInWatchlist(serie) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
                         </a>
                     {% endif %}
                 </p>
-                <p>Date : {{ serie.year }}</p>
+                <p>Date : {{ series.year }}</p>
                 <p>Category :
-                    <a class="categoryName" href="{{ path("category_show", { categoryName: serie.category.name }) }}">{{ serie.category.name }}</a>
+                    <a href="{{ path("category_show", { categoryName: series.category.name }) }}">{{ series.category.name }}</a>
                 </p>
-                <p>Country : {{ serie.country }}</p>
-                <p>Actors : 
+                <p>Country : {{ series.country }}</p>
+                <p>Actors :
                     {% for actor in seasons[0].actors|slice(0, 4) %}
-                        <a class="ms-2" href="{{ path('actor_show', { id: actor.id }) }}">{{ actor.name }}</a>
+                        <a href="{{ path('actor_show', { id: actor.id }) }}">{{ actor.name }}</a>
                         {# Not , after last actor name #}
                         {{ (loop.index < 4) ? ',' : '' }}
                     {% else %}
-                        <div>Aucun acteur pour cette série</div>
+                        &#160;Aucun acteur pour cette série
                     {% endfor %}
                 </p>
-                <div class="d-flex">
-                    <div class="dropdown-toggle col-1" role="button" data-bs-toggle="dropdown">
-                        Seasons : {{ seasons|length }} seasons
-                    </div>
-                    <div class="dropdown-menu ms-5 ms-5" aria-labelledby="navbarDropdownMenuLink">
-                        {% for season in seasons %}
-                            <a class="dropdown-item" href="{{ path('serie_season_show', {slug: serie.slug, seasonId: season.id}) }}">Season
-                                {{ season.number }}
-                            </a>
-                        {% endfor %}
-                    </div>
+
+                <div class="dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                    Seasons : {{ seasons|length }} seasons
+                </div>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    {% for season in seasons %}
+                        <a class="dropdown-item" href="{{ path('serie_season_show', { slug: series.slug, seasonId: season.id }) }}">Season
+                            {{ season.number }}
+                        </a>
+                    {% endfor %}
                 </div>
             </div>
         </div>
         <div>
-            <p>Description : </p>
-            <p class="mb-5 mt-4 description">{{ serie.description }}</p>
-            <div class="d-flex justify-content-center">
-                {% if ('https://' in serie.image) or ('http://' in serie.image) %}
-                    <img class="w-75" src="{{serie.image}}" alt="{{ serie.title }} poster">
+            <p class="description">{{ series.description }}</p>
+            <div class="descriptionImage">
+                {% if ('https://' in series.image) or ('http://' in series.image) %}
+                    <img class="seriesImage" src="{{ series.image }}" alt="{{ series.title }} image">
                 {% else %}
-                    <img src="/uploads/series/images/{{serie.image}}" alt="{{ serie.title }} poster">
+                    <img class="seriesImage" src="/uploads/series/images/{{ series.image }}" alt="{{ series.title }} image">
                 {% endif %}
             </div>
         </div>
+        {# Only for admin and and the author #}
         {% if is_granted("ROLE_ADMIN") %}
-            <a href="{{ path('serie_edit', { 'slug': serie.slug} ) }}">Edit</a>
+            <a href="{{ path('serie_edit', { 'slug': series.slug }) }}">Edit</a>
         {% endif %}
-        <div>
-            <a href="{{ path('serie_index') }}">
-                Back to series list
-            </a>
-        </div>
     </div>
 {% endblock %}
