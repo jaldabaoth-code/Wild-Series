@@ -38,6 +38,8 @@ Encore
     .addStyleEntry('footer', './assets/styles/footer.scss')
     .addStyleEntry('home', './assets/styles/home.scss')
     .addStyleEntry('series', './assets/styles/series.scss')
+    .addStyleEntry('showSeries', './assets/styles/showSeries.scss')
+    .addStyleEntry('seasons', './assets/styles/seasons.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

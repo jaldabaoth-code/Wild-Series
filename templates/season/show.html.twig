@@ -1,34 +1,67 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
-{% block title %}Season{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('seasons') }}
+{% endblock %}
+
+{% block title %}{{ serie.title }} - Season {{ season.number }}{% endblock %}
 
 {% block body %}
-    <h1>Season</h1>
+    <div class="container">
+        <h1>{{ serie.title }} - Season {{ season.number }}</h1>
+        <div class="d-flex">
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ season.id }}</td>
-            </tr>
-            <tr>
-                <th>Number</th>
-                <td>{{ season.number }}</td>
-            </tr>
-            <tr>
-                <th>Year</th>
-                <td>{{ season.year }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ season.description }}</td>
-            </tr>
-        </tbody>
-    </table>
 
-    <a href="{{ path('season_index') }}">back to list</a>
+            {% if ('https://' in season.poster) or ('http://' in season.poster) %}
+                <img class"seasonPoster" src="{{ season.poster }}" alt="{{ serie.title }} poster">
+            {% else %}
+                <img class"seasonPoster" src="/uploads/seasons/posters/{{ season.poster }}" alt="{{ season.poster }} poster">
+            {% endif %}
 
-    <a href="{{ path('season_edit', {'id': season.id}) }}">edit</a>
+            
+            <div class="seriesInformations">
 
-    {{ include('season/_delete_form.html.twig') }}
+
+
+
+                <p>Series title : {{ serie.title }}</p>
+                <p>Season : {{ season.number }}</p>
+                <p>Year : {{ season.year }}</p>
+                <p>Liste des épisodes:</p>
+                <div class="d-flex">
+                    <div class="dropdown-toggle col-1" role="button" data-bs-toggle="dropdown">
+                        Episodes : 
+                    </div>
+                    <div class="dropdown-menu ms-5 ms-5" aria-labelledby="navbarDropdownMenuLink">
+                        {% for episode in episodes %}
+                            <a class="dropdown-item" href="{{ path('serie_episode_show', {serieSlug: serie.slug, seasonId: season.id, episodeSlug: episode.slug}) }}">Episode
+                                {{ episode.number }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>Description : {{ season.description }}</p>
+    <strong class="text-center">CASTING :</strong>
+    <div class="d-flex justify-content-center">
+        <div class="d-flex row">
+            {% for actor in season.actors %}
+                <div class="col-3 row">
+                    {% if actor.poster %}
+                        <img class="w-75" src="{{ actor.poster }}">
+                    {%  else %}
+                        <img class="w-75" src="{{ asset('build/no-image.png') }}">
+                    {%endif%}
+                    <a href="{{ path('actor_show', {id: actor.id}) }}">{{ actor.name }}</a>
+                </div>
+            {% else %}
+                <div>Aucun acteur pour cette série</div>
+            {% endfor %}
+        </div>
+    </div>
+
+
 {% endblock %}

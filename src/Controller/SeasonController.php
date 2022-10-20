@@ -2,14 +2,18 @@
 
 namespace App\Controller;
 
+use App\Entity\Serie;
 use App\Entity\Season;
+use App\Entity\Episode;
 use App\Form\SeasonType;
+use App\Service\Slugify;
 use App\Repository\SeasonRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
  * @Route("/season")
@@ -51,13 +55,27 @@ class SeasonController extends AbstractController
         ]);
     }
 
+
+
     /**
-     * @Route("/{id}", name="season_show", methods={"GET"})
+     * @Route("/{slug}/seasons/{seasonId}", name="season_show")
+     * @ParamConverter("serie", class="App\Entity\Serie", options={"mapping": {"slug": "slug"}})
+     * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"seasonId": "id"}})
+     * @return Response
      */
-    public function show(Season $season): Response
+    public function show(Serie $serie, Season $season, Slugify $slugify): Response
     {
+        $slug = $slugify->generate($serie->getTitle());
+        $serie->setSlug($slug);
+        $episodes = $this->getDoctrine()
+        ->getRepository(Episode::class)
+        ->findBy([
+            'season' => $season->getId()
+        ]);
         return $this->render('season/show.html.twig', [
+            'serie' => $serie,
             'season' => $season,
+            'episodes' => $episodes,
         ]);
     }
 

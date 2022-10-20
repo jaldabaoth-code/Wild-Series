@@ -2,21 +2,21 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    {{ encore_entry_link_tags('series') }}
+    {{ encore_entry_link_tags('showSeries') }}
 {% endblock %}
 
 {% block title %}{{ series.title }}{% endblock %}
 
 {% block body %}
-    <div class="showSeries">
+    <div class="container">
         <h1>{{ series.title }}</h1>
-        <div class="seriesMain">
+        <div class="body">
             {% if ('https://' in series.poster) or ('http://' in series.poster) %}
                 <img class"seriesPoster" src="{{ series.poster }}" alt="{{ series.title }} poster">
             {% else %}
                 <img class"seriesPoster" src="/uploads/series/poster/{{ series.poster }}" alt="{{ series.title }} poster">
             {% endif %}
-            <div class="seriesInformations">
+            <div class="informations">
                 <p>Title :
                     <a href="{{ path("serie_show", { slug: series.slug }) }}">{{ series.title }}</a>
                     {% if app.user %}
@@ -44,7 +44,7 @@
                 </div>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     {% for season in seasons %}
-                        <a class="dropdown-item" href="{{ path('serie_season_show', { slug: series.slug, seasonId: season.id }) }}">Season
+                        <a class="dropdown-item" href="{{ path('season_show', { slug: series.slug, seasonId: season.id }) }}">Season
                             {{ season.number }}
                         </a>
                     {% endfor %}

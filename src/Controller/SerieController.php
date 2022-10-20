@@ -124,28 +124,6 @@ class SerieController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}/seasons/{seasonId}", name="season_show")
-     * @ParamConverter("serie", class="App\Entity\Serie", options={"mapping": {"slug": "slug"}})
-     * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"seasonId": "id"}})
-     * @return Response
-     */
-    public function showSeason(Serie $serie, Season $season, Slugify $slugify): Response
-    {
-        $slug = $slugify->generate($serie->getTitle());
-        $serie->setSlug($slug);
-        $episodes = $this->getDoctrine()
-        ->getRepository(Episode::class)
-        ->findBy([
-            'season' => $season->getId()
-        ]);
-        return $this->render('serie/season_show.html.twig', [
-            'serie' => $serie,
-            'season' => $season,
-            'episodes' => $episodes,
-        ]);
-    }
-
-    /**
      * @Route("/{serieSlug}/seasons/{seasonId}/episodes/{episodeSlug}", name="episode_show")
      * @ParamConverter("serie", class="App\Entity\Serie", options={"mapping": {"serieSlug": "slug"}})
      * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"seasonId": "id"}})
