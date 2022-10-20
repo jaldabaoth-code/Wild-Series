@@ -21,7 +21,7 @@
                     <a href="{{ path("serie_show", { slug: series.slug }) }}">{{ series.title }}</a>
                     {% if app.user %}
                         <a id="watchlist" href="{{ path('serie_watchlist', { id: series.id }) }}">
-                            <i class="ms-3 bi {{ app.user.isInWatchlist(series) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
+                            <i class="heart bi {{ app.user.isInWatchlist(series) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
                         </a>
                     {% endif %}
                 </p>
@@ -39,7 +39,6 @@
                         &#160;Aucun acteur pour cette série
                     {% endfor %}
                 </p>
-
                 <div class="dropdown-toggle" role="button" data-bs-toggle="dropdown">
                     Seasons : {{ seasons|length }} seasons
                 </div>

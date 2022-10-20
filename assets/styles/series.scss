@@ -106,6 +106,12 @@
         .seriesInformations {
             margin: $spacer $spacer * .5 $spacer * .25;
 
+            .heart {
+                font-size: large;
+                color: $danger;
+                margin-left: $spacer * .25;
+            }
+
             p {
                 display: flex;
 
@@ -142,6 +148,7 @@
 
     .rectificationButtons {
         display: flex;
+        margin-top: $spacer * 3;
 
         .buttonEditSeries {
             width: $column * 2;
