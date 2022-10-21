@@ -1,0 +1,75 @@
+@import 'variables.scss';
+
+.container {
+    margin: $spacer;
+    padding: $spacer;
+
+    .body {
+        display: flex;
+
+        .informations {
+            margin: $spacer $spacer * .5 $spacer * .25;
+
+            p {
+                display: flex;
+
+                a {
+                    color: $primary;
+                    text-decoration: none;
+                    margin-left: $spacer * .25;
+
+                    &:hover {
+                        filter: brightness(20%);
+                    }
+                }
+            }
+        }
+
+        .poster  {
+            padding: $spacer * 0.5;
+            border: thick double $secondary;
+        }
+    }
+
+    .description {
+        margin: $spacer * 2 $spacer * 3;
+    }
+
+    .titi {
+        font-weight: bolder;
+        margin-bottom: $spacer;
+    }
+
+    .casting {
+        display: flex;
+        flex-wrap: wrap;
+
+        .castingPosters {
+            display: flex;
+            width: $column * 3;
+            flex-wrap: wrap;
+
+            .actor {
+                width: $column * 9;
+
+                .actorPoster {
+                    width:  $column * 12;
+
+                    &:hover {
+                        opacity: .75;
+                    }
+                }
+            }
+
+            .actorName {
+                text-decoration: none;
+                margin-bottom: $spacer * 2;
+                color: $dark;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}

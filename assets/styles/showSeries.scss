@@ -31,7 +31,7 @@
             }
         }
 
-        .seriesPoster  {
+        .poster  {
             padding: $spacer * 0.5;
             border: thick double $secondary;
         }
@@ -45,7 +45,7 @@
         display: flex;
         justify-content: center;
 
-        .seriesImage {
+        .image {
             width: $column * 9;
         }
     }
@@ -54,16 +54,16 @@
         display: flex;
         margin-top: $spacer * 3;
 
-        .buttonEditSeries {
+        .buttonEdit {
             width: $column * 2;
             margin-right: $spacer * .25;
         }
 
-        .formDeleteSeries {
+        .formDelete {
             width: $column * 2;
             margin-left: $spacer * .25;
 
-            .buttonDeleteSeries {
+            .buttonDelete {
                 width: 100%;
             }
         }

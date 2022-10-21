@@ -10,58 +10,47 @@
 {% block body %}
     <div class="container">
         <h1>{{ serie.title }} - Season {{ season.number }}</h1>
-        <div class="d-flex">
-
-
+        <div class="body">
             {% if ('https://' in season.poster) or ('http://' in season.poster) %}
                 <img class"seasonPoster" src="{{ season.poster }}" alt="{{ serie.title }} poster">
             {% else %}
                 <img class"seasonPoster" src="/uploads/seasons/posters/{{ season.poster }}" alt="{{ season.poster }} poster">
             {% endif %}
-
-            
-            <div class="seriesInformations">
-
-
-
-
-                <p>Series title : {{ serie.title }}</p>
-                <p>Season : {{ season.number }}</p>
-                <p>Year : {{ season.year }}</p>
-                <p>Liste des épisodes:</p>
-                <div class="d-flex">
-                    <div class="dropdown-toggle col-1" role="button" data-bs-toggle="dropdown">
-                        Episodes : 
-                    </div>
-                    <div class="dropdown-menu ms-5 ms-5" aria-labelledby="navbarDropdownMenuLink">
-                        {% for episode in episodes %}
-                            <a class="dropdown-item" href="{{ path('serie_episode_show', {serieSlug: serie.slug, seasonId: season.id, episodeSlug: episode.slug}) }}">Episode
-                                {{ episode.number }}
-                            </a>
-                        {% endfor %}
-                    </div>
+            <div class="informations">
+                <p>Series title :
+                    <a href="{{ path("serie_show", { slug: serie.slug }) }}">{{ serie.title }}</a>
+                </p>
+                <p>Season : Season {{ season.number }}</p>
+                <p>Date : {{ season.year }}</p>
+                <div class="dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                    Episodes : {{ episodes|length }} episodes
+                </div>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    {% for episode in episodes %}
+                        <a class="dropdown-item" href="{{ path('serie_episode_show', { serieSlug: serie.slug, seasonId: season.id, episodeSlug: episode.slug }) }}">Episode
+                            {{ episode.number }}
+                        </a>
+                    {% endfor %}
                 </div>
             </div>
         </div>
-    </div>
-    <p>Description : {{ season.description }}</p>
-    <strong class="text-center">CASTING :</strong>
-    <div class="d-flex justify-content-center">
-        <div class="d-flex row">
-            {% for actor in season.actors %}
-                <div class="col-3 row">
-                    {% if actor.poster %}
-                        <img class="w-75" src="{{ actor.poster }}">
-                    {%  else %}
-                        <img class="w-75" src="{{ asset('build/no-image.png') }}">
-                    {%endif%}
-                    <a href="{{ path('actor_show', {id: actor.id}) }}">{{ actor.name }}</a>
-                </div>
-            {% else %}
-                <div>Aucun acteur pour cette série</div>
-            {% endfor %}
+        <div>
+            <p class="description">{{ season.description }}</p>
+            <div class="titi">CASTING :</div>
+            <div class="casting">
+                {% for actor in season.actors %}
+                    <div class="castingPosters">
+                        {% if actor.poster %}
+                            <a class="actor" href="{{ path('actor_show', { id: actor.id }) }}"><img class="actorPoster" src="{{ actor.poster }}"></a>
+                        {%  else %}
+                            <a class="actor" href="{{ path('actor_show', { id: actor.id }) }}"><img class="actorPoster" src="{{ asset('build/no-image.png') }}"></a>
+                        {% endif %}
+                        <a class="actorName" href="{{ path('actor_show', { id: actor.id }) }}">{{ actor.name }}</a>
+                    </div>
+                {% else %}
+                    <div>Aucun acteur pour cette série</div>
+                {% endfor %}
+            </div>
         </div>
     </div>
-
-
 {% endblock %}
