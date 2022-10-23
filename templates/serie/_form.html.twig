@@ -1,31 +1,29 @@
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('formSeries') }}
+{% endblock %}
+
 {{ form_start(form) }}
-    <div class="col-12 mt-2">
-        {{ form_label(form.title, 'Title : ', {'attr': {'class': 'form-label'}}) }}
-        {{ form_widget(form.title, {'attr': {'class': 'mt-1 form-control'}}) }}
-    </div>
-    <div class="col-12 mt-2">
-        {{ form_label(form.description, 'Description : ', {'attr': {'class': 'form-label'}}) }}
-        {{ form_widget(form.description, {'attr': {'class': 'mt-1 form-control'}}) }}
-    </div>
-    <div class="col-12 mt-2">
-        {{ form_label(form.posterFile, 'Poster : ', {'attr': {'class': 'form-label'}}) }}
-        {{ form_widget(form.posterFile, {'attr': {'class': 'mt-1 form-control'}}) }}
-    </div>
-    <div class="col-12 mt-2">
-        {{ form_label(form.imageFile, 'Image : ', {'attr': {'class': 'form-label'}}) }}
-        {{ form_widget(form.imageFile, {'attr': {'class': 'mt-1 form-control'}}) }}
-    </div>
-    <div class="col-12 mt-2">
-        {{ form_label(form.country, 'Country : ', {'attr': {'class': 'form-label'}}) }}
-        {{ form_widget(form.country, {'attr': {'class': 'mt-1 form-control'}}) }}
-    </div>
-    <div class="col-12 mt-2">
-        {{ form_label(form.year, 'Year : ', {'attr': {'class': 'form-label'}}) }}
-        {{ form_widget(form.year, {'attr': {'class': 'mt-1 form-control'}}) }}
-    </div>
-    <div class="col-12 mt-2">
-        {{ form_label(form.category, 'Category : ', {'attr': {'class': 'form-label'}}) }}
-        {{ form_widget(form.category, {'attr': {'class': 'mt-1 form-control'}}) }}
-    </div>
-    <button class="btn btn-primary mb-3 col-12 mt-4">{{ edit ?? 'Save' }}</button>
+    {{ form_label(form.title, 'Title : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+
+    {{ form_label(form.description, 'Description : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+
+    {{ form_label(form.posterFile, 'Poster : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.posterFile, {'attr': {'class': 'form-control'}}) }}
+
+    {{ form_label(form.imageFile, 'Image : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.imageFile, {'attr': {'class': 'form-control'}}) }}
+
+    {{ form_label(form.country, 'Country : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.country, {'attr': {'class': 'form-control'}}) }}
+
+    {{ form_label(form.year, 'Year : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.year, {'attr': {'class': 'form-control'}}) }}
+
+    {{ form_label(form.category, 'Category : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.category, {'attr': {'class': 'form-control'}}) }}
+
+    <button class="button btn btn-primary">{{ 'Save' }}</button>
 {{ form_end(form) }}

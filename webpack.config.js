@@ -33,13 +33,16 @@ Encore
      */
     .addEntry('app', './assets/app.js')
 
-    .addStyleEntry('header', './assets/styles/header.scss')
-    .addStyleEntry('navbar', './assets/styles/navbar.scss')
-    .addStyleEntry('footer', './assets/styles/footer.scss')
-    .addStyleEntry('home', './assets/styles/home.scss')
-    .addStyleEntry('series', './assets/styles/series.scss')
-    .addStyleEntry('showSeries', './assets/styles/showSeries.scss')
-    .addStyleEntry('seasons', './assets/styles/seasons.scss')
+    .addStyleEntry('header', './assets/styles/includes/header.scss')
+    .addStyleEntry('navbar', './assets/styles/includes/navbar.scss')
+    .addStyleEntry('footer', './assets/styles/includes/footer.scss')
+    .addStyleEntry('home', './assets/styles/home/home.scss')
+    .addStyleEntry('indexSeries', './assets/styles/series/index.scss')
+    .addStyleEntry('showSeries', './assets/styles/series/show.scss')
+    .addStyleEntry('formSeries', './assets/styles/series/form.scss')
+    .addStyleEntry('newSeries', './assets/styles/series/new.scss')
+    .addStyleEntry('editSeries', './assets/styles/series/edit.scss')
+    .addStyleEntry('indexSeason', './assets/styles/season/index.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

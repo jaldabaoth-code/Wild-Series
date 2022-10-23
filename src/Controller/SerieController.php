@@ -53,6 +53,32 @@ class SerieController extends AbstractController
     }
     
     /**
+     * Getting a series by id
+     * @Route("/{slug}", name="show")
+     * @return Response
+     */
+    public function show(Serie $series, Slugify $slugify):Response
+    {
+        $seasons = $this->getDoctrine()
+        ->getRepository(Season::class)
+        ->findBy([
+            'serie' => $series->getId()
+        ]);
+
+        $slug = $slugify->generate($series->getTitle());
+        $series->setSlug($slug);
+        if (!$series) {
+            throw $this->createNotFoundException(
+                'No series with id : '. $series->getId() .' found in series table.'
+            );
+        }
+        return $this->render('serie/show.html.twig', [
+            'series' => $series,
+            'seasons' => $seasons,
+        ]);
+    }
+
+    /**
      * Display the form for add series
      * @Route("/new", name="new")
      */
@@ -93,65 +119,6 @@ class SerieController extends AbstractController
         }
         // Render the form
         return $this->render('serie/new.html.twig', [
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
-     * Getting a series by id
-     * @Route("/{slug}", name="show")
-     * @return Response
-     */
-    public function show(Serie $series, Slugify $slugify):Response
-    {
-        $seasons = $this->getDoctrine()
-        ->getRepository(Season::class)
-        ->findBy([
-            'serie' => $series->getId()
-        ]);
-
-        $slug = $slugify->generate($series->getTitle());
-        $series->setSlug($slug);
-        if (!$series) {
-            throw $this->createNotFoundException(
-                'No series with id : '. $series->getId() .' found in series table.'
-            );
-        }
-        return $this->render('serie/show.html.twig', [
-            'series' => $series,
-            'seasons' => $seasons,
-        ]);
-    }
-
-    /**
-     * @Route("/{serieSlug}/seasons/{seasonId}/episodes/{episodeSlug}", name="episode_show")
-     * @ParamConverter("serie", class="App\Entity\Serie", options={"mapping": {"serieSlug": "slug"}})
-     * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"seasonId": "id"}})
-     * @ParamConverter("episode", class="App\Entity\Episode", options={"mapping": {"episodeSlug": "slug"}})
-     * @return Response
-     */
-    public function showEpisode(Request $request, Serie $serie, Season $season, Episode $episode, Slugify $slugify): Response
-    {
-        $comment = new Comment();
-        $form = $this->createForm(CommentType::class, $comment);
-        $form->handleRequest($request);
-        $comment->setEpisode($episode);
-        if ($form->isSubmitted() && $form->isValid()) {
-            if ($this->getUser()) {
-                $entityManager = $this->getDoctrine()->getManager();
-                $comment->setAuthor($this->getUser());
-                $entityManager->persist($comment);
-                $entityManager->flush();
-                return $this->redirect($request->getUri());
-            }
-        }
-
-        $slug = $slugify->generate($serie->getTitle());
-        $serie->setSlug($slug);
-        return $this->render('serie/episode_show.html.twig', [
-            'serie' => $serie,
-            'season' => $season,
-            'episode' => $episode,
             'form' => $form->createView(),
         ]);
     }

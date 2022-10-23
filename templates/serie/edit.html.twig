@@ -1,13 +1,15 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Edit serie
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('editSeries') }}
 {% endblock %}
 
+{% block title %}Edit Series{% endblock %}
+
 {% block body %}
-    <div class="d-flex flex-column align-items-center">
-        <h2 class="text-center">Edit series</h2>
-        <div class="col-8">
-            {{ include('serie/_form.html.twig') }}
-        </div>
+    <div class="container">
+        <h1>Edit series</h1>
+        {{ include('serie/_form.html.twig') }}
     </div>
 {% endblock %}

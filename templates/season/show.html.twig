@@ -2,7 +2,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    {{ encore_entry_link_tags('seasons') }}
+    {{ encore_entry_link_tags('indexSeason') }}
 {% endblock %}
 
 {% block title %}{{ serie.title }} - Season {{ season.number }}{% endblock %}
@@ -27,7 +27,7 @@
                 </div>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     {% for episode in episodes %}
-                        <a class="dropdown-item" href="{{ path('serie_episode_show', { serieSlug: serie.slug, seasonId: season.id, episodeSlug: episode.slug }) }}">Episode
+                        <a class="dropdown-item" href="{{ path('episode_show', { serieSlug: serie.slug, seasonId: season.id, episodeSlug: episode.slug }) }}">Episode
                             {{ episode.number }}
                         </a>
                     {% endfor %}

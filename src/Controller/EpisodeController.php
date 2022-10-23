@@ -2,18 +2,22 @@
 
 namespace App\Controller;
 
-use App\Entity\Episode;
-use App\Form\EpisodeType;
 use App\Entity\Serie;
+use App\Entity\Season;
+use App\Entity\Comment;
+use App\Entity\Episode;
+use App\Service\Slugify;
+use App\Form\CommentType;
+use App\Form\EpisodeType;
+use Symfony\Component\Mime\Email;
 use App\Repository\EpisodeRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Service\Slugify;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
  * @Route("/episode")
@@ -67,16 +71,36 @@ class EpisodeController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}", name="episode_show", methods={"GET"})
+     * @Route("/{serieSlug}/seasons/{seasonId}/episode/{episodeSlug}", name="episode_show")
+     * @ParamConverter("serie", class="App\Entity\Serie", options={"mapping": {"serieSlug": "slug"}})
+     * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"seasonId": "id"}})
+     * @ParamConverter("episode", class="App\Entity\Episode", options={"mapping": {"episodeSlug": "slug"}})
+     * @return Response
      */
-    public function show(Episode $episode, Slugify $slugify): Response
+    public function show(Request $request, Serie $serie, Season $season, Episode $episode, Slugify $slugify): Response
     {
-        $slug = $slugify->generate($episode->getTitle());
-        $episode->setSlug($slug);
-        return $this
-        ->render('episode/show.html.twig', [
+         $comment = new Comment();
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+        $comment->setEpisode($episode);
+        if ($form->isSubmitted() && $form->isValid()) {
+            if ($this->getUser()) {
+                $entityManager = $this->getDoctrine()->getManager();
+                $comment->setAuthor($this->getUser());
+                $entityManager->persist($comment);
+                $entityManager->flush();
+                return $this->redirect($request->getUri());
+            }
+        }
+
+        $slug = $slugify->generate($serie->getTitle());
+        $serie->setSlug($slug);
+        return $this->render('episode/show.html.twig', [
+            'serie' => $serie,
+            'season' => $season,
             'episode' => $episode,
-        ]);
+            'form' => $form->createView(),
+        ]); 
     }
 
     /**

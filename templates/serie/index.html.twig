@@ -2,17 +2,17 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    {{ encore_entry_link_tags('series') }}
+    {{ encore_entry_link_tags('indexSeries') }}
 {% endblock %}
 
 {% block title %}All Series{% endblock %}
 
 {% block body %}
-    {# Only for admin and author for add new series #}
-    {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
-        <a class="buttonAddSeries btn btn-success btn-sm col-2 mb-5" href="{{ path("serie_new") }}">Add new Series</a>
-    {% endif %}
     <div class="container">
+        {# Only for admin and author for add new series #}
+        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+            <a class="buttonAddSeries btn btn-success btn-sm" href="{{ path("serie_new") }}">Add new series</a>
+        {% endif %}
         <h1>
             {% if search == '' %}
                 All Series

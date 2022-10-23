@@ -2,3 +2,29 @@
     {{ form_widget(form) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
+
+
+{# {{ form_start(form) }}
+    {{ form_label(form.title, 'Title : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+
+    {{ form_label(form.description, 'Description : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+
+    {{ form_label(form.posterFile, 'Poster : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.posterFile, {'attr': {'class': 'form-control'}}) }}
+
+    {{ form_label(form.imageFile, 'Image : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.imageFile, {'attr': {'class': 'form-control'}}) }}
+
+    {{ form_label(form.country, 'Country : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.country, {'attr': {'class': 'form-control'}}) }}
+
+    {{ form_label(form.year, 'Year : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.year, {'attr': {'class': 'form-control'}}) }}
+
+    {{ form_label(form.category, 'Category : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.category, {'attr': {'class': 'form-control'}}) }}
+
+    <button class="button btn btn-primary">{{ 'Save' }}</button>
+{{ form_end(form) }} #}

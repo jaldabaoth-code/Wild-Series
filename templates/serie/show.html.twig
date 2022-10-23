@@ -9,6 +9,10 @@
 
 {% block body %}
     <div class="container">
+        {# Only for admin and author for add new series #}
+        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+            <a class="buttonAddSeason btn btn-success btn-sm" href="{{ path("serie_new") }}">Add new season</a>
+        {% endif %}
         <h1>{{ series.title }}</h1>
         <div class="body">
             {% if ('https://' in series.poster) or ('http://' in series.poster) %}

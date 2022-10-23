@@ -1,14 +1,25 @@
-@import 'variables.scss';
+@import '../variables.scss';
 
 .container {
     margin: $spacer;
     padding: $spacer;
+
+    .buttonAddSeason {
+        width: $column * 2;
+        margin-bottom: $spacer .5;
+    }
 
     .body {
         display: flex;
 
         .informations {
             margin: $spacer $spacer * .5 $spacer * .25;
+
+            .heart {
+                font-size: large;
+                color: $danger;
+                margin-left: $spacer * .25;
+            }
 
             p {
                 display: flex;
@@ -35,40 +46,30 @@
         margin: $spacer * 2 $spacer * 3;
     }
 
-    .titi {
-        font-weight: bolder;
-        margin-bottom: $spacer;
+    .descriptionImage {
+        display: flex;
+        justify-content: center;
+
+        .image {
+            width: $column * 9;
+        }
     }
 
-    .casting {
+    .rectificationButtons {
         display: flex;
-        flex-wrap: wrap;
+        margin-top: $spacer * 3;
 
-        .castingPosters {
-            display: flex;
-            width: $column * 3;
-            flex-wrap: wrap;
+        .buttonEdit {
+            width: $column * 2;
+            margin-right: $spacer * .25;
+        }
 
-            .actor {
-                width: $column * 9;
+        .formDelete {
+            width: $column * 2;
+            margin-left: $spacer * .25;
 
-                .actorPoster {
-                    width:  $column * 12;
-
-                    &:hover {
-                        opacity: .75;
-                    }
-                }
-            }
-
-            .actorName {
-                text-decoration: none;
-                margin-bottom: $spacer * 2;
-                color: $dark;
-
-                &:hover {
-                    color: $primary;
-                }
+            .buttonDelete {
+                width: 100%;
             }
         }
     }

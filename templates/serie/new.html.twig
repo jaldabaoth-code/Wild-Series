@@ -1,39 +1,15 @@
-{% extends "layout.html.twig" %}
-{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('newSeries') }}
+{% endblock %}
+
+{% block title %}New Series{% endblock %}
 
 {% block body %}
-    <div class="container mt-5">
-        <h1 class="mb-5">New Series</h1>
-        {{ form_start(form) }}
-            <div class="col-12 mt-2">
-                {{ form_label(form.title, 'Title : ', {'attr': {'class': 'form-label'}}) }}
-                {{ form_widget(form.title, {'attr': {'class': 'mt-1 form-control'}}) }}
-            </div>
-            <div class="col-12 mt-2">
-                {{ form_label(form.description, 'Description : ', {'attr': {'class': 'form-label'}}) }}
-                {{ form_widget(form.description, {'attr': {'class': 'mt-1 form-control'}}) }}
-            </div>
-            <div class="col-12 mt-2">
-                {{ form_label(form.posterFile, 'Poster : ', {'attr': {'class': 'form-label'}}) }}
-                {{ form_widget(form.posterFile, {'attr': {'class': 'mt-1 form-control'}}) }}
-            </div>
-            <div class="col-12 mt-2">
-                {{ form_label(form.imageFile, 'Image : ', {'attr': {'class': 'form-label'}}) }}
-                {{ form_widget(form.imageFile, {'attr': {'class': 'mt-1 form-control'}}) }}
-            </div>
-            <div class="col-12 mt-2">
-                {{ form_label(form.country, 'Country : ', {'attr': {'class': 'form-label'}}) }}
-                {{ form_widget(form.country, {'attr': {'class': 'mt-1 form-control'}}) }}
-            </div>
-            <div class="col-12 mt-2">
-                {{ form_label(form.year, 'Year : ', {'attr': {'class': 'form-label'}}) }}
-                {{ form_widget(form.year, {'attr': {'class': 'mt-1 form-control'}}) }}
-            </div>
-            <div class="col-12 mt-2">
-                {{ form_label(form.category, 'Category : ', {'attr': {'class': 'form-label'}}) }}
-                {{ form_widget(form.category, {'attr': {'class': 'mt-1 form-control'}}) }}
-            </div>
-            <button class="btn btn-primary mb-3 col-12 mt-4">{{ edit ?? 'Add Series' }}</button>
-        {{ form_end(form) }}
+    <div class="container">
+        <h1>Add new series</h1>
+        {{ include('serie/_form.html.twig') }}
     </div>
 {% endblock %}
