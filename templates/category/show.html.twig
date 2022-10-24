@@ -5,19 +5,15 @@
     {% if series %}
         <h1 class="my-5">{{ series.0.category.name }}</h1>
 
-        {% for serie in series %}
+        {% for oneSeries in series %}
             <div class="my-5">
                 <h2>
-                    <a href="{{ path("serie_show", { 'slug': serie.slug }) }}">{{ serie.title }}</a>
+                    <a href="{{ path("series_show", { 'slug': oneSeries.slug }) }}">{{ oneSeries.title }}</a>
                 </h2>
-                <p>{{ serie.description }}</p>
+                <p>{{ oneSeries.description }}</p>
             </div>
         {% else %}
             Aucune série trouvée.
         {% endfor %}
     {% endif %}
-
-    <a href="{{ path('category_index') }}">
-        Retour à la liste des catégories
-    </a>
 {% endblock %}

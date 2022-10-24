@@ -19,6 +19,13 @@
                 <td>{{ actor.id }}</td>
                 <td>{{ actor.name }}</td>
                 <td>
+                    {% if ('https://' in actor.poster) or ('http://' in actor.poster) %}
+                        <img class"actorPoster w-25" src="{{ actor.poster }}" alt="{{ actor.name }} poster">
+                    {% else %}
+                        <img class"actorPoster w-25" src="/uploads/seasons/posters/{{ actor.poster }}" alt="{{ actor.poster }} poster">
+                    {% endif %}
+                </td>
+                <td>
                     <a href="{{ path('actor_show', {'id': actor.id}) }}">show</a>
                     <a href="{{ path('actor_edit', {'id': actor.id}) }}">edit</a>
                 </td>

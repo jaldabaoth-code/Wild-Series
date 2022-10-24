@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Serie;
+use App\Entity\Series;
 use App\Entity\Season;
 use App\Entity\Comment;
 use App\Entity\Episode;
@@ -52,7 +52,7 @@ class EpisodeController extends AbstractController
             $entityManager->flush();
 
             // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The new serie has been created');
+            $this->addFlash('success', 'The new series has been created');
 
             $email = (new Email())
                     ->from($this->getParameter('mailer_from'))
@@ -71,13 +71,13 @@ class EpisodeController extends AbstractController
     }
 
     /**
-     * @Route("/{serieSlug}/seasons/{seasonId}/episode/{episodeSlug}", name="episode_show")
-     * @ParamConverter("serie", class="App\Entity\Serie", options={"mapping": {"serieSlug": "slug"}})
+     * @Route("/{seriesSlug}/seasons/{seasonId}/episode/{episodeSlug}", name="episode_show")
+     * @ParamConverter("series", class="App\Entity\Series", options={"mapping": {"seriesSlug": "slug"}})
      * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"seasonId": "id"}})
      * @ParamConverter("episode", class="App\Entity\Episode", options={"mapping": {"episodeSlug": "slug"}})
      * @return Response
      */
-    public function show(Request $request, Serie $serie, Season $season, Episode $episode, Slugify $slugify): Response
+    public function show(Request $request, Series $series, Season $season, Episode $episode, Slugify $slugify): Response
     {
          $comment = new Comment();
         $form = $this->createForm(CommentType::class, $comment);
@@ -93,10 +93,10 @@ class EpisodeController extends AbstractController
             }
         }
 
-        $slug = $slugify->generate($serie->getTitle());
-        $serie->setSlug($slug);
+        $slug = $slugify->generate($series->getTitle());
+        $series->setSlug($slug);
         return $this->render('episode/show.html.twig', [
-            'serie' => $serie,
+            'series' => $series,
             'season' => $season,
             'episode' => $episode,
             'form' => $form->createView(),
@@ -117,7 +117,7 @@ class EpisodeController extends AbstractController
             $this->getDoctrine()->getManager()->flush();
             
             // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The serie has been edited');
+            $this->addFlash('success', 'The series has been edited');
 
             return $this->redirectToRoute('episode_index');
         }
@@ -137,7 +137,7 @@ class EpisodeController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($episode);
             $entityManager->flush();
-            $this->addFlash('danger', 'The serie is deleted');
+            $this->addFlash('danger', 'The series is deleted');
         }
 
         return $this->redirectToRoute('episode_index');

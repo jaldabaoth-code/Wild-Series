@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\Repository\SerieRepository;
+use App\Repository\SeriesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -13,10 +13,10 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\SerieRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\SeriesRepository")
  * @Vich\Uploadable
  */
-class Serie
+class Series
 {
     /**
      * @ORM\Id
@@ -84,7 +84,7 @@ class Serie
     private $year;
 
     /**
-     * @ORM\OneToMany(targetEntity=Season::class, mappedBy="serie", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Season::class, mappedBy="series", orphanRemoval=true)
      */
     private $seasons;
 
@@ -220,7 +220,7 @@ class Serie
         return $this;
     }
 
-    public function setPosterFile(File $posterFile = null): Serie
+    public function setPosterFile(File $posterFile = null): Series
     {
         $this->posterFile = $posterFile;
         if ($posterFile) {
@@ -234,7 +234,7 @@ class Serie
         return $this->posterFile;
     }
 
-    public function setImageFile(File $imageFile = null): Serie
+    public function setImageFile(File $imageFile = null): Series
     {
         $this->imageFile = $imageFile;
         if ($imageFile) {
@@ -271,7 +271,7 @@ class Serie
     {
         if (!$this->seasons->contains($season)) {
             $this->seasons[] = $season;
-            $season->setSerie($this);
+            $season->setSeries($this);
         }
         return $this;
     }
@@ -280,8 +280,8 @@ class Serie
     {
         if ($this->seasons->removeElement($season)) {
             // set the owning side to null (unless already changed)
-            if ($season->getSerie() === $this) {
-                $season->setSerie(null);
+            if ($season->getSeries() === $this) {
+                $season->setSeries(null);
             }
         }
         return $this;
@@ -299,7 +299,7 @@ class Serie
     {
         if (!$this->actors->contains($actor)) {
             $this->actors[] = $actor;
-            $actor->addSerie($this);
+            $actor->addSeries($this);
         }
         return $this;
     }
@@ -307,7 +307,7 @@ class Serie
     public function removeActor(Actor $actor): self
     {
         if ($this->actors->removeElement($actor)) {
-            $actor->removeSerie($this);
+            $actor->removeSeries($this);
         }
         return $this;
     }
@@ -324,7 +324,7 @@ class Serie
     {
         if (!$this->creators->contains($creator)) {
             $this->creators[] = $creator;
-            $creator->addSerie($this);
+            $creator->addSeries($this);
         }
         return $this;
     }
@@ -332,7 +332,7 @@ class Serie
     public function removeCreator(Creator $creator): self
     {
         if ($this->creators->removeElement($creator)) {
-            $creator->removeSerie($this);
+            $creator->removeSeries($this);
         }
         return $this;
     }

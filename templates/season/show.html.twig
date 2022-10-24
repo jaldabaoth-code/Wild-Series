@@ -5,20 +5,24 @@
     {{ encore_entry_link_tags('indexSeason') }}
 {% endblock %}
 
-{% block title %}{{ serie.title }} - Season {{ season.number }}{% endblock %}
+{% block title %}{{ series.title }} - Season {{ season.number }}{% endblock %}
 
 {% block body %}
     <div class="container">
-        <h1>{{ serie.title }} - Season {{ season.number }}</h1>
+        {# Only for admin and author for add new series #}
+        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+            <a class="buttonAddEpisode btn btn-success btn-sm" href="{{ path("episode_new") }}">Add new episode</a>
+        {% endif %}
+        <h1>{{ series.title }} - Season {{ season.number }}</h1>
         <div class="body">
             {% if ('https://' in season.poster) or ('http://' in season.poster) %}
-                <img class"seasonPoster" src="{{ season.poster }}" alt="{{ serie.title }} poster">
+                <img class"seasonPoster" src="{{ season.poster }}" alt="{{ series.title }} poster">
             {% else %}
                 <img class"seasonPoster" src="/uploads/seasons/posters/{{ season.poster }}" alt="{{ season.poster }} poster">
             {% endif %}
             <div class="informations">
                 <p>Series title :
-                    <a href="{{ path("serie_show", { slug: serie.slug }) }}">{{ serie.title }}</a>
+                    <a href="{{ path("series_show", { slug: series.slug }) }}">{{ series.title }}</a>
                 </p>
                 <p>Season : Season {{ season.number }}</p>
                 <p>Date : {{ season.year }}</p>
@@ -27,7 +31,7 @@
                 </div>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     {% for episode in episodes %}
-                        <a class="dropdown-item" href="{{ path('episode_show', { serieSlug: serie.slug, seasonId: season.id, episodeSlug: episode.slug }) }}">Episode
+                        <a class="dropdown-item" href="{{ path('episode_show', { seriesSlug: series.slug, seasonId: season.id, episodeSlug: episode.slug }) }}">Episode
                             {{ episode.number }}
                         </a>
                     {% endfor %}

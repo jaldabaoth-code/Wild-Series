@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Serie;
+use App\Entity\Series;
 use App\Entity\Season;
 use App\Entity\Episode;
 use App\Form\SeasonType;
@@ -45,7 +45,7 @@ class SeasonController extends AbstractController
             $entityManager->flush();
 
             // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The new serie has been created');
+            $this->addFlash('success', 'The new series has been created');
             return $this->redirectToRoute('season_index');
         }
 
@@ -59,21 +59,21 @@ class SeasonController extends AbstractController
 
     /**
      * @Route("/{slug}/seasons/{seasonId}", name="season_show")
-     * @ParamConverter("serie", class="App\Entity\Serie", options={"mapping": {"slug": "slug"}})
+     * @ParamConverter("series", class="App\Entity\Series", options={"mapping": {"slug": "slug"}})
      * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"seasonId": "id"}})
      * @return Response
      */
-    public function show(Serie $serie, Season $season, Slugify $slugify): Response
+    public function show(Series $series, Season $season, Slugify $slugify): Response
     {
-        $slug = $slugify->generate($serie->getTitle());
-        $serie->setSlug($slug);
+        $slug = $slugify->generate($series->getTitle());
+        $series->setSlug($slug);
         $episodes = $this->getDoctrine()
         ->getRepository(Episode::class)
         ->findBy([
             'season' => $season->getId()
         ]);
         return $this->render('season/show.html.twig', [
-            'serie' => $serie,
+            'series' => $series,
             'season' => $season,
             'episodes' => $episodes,
         ]);
@@ -91,7 +91,7 @@ class SeasonController extends AbstractController
             $this->getDoctrine()->getManager()->flush();
             
             // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The serie has been edited');
+            $this->addFlash('success', 'The series has been edited');
             return $this->redirectToRoute('season_index');
         }
 
@@ -110,7 +110,7 @@ class SeasonController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($season);
             $entityManager->flush();
-            $this->addFlash('danger', 'The serie is deleted');
+            $this->addFlash('danger', 'The series is deleted');
         }
 
         return $this->redirectToRoute('season_index');

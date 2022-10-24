@@ -3,10 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Category;
-use App\Entity\Serie;
+use App\Entity\Series;
 use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
-use App\Repository\SerieRepository;
+use App\Repository\SeriesRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,13 +24,13 @@ class CategoryController extends AbstractController
      * @Route("/", name="index")
      * @return Response A response instance
      */
-    public function index(SerieRepository $serieRepository): Response
+    public function index(SeriesRepository $seriesRepository): Response
     {
         $categories = $this->getDoctrine()
         ->getRepository(Category::class)
         ->findAll();
         for ($i = 0; $i <= sizeof($categories)-1; $i++) {
-            $seriesCategorie = $serieRepository->findByCategory($categories[$i]->getId());
+            $seriesCategorie = $seriesRepository->findByCategory($categories[$i]->getId());
             if (isset($seriesCategorie[0])) {
                 $seriesCategories[$categories[$i]->getName()] = $seriesCategorie[0];
             }
@@ -86,7 +86,7 @@ class CategoryController extends AbstractController
         }
 
         $series = $this->getDoctrine()
-        ->getRepository(Serie::class)
+        ->getRepository(Series::class)
         ->findBy(['category' => $category->getId()],
                     ['id' => 'DESC'], 3);
                     

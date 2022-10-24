@@ -11,7 +11,7 @@
     <div class="container">
         {# Only for admin and author for add new series #}
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
-            <a class="buttonAddSeason btn btn-success btn-sm" href="{{ path("serie_new") }}">Add new season</a>
+            <a class="buttonAddSeason btn btn-success btn-sm" href="{{ path("season_new") }}">Add new season</a>
         {% endif %}
         <h1>{{ series.title }}</h1>
         <div class="body">
@@ -22,9 +22,9 @@
             {% endif %}
             <div class="informations">
                 <p>Title :
-                    <a href="{{ path("serie_show", { slug: series.slug }) }}">{{ series.title }}</a>
+                    <a href="{{ path("series_show", { slug: series.slug }) }}">{{ series.title }}</a>
                     {% if app.user %}
-                        <a id="watchlist" href="{{ path('serie_watchlist', { id: series.id }) }}">
+                        <a id="watchlist" href="{{ path('series_watchlist', { id: series.id }) }}">
                             <i class="heart bi {{ app.user.isInWatchlist(series) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
                         </a>
                     {% endif %}
@@ -69,9 +69,9 @@
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
             <div class="rectificationButtons">
                 <!-- Edit series button -->
-                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("serie_edit", { slug: series.slug }) }}" type="button">Edit series</a>
+                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("series_edit", { slug: series.slug }) }}" type="button">Edit series</a>
                 <!-- Delete series button -->
-                <form class="formDelete" method="post" action="{{ path('serie_delete', { 'id': series.id }) }}" onsubmit="return confirm('Are you sure you want to delete the series : {{ series.title }} ?');">
+                <form class="formDelete" method="post" action="{{ path('series_delete', { 'id': series.id }) }}" onsubmit="return confirm('Are you sure you want to delete the series : {{ series.title }} ?');">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ series.id) }}">
                     <button class="buttonDelete btn btn-danger btn-sm">Delete series</button>
                 </form>

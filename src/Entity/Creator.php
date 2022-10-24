@@ -28,7 +28,7 @@ class Creator
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Serie::class, inversedBy="creators")
+     * @ORM\ManyToMany(targetEntity=Series::class, inversedBy="creators")
      */
     private $series;
 
@@ -110,25 +110,25 @@ class Creator
     }
 
     /**
-     * @return Collection|Serie[]
+     * @return Collection|Series[]
      */
     public function getSeries(): Collection
     {
         return $this->series;
     }
 
-    public function addSerie(Serie $serie): self
+    public function addSeries(Series $series): self
     {
-        if (!$this->series->contains($serie)) {
-            $this->series[] = $serie;
+        if (!$this->series->contains($series)) {
+            $this->series[] = $series;
         }
 
         return $this;
     }
 
-    public function removeSerie(Serie $serie): self
+    public function removeSeries(Series $series): self
     {
-        $this->series->removeElement($serie);
+        $this->series->removeElement($series);
 
         return $this;
     }

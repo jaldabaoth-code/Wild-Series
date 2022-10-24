@@ -52,7 +52,7 @@ class SeasonRepository extends ServiceEntityRepository
     {
         $queryBuilder = $this->createQueryBuilder('sea')
             ->join('sea.actors', 'a')
-            ->join('sea.serie', 'ser')
+            ->join('sea.series', 'ser')
             ->where('ser.title LIKE :name')
             ->setParameter('name', '%' . $name . '%')
             ->orWhere('a.name LIKE :actor')

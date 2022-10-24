@@ -44,7 +44,7 @@ class User implements UserInterface
     private $comments;
 
     /**
-     * @ORM\OneToMany(targetEntity=Serie::class, mappedBy="owner")
+     * @ORM\OneToMany(targetEntity=Series::class, mappedBy="owner")
      */
     private $series;
 
@@ -54,7 +54,7 @@ class User implements UserInterface
     private $isVerified = false;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Serie::class, inversedBy="viewers")
+     * @ORM\ManyToMany(targetEntity=Series::class, inversedBy="viewers")
      * @ORM\JoinTable(name="watchlist")
      */
     private $watchlist;
@@ -179,53 +179,53 @@ class User implements UserInterface
     }
 
     /**
-     * @return Collection|Serie[]
+     * @return Collection|Series[]
      */
     public function getWatchlist(): Collection
     {
         return $this->watchlist;
     }
 
-    public function addToWatchlist(Serie $serie): self
+    public function addToWatchlist(Series $series): self
     {
-        if (!$this->watchlist->contains($serie)) {
-            $this->watchlist[] = $serie;
+        if (!$this->watchlist->contains($series)) {
+            $this->watchlist[] = $series;
         }
 
         return $this;
     }
 
-    public function removeFromWatchlist(Serie $serie): self
+    public function removeFromWatchlist(Series $series): self
     {
-        $this->watchlist->removeElement($serie);
+        $this->watchlist->removeElement($series);
 
         return $this;
     }
 
     /**
-     * @return Collection|Serie[]
+     * @return Collection|Series[]
      */
     public function getSeries(): Collection
     {
         return $this->series;
     }
 
-    public function addSerie(Serie $serie): self
+    public function addSeries(Series $series): self
     {
-        if (!$this->series->contains($serie)) {
-            $this->series[] = $serie;
-            $serie->setOwner($this);
+        if (!$this->series->contains($series)) {
+            $this->series[] = $series;
+            $series->setOwner($this);
         }
 
         return $this;
     }
 
-    public function removeSerie(Serie $serie): self
+    public function removeSeries(Series $series): self
     {
-        if ($this->series->removeElement($serie)) {
+        if ($this->series->removeElement($series)) {
             // set the owning side to null (unless already changed)
-            if ($serie->getOwner() === $this) {
-                $serie->setOwner(null);
+            if ($series->getOwner() === $this) {
+                $series->setOwner(null);
             }
         }
 
@@ -244,8 +244,8 @@ class User implements UserInterface
         return $this;
     }
     
-    public function isInWatchlist(Serie $serie): bool
+    public function isInWatchlist(Series $series): bool
     {
-        return $this->getWatchlist()->contains($serie) ? true : false;
+        return $this->getWatchlist()->contains($series) ? true : false;
     }
 }

@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Serie;
+use App\Entity\Series;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Serie|null find($id, $lockMode = null, $lockVersion = null)
- * @method Serie|null findOneBy(array $criteria, array $orderBy = null)
- * @method Serie[]    findAll()
- * @method Serie[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Series|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Series|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Series[]    findAll()
+ * @method Series[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class SerieRepository extends ServiceEntityRepository
+class SeriesRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Serie::class);
+        parent::__construct($registry, Series::class);
     }
 
     // /**
-    //  * @return Serie[] Returns an array of Serie objects
+    //  * @return Series[] Returns an array of Series objects
     //  */
     /*
     public function findByExampleField($value)
@@ -35,7 +35,7 @@ class SerieRepository extends ServiceEntityRepository
         ;
     }
        
-    public function findOneBySomeField($value): ?Serie
+    public function findOneBySomeField($value): ?Series
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')
@@ -62,14 +62,14 @@ class SerieRepository extends ServiceEntityRepository
 
     public function findLikeName(string $name): array
     {
-        $queryBuilder = $this->createQueryBuilder('serie')
-            ->join('serie.seasons', 'season')
+        $queryBuilder = $this->createQueryBuilder('series')
+            ->join('series.seasons', 'season')
             ->join('season.actors', 'actor')
-            ->where('serie.title LIKE :name')
+            ->where('series.title LIKE :name')
             ->setParameter('name', '%' . $name . '%')
             ->orWhere('actor.name LIKE :actor')
             ->setParameter('actor', '%' . $name . '%')
-            ->orderBy('serie.title', 'ASC')
+            ->orderBy('series.title', 'ASC')
             ->getQuery();
 
         return $queryBuilder->getResult();

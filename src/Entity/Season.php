@@ -12,6 +12,7 @@ use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * @ORM\Entity(repositoryClass=SeasonRepository::class)
+ * @Vich\Uploadable
  */
 class Season
 {
@@ -28,9 +29,9 @@ class Season
     private $number;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Serie::class, inversedBy="seasons")
+     * @ORM\ManyToOne(targetEntity=Series::class, inversedBy="seasons")
      */
-    private $serie;
+    private $series;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -112,14 +113,14 @@ class Season
         return $this;
     }
 
-    public function getSerie(): ?Serie
+    public function getSeries(): ?Series
     {
-        return $this->serie;
+        return $this->series;
     }
 
-    public function setSerie(?Serie $serie): self
+    public function setSeries(?Series $series): self
     {
-        $this->serie = $serie;
+        $this->series = $series;
 
         return $this;
     }
@@ -189,7 +190,7 @@ class Season
         return $this;
     }
 
-    public function setPosterFile(File $posterFile = null): Serie
+    public function setPosterFile(File $posterFile = null): Series
     {
         $this->posterFile = $posterFile;
         if ($posterFile) {

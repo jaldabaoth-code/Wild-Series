@@ -177,7 +177,7 @@ class Episode
         return $this;
     }
 
-    public function setPosterFile(File $posterFile = null): Serie
+    public function setPosterFile(File $posterFile = null): Series
     {
         $this->posterFile = $posterFile;
         if ($posterFile) {

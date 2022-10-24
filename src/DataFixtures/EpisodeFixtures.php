@@ -11,7 +11,6 @@ use App\Service\Slugify;
 
 class EpisodeFixtures extends Fixture implements DependentFixtureInterface
 {
-
     private Slugify $slugify;
 
     public function __construct(Slugify $slugify)
@@ -22,16 +21,16 @@ class EpisodeFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         $seasonFixtures = new SeasonFixtures;
-        foreach (FixturesData::TV_SERIES as $serieTitle => $serieData) {
-            foreach ($seasonFixtures->getSeries($serieTitle) as $seasonNumber => $seasonData) {
+        foreach (FixturesData::TV_SERIES as $seriesTitle => $seriesData) {
+            foreach ($seasonFixtures->getSeries($seriesTitle) as $seasonNumber => $seasonData) {
                 foreach ($seasonData['episodes'] as $episodeNumber => $episodeData) {
                     $episode = new Episode();
                     $episode->setTitle($episodeData['title']);
-                    $episode->setSlug($this->slugify->generate($serieTitle .'-' . $episode->getTitle()));
+                    $episode->setSlug($this->slugify->generate($seriesTitle .'-' . $episode->getTitle()));
                     $episode->setNumber($episodeData['number']);
                     $episode->setSynopsis($episodeData['description']);
                     $episode->setPoster($episodeData['poster']);
-                    $episode->setSeason($this->getReference('season_'. $serieTitle . '_' . $seasonNumber));
+                    $episode->setSeason($this->getReference('season_'. $seriesTitle . '_' . $seasonNumber));
                     $manager->persist($episode);
                 }
             }

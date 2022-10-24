@@ -21,17 +21,17 @@ final class Version20210608061603 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql('DROP TABLE name');
-        $this->addSql('ALTER TABLE serie ADD owner_id INT DEFAULT NULL');
-        $this->addSql('ALTER TABLE serie ADD CONSTRAINT FK_92ED77847E3C61F9 FOREIGN KEY (owner_id) REFERENCES user (id)');
-        $this->addSql('CREATE INDEX IDX_92ED77847E3C61F9 ON serie (owner_id)');
+        $this->addSql('ALTER TABLE series ADD owner_id INT DEFAULT NULL');
+        $this->addSql('ALTER TABLE series ADD CONSTRAINT FK_92ED77847E3C61F9 FOREIGN KEY (owner_id) REFERENCES user (id)');
+        $this->addSql('CREATE INDEX IDX_92ED77847E3C61F9 ON series (owner_id)');
     }
 
     public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->addSql('CREATE TABLE name (id INT AUTO_INCREMENT NOT NULL, name VARCHAR(255) CHARACTER SET utf8mb4 NOT NULL COLLATE `utf8mb4_unicode_ci`, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE `utf8_unicode_ci` ENGINE = InnoDB COMMENT = \'\' ');
-        $this->addSql('ALTER TABLE serie DROP FOREIGN KEY FK_92ED77847E3C61F9');
-        $this->addSql('DROP INDEX IDX_92ED77847E3C61F9 ON serie');
-        $this->addSql('ALTER TABLE serie DROP owner_id');
+        $this->addSql('ALTER TABLE series DROP FOREIGN KEY FK_92ED77847E3C61F9');
+        $this->addSql('DROP INDEX IDX_92ED77847E3C61F9 ON series');
+        $this->addSql('ALTER TABLE series DROP owner_id');
     }
 }

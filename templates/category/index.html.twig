@@ -2,14 +2,18 @@
 {% block title %}All series{% endblock %}
 
 {% block body %}
+    {# Only for admin and author for add new series #}
+    {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+        <a class="buttonAddCategory btn btn-success btn-sm" href="{{ path("category_new") }}">Add new category</a>
+    {% endif %}
     <h1 class="m-5">Toutes les catégories existante : </h1>
     {% for categorie, seriesCategorie in seriesCategories %}
         <h2><a href="{{ path("category_show", { categoryName: categorie }) }}">{{ loop.index }} / {{ categorie }}</a></h2>
         <div class="row">
-            <a class="shine" href="{{ path("serie_show", { slug: seriesCategorie.slug }) }}">
+            <a class="shine" href="{{ path("series_show", { slug: seriesCategorie.slug }) }}">
                 <img src="{{ seriesCategorie.poster }}" alt="poster of series">
             </a>
-            <a href="{{ path("serie_show", { 'slug': seriesCategorie.slug }) }}">{{ seriesCategorie.title }}</a>
+            <a href="{{ path("series_show", { 'slug': seriesCategorie.slug }) }}">{{ seriesCategorie.title }}</a>
         </div>
     {% else %}
         Aucune série trouvée.

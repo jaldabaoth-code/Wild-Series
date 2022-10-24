@@ -9,8 +9,8 @@
     {% endif %}
     <p>A joué dans: </p>
     <ul>
-        {% for serie in actor.series %}
-            <li><a href="{{ path('serie_show', {slug: serie.slug}) }}">{{ serie.title }}</a></li>
+        {% for oneSeries in actor.series %}
+            <li><a href="{{ path('series_show', {slug: oneSeries.slug}) }}">{{ oneSeries.title }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

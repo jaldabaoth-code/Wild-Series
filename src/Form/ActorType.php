@@ -3,7 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Actor;
-use App\Entity\Serie;
+use App\Entity\Series;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -23,7 +23,7 @@ class ActorType extends AbstractType
                 'download_uri' => true,
             ])
             ->add('series', EntityType::class, [
-                'class' => Serie::class,
+                'class' => Series::class,
                 'choice_label' => 'title',
                 'multiple' => true,
                 'expanded' => true,

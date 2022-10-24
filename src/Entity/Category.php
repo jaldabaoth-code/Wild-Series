@@ -25,7 +25,7 @@ class Category
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Serie", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="App\Entity\Series", mappedBy="category")
      */
     private $series;
 
@@ -52,7 +52,7 @@ class Category
     }
 
     /**
-     * @return Collection|Serie[]
+     * @return Collection|Series[]
      */
     public function getSeries(): Collection
     {
@@ -60,30 +60,30 @@ class Category
     }
 
     /**
-     * @param Serie $serie
+     * @param Series $series
      * @return Category
      */
-    public function addSerie(Serie $serie): self
+    public function addSeries(Series $series): self
     {
-        if (!$this->series->contains($serie)) {
-            $this->series[] = $serie;
-            $serie->setCategory($this);
+        if (!$this->series->contains($series)) {
+            $this->series[] = $series;
+            $series->setCategory($this);
         }
         return $this;
     }
 
     /**
-     * @param Serie $serie
+     * @param Series $series
      * @return Category
      */
 
-    public function removeSerie(Serie $serie): self
+    public function removeSeries(Series $series): self
     {
-        if ($this->series->contains($serie)) {
-            $this->series->removeElement($serie);
+        if ($this->series->contains($series)) {
+            $this->series->removeElement($series);
             // set the owning side to null (unless already changed)
-            if ($serie->getCategory() === $this) {
-                $serie->setCategory(null);
+            if ($series->getCategory() === $this) {
+                $series->setCategory(null);
             }
         }
         return $this;

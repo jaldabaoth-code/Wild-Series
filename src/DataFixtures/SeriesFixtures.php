@@ -2,7 +2,7 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Serie;
+use App\Entity\Series;
 use App\Entity\Category;
 use App\Service\FixturesData;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -10,7 +10,7 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 use App\Service\Slugify;
 
-class SerieFixtures extends Fixture implements DependentFixtureInterface
+class SeriesFixtures extends Fixture implements DependentFixtureInterface
 {
     private Slugify $slugify;
 
@@ -22,17 +22,17 @@ class SerieFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         foreach (FixturesData::TV_SERIES as $title => $data) {
-            $serie = new Serie();
-            $serie->setTitle($title);
-            $serie->setDescription($data['description']);
-            $serie->setPoster($data['poster']);
-            $serie->setImage($data['image']);
-            $serie->setYear($data['year']);
-            $serie->setCountry($data['country']);
-            $serie->setCategory($this->getReference('category_' . $data['category']));
-            $serie->setSlug($this->slugify->generate($serie->getTitle()));
-            $manager->persist($serie);
-            $this->addReference('serie_' . $title, $serie);
+            $series = new Series();
+            $series->setTitle($title);
+            $series->setDescription($data['description']);
+            $series->setPoster($data['poster']);
+            $series->setImage($data['image']);
+            $series->setYear($data['year']);
+            $series->setCountry($data['country']);
+            $series->setCategory($this->getReference('category_' . $data['category']));
+            $series->setSlug($this->slugify->generate($series->getTitle()));
+            $manager->persist($series);
+            $this->addReference('series_' . $title, $series);
         }
         $manager->flush();
     }
