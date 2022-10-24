@@ -14,23 +14,23 @@
             <a class="buttonAddSeries btn btn-success btn-sm" href="{{ path("series_new") }}">Add new series</a>
         {% endif %}
         <h1>
-            {% if search == '' %}
-                All Series
+            {% if searchedWord == '' %}
+                All series
             {% else %}
-                Result for : {{ search }}
+                Result for : {{ searchedWord }}
             {% endif %}
         </h1>
         <div class="body">
             {% for oneSeries in series %}
                 <div class="oneSeries">
-                    <a class="shinePoster" href="{{ path("series_show", { slug: oneSeries.slug }) }}">
+                    <a class="shinePoster" href="{{ path("series_show", { slug: oneSeries.slug, id: oneSeries.id }) }}">
                         <img src="{{ oneSeries.poster }}" alt="poster of {{ oneSeries.title }}">
                     </a>
                     {# Only for admin and author for edit or delete series #}
                     {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
                         <div class="rectificationButtons">
                             <!-- Edit series button -->
-                            <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("series_edit", { slug: oneSeries.slug }) }}" type="button">Edit</a>
+                            <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("series_edit", { slug: oneSeries.slug, id: oneSeries.id }) }}" type="button">Edit</a>
                             <!-- Delete series button -->
                             <form class="formDelete" method="post" action="{{ path('series_delete', { 'id': oneSeries.id }) }}" onsubmit="return confirm('Are you sure you want to delete the series : {{ oneSeries.title }} ?');">
                                 <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ oneSeries.id) }}">
@@ -38,7 +38,7 @@
                             </form>
                         </div>
                     {% endif %}
-                    <a class="title" href="{{ path("series_show", { slug: oneSeries.slug }) }}">{{ oneSeries.title }}</a>
+                    <a class="title" href="{{ path("series_show", { slug: oneSeries.slug, id: oneSeries.id }) }}">{{ oneSeries.title }}</a>
                     {% if oneSeries.category.name is defined %}
                         <a class="categoryName" href="{{ path("category_show", { categoryName: oneSeries.category.name }) }}">{{ oneSeries.category.name }}</a>
                     {% endif %}

@@ -22,7 +22,7 @@
             {% endif %}
             <div class="informations">
                 <p>Title :
-                    <a href="{{ path("series_show", { slug: series.slug }) }}">{{ series.title }}</a>
+                    <a href="{{ path("series_show", { slug: series.slug, id: series.id }) }}">{{ series.title }}</a>
                     {% if app.user %}
                         <a id="watchlist" href="{{ path('series_watchlist', { id: series.id }) }}">
                             <i class="heart bi {{ app.user.isInWatchlist(series) ? 'bi-heart-fill' : 'bi-heart' }}"></i>
@@ -35,20 +35,22 @@
                 </p>
                 <p>Country : {{ series.country }}</p>
                 <p>Actors :
+                {% if seasons[0].actors is defined %}              
                     {% for actor in seasons[0].actors|slice(0, 4) %}
-                        <a href="{{ path('actor_show', { id: actor.id }) }}">{{ actor.name }}</a>
                         {# Not , after last actor name #}
-                        {{ (loop.index < 4) ? ',' : '' }}
-                    {% else %}
-                        &#160;Aucun acteur pour cette série
+                        {{ (loop.index > 1) ? ',' : '' }}
+                        <a href="{{ path('actor_show', { id: actor.id }) }}">{{ actor.name }}</a>
                     {% endfor %}
+                {% else %}
+                    No actor for this series
+                {% endif  %}
                 </p>
                 <div class="dropdown-toggle" role="button" data-bs-toggle="dropdown">
                     Seasons : {{ seasons|length }} seasons
                 </div>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     {% for season in seasons %}
-                        <a class="dropdown-item" href="{{ path('season_show', { slug: series.slug, seasonId: season.id }) }}">Season
+                        <a class="dropdown-item" href="{{ path('season_show', { seasonNumber: season.number, slug: series.slug, id: season.id }) }}">Season
                             {{ season.number }}
                         </a>
                     {% endfor %}
@@ -69,7 +71,7 @@
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
             <div class="rectificationButtons">
                 <!-- Edit series button -->
-                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("series_edit", { slug: series.slug }) }}" type="button">Edit series</a>
+                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("series_edit", { slug: series.slug, id: series.id }) }}" type="button">Edit series</a>
                 <!-- Delete series button -->
                 <form class="formDelete" method="post" action="{{ path('series_delete', { 'id': series.id }) }}" onsubmit="return confirm('Are you sure you want to delete the series : {{ series.title }} ?');">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ series.id) }}">

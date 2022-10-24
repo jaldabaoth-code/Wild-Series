@@ -30,33 +30,30 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class SeriesController extends AbstractController
 {
     /**
-     * Show all rows from Series's entity
      * @Route("/", name="index")
      */
     public function index(Request $request, SeriesRepository $seriesRepository): Response
     {
         $formSearchSeries = $this->createForm(SearchType::class);
         $formSearchSeries->handleRequest($request);
-
         if ($formSearchSeries->isSubmitted() && $formSearchSeries->isValid()) {
-            $search = $formSearchSeries->getData();
-            $series = $seriesRepository->findLikeName($search);
+            $searchedWord = $formSearchSeries->getData();
+            $series = $seriesRepository->findLikeName($searchedWord);
         } else {
             $series = $seriesRepository->findAll();
-            $search = '';
+            $searchedWord = '';
         }
         return $this->render('series/index.html.twig', [
             'series' => $series,
             'formSearchSeries' => $formSearchSeries->createView(),
-            'search' => $search,
+            'searchedWord' => $searchedWord,
         ]);
     }
     
     /**
-     * Display the form for add series
      * @Route("/new", name="new")
      */
-    public function new(Request $request, Slugify $slugify, MailerInterface $mailer) : Response
+    public function new(Request $request, Slugify $slugify, MailerInterface $mailer): Response
     {
         // Create a new Series Object
         $series = new Series();
@@ -64,29 +61,24 @@ class SeriesController extends AbstractController
         $form = $this->createForm(SeriesType::class, $series);
         // Get data from HTTP request
         $form->handleRequest($request);
-        
         // Was the form submitted ?
         if ($form->isSubmitted() && $form->isValid()) {
             $slug = $slugify->generate($series->getTitle());
             $series->setSlug($slug);
-            // Deal with the submitted data
-            // Get the Entity Manager
             $series->setOwner($this->getUser());
+            // Get the Entity Manager
             $entityManager = $this->getDoctrine()->getManager();
             // Persist Series Object
             $entityManager->persist($series);
             // Flush the persisted object
             $entityManager->flush();
-
             // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
             $this->addFlash('success', 'The new series has been added');
-
             $email = (new Email())
                     ->from($this->getParameter('mailer_from'))
                     ->to('your_email@example.com')
-                    ->subject('Une nouvelle série vient d\'être publiée !')
+                    ->subject('A new series has just been published !')
                     ->html($this->renderView('mail/newSeriesEmail.html.twig', ['series' => $series]));
-
             $mailer->send($email);
             // Finally redirect to series list
             return $this->redirectToRoute('series_index');
@@ -98,25 +90,15 @@ class SeriesController extends AbstractController
     }
 
     /**
-     * Getting a series by id
-     * @Route("/{slug}", name="show")
-     * @return Response
+     * @Route("/{slug}/{id}/show", name="show")
      */
-    public function show(Series $series, Slugify $slugify):Response
+    public function show(Series $series): Response
     {
         $seasons = $this->getDoctrine()
         ->getRepository(Season::class)
         ->findBy([
             'series' => $series->getId()
         ]);
-
-        $slug = $slugify->generate($series->getTitle());
-        $series->setSlug($slug);
-        if (!$series) {
-            throw $this->createNotFoundException(
-                'No series with id : '. $series->getId() .' found in series table.'
-            );
-        }
         return $this->render('series/show.html.twig', [
             'series' => $series,
             'seasons' => $seasons,
@@ -124,9 +106,9 @@ class SeriesController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}/edit", name="edit", methods={"GET","POST"})
+     * @Route("/{slug}/{id}/edit", name="edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Series $series, Slugify $slugify,): Response
+    public function edit(Request $request, Series $series, Slugify $slugify): Response
     {
         if (!($this->getUser() == $series->getOwner()) && ($this->getUser()->getRoles()[0] != 'ROLE_ADMIN')) {
             // If not the owner, throws a 403 Access Denied exception
@@ -148,9 +130,9 @@ class SeriesController extends AbstractController
     }
 
     /**
-     * @Route("/delete/{id}", name="delete", methods={"POST"})
+     * @Route("/{id}/delete", name="delete", methods={"POST"})
      */
-    public function deleteComment(Request $request, Series $series): Response
+    public function delete(Request $request, Series $series): Response
     {
         if ($this->isCsrfTokenValid('delete' . $series->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
@@ -164,21 +146,17 @@ class SeriesController extends AbstractController
     /**
      * @Route("/{id}/watchlist", name="watchlist", methods={"GET","POST"})
      */
-    public function addToWatchList(Series $series, EntityManagerInterface $em): Response
+    public function addToWatchList(Series $series, EntityManagerInterface $entityManager): Response
     {
         if ($this->getUser()->isInWatchList($series)){
             $this->getUser()->removeFromWatchlist($series);
         } else {
             $this->getUser()->addToWatchList($series);
         }
-
-        $em->flush();
-        
+        $entityManager->flush();
         return $this->redirectToRoute('series_show', [
+            'id' => $series->getId(),
             'slug' => $series->getSlug(),
-        ]);
-        return $this->json([
-            'isInWatchlist' => $this->getUser()->isInWatchlist($series)
         ]);
     }
 }

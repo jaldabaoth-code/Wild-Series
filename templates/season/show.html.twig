@@ -2,7 +2,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    {{ encore_entry_link_tags('indexSeason') }}
+    {{ encore_entry_link_tags('showSeason') }}
 {% endblock %}
 
 {% block title %}{{ series.title }} - Season {{ season.number }}{% endblock %}
@@ -18,11 +18,11 @@
             {% if ('https://' in season.poster) or ('http://' in season.poster) %}
                 <img class"seasonPoster" src="{{ season.poster }}" alt="{{ series.title }} poster">
             {% else %}
-                <img class"seasonPoster" src="/uploads/seasons/posters/{{ season.poster }}" alt="{{ season.poster }} poster">
+                <img class"seasonPoster" src="/uploads/seasons/posters/{{ season.poster }}" alt="{{ series.title }} poster">
             {% endif %}
             <div class="informations">
                 <p>Series title :
-                    <a href="{{ path("series_show", { slug: series.slug }) }}">{{ series.title }}</a>
+                    <a href="{{ path("series_show", { id: series.id, slug: series.slug }) }}">{{ series.title }}</a>
                 </p>
                 <p>Season : Season {{ season.number }}</p>
                 <p>Date : {{ season.year }}</p>
@@ -40,19 +40,19 @@
         </div>
         <div>
             <p class="description">{{ season.description }}</p>
-            <div class="titi">CASTING :</div>
+            <div class="castingTitle">CASTING :</div>
             <div class="casting">
                 {% for actor in season.actors %}
                     <div class="castingPosters">
                         {% if actor.poster %}
-                            <a class="actor" href="{{ path('actor_show', { id: actor.id }) }}"><img class="actorPoster" src="{{ actor.poster }}"></a>
+                            <a class="actor" href="{{ path('actor_show', { id: actor.id }) }}"><img class="actorPoster" src="{{ actor.poster }}" alt="{{ actor.name }} poster"></a>
                         {%  else %}
-                            <a class="actor" href="{{ path('actor_show', { id: actor.id }) }}"><img class="actorPoster" src="{{ asset('build/no-image.png') }}"></a>
+                            <a class="actor" href="{{ path('actor_show', { id: actor.id }) }}"><img class="actorPoster" src="{{ asset('build/no-image.png') }}" alt="{{ actor.name }} poster"></a>
                         {% endif %}
                         <a class="actorName" href="{{ path('actor_show', { id: actor.id }) }}">{{ actor.name }}</a>
                     </div>
                 {% else %}
-                    <div>Aucun acteur pour cette série</div>
+                    <div>No actor for this season</div>
                 {% endfor %}
             </div>
         </div>
