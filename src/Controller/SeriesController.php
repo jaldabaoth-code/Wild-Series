@@ -45,8 +45,8 @@ class SeriesController extends AbstractController
         }
         return $this->render('series/index.html.twig', [
             'series' => $series,
-            'formSearchSeries' => $formSearchSeries->createView(),
             'searchedWord' => $searchedWord,
+            'formSearchSeries' => $formSearchSeries->createView()
         ]);
     }
     
@@ -124,8 +124,8 @@ class SeriesController extends AbstractController
             return $this->redirectToRoute('series_index');
         }
         return $this->render('series/edit.html.twig', [
-            'series' => $series,
             'form' => $form->createView(),
+            'series' => $series
         ]);
     }
 

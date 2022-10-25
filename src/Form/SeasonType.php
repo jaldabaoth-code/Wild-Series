@@ -19,19 +19,11 @@ class SeasonType extends AbstractType
             ->add('description')
             ->add('posterFile', VichFileType::class, [
                 'required'      => false,
-                'allow_delete'  => true, // not mandatory, default is true
-                'download_uri' => true, // not mandatory, default is true
+                'allow_delete'  => false,
+                'download_uri' => false,
                 ])
             ->add('series', null, ['choice_label' => 'title'])
         ;
-
-      /*  $builder->add('actors', EntityType::class, [
-            'class' => Actor::class,
-            'choice_label' => 'name',
-            'multiple' => true,
-            'expanded' => true,
-            'by_reference' => false,
-        ]);*/
     }
 
     public function configureOptions(OptionsResolver $resolver)

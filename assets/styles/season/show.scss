@@ -47,7 +47,7 @@
         .castingPosters {
             display: flex;
             width: $column * 3;
-            flex-wrap: wrap;
+            flex-direction: column;
 
             .actor {
                 width: $column * 9;
@@ -69,6 +69,25 @@
                 &:hover {
                     color: $primary;
                 }
+            }
+        }
+    }
+
+    .rectificationButtons {
+        display: flex;
+        margin-top: $spacer * 3;
+
+        .buttonEdit {
+            width: $column * 2;
+            margin-right: $spacer * .25;
+        }
+
+        .formDelete {
+            width: $column * 2;
+            margin-left: $spacer * .25;
+
+            .buttonDelete {
+                width: 100%;
             }
         }
     }

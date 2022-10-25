@@ -11,7 +11,7 @@
     <div class="container">
         {# Only for admin and author for add new series #}
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
-            <a class="buttonAddEpisode btn btn-success btn-sm" href="{{ path("episode_new") }}">Add new episode</a>
+            <a class="buttonAddEpisode btn btn-success btn-sm" href="{{ path("episode_new", { seriesSlug: series.slug, seasonId: season.id }) }}">Add new episode</a>
         {% endif %}
         <h1>{{ series.title }} - Season {{ season.number }}</h1>
         <div class="body">
@@ -56,5 +56,17 @@
                 {% endfor %}
             </div>
         </div>
+        {# Only for admin and author for edit or delete series #}
+        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+            <div class="rectificationButtons">
+                <!-- Edit series button -->
+                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("season_edit", { id: season.id }) }}" type="button">Edit season</a>
+                <!-- Delete series button -->
+                <form class="formDelete" method="post" action="{{ path('season_delete', { 'id': season.id }) }}" onsubmit="return confirm('Do you want to delete {{ series.title }} season {{ season.number }} ?');">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ season.id) }}">
+                    <button class="buttonDelete btn btn-danger btn-sm">Delete season</button>
+                </form>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

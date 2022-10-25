@@ -25,46 +25,43 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 class EpisodeController extends AbstractController
 {
     /**
-     * @Route("/", name="episode_index", methods={"GET"})
+     * @Route("season/{seasonId}/series/{seriesSlug}/new/", name="episode_new", methods={"GET","POST"})
+     * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"seasonId": "id"}})
+     * @ParamConverter("series", class="App\Entity\Series", options={"mapping": {"seriesSlug": "slug"}})
      */
-    public function index(EpisodeRepository $episodeRepository): Response
+    public function new(Request $request, Slugify $slugify, MailerInterface $mailer, Season $season, Series $series): Response
     {
-        return $this->render('episode/index.html.twig', [
-            'episodes' => $episodeRepository->findAll(),
-        ]);
-    }
-
-    /**
-     * @Route("/new", name="episode_new", methods={"GET","POST"})
-     */
-    public function new(Request $request, Slugify $slugify, MailerInterface $mailer): Response
-    {
-
         $episode = new Episode();
         $form = $this->createForm(EpisodeType::class, $episode);
         $form->handleRequest($request);
-
+        // Add season in form data of episode
+        $data = $form->getData()->setSeason($season);
         if ($form->isSubmitted() && $form->isValid()) {
             $slug = $slugify->generate($episode->getTitle());
             $episode->setSlug($slug);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($episode);
             $entityManager->flush();
-
             // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
             $this->addFlash('success', 'The new series has been created');
-
             $email = (new Email())
                     ->from($this->getParameter('mailer_from'))
                     ->to('your_email@example.com')
                     ->subject('Une nouvelle série vient d\'être publiée !')
                     ->html($this->renderView('mail/newEpisodeEmail.html.twig', ['episode' => $episode]));
-
             $mailer->send($email);
-            return $this->redirectToRoute('episode_index');
+/*             var_dump($season);
+            die; */
+            return $this->redirectToRoute('season_show', [
+                'seasonNumber' => $season->getNumber(),
+                'slug' => $series->getSlug(),
+                'id' => $season->getId()
+            ]
+        );
         }
-
+        //seasonNumber: season.number, slug: series.slug, id: season.id
         return $this->render('episode/new.html.twig', [
+            'season' => $season,
             'episode' => $episode,
             'form' => $form->createView(),
         ]);
@@ -104,7 +101,7 @@ class EpisodeController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}/edit", name="episode_edit", methods={"GET","POST"})
+     * @Route("/{id}/{slug}/edit", name="episode_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Episode $episode, Slugify $slugify): Response
     {

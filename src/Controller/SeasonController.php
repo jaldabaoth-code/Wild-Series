@@ -43,7 +43,7 @@ class SeasonController extends AbstractController
     }
 
     /**
-     * @Route("/{seasonNumber}/{slug}/{id}", name="show")
+     * @Route("/{seasonNumber}/{slug}/{id}/show", name="show")
      * @ParamConverter("series", class="App\Entity\Series", options={"mapping": {"slug": "slug"}})
      */
     public function show(Series $series, Season $season, Slugify $slugify): Response
@@ -73,16 +73,16 @@ class SeasonController extends AbstractController
             $this->getDoctrine()->getManager()->flush();
             // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
             $this->addFlash('success', 'The series has been edited');
-            return $this->redirectToRoute('season_index');
+            return $this->redirectToRoute('series_index');
         }
         return $this->render('season/edit.html.twig', [
-            'season' => $season,
             'form' => $form->createView(),
+            'season' => $season
         ]);
     }
 
     /**
-     * @Route("/{id}", name="delete", methods={"POST"})
+     * @Route("/{id}/delete", name="delete", methods={"POST"})
      */
     public function delete(Request $request, Season $season): Response
     {
@@ -90,9 +90,8 @@ class SeasonController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($season);
             $entityManager->flush();
-            $this->addFlash('danger', 'The series is deleted');
+            $this->addFlash('danger', 'The season is deleted');
         }
-
-        return $this->redirectToRoute('season_index');
+        return $this->redirectToRoute('series_index');
     }
 }
