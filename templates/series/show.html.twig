@@ -11,14 +11,14 @@
     <div class="container">
         {# Only for admin and author for add new series #}
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
-            <a class="buttonAddSeason btn btn-success btn-sm" href="{{ path("season_new") }}">Add new season</a>
+            <a class="buttonAddSeason btn btn-success btn-sm" href="{{ path("season_new", { seriesSlug: series.slug, seriesId: series.id }) }}">Add new season</a>
         {% endif %}
         <h1>{{ series.title }}</h1>
         <div class="body">
             {% if ('https://' in series.poster) or ('http://' in series.poster) %}
-                <img class"poster" src="{{ series.poster }}" alt="{{ series.title }} poster">
+                <img src="{{ series.poster }}" alt="{{ series.title }} poster">
             {% else %}
-                <img class"poster" src="/uploads/series/poster/{{ series.poster }}" alt="{{ series.title }} poster">
+                <img src="/uploads/series/poster/{{ series.poster }}" alt="{{ series.title }} poster">
             {% endif %}
             <div class="informations">
                 <p>Title :
@@ -50,7 +50,7 @@
                 </div>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     {% for season in seasons %}
-                        <a class="dropdown-item" href="{{ path('season_show', { seasonNumber: season.number, slug: series.slug, id: season.id }) }}">Season
+                        <a class="dropdown-item" href="{{ path('season_show', { seasonNumber: season.number, id: season.id, seriesSlug: series.slug, seriesId: series.id }) }}">Season
                             {{ season.number }}
                         </a>
                     {% endfor %}

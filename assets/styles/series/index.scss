@@ -3,6 +3,8 @@
 .container {
     display: flex;
     flex-direction: column;
+    margin: $spacer;
+    padding: $spacer;
 
     .buttonAddSeries {
         width: $column * 2;

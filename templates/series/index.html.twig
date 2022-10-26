@@ -32,7 +32,7 @@
                             <!-- Edit series button -->
                             <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("series_edit", { slug: oneSeries.slug, id: oneSeries.id }) }}" type="button">Edit</a>
                             <!-- Delete series button -->
-                            <form class="formDelete" method="post" action="{{ path('series_delete', { 'id': oneSeries.id }) }}" onsubmit="return confirm('Are you sure you want to delete the series : {{ oneSeries.title }} ?');">
+                            <form class="formDelete" method="post" action="{{ path('series_delete', { 'id': oneSeries.id }) }}" onsubmit="return confirm('Do you want to delete the series : {{ oneSeries.title }} ?');">
                                 <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ oneSeries.id) }}">
                                 <button class="buttonDelete btn btn-danger btn-sm">Delete</button>
                             </form>

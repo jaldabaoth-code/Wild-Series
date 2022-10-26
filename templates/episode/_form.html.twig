@@ -12,10 +12,5 @@
     {{ form_label(form.synopsis, 'Synopsis : ', {'attr': {'class': 'form-label'}}) }}
     {{ form_widget(form.synopsis, {'attr': {'class': 'form-control'}}) }}
 
-
-{{ dump(season) }}
-{#     {{ form_label(form.season, 'Season : ', {'attr': {'class': 'form-label'}}) }}
-    {{ form_widget(form.season, {'attr': {'class': 'form-control', 'value' : '2'}}) }} #}
-
     <button class="button btn btn-primary">{{ 'Save' }}</button>
 {{ form_end(form) }}

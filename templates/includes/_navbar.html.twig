@@ -1,21 +1,17 @@
 {% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
+{% set mainPath = currentPath|split('/').1 %}
+
 <nav class="navbar navbar-expand-lg navbar-light p-0">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link px-3 {{ currentPath == '/' ? 'active text-white' : '' }} menu" aria-current="page" href="/">Home</a>
+                <a class="nav-link px-3 {{ mainPath == '' ? 'active text-white' : '' }} menu" aria-current="page" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link px-3 {{ currentPath == '/series/' ? 'active text-white' : '' }} menu" href="/series/">Series</a>
+                <a class="nav-link px-3 {{ mainPath == 'series' ? 'active text-white' : '' }} menu" href="/series/">Series</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link px-3 {{ currentPath == '/categories/' ? 'active text-white' : '' }} menu" href="/categories/">Categories</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link px-3 {{ currentPath == '/season/' ? 'active text-white' : '' }} menu" href="/season/">Seasons</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link px-3 {{ currentPath == '/episode/' ? 'active text-white' : '' }} menu" href="/episode/">Episodes</a>
+                <a class="nav-link px-3 {{ mainPath == 'actors' ? 'active text-white' : '' }} menu" href="/actors/">Actrors</a>
             </li>
             {{ render(controller('App\\Controller\\CategoryController::dropdown')) }}
         </ul>

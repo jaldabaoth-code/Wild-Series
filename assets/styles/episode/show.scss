@@ -1,0 +1,76 @@
+@import '../variables.scss';
+
+.container {
+    margin: $spacer;
+    padding: $spacer;
+
+    .rectificationButtons {
+        display: flex;
+        margin-bottom: $spacer .5;
+
+        .buttonEdit {
+            width: $column * 2;
+            margin-right: $spacer * .25;
+        }
+
+        .formDelete {
+            width: $column * 2;
+            margin-left: $spacer * .25;
+
+            .buttonDelete {
+                width: 100%;
+            }
+        }
+    }
+
+    .body {
+        display: flex;
+
+        .informations {
+            margin: $spacer $spacer * .5 $spacer * .25;
+
+            p {
+                display: flex;
+
+                a {
+                    color: $primary;
+                    text-decoration: none;
+                    margin-left: $spacer * .25;
+
+                    &:hover {
+                        filter: brightness(20%);
+                    }
+                }
+            }
+        }
+    }
+
+    .description {
+        margin: $spacer * 2 $spacer * 3;
+    }
+
+    .descriptionPoster {
+        display: flex;
+        justify-content: center;
+
+        .poster {
+            width: $column * 9;
+        }
+    }
+
+    .commentForm {
+        margin-top: $spacer * 3;
+    }
+
+    .commentsList {
+        .comment {
+            background-color: $secondary;
+            filter: brightness(210%);
+            margin-bottom: $spacer * 2;
+
+            p {
+                margin: $spacer * .25;
+            }
+        }
+    }
+}

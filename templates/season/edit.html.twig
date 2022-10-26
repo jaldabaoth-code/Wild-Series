@@ -9,7 +9,8 @@
 
 {% block body %}
     <div class="container">
-        <h1>Edit season - The season {{ season.number }}</h1>
+        <h1>Edit season</h1>
+        <h2>{{ series.title }} - season {{ season.number }}</h2>
         {{ include('season/_form.html.twig') }}
     </div>
 {% endblock %}

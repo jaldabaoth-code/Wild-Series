@@ -21,8 +21,7 @@ class SeasonType extends AbstractType
                 'required'      => false,
                 'allow_delete'  => false,
                 'download_uri' => false,
-                ])
-            ->add('series', null, ['choice_label' => 'title'])
+            ])
         ;
     }
 

@@ -21,13 +21,10 @@ body {
         margin-top: $spacer * 3;
         padding: $spacer * 3;
         width: $column * 8;
-
-        h1 {
-            padding-bottom: $spacer * 2;
-        }
         
         h1, h2 {
             text-align: center;
+            padding-bottom: $spacer * 2;
         }
     }
 }

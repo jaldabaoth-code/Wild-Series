@@ -30,7 +30,6 @@ class SeasonRepository extends ServiceEntityRepository
             ->setParameter('actor', '%' . $name . '%')
             ->orderBy('ser.title', 'ASC')
             ->getQuery();
-
         return $queryBuilder->getResult();
     }
 }

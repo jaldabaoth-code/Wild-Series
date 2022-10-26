@@ -16,9 +16,9 @@
         <h1>{{ series.title }} - Season {{ season.number }}</h1>
         <div class="body">
             {% if ('https://' in season.poster) or ('http://' in season.poster) %}
-                <img class"seasonPoster" src="{{ season.poster }}" alt="{{ series.title }} poster">
+                <img src="{{ season.poster }}" alt="{{ series.title }} poster">
             {% else %}
-                <img class"seasonPoster" src="/uploads/seasons/posters/{{ season.poster }}" alt="{{ series.title }} poster">
+                <img src="/uploads/seasons/posters/{{ season.poster }}" alt="{{ series.title }} poster">
             {% endif %}
             <div class="informations">
                 <p>Series title :
@@ -31,7 +31,7 @@
                 </div>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     {% for episode in episodes %}
-                        <a class="dropdown-item" href="{{ path('episode_show', { seriesSlug: series.slug, seasonId: season.id, episodeSlug: episode.slug }) }}">Episode
+                        <a class="dropdown-item" href="{{ path('episode_show', { episodeSlug: episode.slug, id: episode.id, seasonNumber: season.number, seasonId: season.id, seriesSlug: series.slug, seriesId:series.id }) }}">Episode
                             {{ episode.number }}
                         </a>
                     {% endfor %}
@@ -60,9 +60,9 @@
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
             <div class="rectificationButtons">
                 <!-- Edit series button -->
-                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("season_edit", { id: season.id }) }}" type="button">Edit season</a>
+                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("season_edit", { seasonNumber: season.number, id: season.id, seriesSlug: series.slug, seriesId: series.id }) }}" type="button">Edit season</a>
                 <!-- Delete series button -->
-                <form class="formDelete" method="post" action="{{ path('season_delete', { 'id': season.id }) }}" onsubmit="return confirm('Do you want to delete {{ series.title }} season {{ season.number }} ?');">
+                <form class="formDelete" method="post" action="{{ path('season_delete', { 'id': season.id }) }}" onsubmit="return confirm('Do you want to delete : {{ series.title }} - The season {{ season.number }} ?');">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ season.id) }}">
                     <button class="buttonDelete btn btn-danger btn-sm">Delete season</button>
                 </form>

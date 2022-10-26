@@ -2,27 +2,27 @@
     {{ encore_entry_link_tags('formSeries') }}
 {% endblock %}
 
-{{ form_start(form) }}
-    {{ form_label(form.title, 'Title : ', {'attr': {'class': 'form-label'}}) }}
-    {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+{{ form_start(formSeries) }}
+    {{ form_label(formSeries.title, 'Title : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(formSeries.title, {'attr': {'class': 'form-control'}}) }}
 
-    {{ form_label(form.description, 'Description : ', {'attr': {'class': 'form-label'}}) }}
-    {{ form_widget(form.description, {'attr': {'class': 'form-control'}}) }}
+    {{ form_label(formSeries.description, 'Description : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(formSeries.description, {'attr': {'class': 'form-control'}}) }}
 
-    {{ form_label(form.posterFile, 'Poster : ', {'attr': {'class': 'form-label'}}) }}
-    {{ form_widget(form.posterFile, {'attr': {'class': 'form-control'}}) }}
+    {{ form_label(formSeries.posterFile, 'Poster : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(formSeries.posterFile, {'attr': {'class': 'form-control'}}) }}
 
-    {{ form_label(form.imageFile, 'Image : ', {'attr': {'class': 'form-label'}}) }}
-    {{ form_widget(form.imageFile, {'attr': {'class': 'form-control'}}) }}
+    {{ form_label(formSeries.imageFile, 'Image : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(formSeries.imageFile, {'attr': {'class': 'form-control'}}) }}
 
-    {{ form_label(form.country, 'Country : ', {'attr': {'class': 'form-label'}}) }}
-    {{ form_widget(form.country, {'attr': {'class': 'form-control'}}) }}
+    {{ form_label(formSeries.country, 'Country : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(formSeries.country, {'attr': {'class': 'form-control'}}) }}
 
-    {{ form_label(form.year, 'Year : ', {'attr': {'class': 'form-label'}}) }}
-    {{ form_widget(form.year, {'attr': {'class': 'form-control'}}) }}
+    {{ form_label(formSeries.year, 'Year : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(formSeries.year, {'attr': {'class': 'form-control'}}) }}
 
-    {{ form_label(form.category, 'Category : ', {'attr': {'class': 'form-label'}}) }}
-    {{ form_widget(form.category, {'attr': {'class': 'form-control'}}) }}
+    {{ form_label(formSeries.category, 'Category : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(formSeries.category, {'attr': {'class': 'form-control'}}) }}
 
     <button class="button btn btn-primary">{{ 'Save' }}</button>
-{{ form_end(form) }}
+{{ form_end(formSeries) }}

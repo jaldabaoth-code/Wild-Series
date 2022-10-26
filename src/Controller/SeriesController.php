@@ -58,13 +58,13 @@ class SeriesController extends AbstractController
         // Create a new Series Object
         $series = new Series();
         // Create the associated Form
-        $form = $this->createForm(SeriesType::class, $series);
+        $formSeries = $this->createForm(SeriesType::class, $series);
         // Get data from HTTP request
-        $form->handleRequest($request);
+        $formSeries->handleRequest($request);
         // Was the form submitted ?
-        if ($form->isSubmitted() && $form->isValid()) {
-            $slug = $slugify->generate($series->getTitle());
-            $series->setSlug($slug);
+        if ($formSeries->isSubmitted() && $formSeries->isValid()) {
+            $slugSeries = $slugify->generate($series->getTitle());
+            $series->setSlug($slugSeries);
             $series->setOwner($this->getUser());
             // Get the Entity Manager
             $entityManager = $this->getDoctrine()->getManager();
@@ -72,20 +72,23 @@ class SeriesController extends AbstractController
             $entityManager->persist($series);
             // Flush the persisted object
             $entityManager->flush();
-            // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The new series has been added');
+            // Once the form is submitted, valid and the data is inserted in database, you can define the success flash message
+            $this->addFlash('success', 'The new series has been added : ' . $series->getTitle());
             $email = (new Email())
                     ->from($this->getParameter('mailer_from'))
                     ->to('your_email@example.com')
                     ->subject('A new series has just been published !')
                     ->html($this->renderView('mail/newSeriesEmail.html.twig', ['series' => $series]));
             $mailer->send($email);
-            // Finally redirect to series list
-            return $this->redirectToRoute('series_index');
+            // Finally redirect to the series we added
+            return $this->redirectToRoute('series_show', [
+                'slug' => $series->getSlug(),
+                'id' => $series->getId()
+            ]);
         }
         // Render the form
         return $this->render('series/new.html.twig', [
-            'form' => $form->createView(),
+            'formSeries' => $formSeries->createView(),
         ]);
     }
 
@@ -101,31 +104,34 @@ class SeriesController extends AbstractController
         ]);
         return $this->render('series/show.html.twig', [
             'series' => $series,
-            'seasons' => $seasons,
+            'seasons' => $seasons
         ]);
     }
 
     /**
      * @Route("/{slug}/{id}/edit", name="edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Series $series, Slugify $slugify): Response
+    public function edit(Request $request, Slugify $slugify, Series $series): Response
     {
         if (!($this->getUser() == $series->getOwner()) && ($this->getUser()->getRoles()[0] != 'ROLE_ADMIN')) {
             // If not the owner, throws a 403 Access Denied exception
-            throw new AccessDeniedException('Only the owner can edit the series!');
+            throw new AccessDeniedException('Only the owner and admin can edit the series!');
         }
-        $form = $this->createForm(SeriesType::class, $series);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
+        $formSeries = $this->createForm(SeriesType::class, $series);
+        $formSeries->handleRequest($request);
+        if ($formSeries->isSubmitted() && $formSeries->isValid()) {
             $series->setSlug($slugify->generate($series->getTitle()));
             $this->getDoctrine()->getManager()->flush();
-            // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The series has been edited');
-            return $this->redirectToRoute('series_index');
+            // Once the form is submitted, valid and the data is inserted in database, you can define the success flash message
+            $this->addFlash('success', 'The series has been edited : ' . $series->getTitle());
+            return $this->redirectToRoute('series_show', [
+                'slug' => $series->getSlug(),
+                'id' => $series->getId()
+            ]);
         }
         return $this->render('series/edit.html.twig', [
-            'form' => $form->createView(),
-            'series' => $series
+            'series' => $series,
+            'formSeries' => $formSeries->createView()
         ]);
     }
 
@@ -135,10 +141,11 @@ class SeriesController extends AbstractController
     public function delete(Request $request, Series $series): Response
     {
         if ($this->isCsrfTokenValid('delete' . $series->getId(), $request->request->get('_token'))) {
+            $seriesTitle = $series->getTitle();
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($series);
             $entityManager->flush();
-            $this->addFlash('danger', 'The series is deleted');
+            $this->addFlash('danger', 'The series is deleted : ' . $seriesTitle);
         }
         return $this->redirectToRoute('series_index');
     }
@@ -146,17 +153,17 @@ class SeriesController extends AbstractController
     /**
      * @Route("/{id}/watchlist", name="watchlist", methods={"GET","POST"})
      */
-    public function addToWatchList(Series $series, EntityManagerInterface $entityManager): Response
+    public function addToWatchList(EntityManagerInterface $entityManager, Series $series): Response
     {
-        if ($this->getUser()->isInWatchList($series)){
+        if ($this->getUser()->isInWatchList($series)) {
             $this->getUser()->removeFromWatchlist($series);
         } else {
             $this->getUser()->addToWatchList($series);
         }
         $entityManager->flush();
         return $this->redirectToRoute('series_show', [
-            'id' => $series->getId(),
             'slug' => $series->getSlug(),
+            'id' => $series->getId()
         ]);
     }
 }

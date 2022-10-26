@@ -2,11 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\Comment;
 use App\Entity\Series;
+use App\Entity\Comment;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\RangeType;
 
 class CommentType extends AbstractType
 {
@@ -14,7 +15,12 @@ class CommentType extends AbstractType
     {
         $builder
             ->add('comment')
-            ->add('rate')
+            ->add('rate', RangeType::class, [
+                'attr' => [
+                    'min' => 0,
+                    'max' => 10
+                ]
+            ])
         ;
     }
 

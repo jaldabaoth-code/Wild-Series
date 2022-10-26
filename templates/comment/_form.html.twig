@@ -1,4 +1,14 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('formSeason') }}
+{% endblock %} 
+
+{{ form_start(formComment) }}
+    {{ form_label(formComment.comment, 'Comment this episode : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(formComment.comment, {'attr': {'class': 'form-control'}}) }}
+
+    {{ form_label(formComment.rate, 'Rate this episode : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(formComment.rate, {'attr': {'class': 'form-range'}}) }}
+
+    <button class="button btn btn-primary">{{ 'Send' }}</button>
+{{ form_end(formComment) }}
+

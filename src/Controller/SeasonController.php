@@ -21,32 +21,41 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 class SeasonController extends AbstractController
 {
     /**
-     * @Route("/new", name="new", methods={"GET","POST"})
+     * @Route("/series/{seriesSlug}/{seriesId}/new", name="new", methods={"GET","POST"})
+     * @ParamConverter("series", class="App\Entity\Series", options={"mapping": {"seriesId": "id"}})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, Series $series): Response
     {
         $season = new Season();
-        $form = $this->createForm(SeasonType::class, $season);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
+        $formSeason = $this->createForm(SeasonType::class, $season);
+        $formSeason->handleRequest($request);
+        // Add series in form data of season
+        $formSeason->getData()->setSeries($series);
+        if ($formSeason->isSubmitted() && $formSeason->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($season);
             $entityManager->flush();
-            // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The new season has been added');
-            return $this->redirectToRoute('series_index');
+            // Once the form is submitted, valid and the data is inserted in database, you can define the success flash message
+            $this->addFlash('success', 'The new season has been added : ' . $series->getTitle() . ' - The season ' . $season->getNumber());
+            return $this->redirectToRoute('season_show', [
+                'seasonNumber' => $season->getnumber(),
+                'id' => $season->getId(),
+                'seriesSlug' => $series->getSlug(),
+                'seriesId' => $series->getId()
+            ]);
         }
         return $this->render('season/new.html.twig', [
             'season' => $season,
-            'form' => $form->createView(),
+            'series' => $series,
+            'formSeason' => $formSeason->createView()
         ]);
     }
 
     /**
-     * @Route("/{seasonNumber}/{slug}/{id}/show", name="show")
-     * @ParamConverter("series", class="App\Entity\Series", options={"mapping": {"slug": "slug"}})
+     * @Route("/{seasonNumber}/{id}/series/{seriesSlug}/{seriesId}/show", name="show")
+     * @ParamConverter("series", class="App\Entity\Series", options={"mapping": {"seriesId": "id"}})
      */
-    public function show(Series $series, Season $season, Slugify $slugify): Response
+    public function show(Slugify $slugify, Season $season, Series $series): Response
     {
         $slug = $slugify->generate($series->getTitle());
         $series->setSlug($slug);
@@ -56,28 +65,37 @@ class SeasonController extends AbstractController
             'season' => $season->getId()
         ]);
         return $this->render('season/show.html.twig', [
-            'series' => $series,
             'season' => $season,
-            'episodes' => $episodes,
+            'series' => $series,
+            'episodes' => $episodes
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
+     * @Route("/{seasonNumber}/{id}/series/{seriesSlug}/{seriesId}/edit", name="edit", methods={"GET","POST"})
+     * @ParamConverter("series", class="App\Entity\Series", options={"mapping": {"seriesId": "id"}})
      */
-    public function edit(Request $request, Season $season): Response
+    public function edit(Request $request, Season $season, Series $series): Response
     {
-        $form = $this->createForm(SeasonType::class, $season);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
+        $formSeason = $this->createForm(SeasonType::class, $season);
+        $formSeason->handleRequest($request);
+        // Add series in form data of season
+        $formSeason->getData()->setSeries($series);
+        if ($formSeason->isSubmitted() && $formSeason->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            // Once the form is submitted, valid and the data inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The series has been edited');
-            return $this->redirectToRoute('series_index');
+            // Once the form is submitted, valid and the data is inserted in database, you can define the success flash message
+            $this->addFlash('success', 'The season has been edited : ' . $series->getTitle() . ' - The season ' . $season->getNumber());
+            return $this->redirectToRoute('season_show', [
+                'seasonNumber' => $season->getnumber(),
+                'id' => $season->getId(),
+                'seriesSlug' => $series->getSlug(),
+                'seriesId' => $series->getId()
+            ]);
         }
         return $this->render('season/edit.html.twig', [
-            'form' => $form->createView(),
-            'season' => $season
+            'season' => $season,
+            'series' => $series,
+            'formSeason' => $formSeason->createView()
         ]);
     }
 
@@ -87,11 +105,16 @@ class SeasonController extends AbstractController
     public function delete(Request $request, Season $season): Response
     {
         if ($this->isCsrfTokenValid('delete'.$season->getId(), $request->request->get('_token'))) {
+            $seasonNumber = $season->getNumber();
+            $series = $season->getSeries();
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($season);
             $entityManager->flush();
-            $this->addFlash('danger', 'The season is deleted');
+            $this->addFlash('danger', 'The season is deleted : ' . $series->getTitle() . ' - The season ' . $seasonNumber);
         }
-        return $this->redirectToRoute('series_index');
+        return $this->redirectToRoute('series_show', [
+            'slug' => $series->getSlug(),
+            'id' => $series->getId()
+        ]);
     }
 }

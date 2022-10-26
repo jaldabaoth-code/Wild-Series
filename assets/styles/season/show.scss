@@ -4,6 +4,11 @@
     margin: $spacer;
     padding: $spacer;
 
+    .buttonAddEpisode {
+        width: $column * 2;
+        margin-bottom: $spacer .5;
+    }
+
     .body {
         display: flex;
 
@@ -23,11 +28,6 @@
                     }
                 }
             }
-        }
-
-        .poster  {
-            padding: $spacer * 0.5;
-            border: thick double $secondary;
         }
     }
 

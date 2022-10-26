@@ -1,36 +1,73 @@
 {% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('showEpisode') }}
+{% endblock %}
+
+{% block title %}{{ series.title }} - {{ episode.title }}{% endblock %}
+
 {% block body %}
-    <div class="container d-flex flex-column justify-content-center">
-        <div class="card col-6 offset-3">
-            <h1 class="card-title text-center">{{series.title}}</h1>
-            <img src="{{series.poster}}" class="card-img-top w-25" alt="{{ series.title }} poster">
-            <div class="card-body">
-                <p>Season : {{ season.number }}</p>
-                <p>Year : {{ season.year }}</p>
-                <img src="{{episode.poster}}" class="card-img-top w-25" alt="{{ episode.title }} poster">
-                <h3>Episode {{ episode.number }} - {{ episode.title}}</h3>
-                <h4>Description : </h4>
-                <p>{{ episode.synopsis }}</p>
+    <div class="container">
+        {# Only for admin and author for edit or delete series #}
+        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+            <div class="rectificationButtons">
+                <!-- Edit series button -->
+                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("series_edit", { slug: series.slug, id: series.id }) }}" type="button">Edit series</a>
+                <!-- Delete series button -->
+                <form class="formDelete" method="post" action="{{ path('series_delete', { 'id': series.id }) }}" onsubmit="return confirm('Do you want to delete the series : {{ series.title }} ?');">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ series.id) }}">
+                    <button class="buttonDelete btn btn-danger btn-sm">Delete series</button>
+                </form>
+            </div>
+        {% endif %}
+        <h1>{{ episode.title }}</h1>
+        <div class="body">
+            {% if ('https://' in season.poster) or ('http://' in season.poster) %}
+                <img src="{{ season.poster }}" alt="{{ series.title }} poster">
+            {% else %}
+                <img src="/uploads/seasons/posters/{{ season.poster }}" alt="{{ series.title }} poster">
+            {% endif %}
+            <div class="informations">
+                <p>Series title :
+                    <a href="{{ path("series_show", { id: series.id, slug: series.slug }) }}">{{ series.title }}</a>
+                </p>
+                <p>Season : Season {{ season.number }}</p>
+                <p>Date : {{ season.year }}</p>
+                <p>Episode title : {{ episode.title }}</p>
+                <p>Episode rate : {{ averageRate }}</p>
             </div>
         </div>
+        <div>
+            <p class="description">{{ episode.synopsis }}</p>
+            <div class="descriptionPoster">
+                {% if ('https://' in episode.poster) or ('http://' in episode.poster) %}
+                    <img class="poster" src="{{ episode.poster }}" alt="{{ episode.title }} poster">
+                {% else %}
+                    <img class="poster" src="/uploads/series/images/{{ episode.poster }}" alt="{{ episode.title }} poster">
+                {% endif %}
+            </div>
+        </div>
+        {# Comment Episode and rate it #}
+        {% if app.user and is_granted("ROLE_ADMIN")%}
+            {% if app.user %}
+                <div class="commentForm">
+                    {{ include('comment/_form.html.twig') }}
+                </div>
+            {% endif %}
+        {% endif %}
+        <div class="commentsList">
+            <p>Comments on the episode</p>
+            {% for comment in episode.comments | reverse %}
+                <div class="comment">
+                    <p>Commentary : {{ comment.comment }}</p>
+                    <p>Rate : {{ comment.rate }}</p>
+                    <p>comment by : {{ comment.author.username }}</p>
+                </div>
+    {#         {% if app.user and app.user.email == comment.author.username or is_granted('ROLE_ADMIN') %}
+                {% include "series/_delete_form.html.twig" %}
+            {% endif %} #}
+            {% endfor %}
+        </div>
     </div>
-
-    {% if app.user and is_granted("ROLE_ADMIN")%}
-        {% for comment in episode.comments | reverse %}
-            Commentaire : {{ comment.comment }}</br>
-            Note : {{ comment.rate }}</br>
-            commentaire de : {{ comment.author.username }}</br>
-        {% if app.user and app.user.email == comment.author.username or is_granted('ROLE_ADMIN') %}
-            {% include "series/_delete_form.html.twig" %}
-        {% endif %}
-        {% endfor %}
-        {% if app.user %}
-            {{ form_start(form) }}
-                {{ form_widget(form) }}
-                <input type='submit' value='Ajouter un commentaire'>
-                {{ form_end(form) }}
-            {% else %}
-        {% endif %}
-    {% endif %}
-
 {% endblock %}
