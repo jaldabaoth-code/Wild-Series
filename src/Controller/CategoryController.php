@@ -29,11 +29,9 @@ class CategoryController extends AbstractController
         $categories = $this->getDoctrine()
         ->getRepository(Category::class)
         ->findAll();
-        for ($i = 0; $i <= sizeof($categories)-1; $i++) {
-            $seriesCategorie = $seriesRepository->findByCategory($categories[$i]->getId());
-            if (isset($seriesCategorie[0])) {
-                $seriesCategories[$categories[$i]->getName()] = $seriesCategorie[0];
-            }
+        foreach ($categories as $category) {
+            $categoriesNames = $category->getName();
+            $seriesCategories[$categoriesNames] = $seriesRepository->findByCategory($category->getId());
         }
         return $this->render('category/index.html.twig', ['categories' => $categories, 'seriesCategories' => $seriesCategories]);
     }

@@ -31,10 +31,10 @@ class ActorController extends AbstractController
     public function new(Request $request): Response
     {
         $actor = new Actor();
-        $form = $this->createForm(ActorType::class, $actor);
-        $form->handleRequest($request);
+        $formActor = $this->createForm(ActorType::class, $actor);
+        $formActor->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($formActor->isSubmitted() && $formActor->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($actor);
             $entityManager->flush();
@@ -44,7 +44,7 @@ class ActorController extends AbstractController
 
         return $this->render('actor/new.html.twig', [
             'actor' => $actor,
-            'form' => $form->createView(),
+            'formActor' => $formActor->createView(),
         ]);
     }
 
@@ -71,10 +71,10 @@ class ActorController extends AbstractController
      */
     public function edit(Request $request, Actor $actor): Response
     {
-        $form = $this->createForm(ActorType::class, $actor);
-        $form->handleRequest($request);
+        $formActor = $this->createForm(ActorType::class, $actor);
+        $formActor->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($formActor->isSubmitted() && $formActor->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('actor_index');
@@ -82,7 +82,7 @@ class ActorController extends AbstractController
 
         return $this->render('actor/edit.html.twig', [
             'actor' => $actor,
-            'form' => $form->createView(),
+            'formActor' => $formActor->createView(),
         ]);
     }
 

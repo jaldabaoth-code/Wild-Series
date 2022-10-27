@@ -3,6 +3,9 @@
         Categories
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <li>
+            <a href="{{ path('category_index') }}">All categories</a>
+        </li>
         {% for category in categories %}
             <li>
                 <a href="{{ path('category_show', { categoryName:category.name }) }}">{{ category.name }}</a>

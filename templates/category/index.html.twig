@@ -1,25 +1,39 @@
 {% extends 'layout.html.twig' %}
-{% block title %}All series{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('showCategory') }}
+{% endblock %}
+
+{% block title %}Categories{% endblock %}
 
 {% block body %}
-    {# Only for admin and author for add new series #}
-    {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
-        <a class="buttonAddCategory btn btn-success btn-sm" href="{{ path("category_new") }}">Add new category</a>
-    {% endif %}
-    <h1 class="m-5">Toutes les catégories existante : </h1>
-    {% for categorie, seriesCategorie in seriesCategories %}
-        <h2><a href="{{ path("category_show", { categoryName: categorie }) }}">{{ loop.index }} / {{ categorie }}</a></h2>
-        <div class="row">
-            <a class="shine" href="{{ path("series_show", { slug: seriesCategorie.slug }) }}">
-                <img src="{{ seriesCategorie.poster }}" alt="poster of series">
-            </a>
-            <a href="{{ path("series_show", { 'slug': seriesCategorie.slug }) }}">{{ seriesCategorie.title }}</a>
-        </div>
-    {% else %}
-        Aucune série trouvée.
-    {% endfor %}
+    <div class="container">
+        {# Only for admin and author for add new series #}
+        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+            <a class="buttonAddCategorie btn btn-success btn-sm" href="{{ path("category_new") }}">Add new category</a>
+        {% endif %}
+        <h1>All categories</h1>
+        <div class="body">
+                        {{ dump(categories)}}
+            {% for categorie, seriesCategorie in seriesCategories %}
+                <h2>
+                    <a href="{{ path("category_show", { categoryName: categorie }) }}">{{ categorie }}</a>
+                </h2>
 
-    <a href="{{ path('home') }}">
-        Retour à l'accueil
-    </a>
+            {% for seri in seriesCategorie %}
+
+
+                    <div class="row">
+                        <a class="shine" href="{{ path("series_show", { slug: seri.slug, id: seri.id }) }}">
+                            <img src="{{ seri.poster }}" alt="poster of series">
+                        </a>
+                        <a href="{{ path("series_show", { slug: seri.slug, id: seri.id }) }}">{{ seri.title }}</a>
+                    </div>
+                 {% endfor %}
+            {% else %}
+                No series found
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

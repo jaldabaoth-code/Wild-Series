@@ -37,6 +37,9 @@ Encore
     .addStyleEntry('navbar', './assets/styles/includes/navbar.scss')
     .addStyleEntry('footer', './assets/styles/includes/footer.scss')
     .addStyleEntry('home', './assets/styles/home/home.scss')
+    .addStyleEntry('showCategory', './assets/styles/category/show.scss')
+
+
     .addStyleEntry('indexSeries', './assets/styles/series/index.scss')
     .addStyleEntry('showSeries', './assets/styles/series/show.scss')
     .addStyleEntry('formSeries', './assets/styles/series/form.scss')
