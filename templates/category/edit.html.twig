@@ -2,14 +2,14 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    {{ encore_entry_link_tags('newCategory') }}
+    {{ encore_entry_link_tags('editCategory') }}
 {% endblock %}
 
-{% block title %}New Category{% endblock %}
+{% block title %}Edit Category{% endblock %}
 
 {% block body %}
     <div class="container">
-        <h1>Add new category</h1>
+        <h1>Edit category : {{ category.name }}</h1>
         {{ include('category/_form.html.twig') }}
     </div>
 {% endblock %}

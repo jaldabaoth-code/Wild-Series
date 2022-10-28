@@ -1,0 +1,10 @@
+{% block stylesheets %}
+    {{ encore_entry_link_tags('formCategory') }}
+{% endblock %} 
+
+{{ form_start(formCategory) }}
+    {{ form_label(formCategory.name, 'Category name : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(formCategory.name, {'attr': {'class': 'mt-1 form-control'}}) }}
+
+    <button class="button btn btn-primary">{{ 'Save' }}</button>
+{{ form_end(formCategory) }}

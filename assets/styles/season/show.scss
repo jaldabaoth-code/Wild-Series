@@ -1,7 +1,6 @@
 @import '../variables.scss';
 
 .container {
-    margin: $spacer;
     padding: $spacer;
 
     .buttonAddEpisode {
@@ -62,6 +61,7 @@
             }
 
             .actorName {
+                width: $column * 9;
                 text-decoration: none;
                 margin-bottom: $spacer * 2;
                 color: $dark;

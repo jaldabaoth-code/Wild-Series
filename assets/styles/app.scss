@@ -10,8 +10,9 @@ body {
     background: linear-gradient($secondary, $white, $light);
     color: $dark;
 
-    .alertSeries {
+    .alertMessage {
         padding: $spacer;
+        margin-bottom: $spacer * 0;
         width: 100%;
     }
 

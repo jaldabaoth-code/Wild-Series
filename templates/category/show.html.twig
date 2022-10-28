@@ -1,19 +1,52 @@
 {% extends 'layout.html.twig' %}
-{% block title %} All series in category {% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('showCategory') }}
+{% endblock %}
+
+{% block title %}{{ category.name }}{% endblock %}
 
 {% block body %}
-    {% if series %}
-        <h1 class="my-5">{{ series.0.category.name }}</h1>
-
-        {% for oneSeries in series %}
-            <div class="my-5">
-                <h2>
-                    <a href="{{ path("series_show", { 'slug': oneSeries.slug }) }}">{{ oneSeries.title }}</a>
-                </h2>
-                <p>{{ oneSeries.description }}</p>
+    <div class="container">
+        {# Only for admin and author for edit or delete category #}
+        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+            <div class="rectificationButtons">
+                <!-- Edit category button -->
+                <a class="buttonEditCategory btn btn-primary btn-sm" href="{{ path("category_edit", { categoryName: category.name, id: category.id }) }}">Edit category</a>
+                <!-- Delete category button -->
+                <form class="formDeleteCategory" method="post" action="{{ path('category_delete', { id: category.id }) }}" onsubmit="return confirm('Do you want to delete the category : {{ category.name }} ?');">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ category.id) }}">
+                    <button class="buttonDeleteCategory btn btn-danger btn-sm">Delete category</button>
+                </form>
             </div>
-        {% else %}
-            Aucune série trouvée.
-        {% endfor %}
-    {% endif %}
+        {% endif %}
+        <h1>{{ category.name }}</h1>
+        <div class="body">
+            {% if series %}
+                {% for oneSeries in series %}
+                    <div class="oneSeries">
+                        <a class="shinePoster" href="{{ path("series_show", { slug: oneSeries.slug, id: oneSeries.id }) }}">
+                            <img src="{{ oneSeries.poster }}" alt="poster of {{ oneSeries.title }}">
+                        </a>
+                        {# Only for admin and author for edit or delete series #}
+                        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+                            <div class="rectificationButtons">
+                                <!-- Edit series button -->
+                                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("series_edit", { slug: oneSeries.slug, id: oneSeries.id }) }}" type="button">Edit</a>
+                                <!-- Delete series button -->
+                                <form class="formDelete" method="post" action="{{ path('series_delete', { id: oneSeries.id }) }}" onsubmit="return confirm('Do you want to delete the series : {{ oneSeries.title }} ?');">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ oneSeries.id) }}">
+                                    <button class="buttonDelete btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </div>
+                        {% endif %}
+                        <a class="title" href="{{ path("series_show", { slug: oneSeries.slug, id: oneSeries.id }) }}">{{ oneSeries.title }}</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No series found</p>
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}

@@ -38,8 +38,9 @@ Encore
     .addStyleEntry('footer', './assets/styles/includes/footer.scss')
     .addStyleEntry('home', './assets/styles/home/home.scss')
     .addStyleEntry('showCategory', './assets/styles/category/show.scss')
-
-
+    .addStyleEntry('formCategory', './assets/styles/category/form.scss')
+    .addStyleEntry('newCategory', './assets/styles/category/new.scss')
+    .addStyleEntry('editCategory', './assets/styles/category/edit.scss')
     .addStyleEntry('indexSeries', './assets/styles/series/index.scss')
     .addStyleEntry('showSeries', './assets/styles/series/show.scss')
     .addStyleEntry('formSeries', './assets/styles/series/form.scss')
@@ -53,6 +54,7 @@ Encore
     .addStyleEntry('formEpisode', './assets/styles/episode/form.scss')
     .addStyleEntry('newEpisode', './assets/styles/episode/new.scss')
     .addStyleEntry('editEpisode', './assets/styles/episode/edit.scss')
+    .addStyleEntry('indexActor', './assets/styles/actor/index.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

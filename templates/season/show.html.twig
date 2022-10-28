@@ -9,9 +9,9 @@
 
 {% block body %}
     <div class="container">
-        {# Only for admin and author for add new series #}
+        {# Only for admin and author for add new episode #}
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
-            <a class="buttonAddEpisode btn btn-success btn-sm" href="{{ path("episode_new", { seriesSlug: series.slug, seasonId: season.id }) }}">Add new episode</a>
+            <a class="buttonAddEpisode btn btn-success btn-sm" href="{{ path("episode_new", { seasonNumber: season.number, seasonId: season.id, seriesSlug: series.slug, seriesId: series.id }) }}">Add new episode</a>
         {% endif %}
         <h1>{{ series.title }} - Season {{ season.number }}</h1>
         <div class="body">
@@ -24,7 +24,9 @@
                 <p>Series title :
                     <a href="{{ path("series_show", { id: series.id, slug: series.slug }) }}">{{ series.title }}</a>
                 </p>
-                <p>Season : Season {{ season.number }}</p>
+                <p>Season :
+                    <a href="{{ path("season_show", { seasonNumber: season.number, id: season.id, seriesSlug: series.slug, seriesId: series.id }) }}">Season {{ season.number }}</a>
+                </p>
                 <p>Date : {{ season.year }}</p>
                 <div class="dropdown-toggle" role="button" data-bs-toggle="dropdown">
                     Episodes : {{ episodes|length }} episodes
@@ -56,12 +58,12 @@
                 {% endfor %}
             </div>
         </div>
-        {# Only for admin and author for edit or delete series #}
+        {# Only for admin and author for edit or delete season #}
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
             <div class="rectificationButtons">
-                <!-- Edit series button -->
+                <!-- Edit season button -->
                 <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("season_edit", { seasonNumber: season.number, id: season.id, seriesSlug: series.slug, seriesId: series.id }) }}" type="button">Edit season</a>
-                <!-- Delete series button -->
+                <!-- Delete season button -->
                 <form class="formDelete" method="post" action="{{ path('season_delete', { 'id': season.id }) }}" onsubmit="return confirm('Do you want to delete : {{ series.title }} - The season {{ season.number }} ?');">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ season.id) }}">
                     <button class="buttonDelete btn btn-danger btn-sm">Delete season</button>

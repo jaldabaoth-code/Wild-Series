@@ -9,7 +9,7 @@
 
 {% block body %}
     <div class="container">
-        {# Only for admin and author for add new series #}
+        {# Only for admin and author for add new season #}
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
             <a class="buttonAddSeason btn btn-success btn-sm" href="{{ path("season_new", { seriesSlug: series.slug, seriesId: series.id }) }}">Add new season</a>
         {% endif %}
@@ -31,7 +31,7 @@
                 </p>
                 <p>Date : {{ series.year }}</p>
                 <p>Category :
-                    <a href="{{ path("category_show", { categoryName: series.category.name }) }}">{{ series.category.name }}</a>
+                    <a href="{{ path("category_show", { categoryName: series.category.name, id: series.category.id }) }}">{{ series.category.name }}</a>
                 </p>
                 <p>Country : {{ series.country }}</p>
                 <p>Actors :
@@ -73,7 +73,7 @@
                 <!-- Edit series button -->
                 <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("series_edit", { slug: series.slug, id: series.id }) }}" type="button">Edit series</a>
                 <!-- Delete series button -->
-                <form class="formDelete" method="post" action="{{ path('series_delete', { 'id': series.id }) }}" onsubmit="return confirm('Do you want to delete the series : {{ series.title }} ?');">
+                <form class="formDelete" method="post" action="{{ path('series_delete', { id: series.id }) }}" onsubmit="return confirm('Do you want to delete the series : {{ series.title }} ?');">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ series.id) }}">
                     <button class="buttonDelete btn btn-danger btn-sm">Delete series</button>
                 </form>

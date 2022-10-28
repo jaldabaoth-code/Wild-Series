@@ -98,10 +98,10 @@ class SeriesController extends AbstractController
     public function show(Series $series): Response
     {
         $seasons = $this->getDoctrine()
-        ->getRepository(Season::class)
-        ->findBy([
-            'series' => $series->getId()
-        ]);
+            ->getRepository(Season::class)
+            ->findBy([
+                'series' => $series->getId()
+            ]);
         return $this->render('series/show.html.twig', [
             'series' => $series,
             'seasons' => $seasons
@@ -141,6 +141,7 @@ class SeriesController extends AbstractController
     public function delete(Request $request, Series $series): Response
     {
         if ($this->isCsrfTokenValid('delete' . $series->getId(), $request->request->get('_token'))) {
+            // Get series title before delete, for use in flash message
             $seriesTitle = $series->getTitle();
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($series);

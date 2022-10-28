@@ -1,10 +1,16 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('newEpisode') }}
+{% endblock %}
+
 {% block title %}New Episode{% endblock %}
 
 {% block body %}
     <div class="container">
         <h1>Add new episode</h1>
+        <h2>{{ series.title }} - season {{ season.number }}</h2>
         {{ include('episode/_form.html.twig') }}
     </div>
 {% endblock %}

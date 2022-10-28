@@ -60,10 +60,10 @@ class SeasonController extends AbstractController
         $slug = $slugify->generate($series->getTitle());
         $series->setSlug($slug);
         $episodes = $this->getDoctrine()
-        ->getRepository(Episode::class)
-        ->findBy([
-            'season' => $season->getId()
-        ]);
+            ->getRepository(Episode::class)
+            ->findBy([
+                'season' => $season->getId()
+            ]);
         return $this->render('season/show.html.twig', [
             'season' => $season,
             'series' => $series,
@@ -105,7 +105,9 @@ class SeasonController extends AbstractController
     public function delete(Request $request, Season $season): Response
     {
         if ($this->isCsrfTokenValid('delete'.$season->getId(), $request->request->get('_token'))) {
+            // Get season before delete, for use in flash message
             $seasonNumber = $season->getNumber();
+            // Get series before delete, for use in return
             $series = $season->getSeries();
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($season);

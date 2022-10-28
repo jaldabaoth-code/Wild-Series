@@ -9,15 +9,15 @@
 
 {% block body %}
     <div class="container">
-        {# Only for admin and author for edit or delete series #}
+        {# Only for admin and author for edit or delete episode #}
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
             <div class="rectificationButtons">
-                <!-- Edit series button -->
-                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("series_edit", { slug: series.slug, id: series.id }) }}" type="button">Edit series</a>
-                <!-- Delete series button -->
-                <form class="formDelete" method="post" action="{{ path('series_delete', { 'id': series.id }) }}" onsubmit="return confirm('Do you want to delete the series : {{ series.title }} ?');">
-                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ series.id) }}">
-                    <button class="buttonDelete btn btn-danger btn-sm">Delete series</button>
+                <!-- Edit episode button -->
+                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("episode_edit", { episodeSlug: episode.slug, id: episode.id, seasonNumber: season.number, seasonId: season.id, seriesSlug: series.slug, seriesId:series.id }) }}" type="button">Edit episode</a>
+                <!-- Delete episode button -->
+                <form class="formDelete" method="post" action="{{ path('episode_delete', { 'id': episode.id }) }}" onsubmit="return confirm('Do you want to delete the episode : {{ episode.title }} ?');">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ episode.id) }}">
+                    <button class="buttonDelete btn btn-danger btn-sm">Delete episode</button>
                 </form>
             </div>
         {% endif %}
@@ -32,9 +32,13 @@
                 <p>Series title :
                     <a href="{{ path("series_show", { id: series.id, slug: series.slug }) }}">{{ series.title }}</a>
                 </p>
-                <p>Season : Season {{ season.number }}</p>
+                <p>Season :
+                    <a href="{{ path("season_show", { seasonNumber: season.number, id: season.id, seriesSlug: series.slug, seriesId: series.id }) }}">Season {{ season.number }}</a>
+                </p>
                 <p>Date : {{ season.year }}</p>
-                <p>Episode title : {{ episode.title }}</p>
+                <p>Episode title :
+                    <a href="{{ path("episode_show", { episodeSlug: episode.slug, id: episode.id, seasonNumber: season.number, seasonId: season.id, seriesSlug: series.slug, seriesId:series.id }) }}">{{ episode.title }}</a>
+                </p>
                 <p>Episode rate : {{ averageRate }}</p>
             </div>
         </div>
@@ -52,21 +56,18 @@
         {% if app.user and is_granted("ROLE_ADMIN")%}
             {% if app.user %}
                 <div class="commentForm">
-                    {{ include('comment/_form.html.twig') }}
+                    {{ include('comment/_formCommentEpisode.html.twig') }}
                 </div>
             {% endif %}
         {% endif %}
         <div class="commentsList">
-            <p>Comments on the episode</p>
+            <p class="commentTitle">Comments on the episode</p>
             {% for comment in episode.comments | reverse %}
                 <div class="comment">
                     <p>Commentary : {{ comment.comment }}</p>
                     <p>Rate : {{ comment.rate }}</p>
                     <p>comment by : {{ comment.author.username }}</p>
                 </div>
-    {#         {% if app.user and app.user.email == comment.author.username or is_granted('ROLE_ADMIN') %}
-                {% include "series/_delete_form.html.twig" %}
-            {% endif %} #}
             {% endfor %}
         </div>
     </div>

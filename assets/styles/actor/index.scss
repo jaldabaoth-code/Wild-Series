@@ -1,0 +1,39 @@
+@import '../variables.scss';
+
+.container {
+    padding: $spacer;
+
+    .casting {
+        display: flex;
+        flex-wrap: wrap;
+
+        .castingPosters {
+            display: flex;
+            width: $column * 3;
+            flex-direction: column;
+
+            .actor {
+                width: $column * 9;
+
+                .actorPoster {
+                    width:  $column * 12;
+
+                    &:hover {
+                        opacity: .75;
+                    }
+                }
+            }
+
+            .actorName {
+                width: $column * 9;
+                text-decoration: none;
+                margin-bottom: $spacer * 2;
+                color: $dark;
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}

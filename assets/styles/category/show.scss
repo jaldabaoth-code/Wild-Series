@@ -1,49 +1,107 @@
 @import '../variables.scss';
 
 .container {
-    margin: $spacer;
     padding: $spacer;
 
-    .buttonAddCategorie {
-        width: $column * 2;
+    .rectificationButtons {
+        display: flex;
         margin-bottom: $spacer .5;
+
+        .buttonEditCategory {
+            width: $column * 2;
+            margin-right: $spacer * .25;
+        }
+
+        .formDeleteCategory {
+            width: $column * 2;
+            margin-left: $spacer * .25;
+
+            .buttonDeleteCategory {
+                width: 100%;
+            }
+        }
     }
 
     .body {
-        
-    }
-
-}
-
-/* .casting {
-    display: flex;
-    flex-wrap: wrap;
-
-    .castingPosters {
         display: flex;
-        width: $column * 3;
-        flex-direction: column;
+        flex-wrap: wrap;
 
-        .actor {
-            width: $column * 9;
+        .oneSeries {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: $column * 3;
+            margin: $spacer $spacer * 0;
 
-            .actorPoster {
-                width:  $column * 12;
+            .shinePoster {
+                position: relative;
+                overflow: hidden;
+                border-radius: 15px;
+                box-shadow: 8px 8px 12px #aaa;
+
+                &::before {
+                    background: linear-gradient(to right, fade_out(#fff, 1) 0%, fade_out(#fff, 0.7) 100%);
+                    content: "";
+                    display: block;
+                    height: 100%;
+                    left: -75%;
+                    position: absolute;
+                    top: 0;
+                    transform: skewX(-25deg);
+                    width: 50%;
+                    z-index: 2;
+                }
+            
+                &:hover, &:focus {
+                    &::before {
+                        animation: shine 0.85s;
+                    }
+                }
+            
+                @keyframes shine {
+                    100% {
+                        left: 125%;
+                    }
+                }
+            }
+
+            .rectificationButtons {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                margin-top: $spacer * .5;
+                margin-bottom: $spacer * .25;
+
+                .buttonEdit {
+                    width: $column * 4;
+                    margin-right: $spacer * .25;
+                }
+
+                .formDelete {
+                    width: $column * 4;
+                    margin-left: $spacer * .25;
+
+                    .buttonDelete {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .title {
+                color: $dark;
+                font-size: larger;
+                text-decoration: none;
+                margin-top: $spacer * 0;
 
                 &:hover {
-                    opacity: .75;
+                    color: $primary;
                 }
             }
         }
-
-        .actorName {
-            text-decoration: none;
-            margin-bottom: $spacer * 2;
-            color: $dark;
-
-            &:hover {
-                color: $primary;
-            }
-        }
     }
-} */
+
+    p {
+        width: 100%;
+        text-align: center;
+    }
+}

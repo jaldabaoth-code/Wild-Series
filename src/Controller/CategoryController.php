@@ -14,31 +14,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
-    /**
-     * @Route("/categories", name="category_")
-     */
+/**
+ * @Route("/category", name="category_")
+ */
 class CategoryController extends AbstractController
 {
     /**
-     *
-     * @Route("/", name="index")
-     * @return Response A response instance
-     */
-    public function index(SeriesRepository $seriesRepository): Response
-    {
-        $categories = $this->getDoctrine()
-        ->getRepository(Category::class)
-        ->findAll();
-        foreach ($categories as $category) {
-            $categoriesNames = $category->getName();
-            $seriesCategories[$categoriesNames] = $seriesRepository->findByCategory($category->getId());
-        }
-        return $this->render('category/index.html.twig', ['categories' => $categories, 'seriesCategories' => $seriesCategories]);
-    }
-
-    /**
-     * The controller for the category add form
-     * Display the form or deal with it
      * @Route("/new", name="new")
      * @IsGranted("ROLE_ADMIN")
      */
@@ -47,12 +28,11 @@ class CategoryController extends AbstractController
         // Create a new Category Object
         $category = new Category();
         // Create the associated Form
-        $form = $this->createForm(CategoryType::class, $category);
+        $formCategory = $this->createForm(CategoryType::class, $category);
         // Get data from HTTP request
-        $form->handleRequest($request);
+        $formCategory->handleRequest($request);
         // Was the form submitted ?
-        if ($form->isSubmitted()) {
-            // Deal with the submitted data
+        if ($formCategory->isSubmitted() && $formCategory->isValid()) {
             // Get the Entity Manager
             $entityManager = $this->getDoctrine()->getManager();
             // Persist Category Object
@@ -60,37 +40,71 @@ class CategoryController extends AbstractController
             // Flush the persisted object
             $entityManager->flush();
             // Finally redirect to categories list
-            return $this->redirectToRoute('category_index');
+            return $this->redirectToRoute('series_index');
         }
         // Render the form
-        return $this->render('category/new.html.twig', ["form" => $form->createView()]);
+        return $this->render('category/new.html.twig', ["formCategory" => $formCategory->createView()]);
     }
 
     /**
-     *
-     * @Route("/{categoryName}", name="show")
-     * @return Response
+     * @Route("/{categoryName}/{id}/show", name="show")
      */
     public function show(string $categoryName): Response
     {
         $category = $this->getDoctrine()
-        ->getRepository(Category::class)
-        ->findOneBy(['name' => $categoryName]);
-        
+            ->getRepository(Category::class)
+            ->findOneBy(['name' => $categoryName]);
+        // If category not found
         if (!$category) {
             throw $this->createNotFoundException(
                 'Error 404 No category found.'
             );
         }
-
         $series = $this->getDoctrine()
-        ->getRepository(Series::class)
-        ->findBy(['category' => $category->getId()],
-                    ['id' => 'DESC'], 3);
-                    
+            ->getRepository(Series::class)
+            ->findBy(['category' => $category->getId()], ['title' => 'ASC'], 3);
         return $this->render('category/show.html.twig', [
+            'category' => $category,
             'series' => $series,
         ]);
+    }
+
+    /**
+     * @Route("/{categoryName}/{id}/edit", name="edit", methods={"GET","POST"})
+     */
+    public function edit(Request $request, Category $category): Response
+    {
+        $formCategory = $this->createForm(CategoryType::class, $category);
+        $formCategory->handleRequest($request);
+        if ($formCategory->isSubmitted() && $formCategory->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+            // Once the form is submitted, valid and the data is inserted in database, you can define the success flash message
+            $this->addFlash('success', 'The category has been edited : ' . $category->getName());
+            return $this->redirectToRoute('category_show', [
+                'categoryName' => $category->getName(),
+                'id' => $category->getId()
+            ]);
+        }
+        return $this->render('category/edit.html.twig', [
+            'category' => $category,
+            'formCategory' => $formCategory->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/delete", name="delete", methods={"POST"})
+     */
+    public function delete(Request $request, Series $category): Response
+    {
+        if ($this->isCsrfTokenValid('delete' . $category->getId(), $request->request->get('_token'))) {
+            // Get category name before delete, for use in flash message
+            $categoryName = $category->getName();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($category);
+            $entityManager->flush();
+            $this->addFlash('danger', 'The category is deleted : ' . $categoryName);
+        }
+        return $this->redirectToRoute('series_index');
     }
 
     /**
@@ -98,7 +112,7 @@ class CategoryController extends AbstractController
      */
     public function dropdown(CategoryRepository $categoryRepository): Response
     {
-        $categories = $categoryRepository->findBy([], ['id' => 'DESC']);
+        $categories = $categoryRepository->findBy([], ['name' => 'ASC']);
         return $this->render('includes/_dropdown_navbar.html.twig', [
             'categories' => $categories
         ]);
