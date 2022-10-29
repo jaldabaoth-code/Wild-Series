@@ -39,7 +39,7 @@
                     {% for actor in seasons[0].actors|slice(0, 4) %}
                         {# Not , after last actor name #}
                         {{ (loop.index > 1) ? ',' : '' }}
-                        <a href="{{ path('actor_show', { id: actor.id }) }}">{{ actor.name }}</a>
+                        <a href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">{{ actor.name }}</a>
                     {% endfor %}
                 {% else %}
                     No actor for this series

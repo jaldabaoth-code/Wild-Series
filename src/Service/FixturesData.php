@@ -1710,7 +1710,8 @@ class FixturesData
                 'Aidan Gillen',
                 'Iwan Rheon',
                 'Conleth Hill',
-                'Hannah Murray'
+                'Hannah Murray',
+                'Pedro Pascal'
             ],
             'episodes' => [
                 'episode 01' => [

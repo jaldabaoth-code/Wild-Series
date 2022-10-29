@@ -1,7 +1,6 @@
-{# {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }} #}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('formActor') }}
+{% endblock %} 
 
 {{ form_start(formActor) }}
     {{ form_label(formActor.name, 'Name : ', {'attr': {'class': 'form-label'}}) }}

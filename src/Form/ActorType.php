@@ -19,14 +19,13 @@ class ActorType extends AbstractType
             ->add('name')
             ->add('posterFile', VichFileType::class, [
                 'required' => false,
-                'allow_delete' => true,
-                'download_uri' => true,
+                'allow_delete' => false,
+                'download_uri' => false
             ])
             ->add('series', EntityType::class, [
                 'class' => Series::class,
                 'choice_label' => 'title',
-                'multiple' => true,
-                'expanded' => true,
+                'multiple' => true
             ]);
     }
 

@@ -16,6 +16,9 @@ use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 use SymfonyCasts\Bundle\VerifyEmail\Exception\VerifyEmailExceptionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route(name="app_")
+ */
 class RegistrationController extends AbstractController
 {
     private $emailVerifier;
@@ -26,20 +29,20 @@ class RegistrationController extends AbstractController
     }
 
     /**
-     * @Route("/register", name="app_register")
+     * @Route("/register", name="register")
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, LoginFormAuthenticator $authenticator): Response
     {
         $user = new User();
-        $form = $this->createForm(RegistrationFormType::class, $user);
-        $form->handleRequest($request);
+        $formRegister = $this->createForm(RegistrationFormType::class, $user);
+        $formRegister->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($formRegister->isSubmitted() && $formRegister->isValid()) {
             // encode the plain password
             $user->setPassword(
                 $passwordEncoder->encodePassword(
                     $user,
-                    $form->get('plainPassword')->getData()
+                    $formRegister->get('plainPassword')->getData()
                 )
             );
 
@@ -66,12 +69,12 @@ class RegistrationController extends AbstractController
         }
 
         return $this->render('registration/register.html.twig', [
-            'registrationForm' => $form->createView(),
+            'formRegister' => $formRegister->createView(),
         ]);
     }
 
     /**
-     * @Route("/verify/email", name="app_verify_email")
+     * @Route("/verify/email", name="verify_email")
      */
     public function verifyUserEmail(Request $request): Response
     {

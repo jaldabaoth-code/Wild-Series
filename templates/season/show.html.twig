@@ -47,11 +47,11 @@
                 {% for actor in season.actors %}
                     <div class="castingPosters">
                         {% if actor.poster %}
-                            <a class="actor" href="{{ path('actor_show', { id: actor.id }) }}"><img class="actorPoster" src="{{ actor.poster }}" alt="{{ actor.name }} poster"></a>
+                            <a class="actor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}"><img class="actorPoster" src="{{ actor.poster }}" alt="{{ actor.name }} poster"></a>
                         {%  else %}
-                            <a class="actor" href="{{ path('actor_show', { id: actor.id }) }}"><img class="actorPoster" src="{{ asset('build/no-image.png') }}" alt="{{ actor.name }} poster"></a>
+                            <a class="actor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}"><img class="actorPoster" src="{{ asset('build/no-image.png') }}" alt="{{ actor.name }} poster"></a>
                         {% endif %}
-                        <a class="actorName" href="{{ path('actor_show', { id: actor.id }) }}">{{ actor.name }}</a>
+                        <a class="actorName" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">{{ actor.name }}</a>
                     </div>
                 {% else %}
                     <div>No actor for this season</div>
@@ -64,7 +64,7 @@
                 <!-- Edit season button -->
                 <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("season_edit", { seasonNumber: season.number, id: season.id, seriesSlug: series.slug, seriesId: series.id }) }}" type="button">Edit season</a>
                 <!-- Delete season button -->
-                <form class="formDelete" method="post" action="{{ path('season_delete', { 'id': season.id }) }}" onsubmit="return confirm('Do you want to delete : {{ series.title }} - The season {{ season.number }} ?');">
+                <form class="formDelete" method="post" action="{{ path('season_delete', { id: season.id }) }}" onsubmit="return confirm('Do you want to delete : {{ series.title }} - The season {{ season.number }} ?');">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ season.id) }}">
                     <button class="buttonDelete btn btn-danger btn-sm">Delete season</button>
                 </form>

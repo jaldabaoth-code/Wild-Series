@@ -5,10 +5,11 @@ namespace App\Controller;
 use App\Entity\Actor;
 use App\Form\ActorType;
 use App\Repository\ActorRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\SeriesRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/actors", name="actor_")
@@ -33,15 +34,16 @@ class ActorController extends AbstractController
         $actor = new Actor();
         $formActor = $this->createForm(ActorType::class, $actor);
         $formActor->handleRequest($request);
-
         if ($formActor->isSubmitted() && $formActor->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($actor);
             $entityManager->flush();
-
-            return $this->redirectToRoute('actor_index');
+            $this->addFlash('danger', 'The actor has been added : ' . $actorName);
+            return $this->redirectToRoute('actor_show', [
+                'actorName' => $actor->getName(),
+                'id' => $actor->getId()
+            ]);
         }
-
         return $this->render('actor/new.html.twig', [
             'actor' => $actor,
             'formActor' => $formActor->createView(),
@@ -49,54 +51,60 @@ class ActorController extends AbstractController
     }
 
     /**
-     * @Route("/show/{id}", name="show")
-     *
-     * @return Response
+     * @Route("/{actorName}/{id}/show", name="show")
      */
-    public function show(Actor $actor): Response
+    public function show(Actor $actor, SeriesRepository $seriesRepository): Response
     {
         if (!$actor) {
             throw $this->createNotFoundException(
-                'No actor with id : ' . $actor->getId() . ' found in actor\'s table.'
+                'The actor was not found'
             );
         }
-
+        foreach($actor->getSeasons() as $season) {
+            $seasonsSeries[] = $seriesRepository->findBy(['id' => $season->getSeries()])[0];
+        }
+        // Removes duplicate values from an array
+        $series = array_unique($seasonsSeries, SORT_REGULAR);
         return $this->render('actor/show.html.twig', [
             'actor' => $actor,
+            'series' => $series
         ]);
     }
 
-        /**
-     * @Route("/{id}/edit", name="edit")
+    /**
+     * @Route("/{actorName}/{id}/edit", name="edit")
      */
     public function edit(Request $request, Actor $actor): Response
     {
         $formActor = $this->createForm(ActorType::class, $actor);
         $formActor->handleRequest($request);
-
         if ($formActor->isSubmitted() && $formActor->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('actor_index');
+            $this->addFlash('danger', 'The actor has been edited : ' . $actorName);
+            return $this->redirectToRoute('actor_show', [
+                'actorName' => $actor->getName(),
+                'id' => $actor->getId()
+            ]);
         }
-
         return $this->render('actor/edit.html.twig', [
             'actor' => $actor,
-            'formActor' => $formActor->createView(),
+            'formActor' => $formActor->createView()
         ]);
     }
 
     /**
-     * @Route("/{id}", name="delete")
+     * @Route("/{id}/delete", name="delete")
      */
     public function delete(Request $request, Actor $actor): Response
     {
         if ($this->isCsrfTokenValid('delete' . $actor->getId(), $request->request->get('_token'))) {
+            // Get actor name before delete, for use them in flash message
+            $actorName = $actor->getName();
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($actor);
             $entityManager->flush();
+            $this->addFlash('danger', 'The actor is deleted : ' . $actorName);
         }
-
         return $this->redirectToRoute('actor_index');
     }
 }

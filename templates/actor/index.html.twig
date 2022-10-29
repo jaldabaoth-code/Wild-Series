@@ -8,48 +8,10 @@
 {% block title %}All actors{% endblock %}
 
 {% block body %}
-{#     <h1>Actor index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for actor in actors %}
-            <tr class="text-dark">
-
-                <td>{{ actor.name }}</td>
-                <td>
-                    {% if ('https://' in actor.poster) or ('http://' in actor.poster) %}
-                        <img class"actorPoster w-25" src="{{ actor.poster }}" alt="{{ actor.name }} poster">
-                    {% else %}
-                        <img class"actorPoster w-25" src="/uploads/seasons/posters/{{ actor.poster }}" alt="{{ actor.poster }} poster">
-                    {% endif %}
-                </td>
-                <td>
-                    <a href="{{ path('actor_show', {'id': actor.id}) }}">show</a>
-                    <a href="{{ path('actor_edit', {'id': actor.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('actor_new') }}">Create new</a> #}
-
-
     <div class="container">
         {# Only for admin and author for add new actor #}
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
-            <a class="buttonAddActor btn btn-success btn-sm" href="{{ path("season_new", { seriesSlug: series.slug, seriesId: series.id }) }}">Add new season</a>
+            <a class="buttonAddActor btn btn-success btn-sm" href="{{ path("actor_new") }}">Add new actor</a>
         {% endif %}
         <h1>All actors</h1>
         <div class="body">
@@ -57,11 +19,27 @@
                 {% for actor in actors %}
                     <div class="castingPosters">
                         {% if actor.poster %}
-                            <a class="actor" href="{{ path('actor_show', { id: actor.id }) }}"><img class="actorPoster" src="{{ actor.poster }}" alt="{{ actor.name }} poster"></a>
+                            <a class="actor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
+                                <img class="actorPoster" src="{{ actor.poster }}" alt="{{ actor.name }} poster">
+                            </a>
                         {%  else %}
-                            <a class="actor" href="{{ path('actor_show', { id: actor.id }) }}"><img class="actorPoster" src="{{ asset('build/no-image.png') }}" alt="{{ actor.name }} poster"></a>
+                            <a class="actor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
+                                <img class="actorPoster" src="{{ asset('build/no-image.png') }}" alt="{{ actor.name }} poster">
+                            </a>
                         {% endif %}
-                        <a class="actorName" href="{{ path('actor_show', { id: actor.id }) }}">{{ actor.name }}</a>
+                        <a class="actorName" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">{{ actor.name }}</a>
+                        {# Only for admin and author for edit or delete actor #}
+                        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+                            <div class="rectificationButtons">
+                                <!-- Edit actor button -->
+                                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("actor_edit", { actorName: actor.name, id: actor.id }) }}" type="button">Edit</a>
+                                <!-- Delete actor button -->
+                                <form class="formDelete" method="post" action="{{ path('actor_delete', { id: actor.id }) }}" onsubmit="return confirm('Do you want to delete the actor : {{ actor.name }} ?');">
+                                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ actor.id) }}">
+                                    <button class="buttonDelete btn btn-danger btn-sm">Delete</button>
+                                </form>
+                            </div>
+                        {% endif %}
                     </div>
                 {% endfor %}
             </div>

@@ -55,6 +55,12 @@ Encore
     .addStyleEntry('newEpisode', './assets/styles/episode/new.scss')
     .addStyleEntry('editEpisode', './assets/styles/episode/edit.scss')
     .addStyleEntry('indexActor', './assets/styles/actor/index.scss')
+    .addStyleEntry('showActor', './assets/styles/actor/show.scss')
+    .addStyleEntry('formActor', './assets/styles/actor/form.scss')
+    .addStyleEntry('newActor', './assets/styles/actor/new.scss')
+    .addStyleEntry('editActor', './assets/styles/actor/edit.scss')
+    .addStyleEntry('formCommentEpisode', './assets/styles/comment/formCommentEpisode.scss')
+    
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

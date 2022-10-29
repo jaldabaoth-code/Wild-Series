@@ -84,7 +84,7 @@ class Series
     private $year;
 
     /**
-     * @ORM\OneToMany(targetEntity=Season::class, mappedBy="series", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Season::class, mappedBy="series")
      */
     private $seasons;
 

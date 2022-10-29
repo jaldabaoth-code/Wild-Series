@@ -3,35 +3,66 @@
 .container {
     padding: $spacer;
 
-    .casting {
-        display: flex;
-        flex-wrap: wrap;
-
-        .castingPosters {
+    .buttonAddActor {
+        width: $column * 2;
+        margin-bottom: $spacer .5;
+    }
+    
+    .body {
+        .casting {
             display: flex;
-            width: $column * 3;
-            flex-direction: column;
+            flex-wrap: wrap;
 
-            .actor {
-                width: $column * 9;
+            .castingPosters {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: $column * 3;
+                margin: $spacer $spacer * 0;
 
-                .actorPoster {
-                    width:  $column * 12;
+                .actor {
+                    width: $column * 9;
 
-                    &:hover {
-                        opacity: .75;
+                    .actorPoster {
+                        width:  $column * 12;
+
+                        &:hover {
+                            opacity: .75;
+                        }
                     }
                 }
-            }
 
-            .actorName {
-                width: $column * 9;
-                text-decoration: none;
-                margin-bottom: $spacer * 2;
-                color: $dark;
+                .actorName {
+                    width: $column * 9;
+                    text-decoration: none;
+                    color: $dark;
+                    margin-bottom: $spacer * .25;
+                    text-align: center;
 
-                &:hover {
-                    color: $primary;
+                    &:hover {
+                        color: $primary;
+                    }
+                }
+
+                .rectificationButtons {
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                    margin-bottom: $spacer;
+        
+                    .buttonEdit {
+                        width: $column * 4;
+                        margin-right: $spacer * .25;
+                    }
+        
+                    .formDelete {
+                        width: $column * 4;
+                        margin-left: $spacer * .25;
+        
+                        .buttonDelete {
+                            width: 100%;
+                        }
+                    }
                 }
             }
         }

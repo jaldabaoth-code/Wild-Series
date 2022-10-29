@@ -1,16 +1,55 @@
 {% extends 'layout.html.twig' %}
-{% block title %}All series in category
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('showActor') }}
 {% endblock %}
 
+{% block title %}All series in category{% endblock %}
+
 {% block body %}
-    <h1>{{ actor.name }}</h1>
-    {% if actor.poster %}
-        <img src="/uploads/{{ actor.poster }}" alt="actor" class="col-2 mb-4">
-    {% endif %}
-    <p>A joué dans: </p>
-    <ul>
-        {% for oneSeries in actor.series %}
-            <li><a href="{{ path('series_show', {slug: oneSeries.slug}) }}">{{ oneSeries.title }}</a></li>
-        {% endfor %}
-    </ul>
+    <div class="container">
+        {# Only for admin and author for edit or delete actor #}
+        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+            <div class="rectificationButtons">
+                <!-- Edit actor button -->
+                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("actor_edit", { actorName: actor.name, id: actor.id }) }}" type="button">Edit actor</a>
+                <!-- Delete actor button -->
+                <form class="formDelete" method="post" action="{{ path('actor_delete', { id: actor.id }) }}" onsubmit="return confirm('Do you want to delete the actor : {{ actor.name }} ?');">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ actor.id) }}">
+                    <button class="buttonDelete btn btn-danger btn-sm">Delete actor</button>
+                </form>
+            </div>
+        {% endif %}
+        <h1>{{ actor.name }}</h1>
+        <div class="body">
+            {% if actor.poster %}
+                <a class="actor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
+                    <img class="actorPoster" src="{{ actor.poster }}" alt="{{ actor.name }} poster">
+                </a>
+            {%  else %}
+                <a class="actor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
+                    <img class="actorPoster" src="{{ asset('build/no-image.png') }}" alt="{{ actor.name }} poster">
+                </a>
+            {% endif %}
+            <p class="seriesListTitle">Known For</p>
+            <div class="seriesList">
+                {% if series %}
+                    {% for oneSeries in series %}
+                        <div class="oneSeries">
+                            <a class="shinePoster" href="{{ path("series_show", { slug: oneSeries.slug, id: oneSeries.id }) }}">
+                                <img src="{{ oneSeries.poster }}" alt="poster of {{ oneSeries.title }}">
+                            </a>
+                            <a class="title" href="{{ path("series_show", { slug: oneSeries.slug, id: oneSeries.id }) }}">{{ oneSeries.title }}</a>
+                            {% if oneSeries.category.name is defined %}
+                                <a class="categoryName" href="{{ path("category_show", { categoryName: oneSeries.category.name, id: oneSeries.category.id }) }}">{{ oneSeries.category.name }}</a>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No series found</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
