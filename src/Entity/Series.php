@@ -94,11 +94,6 @@ class Series
     private $actors;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Creator::class, mappedBy="series")
-     */
-    private $creators;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $slug;
@@ -123,7 +118,6 @@ class Series
     {
         $this->seasons = new ArrayCollection();
         $this->actors = new ArrayCollection();
-        $this->creators = new ArrayCollection();
         $this->viewers = new ArrayCollection();
     }
 
@@ -308,31 +302,6 @@ class Series
     {
         if ($this->actors->removeElement($actor)) {
             $actor->removeSeries($this);
-        }
-        return $this;
-    }
-
-    /**
-     * @return Collection|Creator[]
-     */
-    public function getCreators(): Collection
-    {
-        return $this->creators;
-    }
-
-    public function addCreator(Creator $creator): self
-    {
-        if (!$this->creators->contains($creator)) {
-            $this->creators[] = $creator;
-            $creator->addSeries($this);
-        }
-        return $this;
-    }
-
-    public function removeCreator(Creator $creator): self
-    {
-        if ($this->creators->removeElement($creator)) {
-            $creator->removeSeries($this);
         }
         return $this;
     }

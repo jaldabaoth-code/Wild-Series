@@ -9,7 +9,7 @@
 
 {% block body %}
     <div class="container">
-        {# Only for admin and author for add new episode #}
+        {# Only for admin and contributor for add new episode #}
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
             <a class="buttonAddEpisode btn btn-success btn-sm" href="{{ path("episode_new", { seasonNumber: season.number, seasonId: season.id, seriesSlug: series.slug, seriesId: series.id }) }}">Add new episode</a>
         {% endif %}
@@ -20,7 +20,7 @@
             {% else %}
                 <img src="/uploads/seasons/posters/{{ season.poster }}" alt="{{ series.title }} poster">
             {% endif %}
-            <div class="informations">
+            <div class="informationsSeason">
                 <p>Series title :
                     <a href="{{ path("series_show", { id: series.id, slug: series.slug }) }}">{{ series.title }}</a>
                 </p>
@@ -41,32 +41,32 @@
             </div>
         </div>
         <div>
-            <p class="description">{{ season.description }}</p>
-            <div class="castingTitle">CASTING :</div>
-            <div class="casting">
+            <p class="descriptionSeason">{{ season.description }}</p>
+            <div class="castingTitleSeason">CASTING :</div>
+            <div class="castingSeason">
                 {% for actor in season.actors %}
-                    <div class="castingPosters">
+                    <div class="castingPostersSeason">
                         {% if actor.poster %}
-                            <a class="actor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}"><img class="actorPoster" src="{{ actor.poster }}" alt="{{ actor.name }} poster"></a>
+                            <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}"><img class="posterActor" src="{{ actor.poster }}" alt="{{ actor.name }} poster"></a>
                         {%  else %}
-                            <a class="actor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}"><img class="actorPoster" src="{{ asset('build/no-image.png') }}" alt="{{ actor.name }} poster"></a>
+                            <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}"><img class="posterActor" src="{{ asset('build/no-image.png') }}" alt="{{ actor.name }} poster"></a>
                         {% endif %}
-                        <a class="actorName" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">{{ actor.name }}</a>
+                        <a class="nameActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">{{ actor.name }}</a>
                     </div>
                 {% else %}
                     <div>No actor for this season</div>
                 {% endfor %}
             </div>
         </div>
-        {# Only for admin and author for edit or delete season #}
+        {# Only for admin and contributor for edit or delete season #}
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
-            <div class="rectificationButtons">
+            <div class="rectificationButtonsSeason">
                 <!-- Edit season button -->
-                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("season_edit", { seasonNumber: season.number, id: season.id, seriesSlug: series.slug, seriesId: series.id }) }}" type="button">Edit season</a>
+                <a class="buttonEditSeason btn btn-primary btn-sm" href="{{ path("season_edit", { seasonNumber: season.number, id: season.id, seriesSlug: series.slug, seriesId: series.id }) }}" type="button">Edit season</a>
                 <!-- Delete season button -->
-                <form class="formDelete" method="post" action="{{ path('season_delete', { id: season.id }) }}" onsubmit="return confirm('Do you want to delete : {{ series.title }} - The season {{ season.number }} ?');">
+                <form class="formDeleteSeason" method="POST" action="{{ path('season_delete', { id: season.id }) }}" onsubmit="return confirm('Do you want to delete : {{ series.title }} - The season {{ season.number }} ?');">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ season.id) }}">
-                    <button class="buttonDelete btn btn-danger btn-sm">Delete season</button>
+                    <button class="buttonDeleteSeason btn btn-danger btn-sm">Delete season</button>
                 </form>
             </div>
         {% endif %}

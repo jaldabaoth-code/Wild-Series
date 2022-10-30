@@ -11,7 +11,7 @@
     .body {
         display: flex;
 
-        .informations {
+        .informationsSeason {
             margin: $spacer $spacer * .5 $spacer * .25;
 
             p {
@@ -30,28 +30,28 @@
         }
     }
 
-    .description {
+    .descriptionSeason {
         margin: $spacer * 2 $spacer * 3;
     }
 
-    .castingTitle {
+    .castingTitleSeason {
         font-weight: bolder;
         margin-bottom: $spacer;
     }
 
-    .casting {
+    .castingSeason {
         display: flex;
         flex-wrap: wrap;
 
-        .castingPosters {
+        .castingPostersSeason {
             display: flex;
             width: $column * 3;
             flex-direction: column;
 
-            .actor {
+            .linkActor {
                 width: $column * 9;
 
-                .actorPoster {
+                .posterActor {
                     width:  $column * 12;
 
                     &:hover {
@@ -60,7 +60,7 @@
                 }
             }
 
-            .actorName {
+            .nameActor {
                 width: $column * 9;
                 text-decoration: none;
                 margin-bottom: $spacer * 2;
@@ -73,20 +73,20 @@
         }
     }
 
-    .rectificationButtons {
+    .rectificationButtonsSeason {
         display: flex;
         margin-top: $spacer * 3;
 
-        .buttonEdit {
+        .buttonEditSeason {
             width: $column * 2;
             margin-right: $spacer * .25;
         }
 
-        .formDelete {
+        .formDeleteSeason {
             width: $column * 2;
             margin-left: $spacer * .25;
 
-            .buttonDelete {
+            .buttonDeleteSeason {
                 width: 100%;
             }
         }

@@ -9,7 +9,7 @@
 
 {% block body %}
     <div class="container">
-        {# Only for admin and author for add new season #}
+        {# Only for admin and contributor for add new season #}
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
             <a class="buttonAddSeason btn btn-success btn-sm" href="{{ path("season_new", { seriesSlug: series.slug, seriesId: series.id }) }}">Add new season</a>
         {% endif %}
@@ -20,7 +20,7 @@
             {% else %}
                 <img src="/uploads/series/poster/{{ series.poster }}" alt="{{ series.title }} poster">
             {% endif %}
-            <div class="informations">
+            <div class="informationsSeries">
                 <p>Title :
                     <a href="{{ path("series_show", { slug: series.slug, id: series.id }) }}">{{ series.title }}</a>
                     {% if app.user %}
@@ -58,24 +58,24 @@
             </div>
         </div>
         <div>
-            <p class="description">{{ series.description }}</p>
-            <div class="descriptionImage">
+            <p class="descriptionSeries">{{ series.description }}</p>
+            <div class="descriptionImageSeries">
                 {% if ('https://' in series.image) or ('http://' in series.image) %}
-                    <img class="image" src="{{ series.image }}" alt="{{ series.title }} image">
+                    <img class="imageSeries" src="{{ series.image }}" alt="{{ series.title }} image">
                 {% else %}
-                    <img class="image" src="/uploads/series/images/{{ series.image }}" alt="{{ series.title }} image">
+                    <img class="imageSeries" src="/uploads/series/images/{{ series.image }}" alt="{{ series.title }} image">
                 {% endif %}
             </div>
         </div>
-        {# Only for admin and author for edit or delete series #}
+        {# Only for admin and contributor for edit or delete series #}
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
-            <div class="rectificationButtons">
+            <div class="rectificationButtonsSeries">
                 <!-- Edit series button -->
-                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("series_edit", { slug: series.slug, id: series.id }) }}" type="button">Edit series</a>
+                <a class="buttonEditSeries btn btn-primary btn-sm" href="{{ path("series_edit", { slug: series.slug, id: series.id }) }}" type="button">Edit series</a>
                 <!-- Delete series button -->
-                <form class="formDelete" method="post" action="{{ path('series_delete', { id: series.id }) }}" onsubmit="return confirm('Do you want to delete the series : {{ series.title }} ?');">
+                <form class="formDeleteSeries" method="POST" action="{{ path('series_delete', { id: series.id }) }}" onsubmit="return confirm('Do you want to delete the series : {{ series.title }} ?');">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ series.id) }}">
-                    <button class="buttonDelete btn btn-danger btn-sm">Delete series</button>
+                    <button class="buttonDeleteSeries btn btn-danger btn-sm">Delete series</button>
                 </form>
             </div>
         {% endif %}

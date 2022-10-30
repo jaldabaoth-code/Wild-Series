@@ -36,6 +36,8 @@ Encore
     .addStyleEntry('header', './assets/styles/includes/header.scss')
     .addStyleEntry('navbar', './assets/styles/includes/navbar.scss')
     .addStyleEntry('footer', './assets/styles/includes/footer.scss')
+    .addStyleEntry('registeration', './assets/styles/security/register.scss')
+    .addStyleEntry('login', './assets/styles/security/login.scss')
     .addStyleEntry('home', './assets/styles/home/home.scss')
     .addStyleEntry('showCategory', './assets/styles/category/show.scss')
     .addStyleEntry('formCategory', './assets/styles/category/form.scss')
@@ -60,7 +62,6 @@ Encore
     .addStyleEntry('newActor', './assets/styles/actor/new.scss')
     .addStyleEntry('editActor', './assets/styles/actor/edit.scss')
     .addStyleEntry('formCommentEpisode', './assets/styles/comment/formCommentEpisode.scss')
-    
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')

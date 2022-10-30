@@ -3,20 +3,20 @@
 .container {
     padding: $spacer;
 
-    .rectificationButtons {
+    .rectificationButtonsEpisode {
         display: flex;
         margin-bottom: $spacer .5;
 
-        .buttonEdit {
+        .buttonEditEpisode {
             width: $column * 2;
             margin-right: $spacer * .25;
         }
 
-        .formDelete {
+        .formDeleteEpisode {
             width: $column * 2;
             margin-left: $spacer * .25;
 
-            .buttonDelete {
+            .buttonDeleteEpisode {
                 width: 100%;
             }
         }
@@ -25,7 +25,7 @@
     .body {
         display: flex;
 
-        .informations {
+        .informationsEpisode {
             margin: $spacer $spacer * .5 $spacer * .25;
 
             p {
@@ -44,31 +44,31 @@
         }
     }
 
-    .description {
+    .descriptionEpisode {
         margin: $spacer * 2 $spacer * 3;
     }
 
-    .descriptionPoster {
+    .descriptionPosterEpisode {
         display: flex;
         justify-content: center;
 
-        .poster {
+        .posterEpisode {
             width: $column * 9;
         }
     }
 
-    .commentForm {
+    .formCommentEpisode {
         margin-top: $spacer * 3;
     }
 
-    .commentsList {
+    .listCommentsEpisode {
         margin-top: $spacer * 3;
 
-        .commentTitle {
+        .titleCommentEpisode {
             font-size: larger;
         }
 
-        .comment {
+        .commentEpisode {
             background-color: $secondary;
             filter: brightness(210%);
             margin-bottom: $spacer * 2;

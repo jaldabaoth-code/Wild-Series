@@ -11,7 +11,7 @@
     .body {
         display: flex;
 
-        .informations {
+        .informationsSeries {
             margin: $spacer $spacer * .5 $spacer * .25;
 
             .heart {
@@ -36,33 +36,33 @@
         }
     }
 
-    .description {
+    .descriptionSeries {
         margin: $spacer * 2 $spacer * 3;
     }
 
-    .descriptionImage {
+    .descriptionImageSeries {
         display: flex;
         justify-content: center;
 
-        .image {
+        .imageSeries {
             width: $column * 9;
         }
     }
 
-    .rectificationButtons {
+    .rectificationButtonsSeries {
         display: flex;
         margin-top: $spacer * 3;
 
-        .buttonEdit {
+        .buttonEditSeries {
             width: $column * 2;
             margin-right: $spacer * .25;
         }
 
-        .formDelete {
+        .formDeleteSeries {
             width: $column * 2;
             margin-left: $spacer * .25;
 
-            .buttonDelete {
+            .buttonDeleteSeries {
                 width: 100%;
             }
         }

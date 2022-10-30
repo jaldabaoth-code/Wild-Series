@@ -7,29 +7,29 @@ header {
     padding: $spacer * 0 $spacer;
     width: 100%;
 
-    .title, .title:hover {
+    .titleHeader, .titleHeader:hover {
         text-decoration: none;
         color: $dark;
     }
 
-    .log {
+    .logHeader {
         display: flex;
         align-items: center;
 
-        .userMail {
+        .userMailHeader {
             color: $white;
             padding: $spacer * 0 $spacer * .5;
         }
         
-        .logOut {
+        .logoutHeader {
             color: $warning;
         }
         
-        .logOut:hover {
+        .logoutHeader:hover {
             color: $danger;
         }
         
-        .logIn, .register, .logOut {
+        .loginHeader, .registerHeader, .logoutHeader {
             text-decoration: none;
             font-weight: bolder;
             font-size: large;
@@ -37,7 +37,7 @@ header {
             padding: $spacer * 0 $spacer;
         }
         
-        .logIn:hover, .register:hover {
+        .loginHeader:hover, .registerHeader:hover {
             color: $warning;
         }
     }

@@ -49,7 +49,11 @@ class EpisodeController extends AbstractController
                     ->from($this->getParameter('mailer_from'))
                     ->to('your_email@example.com')
                     ->subject('A new episode has just been published !')
-                    ->html($this->renderView('mail/newEpisodeEmail.html.twig', ['episode' => $episode]));
+                    ->html($this->renderView('mail/newEpisodeEmail.html.twig', [
+                        'episode' => $episode,
+                        'season' => $season,
+                        'series' => $series
+                    ]));
             $mailer->send($email);
             return $this->redirectToRoute('episode_show', [
                 'episodeSlug' => $episode->getSlug(),

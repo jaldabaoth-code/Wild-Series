@@ -1,26 +1,27 @@
 {% extends 'layout.html.twig' %}
 
-{# {% block stylesheets %}
-    {{ encore_entry_link_tags('register') }}
-{% endblock %}  #}
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('registeration') }}
+{% endblock %}
 
 {% block title %}Register{% endblock %}
 
 {% block body %}
+    <div class="container">
+        <h1>Register</h1>
+        <div class="body">
+            {{ form_start(formRegister) }}
+                {{ form_label(formRegister.email, 'Email : ', {'attr': {'class': 'form-label'}}) }}
+                {{ form_widget(formRegister.email, {'attr': {'class': 'form-control'}}) }}
 
+                {{ form_label(formRegister.plainPassword, 'Password : ', {'attr': {'class': 'form-label'}}) }}
+                {{ form_widget(formRegister.plainPassword, {'attr': {'class': 'form-control'}}) }}
 
-    <h1>Register</h1>
+                {{ form_row(formRegister.agreeTerms) }}
 
-    {{ form_start(formRegister) }}
-
-        {{ form_label(formRegister.email, 'Email : ', {'attr': {'class': 'form-label'}}) }}
-        {{ form_widget(formRegister.email, {'attr': {'class': 'form-control'}}) }}
-
-        {{ form_label(formRegister.plainPassword, 'Password : ', {'attr': {'class': 'form-label'}}) }}
-        {{ form_widget(formRegister.plainPassword, {'attr': {'class': 'form-control'}}) }}
-
-        {{ form_row(formRegister.agreeTerms) }}
-
-        <button class="button btn btn-primary">{{ 'Register' }}</button>
-    {{ form_end(formRegister) }}
+                <button class="buttonRegister btn btn-primary">{{ 'Register' }}</button>
+            {{ form_end(formRegister) }}
+        </div>
+    </div>
 {% endblock %}

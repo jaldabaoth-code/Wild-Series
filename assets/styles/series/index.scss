@@ -27,7 +27,7 @@
             width: $column * 3;
             margin: $spacer $spacer * 0;
 
-            .shinePoster {
+            .shinePosterSeries {
                 position: relative;
                 overflow: hidden;
                 border-radius: 15px;
@@ -59,29 +59,29 @@
                 }
             }
 
-            .rectificationButtons {
+            .rectificationButtonsSeries {
                 display: flex;
                 justify-content: center;
                 width: 100%;
                 margin-top: $spacer * .5;
                 margin-bottom: $spacer * .25;
 
-                .buttonEdit {
+                .buttonEditSeries {
                     width: $column * 4;
                     margin-right: $spacer * .25;
                 }
 
-                .formDelete {
+                .formDeleteSeries {
                     width: $column * 4;
                     margin-left: $spacer * .25;
 
-                    .buttonDelete {
+                    .buttonDeleteSeries {
                         width: 100%;
                     }
                 }
             }
 
-            .title {
+            .titleSeries {
                 color: $dark;
                 font-size: larger;
                 text-decoration: none;
@@ -92,7 +92,7 @@
                 }
             }
 
-            .categoryName {
+            .nameCategory {
                 color: $secondary;
                 text-decoration: none;
 

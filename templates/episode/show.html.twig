@@ -9,15 +9,15 @@
 
 {% block body %}
     <div class="container">
-        {# Only for admin and author for edit or delete episode #}
+        {# Only for admin and contributor for edit or delete episode #}
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
-            <div class="rectificationButtons">
+            <div class="rectificationButtonsEpisode">
                 <!-- Edit episode button -->
-                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("episode_edit", { episodeSlug: episode.slug, id: episode.id, seasonNumber: season.number, seasonId: season.id, seriesSlug: series.slug, seriesId:series.id }) }}" type="button">Edit episode</a>
+                <a class="buttonEditEpisode btn btn-primary btn-sm" href="{{ path("episode_edit", { episodeSlug: episode.slug, id: episode.id, seasonNumber: season.number, seasonId: season.id, seriesSlug: series.slug, seriesId:series.id }) }}" type="button">Edit episode</a>
                 <!-- Delete episode button -->
-                <form class="formDelete" method="post" action="{{ path('episode_delete', { id: episode.id }) }}" onsubmit="return confirm('Do you want to delete the episode : {{ episode.title }} ?');">
+                <form class="formDeleteEpisode" method="post" action="{{ path('episode_delete', { id: episode.id }) }}" onsubmit="return confirm('Do you want to delete the episode : {{ episode.title }} ?');">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ episode.id) }}">
-                    <button class="buttonDelete btn btn-danger btn-sm">Delete episode</button>
+                    <button class="buttonDeleteEpisode btn btn-danger btn-sm">Delete episode</button>
                 </form>
             </div>
         {% endif %}
@@ -28,7 +28,7 @@
             {% else %}
                 <img src="/uploads/seasons/posters/{{ season.poster }}" alt="{{ series.title }} poster">
             {% endif %}
-            <div class="informations">
+            <div class="informationsEpisode">
                 <p>Series title :
                     <a href="{{ path("series_show", { id: series.id, slug: series.slug }) }}">{{ series.title }}</a>
                 </p>
@@ -43,27 +43,27 @@
             </div>
         </div>
         <div>
-            <p class="description">{{ episode.synopsis }}</p>
-            <div class="descriptionPoster">
+            <p class="descriptionEpisode">{{ episode.synopsis }}</p>
+            <div class="descriptionPosterEpisode">
                 {% if ('https://' in episode.poster) or ('http://' in episode.poster) %}
-                    <img class="poster" src="{{ episode.poster }}" alt="{{ episode.title }} poster">
+                    <img class="posterEpisode" src="{{ episode.poster }}" alt="{{ episode.title }} poster">
                 {% else %}
-                    <img class="poster" src="/uploads/series/images/{{ episode.poster }}" alt="{{ episode.title }} poster">
+                    <img class="posterEpisode" src="/uploads/series/images/{{ episode.poster }}" alt="{{ episode.title }} poster">
                 {% endif %}
             </div>
         </div>
         {# Comment Episode and rate it #}
         {% if app.user and is_granted("ROLE_ADMIN")%}
             {% if app.user %}
-                <div class="commentForm">
+                <div class="formCommentEpisode">
                     {{ include('comment/_formCommentEpisode.html.twig') }}
                 </div>
             {% endif %}
         {% endif %}
-        <div class="commentsList">
-            <p class="commentTitle">Comments on the episode</p>
+        <div class="listCommentsEpisode">
+            <p class="titleCommentEpisode">Comments on the episode</p>
             {% for comment in episode.comments | reverse %}
-                <div class="comment">
+                <div class="commentEpisode">
                     <p>Commentary : {{ comment.comment }}</p>
                     <p>Rate : {{ comment.rate }}</p>
                     <p>comment by : {{ comment.author.username }}</p>

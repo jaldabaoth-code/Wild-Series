@@ -11,37 +11,43 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Wild Series</h1>
-	<h2>Latest series</h2>
-	{%  if lastSeries == true %}
-		{# Bootsrap carousel #}
-		<div id="carouselDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-			<div class="carousel-indicators">
-				{% for i in 0.. lastSeries|length-1 %}
-					<button type="button" data-bs-target="#carouselDark" data-bs-slide-to="{{ i }}" aria-label="Slide {{ i+1 }}" {{ (i == 0) ? "class='active' aria-current='true'" : "" }}></button>
-				{% endfor %}
-			</div>
-			<div class="carousel-inner">
-				{% for oneSeries in lastSeries %}
-					<div class="carousel-item {{ (loop.index == 1) ? 'active' : '' }}" data-bs-interval="5000">
-						<img src="{{ oneSeries.image }}" class="carouselImage d-block" alt="{{ oneSeries.title }} image">
-						<div class="carousel-caption d-none d-md-block">
-							<h3>{{ oneSeries.title }}</h3>
-							<p>{{ oneSeries.description }}</p>
-						</div>
+    <div class="container">
+		<h1>Wild Series</h1>
+		<h2>Latest series</h2>
+		<div class="body">
+			{%  if lastSeries == true %}
+				{# Bootsrap carousel #}
+				<div id="carouselDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+					<div class="carousel-indicators">
+						{% for i in 0.. lastSeries|length-1 %}
+							<button type="button" data-bs-target="#carouselDark" data-bs-slide-to="{{ i }}" aria-label="Slide {{ i+1 }}" {{ (i == 0) ? "class='active' aria-current='true'" : "" }}></button>
+						{% endfor %}
 					</div>
-				{% endfor %}
-			</div>
-			<button class="carousel-control-prev" type="button" data-bs-target="#carouselDark" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#carouselDark" data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
+					<div class="carousel-inner">
+						{% for oneSeries in lastSeries %}
+							<div class="carousel-item {{ (loop.index == 1) ? 'active' : '' }}" data-bs-interval="5000">
+								<a href="{{ path("series_show", { slug: oneSeries.slug, id: oneSeries.id }) }}">
+									<img src="{{ oneSeries.image }}" class="carouselImage d-block" alt="{{ oneSeries.title }} image">
+									<div class="carousel-caption d-none d-md-block">
+										<h3>{{ oneSeries.title }}</h3>
+										<p>{{ oneSeries.description }}</p>
+									</div>
+								</a>
+							</div>
+						{% endfor %}
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselDark" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselDark" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+			{% else %}
+				<p>No series on site currently</p>
+			{% endif %}
 		</div>
-	{% else %}
-		<p>No series on site currently</p>
-	{% endif %}
+	</div>
 {% endblock %}

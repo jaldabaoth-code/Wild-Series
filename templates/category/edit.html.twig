@@ -10,6 +10,8 @@
 {% block body %}
     <div class="container">
         <h1>Edit category : {{ category.name }}</h1>
-        {{ include('category/_form.html.twig') }}
+        <div class="body">
+            {{ include('category/_form.html.twig') }}
+        </div>
     </div>
 {% endblock %}

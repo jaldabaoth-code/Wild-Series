@@ -5,44 +5,44 @@
     {{ encore_entry_link_tags('showActor') }}
 {% endblock %}
 
-{% block title %}All series in category{% endblock %}
+{% block title %}{{ actor.name }}{% endblock %}
 
 {% block body %}
     <div class="container">
-        {# Only for admin and author for edit or delete actor #}
+        {# Only for admin and contributor for edit or delete actor #}
         {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
-            <div class="rectificationButtons">
+            <div class="rectificationButtonsActor">
                 <!-- Edit actor button -->
-                <a class="buttonEdit btn btn-primary btn-sm" href="{{ path("actor_edit", { actorName: actor.name, id: actor.id }) }}" type="button">Edit actor</a>
+                <a class="buttonEditActor btn btn-primary btn-sm" href="{{ path("actor_edit", { actorName: actor.name, id: actor.id }) }}" type="button">Edit actor</a>
                 <!-- Delete actor button -->
-                <form class="formDelete" method="post" action="{{ path('actor_delete', { id: actor.id }) }}" onsubmit="return confirm('Do you want to delete the actor : {{ actor.name }} ?');">
+                <form class="formDeleteActor" method="post" action="{{ path('actor_delete', { id: actor.id }) }}" onsubmit="return confirm('Do you want to delete the actor : {{ actor.name }} ?');">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ actor.id) }}">
-                    <button class="buttonDelete btn btn-danger btn-sm">Delete actor</button>
+                    <button class="buttonDeleteActor btn btn-danger btn-sm">Delete actor</button>
                 </form>
             </div>
         {% endif %}
         <h1>{{ actor.name }}</h1>
         <div class="body">
             {% if actor.poster %}
-                <a class="actor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
-                    <img class="actorPoster" src="{{ actor.poster }}" alt="{{ actor.name }} poster">
+                <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
+                    <img class="posterActor" src="{{ actor.poster }}" alt="{{ actor.name }} poster">
                 </a>
             {%  else %}
-                <a class="actor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
-                    <img class="actorPoster" src="{{ asset('build/no-image.png') }}" alt="{{ actor.name }} poster">
+                <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
+                    <img class="posterActor" src="{{ asset('build/no-image.png') }}" alt="{{ actor.name }} poster">
                 </a>
             {% endif %}
-            <p class="seriesListTitle">Known For</p>
-            <div class="seriesList">
+            <p class="titleListSeries">Known For</p>
+            <div class="listSeries">
                 {% if series %}
                     {% for oneSeries in series %}
                         <div class="oneSeries">
-                            <a class="shinePoster" href="{{ path("series_show", { slug: oneSeries.slug, id: oneSeries.id }) }}">
+                            <a class="shinePosterSeries" href="{{ path("series_show", { slug: oneSeries.slug, id: oneSeries.id }) }}">
                                 <img src="{{ oneSeries.poster }}" alt="poster of {{ oneSeries.title }}">
                             </a>
-                            <a class="title" href="{{ path("series_show", { slug: oneSeries.slug, id: oneSeries.id }) }}">{{ oneSeries.title }}</a>
+                            <a class="titleSeries" href="{{ path("series_show", { slug: oneSeries.slug, id: oneSeries.id }) }}">{{ oneSeries.title }}</a>
                             {% if oneSeries.category.name is defined %}
-                                <a class="categoryName" href="{{ path("category_show", { categoryName: oneSeries.category.name, id: oneSeries.category.id }) }}">{{ oneSeries.category.name }}</a>
+                                <a class="nameCategory" href="{{ path("category_show", { categoryName: oneSeries.category.name, id: oneSeries.category.id }) }}">{{ oneSeries.category.name }}</a>
                             {% endif %}
                         </div>
                     {% endfor %}

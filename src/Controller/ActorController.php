@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/actors", name="actor_")
+ * @Route("/actor", name="actor_")
  */
 class ActorController extends AbstractController
 {
@@ -46,7 +46,7 @@ class ActorController extends AbstractController
         }
         return $this->render('actor/new.html.twig', [
             'actor' => $actor,
-            'formActor' => $formActor->createView(),
+            'formActor' => $formActor->createView()
         ]);
     }
 

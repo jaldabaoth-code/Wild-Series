@@ -9,22 +9,22 @@
     }
     
     .body {
-        .casting {
+        .listActors {
             display: flex;
             flex-wrap: wrap;
 
-            .castingPosters {
+            .castingPostersActor {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 width: $column * 3;
                 margin: $spacer $spacer * 0;
 
-                .actor {
+                .linkActor {
                     width: $column * 9;
 
-                    .actorPoster {
-                        width:  $column * 12;
+                    .posterActor {
+                        width: $column * 12;
 
                         &:hover {
                             opacity: .75;
@@ -32,7 +32,7 @@
                     }
                 }
 
-                .actorName {
+                .nameActor {
                     width: $column * 9;
                     text-decoration: none;
                     color: $dark;
@@ -44,22 +44,22 @@
                     }
                 }
 
-                .rectificationButtons {
+                .rectificationButtonsActor {
                     display: flex;
                     justify-content: center;
                     width: 100%;
                     margin-bottom: $spacer;
         
-                    .buttonEdit {
+                    .buttonEditActor {
                         width: $column * 4;
                         margin-right: $spacer * .25;
                     }
         
-                    .formDelete {
+                    .formDeleteActor {
                         width: $column * 4;
                         margin-left: $spacer * .25;
         
-                        .buttonDelete {
+                        .buttonDeleteActor {
                             width: 100%;
                         }
                     }
