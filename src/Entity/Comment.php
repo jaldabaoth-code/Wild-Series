@@ -50,7 +50,6 @@ class Comment
     public function setComment(string $comment): self
     {
         $this->comment = $comment;
-
         return $this;
     }
 
@@ -62,7 +61,6 @@ class Comment
     public function setRate(int $rate): self
     {
         $this->rate = $rate;
-
         return $this;
     }
 
@@ -74,7 +72,6 @@ class Comment
     public function setAuthor(User $author): self
     {
         $this->author = $author;
-
         return $this;
     }
 
@@ -86,7 +83,6 @@ class Comment
     public function setEpisode(?Episode $episode): self
     {
         $this->episode = $episode;
-
         return $this;
     }
 }

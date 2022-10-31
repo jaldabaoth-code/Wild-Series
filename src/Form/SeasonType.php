@@ -2,11 +2,14 @@
 
 namespace App\Form;
 
+use App\Entity\Actor;
 use App\Entity\Season;
 use App\Entity\Series;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class SeasonType extends AbstractType
@@ -20,7 +23,17 @@ class SeasonType extends AbstractType
             ->add('posterFile', VichFileType::class, [
                 'required'      => false,
                 'allow_delete'  => false,
-                'download_uri' => false,
+                'download_uri' => false
+            ])
+            ->add('actors', EntityType::class, [
+                'class' => Actor::class,
+                'choice_label' => 'name',
+                'multiple' => true,
+                'query_builder' => function(EntityRepository $repo) {
+                    return $repo->createQueryBuilder('a')
+                        ->orderBy('a.name', 'ASC')
+                    ;
+                }
             ])
         ;
     }

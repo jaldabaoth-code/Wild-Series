@@ -121,7 +121,6 @@ class Season
     public function setSeries(?Series $series): self
     {
         $this->series = $series;
-
         return $this;
     }
 
@@ -133,7 +132,6 @@ class Season
     public function setYear(?int $year): self
     {
         $this->year = $year;
-
         return $this;
     }
 
@@ -145,7 +143,6 @@ class Season
     public function setDescription(?string $description): self
     {
         $this->description = $description;
-
         return $this;
     }
 
@@ -174,19 +171,17 @@ class Season
             $this->episodes[] = $episode;
             $episode->setSeason($this);
         }
-
         return $this;
     }
 
     public function removeEpisode(Episode $episode): self
     {
         if ($this->episodes->removeElement($episode)) {
-            // set the owning side to null (unless already changed)
+            // Set the owning side to null (unless already changed)
             if ($episode->getSeason() === $this) {
                 $episode->setSeason(null);
             }
         }
-
         return $this;
     }
 

@@ -15,7 +15,7 @@
                 <!-- Edit episode button -->
                 <a class="buttonEditEpisode btn btn-primary btn-sm" href="{{ path("episode_edit", { episodeSlug: episode.slug, id: episode.id, seasonNumber: season.number, seasonId: season.id, seriesSlug: series.slug, seriesId:series.id }) }}" type="button">Edit episode</a>
                 <!-- Delete episode button -->
-                <form class="formDeleteEpisode" method="post" action="{{ path('episode_delete', { id: episode.id }) }}" onsubmit="return confirm('Do you want to delete the episode : {{ episode.title }} ?');">
+                <form class="formDeleteEpisode" method="POST" action="{{ path('episode_delete', { id: episode.id }) }}" onsubmit="return confirm('Do you want to delete the episode : {{ episode.title }} ?');">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ episode.id) }}">
                     <button class="buttonDeleteEpisode btn btn-danger btn-sm">Delete episode</button>
                 </form>

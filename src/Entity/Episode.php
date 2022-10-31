@@ -12,6 +12,7 @@ use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * @ORM\Entity(repositoryClass=EpisodeRepository::class)
+ * @Vich\Uploadable
  */
 class Episode
 {
@@ -70,7 +71,6 @@ class Episode
         $this->comments = new ArrayCollection();
     }
 
-
     public function getId(): ?int
     {
         return $this->id;
@@ -84,7 +84,6 @@ class Episode
     public function setTitle(string $title): self
     {
         $this->title = $title;
-
         return $this;
     }
 
@@ -96,7 +95,6 @@ class Episode
     public function setNumber(int $number): self
     {
         $this->number = $number;
-
         return $this;
     }
 
@@ -108,7 +106,6 @@ class Episode
     public function setSynopsis(string $synopsis): self
     {
         $this->synopsis = $synopsis;
-
         return $this;
     }
 
@@ -120,7 +117,6 @@ class Episode
     public function setSeason(?Season $season): self
     {
         $this->season = $season;
-
         return $this;
     }
 
@@ -132,7 +128,6 @@ class Episode
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
-
         return $this;
     }
 
@@ -150,19 +145,17 @@ class Episode
             $this->comments[] = $comment;
             $comment->setEpisode($this);
         }
-
         return $this;
     }
 
     public function removeComment(Comment $comment): self
     {
         if ($this->comments->removeElement($comment)) {
-            // set the owning side to null (unless already changed)
+            // Set the owning side to null (unless already changed)
             if ($comment->getEpisode() === $this) {
                 $comment->setEpisode(null);
             }
         }
-
         return $this;
     }
 

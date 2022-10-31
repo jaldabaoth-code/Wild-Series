@@ -113,9 +113,9 @@ class SeriesController extends AbstractController
      */
     public function edit(Request $request, Slugify $slugify, Series $series): Response
     {
-        if (!($this->getUser() == $series->getOwner()) && ($this->getUser()->getRoles()[0] != 'ROLE_ADMIN')) {
+        if (($this->getUser()->getRoles()[0] != 'ROLE_ADMIN')) {
             // If not the owner, throws a 403 Access Denied exception
-            throw new AccessDeniedException('Only the owner and admin can edit the series!');
+            throw new AccessDeniedException('Only the admin can edit the series!');
         }
         $formSeries = $this->createForm(SeriesType::class, $series);
         $formSeries->handleRequest($request);

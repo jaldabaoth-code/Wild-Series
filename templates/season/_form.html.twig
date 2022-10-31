@@ -15,5 +15,8 @@
     {{ form_label(formSeason.posterFile, 'Poster : ', {'attr': {'class': 'form-label'}}) }}
     {{ form_widget(formSeason.posterFile, {'attr': {'class': 'form-control'}}) }}
 
+    {{ form_label(formSeason.actors, 'Actors : ', {'attr': {'class': 'form-label'}}) }}
+    {{ form_widget(formSeason.actors, {'attr': {'class': 'form-control formInputActors'}}) }}
+
     <button class="buttonSeason btn btn-primary">{{ 'Save' }}</button>
 {{ form_end(formSeason) }}

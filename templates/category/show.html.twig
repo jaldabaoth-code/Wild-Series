@@ -15,7 +15,7 @@
                 <!-- Edit category button -->
                 <a class="buttonEditCategory btn btn-primary btn-sm" href="{{ path("category_edit", { categoryName: category.name, id: category.id }) }}">Edit category</a>
                 <!-- Delete category button -->
-                <form class="formDeleteCategory" method="post" action="{{ path('category_delete', { id: category.id }) }}" onsubmit="return confirm('Do you want to delete the category : {{ category.name }} ?');">
+                <form class="formDeleteCategory" method="POST" action="{{ path('category_delete', { id: category.id }) }}" onsubmit="return confirm('Do you want to delete the category : {{ category.name }} ?');">
                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ category.id) }}">
                     <button class="buttonDeleteCategory btn btn-danger btn-sm">Delete category</button>
                 </form>
@@ -35,7 +35,7 @@
                                 <!-- Edit series button -->
                                 <a class="buttonEditSeries btn btn-primary btn-sm" href="{{ path("series_edit", { slug: oneSeries.slug, id: oneSeries.id }) }}" type="button">Edit</a>
                                 <!-- Delete series button -->
-                                <form class="formDeleteSeries" method="post" action="{{ path('series_delete', { id: oneSeries.id }) }}" onsubmit="return confirm('Do you want to delete the series : {{ oneSeries.title }} ?');">
+                                <form class="formDeleteSeries" method="POST" action="{{ path('series_delete', { id: oneSeries.id }) }}" onsubmit="return confirm('Do you want to delete the series : {{ oneSeries.title }} ?');">
                                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ oneSeries.id) }}">
                                     <button class="buttonDeleteSeries btn btn-danger btn-sm">Delete</button>
                                 </form>

@@ -26,12 +26,12 @@ class SeriesType extends AbstractType
             ->add('posterFile', VichFileType::class, [
                 'required'      => false,
                 'allow_delete'  => false,
-                'download_uri' => false,
+                'download_uri' => false
                 ])
             ->add('imageFile', VichFileType::class, [
                 'required'      => false,
                 'allow_delete'  => false,
-                'download_uri' => false,
+                'download_uri' => false
                 ])
             ->add('country', TextType::class)
             ->add('year', IntegerType::class)

@@ -44,11 +44,6 @@ class User implements UserInterface
     private $comments;
 
     /**
-     * @ORM\OneToMany(targetEntity=Series::class, mappedBy="owner")
-     */
-    private $series;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $isVerified = false;
@@ -63,7 +58,6 @@ class User implements UserInterface
     public function __construct()
     {
         $this->comments = new ArrayCollection();
-        $this->series = new ArrayCollection();
         $this->watchlist = new ArrayCollection();
     }
 
@@ -80,13 +74,11 @@ class User implements UserInterface
     public function setEmail(string $email): self
     {
         $this->email = $email;
-
         return $this;
     }
 
     /**
      * A visual identifier that represents this user.
-     *
      * @see UserInterface
      */
     public function getUsername(): string
@@ -100,16 +92,14 @@ class User implements UserInterface
     public function getRoles(): array
     {
         $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
+        // Guarantee every user at least has ROLE_USER
         $roles[] = 'ROLE_USER';
-
         return array_unique($roles);
     }
 
     public function setRoles(array $roles): self
     {
         $this->roles = $roles;
-
         return $this;
     }
 
@@ -124,14 +114,12 @@ class User implements UserInterface
     public function setPassword(string $password): self
     {
         $this->password = $password;
-
         return $this;
     }
 
     /**
      * Returning a salt is only needed, if you are not using a modern
      * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
-     *
      * @see UserInterface
      */
     public function getSalt(): ?string
@@ -162,7 +150,6 @@ class User implements UserInterface
             $this->comments[] = $comment;
             $comment->setUser($this);
         }
-
         return $this;
     }
 
@@ -174,7 +161,6 @@ class User implements UserInterface
                 $comment->setUser(null);
             }
         }
-
         return $this;
     }
 
@@ -191,44 +177,12 @@ class User implements UserInterface
         if (!$this->watchlist->contains($series)) {
             $this->watchlist[] = $series;
         }
-
         return $this;
     }
 
     public function removeFromWatchlist(Series $series): self
     {
         $this->watchlist->removeElement($series);
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Series[]
-     */
-    public function getSeries(): Collection
-    {
-        return $this->series;
-    }
-
-    public function addSeries(Series $series): self
-    {
-        if (!$this->series->contains($series)) {
-            $this->series[] = $series;
-            $series->setOwner($this);
-        }
-
-        return $this;
-    }
-
-    public function removeSeries(Series $series): self
-    {
-        if ($this->series->removeElement($series)) {
-            // set the owning side to null (unless already changed)
-            if ($series->getOwner() === $this) {
-                $series->setOwner(null);
-            }
-        }
-
         return $this;
     }
 
@@ -240,7 +194,6 @@ class User implements UserInterface
     public function setIsVerified(bool $isVerified): self
     {
         $this->isVerified = $isVerified;
-
         return $this;
     }
     

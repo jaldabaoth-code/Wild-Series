@@ -29,11 +29,6 @@ class Actor
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Series::class, inversedBy="actors")
-     */
-    private $series;
-
-    /**
      * @ORM\ManyToMany(targetEntity=Season::class, inversedBy="actors")
      */
     private $seasons;
@@ -56,7 +51,6 @@ class Actor
 
     public function __construct()
     {
-        $this->series = new ArrayCollection();
         $this->seasons = new ArrayCollection();
     }
 
@@ -73,7 +67,6 @@ class Actor
     public function setName(string $name): self
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -88,7 +81,6 @@ class Actor
         if ($posterFile) {
             $this->updatedAt = new DateTime('now');
         }
-
         return $this;
     }
 
@@ -100,7 +92,6 @@ class Actor
     public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
-
         return $this;
     }
 
@@ -112,31 +103,6 @@ class Actor
     public function setPoster(?string $poster): self
     {
         $this->poster = $poster;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Series[]
-     */
-    public function getSeries(): Collection
-    {
-        return $this->series;
-    }
-
-    public function addSeries(Series $series): self
-    {
-        if (!$this->series->contains($series)) {
-            $this->series[] = $series;
-        }
-
-        return $this;
-    }
-
-    public function removeSeries(Series $series): self
-    {
-        $this->series->removeElement($series);
-
         return $this;
     }
 
@@ -153,14 +119,12 @@ class Actor
         if (!$this->seasons->contains($season)) {
             $this->seasons[] = $season;
         }
-
         return $this;
     }
 
     public function removeSeason(Season $season): self
     {
         $this->seasons->removeElement($season);
-
         return $this;
     }
 }

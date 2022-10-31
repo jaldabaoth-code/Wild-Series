@@ -47,7 +47,6 @@ class Category
     public function setName(string $name): self
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -76,12 +75,11 @@ class Category
      * @param Series $series
      * @return Category
      */
-
     public function removeSeries(Series $series): self
     {
         if ($this->series->contains($series)) {
             $this->series->removeElement($series);
-            // set the owning side to null (unless already changed)
+            // Set the owning side to null (unless already changed)
             if ($series->getCategory() === $this) {
                 $series->setCategory(null);
             }

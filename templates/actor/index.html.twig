@@ -34,7 +34,7 @@
                                 <!-- Edit actor button -->
                                 <a class="buttonEditActor btn btn-primary btn-sm" href="{{ path("actor_edit", { actorName: actor.name, id: actor.id }) }}" type="button">Edit</a>
                                 <!-- Delete actor button -->
-                                <form class="formDeleteActor" method="post" action="{{ path('actor_delete', { id: actor.id }) }}" onsubmit="return confirm('Do you want to delete the actor : {{ actor.name }} ?');">
+                                <form class="formDeleteActor" method="POST" action="{{ path('actor_delete', { id: actor.id }) }}" onsubmit="return confirm('Do you want to delete the actor : {{ actor.name }} ?');">
                                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ actor.id) }}">
                                     <button class="buttonDeleteActor btn btn-danger btn-sm">Delete</button>
                                 </form>

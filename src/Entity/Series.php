@@ -28,17 +28,17 @@ class Series
     /**
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="don't leave me empty")
-     * @Assert\Length(max="255", maxMessage="La catégorie saisie {{ value }} est trop longue, elle ne devrait pas dépasser {{ limit }} caractères")
+     * @Assert\Length(max="255", maxMessage="The entered category {{ value }} is too long, it should not exceed {{ limit }} characters")
     */
     private $title;
 
     /**
     * @ORM\Column(type="text")
-    * @Assert\NotBlank(message="ne me laisse pas tout vide")
+    * @Assert\NotBlank(message="don't leave me empty")
     * @Assert\Regex(
     * pattern="/plus belle la vie/",
     * match=false,
-    * message="On parle de vraies séries ici"
+    * message="We are talking about real series here"
     * )
     */
     private $description;
@@ -89,25 +89,9 @@ class Series
     private $seasons;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Actor::class, mappedBy="series")
-     */
-    private $actors;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $slug;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="series")
-     */
-    private $owner;
-
-    /*
-      @ORM\Column(type="Datetime")
-      @var Datetime
-     */
-    //private $updatedAt;
 
     /**
      * @ORM\ManyToMany(targetEntity=User::class, mappedBy="watchlist")
@@ -117,7 +101,6 @@ class Series
     public function __construct()
     {
         $this->seasons = new ArrayCollection();
-        $this->actors = new ArrayCollection();
         $this->viewers = new ArrayCollection();
     }
 
@@ -273,35 +256,10 @@ class Series
     public function removeSeason(Season $season): self
     {
         if ($this->seasons->removeElement($season)) {
-            // set the owning side to null (unless already changed)
+            // Set the owning side to null (unless already changed)
             if ($season->getSeries() === $this) {
                 $season->setSeries(null);
             }
-        }
-        return $this;
-    }
-
-    /**
-     * @return Collection|Actor[]
-     */
-    public function getActors(): Collection
-    {
-        return $this->actors;
-    }
-
-    public function addActor(Actor $actor): self
-    {
-        if (!$this->actors->contains($actor)) {
-            $this->actors[] = $actor;
-            $actor->addSeries($this);
-        }
-        return $this;
-    }
-
-    public function removeActor(Actor $actor): self
-    {
-        if ($this->actors->removeElement($actor)) {
-            $actor->removeSeries($this);
         }
         return $this;
     }
@@ -314,17 +272,6 @@ class Series
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
-        return $this;
-    }
-
-    public function getOwner(): ?User
-    {
-        return $this->owner;
-    }
-
-    public function setOwner(?User $owner): self
-    {
-        $this->owner = $owner;
         return $this;
     }
 
