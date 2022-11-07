@@ -23,7 +23,7 @@ class CategoryController extends AbstractController
      * @Route("/new", name="new")
      * @IsGranted("ROLE_ADMIN")
      */
-    public function new(Request $request) : Response
+    public function new(Request $request): Response
     {
         // Create a new Category Object
         $category = new Category();
@@ -43,7 +43,9 @@ class CategoryController extends AbstractController
             return $this->redirectToRoute('series_index');
         }
         // Render the form
-        return $this->render('category/new.html.twig', ["formCategory" => $formCategory->createView()]);
+        return $this->render('category/new.html.twig', [
+            'formCategory' => $formCategory->createView()
+        ]);
     }
 
     /**
@@ -65,7 +67,7 @@ class CategoryController extends AbstractController
             ->findBy(['category' => $category->getId()], ['title' => 'ASC'], 3);
         return $this->render('category/show.html.twig', [
             'category' => $category,
-            'series' => $series,
+            'series' => $series
         ]);
     }
 
@@ -94,7 +96,7 @@ class CategoryController extends AbstractController
     /**
      * @Route("/{id}/delete", name="delete", methods={"POST"})
      */
-    public function delete(Request $request, Series $category): Response
+    public function delete(Request $request, Category $category): Response
     {
         if ($this->isCsrfTokenValid('delete' . $category->getId(), $request->request->get('_token'))) {
             // Get category name before delete, for use in flash message

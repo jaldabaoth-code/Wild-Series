@@ -1,5 +1,4 @@
 <?php
-//ActorFixtures.php
 
 namespace App\DataFixtures;
 

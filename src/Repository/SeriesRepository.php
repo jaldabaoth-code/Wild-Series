@@ -32,11 +32,4 @@ class SeriesRepository extends ServiceEntityRepository
             ->getQuery();
         return $queryBuilder->getResult();
     }
-
-    public function findAllWithCategoriesAndTags()
-    {
-        $em = $this->getEntityManager();
-        $query = $em->createQuery('SELECT a, c, t FROM App\Entity\Article a INNER JOIN a.category c INNER JOIN a.tags t');
-        return $query->execute();
-    }
 }

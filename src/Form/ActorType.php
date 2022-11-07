@@ -27,7 +27,7 @@ class ActorType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Actor::class,
+            'data_class' => Actor::class
         ]);
     }
 }

@@ -29,28 +29,28 @@ class Series
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank(message="don't leave me empty")
      * @Assert\Length(max="255", maxMessage="The entered category {{ value }} is too long, it should not exceed {{ limit }} characters")
-    */
+     */
     private $title;
 
     /**
-    * @ORM\Column(type="text")
-    * @Assert\NotBlank(message="don't leave me empty")
-    * @Assert\Regex(
-    * pattern="/plus belle la vie/",
-    * match=false,
-    * message="We are talking about real series here"
-    * )
-    */
+     * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="don't leave me empty")
+     * @Assert\Regex(
+     * pattern="/plus belle la vie/",
+     * match=false,
+     * message="We are talking about real series here"
+     * )
+     */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-    * @var string
-    */
+     * @var string
+     */
     private $poster;
 
     /**
-     * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
+     * @Vich\UploadableField(mapping="poster_series_file", fileNameProperty="poster")
      * @var File
      */
     private $posterFile;
@@ -62,7 +62,7 @@ class Series
     private $image;
 
     /**
-     * @Vich\UploadableField(mapping="image_file", fileNameProperty="image")
+     * @Vich\UploadableField(mapping="image_series_file", fileNameProperty="image")
      * @var File
      */
     private $imageFile;

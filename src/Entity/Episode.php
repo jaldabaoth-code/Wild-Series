@@ -61,7 +61,7 @@ class Episode
     private $poster;
 
     /**
-     * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
+     * @Vich\UploadableField(mapping="poster_episode_file", fileNameProperty="poster")
      * @var File
      */
     private $posterFile;
@@ -170,7 +170,7 @@ class Episode
         return $this;
     }
 
-    public function setPosterFile(File $posterFile = null): Series
+    public function setPosterFile(File $posterFile = null): self
     {
         $this->posterFile = $posterFile;
         if ($posterFile) {

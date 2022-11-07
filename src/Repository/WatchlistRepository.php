@@ -10,7 +10,6 @@ use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @extends ServiceEntityRepository<Watchlist>
- *
  * @method Watchlist|null find($id, $lockMode = null, $lockVersion = null)
  * @method Watchlist|null findOneBy(array $criteria, array $orderBy = null)
  * @method Watchlist[]    findAll()

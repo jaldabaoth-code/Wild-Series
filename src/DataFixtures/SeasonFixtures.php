@@ -10,7 +10,7 @@ use Doctrine\Persistence\ObjectManager;
 
 class SeasonFixtures extends Fixture implements DependentFixtureInterface
 {
-     public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager)
     {
         foreach (FixturesData::TV_SERIES as $seriesTitle => $seriesData) {
             foreach ($this->getSeries($seriesTitle) as $seasonNumber => $seasonData) {

@@ -17,12 +17,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ActorController extends AbstractController
 {
     /**
-     * @Route("/", name="index")
+     * @Route("", name="index")
      */
     public function index(ActorRepository $actorRepository): Response
     {
         return $this->render('actor/index.html.twig', [
-            'actors' => $actorRepository->findAll(),
+            'actors' => $actorRepository->findAll()
         ]);
     }
 
@@ -38,9 +38,10 @@ class ActorController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($actor);
             $entityManager->flush();
-            $this->addFlash('danger', 'The actor has been added : ' . $actorName);
+            $actorName = $actor->getName();
+            $this->addFlash('success', 'The actor has been added : ' . $actorName);
             return $this->redirectToRoute('actor_show', [
-                'actorName' => $actor->getName(),
+                'actorName' => $actorName,
                 'id' => $actor->getId()
             ]);
         }
@@ -60,6 +61,7 @@ class ActorController extends AbstractController
                 'The actor was not found'
             );
         }
+        $seasonsSeries = [];
         foreach($actor->getSeasons() as $season) {
             $seasonsSeries[] = $seriesRepository->findBy(['id' => $season->getSeries()])[0];
         }
@@ -80,9 +82,10 @@ class ActorController extends AbstractController
         $formActor->handleRequest($request);
         if ($formActor->isSubmitted() && $formActor->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-            $this->addFlash('danger', 'The actor has been edited : ' . $actorName);
+            $actorName = $actor->getName();
+            $this->addFlash('success', 'The actor has been edited : ' . $actorName);
             return $this->redirectToRoute('actor_show', [
-                'actorName' => $actor->getName(),
+                'actorName' => $actorName,
                 'id' => $actor->getId()
             ]);
         }

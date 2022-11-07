@@ -5,9 +5,12 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     mailer_from: '%env(resolve:MAILER_FROM_ADDRESS)%'
-    upload_directory_poster: '%kernel.project_dir%/public/uploads/series/posters'
-    upload_directory_image: '%kernel.project_dir%/public/uploads/series/images'
-    
+    upload_directory_poster_series: '%kernel.project_dir%/public/uploads/series/posters'
+    upload_directory_image_series: '%kernel.project_dir%/public/uploads/series/images'
+    upload_directory_poster_season: '%kernel.project_dir%/public/uploads/seasons/posters'
+    upload_directory_poster_episode: '%kernel.project_dir%/public/uploads/episodes/posters'
+    upload_directory_poster_actor: '%kernel.project_dir%/public/uploads/actors/posters'
+
 services:
     # default configuration for services in *this* file
     _defaults:

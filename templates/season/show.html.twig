@@ -47,9 +47,17 @@
                 {% for actor in season.actors %}
                     <div class="castingPostersSeason">
                         {% if actor.poster %}
-                            <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}"><img class="posterActor" src="{{ actor.poster }}" alt="{{ actor.name }} poster"></a>
+                            <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
+                                {% if ('https://' in actor.poster) or ('http://' in actor.poster) %}
+                                    <img class="posterActor" src="{{ actor.poster }}" alt="{{ actor.name }} poster">
+                                {% else %}
+                                    <img class="posterActor" src="/uploads/actors/posters/{{ actor.poster }}" alt="{{ actor.name }} poster">
+                                {% endif %}
+                            </a>
                         {%  else %}
-                            <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}"><img class="posterActor" src="{{ asset('build/no-image.png') }}" alt="{{ actor.name }} poster"></a>
+                            <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
+                                <img class="posterActor" src="{{ asset('build/no-image.png') }}" alt="{{ actor.name }} poster">
+                            </a>
                         {% endif %}
                         <a class="nameActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">{{ actor.name }}</a>
                     </div>

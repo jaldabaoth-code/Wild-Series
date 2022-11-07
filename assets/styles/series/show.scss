@@ -11,6 +11,11 @@
     .body {
         display: flex;
 
+        .posterSeries {
+            height: 300px;
+            width: 220px;
+        }
+
         .informationsSeries {
             margin: $spacer $spacer * .5 $spacer * .25;
 

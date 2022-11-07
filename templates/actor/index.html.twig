@@ -20,7 +20,11 @@
                     <div class="castingPostersActor">
                         {% if actor.poster %}
                             <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
-                                <img class="posterActor" src="{{ actor.poster }}" alt="{{ actor.name }} poster">
+                                {% if ('https://' in actor.poster) or ('http://' in actor.poster) %}
+                                    <img class="posterActor" src="{{ actor.poster }}" alt="{{ actor.name }} poster">
+                                {% else %}
+                                    <img class="posterActor" src="/uploads/actors/posters/{{ actor.poster }}" alt="{{ actor.name }} poster">
+                                {% endif %}
                             </a>
                         {%  else %}
                             <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">

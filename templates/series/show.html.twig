@@ -16,9 +16,9 @@
         <h1>{{ series.title }}</h1>
         <div class="body">
             {% if ('https://' in series.poster) or ('http://' in series.poster) %}
-                <img src="{{ series.poster }}" alt="{{ series.title }} poster">
+                <img class="posterSeries" src="{{ series.poster }}" alt="{{ series.title }} poster">
             {% else %}
-                <img src="/uploads/series/poster/{{ series.poster }}" alt="{{ series.title }} poster">
+                <img class="posterSeries" src="/uploads/series/posters/{{ series.poster }}" alt="{{ series.title }} poster">
             {% endif %}
             <div class="informationsSeries">
                 <p>Title :

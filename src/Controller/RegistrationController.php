@@ -1,5 +1,6 @@
 <?php
 namespace App\Controller;
+
 use App\Entity\User;
 use App\Form\RegistrationFormType;
 use App\Security\EmailVerifier;
@@ -17,6 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class RegistrationController extends AbstractController
 {
     private $emailVerifier;
+
     public function __construct(EmailVerifier $emailVerifier)
     {
         $this->emailVerifier = $emailVerifier;
@@ -60,7 +62,7 @@ class RegistrationController extends AbstractController
             }
         }
         return $this->render('registration/register.html.twig', [
-            'formRegister' => $formRegister->createView(),
+            'formRegister' => $formRegister->createView()
         ]);
     }
 

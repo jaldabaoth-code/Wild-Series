@@ -27,7 +27,11 @@
 						{% for oneSeries in lastSeries %}
 							<div class="carousel-item {{ (loop.index == 1) ? 'active' : '' }}" data-bs-interval="5000">
 								<a href="{{ path("series_show", { slug: oneSeries.slug, id: oneSeries.id }) }}">
-									<img src="{{ oneSeries.image }}" class="carouselImage d-block" alt="{{ oneSeries.title }} image">
+									{% if ('https://' in oneSeries.image) or ('http://' in oneSeries.image) %}
+										<img class="carouselImage d-block" src="{{ oneSeries.image }}" alt="{{ oneSeries.title }} poster">
+									{% else %}
+										<img class="carouselImage d-block" src="/uploads/series/images/{{ oneSeries.image }}" alt="{{ oneSeries.title }} poster">
+									{% endif %}
 									<div class="carousel-caption d-none d-md-block">
 										<h3>{{ oneSeries.title }}</h3>
 										<p>{{ oneSeries.description }}</p>

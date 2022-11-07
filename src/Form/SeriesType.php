@@ -24,13 +24,13 @@ class SeriesType extends AbstractType
             ->add('title', TextType::class)
             ->add('description', TextareaType::class)
             ->add('posterFile', VichFileType::class, [
-                'required'      => false,
-                'allow_delete'  => false,
+                'required' => false,
+                'allow_delete' => false,
                 'download_uri' => false
                 ])
             ->add('imageFile', VichFileType::class, [
-                'required'      => false,
-                'allow_delete'  => false,
+                'required' => false,
+                'allow_delete' => false,
                 'download_uri' => false
                 ])
             ->add('country', TextType::class)
@@ -44,7 +44,7 @@ class SeriesType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Series::class,
+            'data_class' => Series::class
         ]);
     }
 }

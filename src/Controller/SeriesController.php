@@ -49,7 +49,7 @@ class SeriesController extends AbstractController
             'formSearchSeries' => $formSearchSeries->createView()
         ]);
     }
-    
+
     /**
      * @Route("/new", name="new")
      */
@@ -65,7 +65,6 @@ class SeriesController extends AbstractController
         if ($formSeries->isSubmitted() && $formSeries->isValid()) {
             $slugSeries = $slugify->generate($series->getTitle());
             $series->setSlug($slugSeries);
-            $series->setOwner($this->getUser());
             // Get the Entity Manager
             $entityManager = $this->getDoctrine()->getManager();
             // Persist Series Object
@@ -88,7 +87,7 @@ class SeriesController extends AbstractController
         }
         // Render the form
         return $this->render('series/new.html.twig', [
-            'formSeries' => $formSeries->createView(),
+            'formSeries' => $formSeries->createView()
         ]);
     }
 

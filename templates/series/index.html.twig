@@ -27,7 +27,11 @@
             {% for oneSeries in series %}
                 <div class="oneSeries">
                     <a class="shinePosterSeries" href="{{ path("series_show", { slug: oneSeries.slug, id: oneSeries.id }) }}">
-                        <img src="{{ oneSeries.poster }}" alt="poster of {{ oneSeries.title }}">
+                        {% if ('https://' in oneSeries.poster) or ('http://' in oneSeries.poster) %}
+                            <img class="posterSeries" src="{{ oneSeries.poster }}" alt="{{ oneSeries.title }} poster">
+                        {% else %}
+                            <img class="posterSeries" src="/uploads/series/posters/{{ oneSeries.poster }}" alt="{{ oneSeries.title }} poster">
+                        {% endif %}
                     </a>
                     {# Only for admin and contributor for edit or delete series #}
                     {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}

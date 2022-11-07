@@ -45,12 +45,12 @@ class Season
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-    * @var string
-    */
+     * @var string
+     */
     private $poster;
 
     /**
-     * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
+     * @Vich\UploadableField(mapping="poster_season_file", fileNameProperty="poster")
      * @var File
      */
     private $posterFile;
@@ -185,7 +185,7 @@ class Season
         return $this;
     }
 
-    public function setPosterFile(File $posterFile = null): Series
+    public function setPosterFile(File $posterFile = null): self
     {
         $this->posterFile = $posterFile;
         if ($posterFile) {

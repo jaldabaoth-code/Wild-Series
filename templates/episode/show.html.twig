@@ -48,7 +48,7 @@
                 {% if ('https://' in episode.poster) or ('http://' in episode.poster) %}
                     <img class="posterEpisode" src="{{ episode.poster }}" alt="{{ episode.title }} poster">
                 {% else %}
-                    <img class="posterEpisode" src="/uploads/series/images/{{ episode.poster }}" alt="{{ episode.title }} poster">
+                    <img class="posterEpisode" src="/uploads/episodes/posters/{{ episode.poster }}" alt="{{ episode.title }} poster">
                 {% endif %}
             </div>
         </div>

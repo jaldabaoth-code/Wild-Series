@@ -2,14 +2,32 @@ vich_uploader:
     db_driver: orm
 
     mappings:
-        poster_file:
-                # alias qui nous permet d'accéder à nos images depuis le navigateur
+        poster_series_file:
+                # Alias that allows us to access our images from the browser
                 uri_prefix: /uploads/series/posters
-                # Chemin vers le dossier de stockage
-                upload_destination: '%upload_directory_poster%'
+                # Path to storage folder
+                upload_destination: '%upload_directory_poster_series%'
 
-        image_file:
-                # alias qui nous permet d'accéder à nos images depuis le navigateur
+        image_series_file:
+                # Alias that allows us to access our images from the browser
                 uri_prefix: /uploads/series/images
-                # Chemin vers le dossier de stockage
-                upload_destination: '%upload_directory_image%'
+                # Path to storage folder
+                upload_destination: '%upload_directory_image_series%'
+
+        poster_season_file:
+                # Alias that allows us to access our images from the browser
+                uri_prefix: /uploads/seasons/posters
+                # Path to storage folder
+                upload_destination: '%upload_directory_poster_season%'
+
+        poster_episode_file:
+                # Alias that allows us to access our images from the browser
+                uri_prefix: /uploads/episodes/posters
+                # Path to storage folder
+                upload_destination: '%upload_directory_poster_episode%'
+
+        poster_actor_file:
+                # Alias that allows us to access our images from the browser
+                uri_prefix: /uploads/actors/posters
+                # Path to storage folder
+                upload_destination: '%upload_directory_poster_actor%'

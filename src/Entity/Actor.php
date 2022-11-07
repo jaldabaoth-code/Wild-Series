@@ -39,7 +39,7 @@ class Actor
     private $poster;
 
     /**
-     * @Vich\UploadableField(mapping="poster_file", fileNameProperty="poster")
+     * @Vich\UploadableField(mapping="poster_actor_file", fileNameProperty="poster")
      * @var File
      */
     private $posterFile;
