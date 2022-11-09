@@ -2,27 +2,29 @@
 
 namespace App\Controller;
 
-use App\Entity\Series;
 use App\Entity\Season;
+use App\Entity\Series;
+use App\Entity\Comment;
 use App\Entity\Episode;
 use App\Form\SeriesType;
+use App\Service\Slugify;
 use App\Form\CommentType;
-use App\Entity\Comment;
-use App\Repository\SeriesRepository;
+use Symfony\Component\Mime\Email;
 use App\Form\SearchSeriesFormType;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\SeriesRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-use Symfony\Component\HttpFoundation\Request;
-use Doctrine\ORM\EntityManagerInterface;
-use App\Service\Slugify;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Controller\RedirectController;
-use Symfony\Component\HttpFoundation\RedirectResponse;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 /**
  * @Route("/series", name="series_")
@@ -112,30 +114,33 @@ class SeriesController extends AbstractController
      */
     public function edit(Request $request, Slugify $slugify, Series $series): Response
     {
-        if (($this->getUser()->getRoles()[0] != 'ROLE_ADMIN')) {
-            // If not the owner, throws a 403 Access Denied exception
-            throw new AccessDeniedException('Only the admin can edit the series!');
-        }
-        $formSeries = $this->createForm(SeriesType::class, $series);
-        $formSeries->handleRequest($request);
-        if ($formSeries->isSubmitted() && $formSeries->isValid()) {
-            $series->setSlug($slugify->generate($series->getTitle()));
-            $this->getDoctrine()->getManager()->flush();
-            // Once the form is submitted, valid and the data is inserted in database, you can define the success flash message
-            $this->addFlash('success', 'The series has been edited : ' . $series->getTitle());
-            return $this->redirectToRoute('series_show', [
-                'slug' => $series->getSlug(),
-                'id' => $series->getId()
+        if (($this->getUser()->getRoles()[0] == 'ROLE_ADMIN') || ($this->getUser()->getRoles()[0] == 'ROLE_CONTRIBUTOR')) {
+
+            $formSeries = $this->createForm(SeriesType::class, $series);
+            $formSeries->handleRequest($request);
+            if ($formSeries->isSubmitted() && $formSeries->isValid()) {
+                $series->setSlug($slugify->generate($series->getTitle()));
+                $this->getDoctrine()->getManager()->flush();
+                // Once the form is submitted, valid and the data is inserted in database, you can define the success flash message
+                $this->addFlash('success', 'The series has been edited : ' . $series->getTitle());
+                return $this->redirectToRoute('series_show', [
+                    'slug' => $series->getSlug(),
+                    'id' => $series->getId()
+                ]);
+            }
+            return $this->render('series/edit.html.twig', [
+                'series' => $series,
+                'formSeries' => $formSeries->createView()
             ]);
+        } else {
+            // If not the owner, throws a 403 Access Denied exception
+            throw new AccessDeniedException('Only the admin and contributor\'s can edit the series!');
         }
-        return $this->render('series/edit.html.twig', [
-            'series' => $series,
-            'formSeries' => $formSeries->createView()
-        ]);
     }
 
     /**
      * @Route("/{id}/delete", name="delete", methods={"POST"})
+     * @IsGranted("ROLE_ADMIN", message="No access! Get out!")
      */
     public function delete(Request $request, Series $series): Response
     {

@@ -25,6 +25,11 @@
     .body {
         display: flex;
 
+        .posterSeason {
+            height: $spacer * 19;
+            width: $spacer * 14;
+        }
+
         .informationsEpisode {
             margin: $spacer $spacer * .5 $spacer * .25;
 
@@ -53,7 +58,8 @@
         justify-content: center;
 
         .posterEpisode {
-            width: $column * 9;
+            height: $spacer * 31;
+            width: $spacer * 62;
         }
     }
 

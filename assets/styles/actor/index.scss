@@ -24,7 +24,8 @@
                     width: $column * 9;
 
                     .posterActor {
-                        width: $column * 12;
+                        height: $spacer * 18;
+                        width: $spacer * 13;
 
                         &:hover {
                             opacity: .75;

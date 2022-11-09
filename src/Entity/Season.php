@@ -56,7 +56,7 @@ class Season
     private $posterFile;
 
     /**
-     * @ORM\OneToMany(targetEntity=Episode::class, mappedBy="season")
+     * @ORM\OneToMany(targetEntity=Episode::class, mappedBy="season", cascade={"persist", "remove"})
      */
     private $episodes;
 

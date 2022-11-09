@@ -10,15 +10,19 @@
 {% block body %}
     <div class="container">
         {# Only for admin and contributor for add new episode #}
-        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+        {% if is_granted("ROLE_CONTRIBUTOR") %}
             <a class="buttonAddEpisode btn btn-success btn-sm" href="{{ path("episode_new", { seasonNumber: season.number, seasonId: season.id, seriesSlug: series.slug, seriesId: series.id }) }}">Add new episode</a>
         {% endif %}
         <h1>{{ series.title }} - Season {{ season.number }}</h1>
         <div class="body">
-            {% if ('https://' in season.poster) or ('http://' in season.poster) %}
-                <img src="{{ season.poster }}" alt="{{ series.title }} poster">
-            {% else %}
-                <img src="/uploads/seasons/posters/{{ season.poster }}" alt="{{ series.title }} poster">
+            {% if season.poster %}
+                {% if ('https://' in season.poster) or ('http://' in season.poster) %}
+                    <img class="posterSeason" src="{{ season.poster }}" alt="{{ series.title }}'s season {{ season.number }} poster">
+                {% else %}
+                    <img class="posterSeason" src="/uploads/seasons/posters/{{ season.poster }}" alt="{{ series.title }}'s season {{ season.number }} poster">
+                {% endif %}
+            {%  else %}
+                <img class="posterSeason" src="{{ asset('build/noImage.jpg') }}" alt="{{ series.title }}'s season {{ season.number }} poster">
             {% endif %}
             <div class="informationsSeason">
                 <p>Series title :
@@ -29,7 +33,7 @@
                 </p>
                 <p>Date : {{ season.year }}</p>
                 <div class="dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                    Episodes : {{ episodes|length }} episodes
+                    All episodes
                 </div>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     {% for episode in episodes %}
@@ -46,19 +50,17 @@
             <div class="castingSeason">
                 {% for actor in season.actors %}
                     <div class="castingPostersSeason">
-                        {% if actor.poster %}
-                            <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
+                        <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
+                            {% if actor.poster %}
                                 {% if ('https://' in actor.poster) or ('http://' in actor.poster) %}
                                     <img class="posterActor" src="{{ actor.poster }}" alt="{{ actor.name }} poster">
                                 {% else %}
                                     <img class="posterActor" src="/uploads/actors/posters/{{ actor.poster }}" alt="{{ actor.name }} poster">
                                 {% endif %}
-                            </a>
-                        {%  else %}
-                            <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
-                                <img class="posterActor" src="{{ asset('build/no-image.png') }}" alt="{{ actor.name }} poster">
-                            </a>
-                        {% endif %}
+                            {%  else %}
+                                <img class="posterActor" src="{{ asset('build/noPhoto.png') }}" alt="{{ actor.name }} poster">
+                            {% endif %}
+                        </a>
                         <a class="nameActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">{{ actor.name }}</a>
                     </div>
                 {% else %}
@@ -67,7 +69,7 @@
             </div>
         </div>
         {# Only for admin and contributor for edit or delete season #}
-        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+        {% if is_granted("ROLE_CONTRIBUTOR") %}
             <div class="rectificationButtonsSeason">
                 <!-- Edit season button -->
                 <a class="buttonEditSeason btn btn-primary btn-sm" href="{{ path("season_edit", { seasonNumber: season.number, id: season.id, seriesSlug: series.slug, seriesId: series.id }) }}" type="button">Edit season</a>

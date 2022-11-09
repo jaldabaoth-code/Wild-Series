@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Series;
 use App\Entity\Season;
+use App\Entity\Series;
 use App\Entity\Episode;
 use App\Form\SeasonType;
 use App\Service\Slugify;
@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
@@ -101,6 +102,7 @@ class SeasonController extends AbstractController
 
     /**
      * @Route("/{id}/delete", name="delete", methods={"POST"})
+     * @IsGranted("ROLE_ADMIN", message="No access! Get out!")
      */
     public function delete(Request $request, Season $season): Response
     {

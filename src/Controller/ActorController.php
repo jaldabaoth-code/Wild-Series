@@ -9,6 +9,7 @@ use App\Repository\SeriesRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
@@ -97,6 +98,7 @@ class ActorController extends AbstractController
 
     /**
      * @Route("/{id}/delete", name="delete")
+     * @IsGranted("ROLE_ADMIN", message="No access! Get out!")
      */
     public function delete(Request $request, Actor $actor): Response
     {

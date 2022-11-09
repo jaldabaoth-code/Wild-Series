@@ -5,10 +5,8 @@
 
     .body {
         .carouselImage {
-            float: left;
-            width:  1250px;
-            height: 600px;
-            object-fit: cover;
+            width: $column * 12;
+            height: $spacer * 40;
         }
         
         .carousel-caption {

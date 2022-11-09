@@ -10,7 +10,7 @@
 {% block body %}
     <div class="container">
         {# Only for admin and contributor for edit or delete category #}
-        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+        {% if is_granted("ROLE_CONTRIBUTOR") %}
             <div class="rectificationButtonsCategory">
                 <!-- Edit category button -->
                 <a class="buttonEditCategory btn btn-primary btn-sm" href="{{ path("category_edit", { categoryName: category.name, id: category.id }) }}">Edit category</a>
@@ -27,10 +27,18 @@
                 {% for oneSeries in series %}
                     <div class="oneSeries">
                         <a class="shinePosterSeries" href="{{ path("series_show", { slug: oneSeries.slug, id: oneSeries.id }) }}">
-                            <img src="{{ oneSeries.poster }}" alt="poster of {{ oneSeries.title }}">
+                            {% if oneSeries.poster %}
+                                {% if ('https://' in oneSeries.poster) or ('http://' in oneSeries.poster) %}
+                                    <img class="posterSeries" src="{{ oneSeries.poster }}" alt="{{ oneSeries.title }} poster">
+                                {% else %}
+                                    <img class="posterSeries" src="/uploads/series/posters/{{ oneSeries.poster }}" alt="{{ oneSeries.title }} poster">
+                                {% endif %}
+                            {%  else %}
+                                <img class="posterSeries" src="{{ asset('build/noImage.jpg') }}" alt="{{ oneSeries.title }} poster">
+                            {% endif %}
                         </a>
                         {# Only for admin and contributor for edit or delete series #}
-                        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+                        {% if is_granted("ROLE_CONTRIBUTOR") %}
                             <div class="rectificationButtonsSeries">
                                 <!-- Edit series button -->
                                 <a class="buttonEditSeries btn btn-primary btn-sm" href="{{ path("series_edit", { slug: oneSeries.slug, id: oneSeries.id }) }}" type="button">Edit</a>

@@ -36,7 +36,7 @@
             .shinePosterSeries {
                 position: relative;
                 overflow: hidden;
-                border-radius: 15px;
+                border-radius: $spacer;
                 box-shadow: 8px 8px 12px #aaa;
 
                 &::before {
@@ -62,6 +62,11 @@
                     100% {
                         left: 125%;
                     }
+                }
+
+                .posterSeries {
+                    height: $spacer * 20;
+                    width: $spacer * 15;
                 }
             }
 

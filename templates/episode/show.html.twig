@@ -10,7 +10,7 @@
 {% block body %}
     <div class="container">
         {# Only for admin and contributor for edit or delete episode #}
-        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+        {% if is_granted("ROLE_CONTRIBUTOR") %}
             <div class="rectificationButtonsEpisode">
                 <!-- Edit episode button -->
                 <a class="buttonEditEpisode btn btn-primary btn-sm" href="{{ path("episode_edit", { episodeSlug: episode.slug, id: episode.id, seasonNumber: season.number, seasonId: season.id, seriesSlug: series.slug, seriesId:series.id }) }}" type="button">Edit episode</a>
@@ -23,10 +23,14 @@
         {% endif %}
         <h1>{{ episode.title }}</h1>
         <div class="body">
-            {% if ('https://' in season.poster) or ('http://' in season.poster) %}
-                <img src="{{ season.poster }}" alt="{{ series.title }} poster">
-            {% else %}
-                <img src="/uploads/seasons/posters/{{ season.poster }}" alt="{{ series.title }} poster">
+            {% if season.poster %}
+                {% if ('https://' in season.poster) or ('http://' in season.poster) %}
+                    <img class="posterSeason" src="{{ season.poster }}" alt="{{ series.title }}'s season {{ season.number }} poster">
+                {% else %}
+                    <img class="posterSeason" src="/uploads/seasons/posters/{{ season.poster }}" alt="{{ series.title }}'s season {{ season.number }} poster">
+                {% endif %}
+            {%  else %}
+                <img class="posterSeason" src="{{ asset('build/noImage.jpg') }}" alt="{{ series.title }}'s season {{ season.number }} poster">
             {% endif %}
             <div class="informationsEpisode">
                 <p>Series title :
@@ -45,20 +49,22 @@
         <div>
             <p class="descriptionEpisode">{{ episode.synopsis }}</p>
             <div class="descriptionPosterEpisode">
-                {% if ('https://' in episode.poster) or ('http://' in episode.poster) %}
-                    <img class="posterEpisode" src="{{ episode.poster }}" alt="{{ episode.title }} poster">
-                {% else %}
-                    <img class="posterEpisode" src="/uploads/episodes/posters/{{ episode.poster }}" alt="{{ episode.title }} poster">
+                {% if episode.poster %}
+                    {% if ('https://' in episode.poster) or ('http://' in episode.poster) %}
+                        <img class="posterEpisode" src="{{ episode.poster }}" alt="{{ episode.title }} poster">
+                    {% else %}
+                        <img class="posterEpisode" src="/uploads/episodes/posters/{{ episode.poster }}" alt="{{ episode.title }} poster">
+                    {% endif %}
+                {%  else %}
+                    <img class="posterEpisode" src="{{ asset('build/noImage2.jpg') }}" alt="{{ episode.title }} poster">
                 {% endif %}
             </div>
         </div>
         {# Comment Episode and rate it #}
-        {% if app.user and is_granted("ROLE_ADMIN")%}
-            {% if app.user %}
-                <div class="formCommentEpisode">
-                    {{ include('comment/_formCommentEpisode.html.twig') }}
-                </div>
-            {% endif %}
+        {% if app.user %}
+            <div class="formCommentEpisode">
+                {{ include('comment/_formCommentEpisode.html.twig') }}
+            </div>
         {% endif %}
         <div class="listCommentsEpisode">
             <p class="titleCommentEpisode">Comments on the episode</p>

@@ -21,7 +21,7 @@ class CategoryController extends AbstractController
 {
     /**
      * @Route("/new", name="new")
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_CONTRIBUTOR", message="No access! Get out!")
      */
     public function new(Request $request): Response
     {
@@ -95,6 +95,7 @@ class CategoryController extends AbstractController
 
     /**
      * @Route("/{id}/delete", name="delete", methods={"POST"})
+     * @IsGranted("ROLE_ADMIN", message="No access! Get out!")
      */
     public function delete(Request $request, Category $category): Response
     {

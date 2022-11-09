@@ -10,7 +10,7 @@
 {% block body %}
     <div class="container">
         {# Only for admin and contributor for add new actor #}
-        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+        {% if is_granted("ROLE_CONTRIBUTOR") %}
             <a class="buttonAddActor btn btn-success btn-sm" href="{{ path("actor_new") }}">Add new actor</a>
         {% endif %}
         <h1>All actors</h1>
@@ -18,22 +18,20 @@
             <div class="listActors">
                 {% for actor in actors %}
                     <div class="castingPostersActor">
-                        {% if actor.poster %}
-                            <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
+                        <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
+                            {% if actor.poster %}
                                 {% if ('https://' in actor.poster) or ('http://' in actor.poster) %}
                                     <img class="posterActor" src="{{ actor.poster }}" alt="{{ actor.name }} poster">
                                 {% else %}
                                     <img class="posterActor" src="/uploads/actors/posters/{{ actor.poster }}" alt="{{ actor.name }} poster">
                                 {% endif %}
-                            </a>
-                        {%  else %}
-                            <a class="linkActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">
-                                <img class="posterActor" src="{{ asset('build/no-image.png') }}" alt="{{ actor.name }} poster">
-                            </a>
-                        {% endif %}
+                            {%  else %}
+                                <img class="posterActor" src="{{ asset('build/noPhoto.png') }}" alt="{{ actor.name }} poster">
+                            {% endif %}
+                        </a>
                         <a class="nameActor" href="{{ path('actor_show', { actorName: actor.name, id: actor.id }) }}">{{ actor.name }}</a>
                         {# Only for admin and contributor for edit or delete actor #}
-                        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+                        {% if is_granted("ROLE_CONTRIBUTOR") %}
                             <div class="rectificationButtonsActor">
                                 <!-- Edit actor button -->
                                 <a class="buttonEditActor btn btn-primary btn-sm" href="{{ path("actor_edit", { actorName: actor.name, id: actor.id }) }}" type="button">Edit</a>

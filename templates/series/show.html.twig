@@ -10,15 +10,19 @@
 {% block body %}
     <div class="container">
         {# Only for admin and contributor for add new season #}
-        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+        {% if is_granted("ROLE_CONTRIBUTOR") %}
             <a class="buttonAddSeason btn btn-success btn-sm" href="{{ path("season_new", { seriesSlug: series.slug, seriesId: series.id }) }}">Add new season</a>
         {% endif %}
         <h1>{{ series.title }}</h1>
         <div class="body">
-            {% if ('https://' in series.poster) or ('http://' in series.poster) %}
-                <img class="posterSeries" src="{{ series.poster }}" alt="{{ series.title }} poster">
-            {% else %}
-                <img class="posterSeries" src="/uploads/series/posters/{{ series.poster }}" alt="{{ series.title }} poster">
+            {% if series.poster %}
+                {% if ('https://' in series.poster) or ('http://' in series.poster) %}
+                    <img class="posterSeries" src="{{ series.poster }}" alt="{{ series.title }} poster">
+                {% else %}
+                    <img class="posterSeries" src="/uploads/series/posters/{{ series.poster }}" alt="{{ series.title }} poster">
+                {% endif %}
+            {%  else %}
+                <img class="posterSeries" src="{{ asset('build/noImage.jpg') }}" alt="{{ series.title }} poster">
             {% endif %}
             <div class="informationsSeries">
                 <p>Title :
@@ -46,7 +50,7 @@
                 {% endif  %}
                 </p>
                 <div class="dropdown-toggle" role="button" data-bs-toggle="dropdown">
-                    Seasons : {{ seasons|length }} seasons
+                    All seasons
                 </div>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     {% for season in seasons %}
@@ -60,15 +64,19 @@
         <div>
             <p class="descriptionSeries">{{ series.description }}</p>
             <div class="descriptionImageSeries">
-                {% if ('https://' in series.image) or ('http://' in series.image) %}
-                    <img class="imageSeries" src="{{ series.image }}" alt="{{ series.title }} image">
-                {% else %}
-                    <img class="imageSeries" src="/uploads/series/images/{{ series.image }}" alt="{{ series.title }} image">
+                {% if series.image %}
+                    {% if ('https://' in series.image) or ('http://' in series.image) %}
+                        <img class="imageSeries" src="{{ series.image }}" alt="{{ series.title }} image">
+                    {% else %}
+                        <img class="imageSeries" src="/uploads/series/images/{{ series.image }}" alt="{{ series.title }} image">
+                    {% endif %}
+                {%  else %}
+                    <img class="imageSeries" src="{{ asset('build/noImage2.jpg') }}" alt="{{ series.title }} image">
                 {% endif %}
             </div>
         </div>
         {# Only for admin and contributor for edit or delete series #}
-        {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_CONTRIBUTOR") %}
+        {% if is_granted("ROLE_CONTRIBUTOR") %}
             <div class="rectificationButtonsSeries">
                 <!-- Edit series button -->
                 <a class="buttonEditSeries btn btn-primary btn-sm" href="{{ path("series_edit", { slug: series.slug, id: series.id }) }}" type="button">Edit series</a>

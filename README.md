@@ -1,6 +1,6 @@
-<h1>Wild Series (Quests Wild Series, WCS Web PHP)</h1>
+<h1>Wild Series (Wild Series Quests, WCS Web PHP)</h1>
 
-### There are PHP "Quests" we did during WCS Web PHP by using Symfony
+### There are Symfony "Quests" we did during WCS Web PHP
 
 ---
 
